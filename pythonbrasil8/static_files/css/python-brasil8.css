@@ -1,0 +1,77 @@
+#menu {
+    background-color: #000;
+    height: 45px;    
+}
+
+#menu li {
+    float: left;
+    margin: 0 48px;
+}
+
+#menu .primeiro {
+    margin-left: 0px
+}
+
+#menu .ultimo {
+    margin-right: 0px;
+}
+
+#menu li a {
+    color: #fff;
+    line-height: 43px;
+}
+
+#header {
+    background-color: #c4b4a7;
+    background:url('/static/images/header/background-header.jpg');
+    max-height: 458px;
+    position: relative;
+}
+
+#header .logo {
+    background:url('/static/images/header/logo-python-brasil.png') no-repeat;
+    float: left;
+    height: 115px;
+    margin-top: 60px;
+    width: 486px;
+}
+
+#header .descricao {
+    color: #0a4c7b;
+    font-size: 21px;
+    left: 210px;
+    position: absolute;
+    top: 135px;
+    text-align: right;
+    width: 268px;
+}
+
+#header .cristo {
+    background: url("/static/images/header/cristo.png") no-repeat 33px 10px transparent;
+    float: left;
+    height: 265px;
+    width: 377px;
+}
+
+#header .patrocinadores-oficiais {
+    float: right;
+    margin-top: 50px;
+}
+
+#header .patrocinio {
+    color: #979797;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+}
+
+#apoio {
+    background-color: #f0f0f0;
+    border-top: 1px solid #D8D7D4;
+    height: 157px;
+    width: 100%;
+}
+
+#container {
+    margin-top: 40px;
+}

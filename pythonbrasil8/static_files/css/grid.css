@@ -1,0 +1,43 @@
+.grid_1 {width: 12px;}
+.grid_2 {width: 44px;}
+.grid_3 {width: 76px;}
+.grid_4 {width: 108px;}
+.grid_5 {width: 140px;}
+.grid_6 {width: 172px;}
+.grid_7 {width: 204px;}
+.grid_8 {width: 236px;}
+.grid_9 {width: 268px;}
+.grid_10 {width: 300px;}
+.grid_11 {width: 332px;}
+.grid_12 {width: 364px;}
+.grid_13 {width: 396px;}
+.grid_14 {width: 428px;}
+.grid_15 {width: 460px;}
+.grid_16 {width: 492px;}
+.grid_17 {width: 524px;}
+.grid_18 {width: 556px;}
+.grid_19 {width: 588px;}
+.grid_20 {width: 620px;}
+.grid_21 {width: 652px;}
+.grid_22 {width: 684px;}
+.grid_23 {width: 716px;}
+.grid_24 {width: 748px;}
+.grid_25 {width: 780px;}
+.grid_26 {width: 812px;}
+.grid_27 {width: 844px;}
+.grid_28 {width: 876px;}
+.grid_29 {width: 908px;}
+.grid_30 {width: 940px;}
+.grid_31 {width: 972px;}
+.grid_32 {width: 1004px;}
+.column {margin: 0 10px 0 10px;
+         overflow: hidden;
+         float: left;
+         display: inline;}
+.row {width: 1024px;
+         margin: 0 auto;
+         overflow: hidden;}
+.row .row {margin: 0 -10px 0 -10px;
+         width: auto;
+         display: inline-block;}
+
