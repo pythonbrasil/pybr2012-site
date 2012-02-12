@@ -1,1 +1,65 @@
-<h1>Welcome to PythonBrasil 8</h1>
+<!doctype html>
+
+<html>
+    <head>
+        <title>Python Brasil 8</title>
+        <link rel="stylesheet" href="/static/css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/grid.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/python-brasil8.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/home.css" type="text/css" />
+    </head>
+    <body>
+        <div id="menu">
+            <div class="row">
+                <div class="column grid_32">
+                    <ul>
+                        <li class="primeiro">
+                            <a href="">home</a> 
+                        </li>
+                        <li>
+                            <a href="">programação</a> 
+                        </li>
+                        <li>
+                            <a href="">inscrições</a> 
+                        </li>
+                        <li>
+                            <a href="">localização</a> 
+                        </li>
+                        <li>
+                            <a href="">patrocinadores</a> 
+                        </li>
+                        <li class="ultimo">
+                            <a href="">vagas de emprego</a> 
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <div id="header">
+            <div class="row">
+                <div class="column grid_32">
+                    <h1 class="logo"></h1>
+                    <span class="descricao">21st - 24st November 2012 Rio de Janeiro</span>
+                    <div class="cristo"></div>
+                    <div class="patrocinadores-oficiais">
+                        <p class="patrocinio">patrocínio:</p>
+                        <ul class=patrocinadores">
+                            <li>
+                                <img src="/static/images/patrocinadores/globo.png">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="apoio">
+            <div class="row">
+                <div class="column grid_32"></div>
+            </div>
+        </div>
+        <div id="container">
+            {% block conteudo %}{% endblock %}
+        </div>
+    </body>
+</html>
+
