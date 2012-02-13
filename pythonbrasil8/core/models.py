@@ -1,5 +1,4 @@
 from django.db import models
 
-
-class Site(models.Model):
+class Home(models.Model):
     pass

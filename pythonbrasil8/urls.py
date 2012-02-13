@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, url
-from core.views import Index
+from core.views import Home
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -7,7 +7,7 @@ from core.views import Index
 
 urlpatterns = patterns('',
     # Examples:
-	url(r'^$',  Index.as_view(), name='Home'),
+	url(r'^$',  Home.as_view(), name='Home'),
     # url(r'^pythonbrasil8/', include('pythonbrasil8.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

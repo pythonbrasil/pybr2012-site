@@ -1,6 +1,6 @@
 from django.views.generic import ListView
-from core.models import Site
+from core.models import Home
 
-class Index(ListView):
-    model = Site
-    template_name = 'index.html'
+class Home(ListView):
+    model = Home
+    template_name = 'home.html'
