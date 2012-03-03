@@ -1,82 +1,175 @@
+@media (max-width: 699px) and (min-width: 400px) {
+
+    #menu {
+        height: 45px;
+    }
+
+    #menu li {
+        margin: 0 25px;
+        display: inline;
+    }
+
+    #menu .primeiro {
+        margin-left: 0px
+    }
+
+    #menu .ultimo {
+        margin-right: 0px;
+    }
+
+    #menu li a {
+        color: #DDD;
+        line-height: 43px;
+    }
+
+    #pre-register a {
+        width: 235px;
+        height: 39px;
+        float: right;
+        text-align: center;
+        margin: 11% 8% 0 0;
+        padding-bottom: 15px;
+        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+        color: #FFF;
+        font-size: 22px;
+    }
+
+    #pre-register span {
+        height: 100%;
+        width: 90%;
+        padding: 15px 0 0 13px;
+        display: block;
+        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
+    }
+
+}
+
+@media (max-width: 899px) and (min-width: 700px) {
+
+    #menu {
+        height: 45px;
+    }
+
+    #menu li {
+        margin: 0 25px;
+        display: inline;
+    }
+
+    #menu .primeiro {
+        margin-left: 0px
+    }
+
+    #menu .ultimo {
+        margin-right: 0px;
+    }
+
+    #menu li a {
+        color: #DDD;
+        line-height: 43px;
+    }
+
+    #pre-register a {
+        width: 235px;
+        height: 39px;
+        float: right;
+        text-align: center;
+        margin: 11% 8% 0 0;
+        padding-bottom: 15px;
+        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+        color: #FFF;
+        font-size: 22px;
+    }
+
+    #pre-register span {
+        height: 100%;
+        width: 90%;
+        padding: 15px 0 0 13px;
+        display: block;
+        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
+    }
+
+}
+
+/** my macbook **/
+@media (min-width: 900px) {
+    /** HEADER **/
+
+    #menu {
+        height: 45px;
+    }
+
+    #menu li {
+        margin: 0 25px;
+        display: inline;
+    }
+
+    #menu .primeiro {
+        margin-left: 0px
+    }
+
+    #menu .ultimo {
+        margin-right: 0px;
+    }
+
+    #menu li a {
+        color: #DDD;
+        line-height: 43px;
+    }
+
+
+
+    #pre-register a {
+        width: 235px;
+        height: 39px;
+        float: right;
+        text-align: center;
+        margin: 11% 8% 0 0;
+        padding-bottom: 15px;
+        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+        color: #FFF;
+        font-size: 22px;
+    }
+
+    #pre-register span {
+        height: 100%;
+        width: 90%;
+        padding: 15px 0 0 13px;
+        display: block;
+        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
+    }
+
+
+    /* #pre-register a { */
+    /*     color: #FFF; */
+    /*     font-size: 22px; */
+    /* } */
+
+
+    /** CONTAINERS **/
+
+    #container {
+        margin-top: 40px;
+    }
+
+    #sponsors {
+        background-color: #f0f0f0;
+        border-top: 1px solid #D8D7D4;
+        height: 157px;
+        width: 100%;
+    }
+}
+
 /** COMMON **/
 .text_right {
     text-align: right;
 }
 
-
-/** HEADER **/
-
 #header {
-    background: #1b1f20;
     height: 280px;
-    position: relative;
+    background: #1b1f20;
 }
 
 #header .logo {
     background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
     height: 100%;
-}
-
-#menu {
-    height: 45px;
-}
-
-#menu li {
-    margin: 0 25px;
-    display: inline;
-}
-
-#menu .primeiro {
-    margin-left: 0px
-}
-
-#menu .ultimo {
-    margin-right: 0px;
-}
-
-#menu li a {
-    color: #DDD;
-    line-height: 43px;
-}
-
-
-
-#pre-register a {
-    width: 235px;
-    height: 39px;
-    float: right;
-    text-align: center;
-    margin: 11% 8% 0 0;
-    padding-bottom: 15px;
-    background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
-    color: #FFF;
-    font-size: 22px;
-}
-
-#pre-register span {
-    height: 100%;
-    width: 90%;
-    padding: 15px 0 0 13px;
-    display: block;
-    background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
-}
-
-
-/* #pre-register a { */
-/*     color: #FFF; */
-/*     font-size: 22px; */
-/* } */
-
-
-/** CONTAINERS **/
-
-#container {
-    margin-top: 40px;
-}
-
-#sponsors {
-    background-color: #f0f0f0;
-    border-top: 1px solid #D8D7D4;
-    height: 157px;
-    width: 100%;
 }
