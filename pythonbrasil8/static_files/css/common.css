@@ -1,6 +1,24 @@
+/** COMMON **/
+.text_right {
+    text-align: right;
+}
+
+
+/** HEADER **/
+
+#header {
+    background: #1b1f20;
+    height: 280px;
+    position: relative;
+}
+
+#header .logo {
+    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+    height: 100%;
+}
+
 #menu {
     height: 45px;
-    text-align: right;
 }
 
 #menu li {
@@ -17,46 +35,48 @@
 }
 
 #menu li a {
-    color: #fff;
+    color: #DDD;
     line-height: 43px;
 }
 
-#header {
-    background: #1b1f20;
-    height: 280px;
-    position: relative;
+
+
+#pre-register a {
+    width: 235px;
+    height: 39px;
+    float: right;
+    text-align: center;
+    margin: 11% 8% 0 0;
+    padding-bottom: 15px;
+    background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+    color: #FFF;
+    font-size: 22px;
 }
 
-#header .logo {
-    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+#pre-register span {
     height: 100%;
+    width: 90%;
+    padding: 15px 0 0 13px;
+    display: block;
+    background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
 }
 
-/*#header .logo {
-    background:url('/static/images/header/logo-python-brasil.png') no-repeat;
-    float: left;
-    height: 115px;
-    margin-top: 60px;
-    width: 486px;
+
+/* #pre-register a { */
+/*     color: #FFF; */
+/*     font-size: 22px; */
+/* } */
+
+
+/** CONTAINERS **/
+
+#container {
+    margin-top: 40px;
 }
 
-#header .descricao {
-    color: #0a4c7b;
-    font-size: 21px;
-    left: 210px;
-    position: absolute;
-    top: 135px;
-    text-align: right;
-    width: 268px;
-}*/
-
-#apoio {
+#sponsors {
     background-color: #f0f0f0;
     border-top: 1px solid #D8D7D4;
     height: 157px;
     width: 100%;
-}
-
-#container {
-    margin-top: 40px;
 }
