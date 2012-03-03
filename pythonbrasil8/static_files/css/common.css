@@ -1,10 +1,11 @@
 #menu {
     height: 45px;
+    text-align: right;
 }
 
 #menu li {
-    float: right;
     margin: 0 25px;
+    display: inline;
 }
 
 #menu .primeiro {
@@ -21,9 +22,14 @@
 }
 
 #header {
-    background: url('/static/images/header/sprite.png') #c4b4a7 0px -396px;
-    height: 275px;
+    background: #1b1f20;
+    height: 280px;
     position: relative;
+}
+
+#header .logo {
+    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+    height: 100%;
 }
 
 /*#header .logo {
