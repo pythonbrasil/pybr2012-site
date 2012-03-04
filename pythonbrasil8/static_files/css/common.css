@@ -59,10 +59,6 @@
 
     /** CONTAINERS **/
 
-    #container {
-        margin-top: 40px;
-    }
-
     #sponsors {
         background-color: #f0f0f0;
         border-top: 1px solid #D8D7D4;
@@ -117,6 +113,59 @@
     text-align: right;
 }
 
+.text_center {
+    text-align: center;
+}
+
+
+/*** TYPOGRAPHY ***/
+
+.dates h4 {
+    color: #004592;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dates p {
+    color: #474747;
+    margin-top: 5px;
+}
+
+/*** CONTAINERS ***/
+
+
+.clearfix {
+    clear: both;
+}
+
+.dates .inner {
+    margin: 15px 20px;
+    float: left;
+}
+
+.dates .dates-container {
+    margin: 0 auto;
+    float: none;
+}
+
+.dates-container {
+    width: 39%;
+    float: left;
+}
+
+.inner-row {
+    margin: 10px 0;
+}
+
+.wrapper {
+    margin: 0 8%;
+}
+
+.dates {
+    background: url('/static/images/header/white-dashed-border.png') #efefef repeat-x;
+    height: 85px;
+}
+
 
 /*** HEADER ***/
 
@@ -133,10 +182,11 @@
 }
 
 .dashed-border {
-    margin-top: -10px;
+    margin-top: -12px;
     width: 100%;
     height: 6px;
     background: url('/static/images/header/dashed-border.png') #1b1f20 repeat-x;
+    position: absolute;
 }
 
 #menu {
@@ -169,5 +219,4 @@
 #menu li.active a {
     background: url('/static/images/header/sprite.png') right 3px no-repeat;
     padding: 10px 16px 10px 0;
-    /** #004592 **/
 }
