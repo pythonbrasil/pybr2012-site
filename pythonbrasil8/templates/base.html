@@ -18,28 +18,26 @@
 
                 <div id="menu" class="text_right">
                     <div class="row">
-                        <div class="column grid_32">
-                            <ul>
-                                <li class="{% is_active request.get_full_path 'home' %}">
-                                    <a href="{% url home %}">home</a>
-                                </li>
-                                <!--<li>-->
-                                <!--    <a href="">programação</a>-->
-                                <!--</li>-->
-                                <li>
-                                    <a href="">inscrições</a>
-                                </li>
-                                <li>
-                                    <a href="">localização</a>
-                                </li>
-                                <!--<li>-->
-                                <!--    <a href="">patrocinadores</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--    <a href="">vagas de emprego</a>-->
-                                <!--</li>-->
-                           </ul>
-                        </div>
+                        <ul>
+                            <li class="{% is_active request.get_full_path 'home' %}">
+                                <a href="{% url home %}">home</a>
+                            </li>
+                            <!--<li>-->
+                            <!--    <a href="">programação</a>-->
+                            <!--</li>-->
+                            <li>
+                                <a href="">inscrições</a>
+                            </li>
+                            <li>
+                                <a href="">localização</a>
+                            </li>
+                            <!--<li>-->
+                            <!--    <a href="">patrocinadores</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                            <!--    <a href="">vagas de emprego</a>-->
+                            <!--</li>-->
+                       </ul>
                     </div>
                 </div>
 
@@ -53,19 +51,27 @@
         </div>
         <div class="dashed-border"></div>
 
-        <div class="row">
-            23 + 24 - talks e exposition hall
-            21 + 22 - Tutorials
-        </div>
-
-        <div id="sponsors">
-            <div class="row">
-                <div class="column grid_32"></div>
+        <div class="dates">
+            <div class="row wrapper">
+                <div class="dates-container">
+                    <div class="inner">
+                        <h4>Tutorials</h4>
+                        <p>October 21 - 22</p>
+                    </div>
+                    <div class="inner">
+                        <h4>Talks & Exposition Hall</h4>
+                        <p>October 23 - 24</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
 
-        <div id="container">
-            {% block conteudo %}{% endblock %}
+        <div class="row wrapper">
+        </div>
+
+        <div class="row wrapper main">
+            {% block content %}{% endblock %}
         </div>
 
     </body>
