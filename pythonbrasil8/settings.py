@@ -102,6 +102,12 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -115,6 +121,9 @@ ROOT_URLCONF = 'pythonbrasil8.urls'
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates')
 )
+
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -131,6 +140,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'django_nose'
 )
 
 # A sample logging configuration. The only tangible logging

@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-	url(r'^$',  Home.as_view(), name='Home'),
+	url(r'^$',  Home.as_view(), name='home'),
     url(r'^mittun/', include('mittun.urls')),
     # url(r'^pythonbrasil8/', include('pythonbrasil8.foo.urls')),
 

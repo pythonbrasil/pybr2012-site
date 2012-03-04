@@ -1,16 +1,19 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
+from django.template import Context, Template
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+class TestMenuTemplateTag(TestCase):
+
+    def should_make_a_menu_link_as_active(self):
+        html = "{% is_active request.get_full_path 'home' %}"
+        template = Template(html)
+        context = Context({'request': {"get_full_path": "home"}})
+
+        self.assertEqual("active", template.render(context))
+
+    # def should_make_a_menu_link_as_not_active(self):
+    #     html = "{% is_active request.get_full_path 'home' %}"
+    #     template = Template(html)
+    #     context = Context({'request': {"get_full_path": "register"}})
+
+    #     self.assertNotEqual("", template.render(context))
