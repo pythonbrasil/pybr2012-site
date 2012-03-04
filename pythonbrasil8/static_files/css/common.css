@@ -1,27 +1,5 @@
 @media (max-width: 699px) and (min-width: 400px) {
 
-    #menu {
-        height: 45px;
-    }
-
-    #menu li {
-        margin: 0 25px;
-        display: inline;
-    }
-
-    #menu .primeiro {
-        margin-left: 0px
-    }
-
-    #menu .ultimo {
-        margin-right: 0px;
-    }
-
-    #menu li a {
-        color: #DDD;
-        line-height: 43px;
-    }
-
     #pre-register a {
         width: 235px;
         height: 39px;
@@ -45,28 +23,6 @@
 }
 
 @media (max-width: 899px) and (min-width: 700px) {
-
-    #menu {
-        height: 45px;
-    }
-
-    #menu li {
-        margin: 0 25px;
-        display: inline;
-    }
-
-    #menu .primeiro {
-        margin-left: 0px
-    }
-
-    #menu .ultimo {
-        margin-right: 0px;
-    }
-
-    #menu li a {
-        color: #DDD;
-        line-height: 43px;
-    }
 
     #pre-register a {
         width: 235px;
@@ -94,30 +50,6 @@
 @media (min-width: 900px) {
     /** HEADER **/
 
-    #menu {
-        height: 45px;
-    }
-
-    #menu li {
-        margin: 0 25px;
-        display: inline;
-    }
-
-    #menu .primeiro {
-        margin-left: 0px
-    }
-
-    #menu .ultimo {
-        margin-right: 0px;
-    }
-
-    #menu li a {
-        color: #DDD;
-        line-height: 43px;
-    }
-
-
-
     #pre-register a {
         width: 235px;
         height: 39px;
@@ -139,12 +71,6 @@
     }
 
 
-    /* #pre-register a { */
-    /*     color: #FFF; */
-    /*     font-size: 22px; */
-    /* } */
-
-
     /** CONTAINERS **/
 
     #container {
@@ -160,16 +86,50 @@
 }
 
 /** COMMON **/
+
 .text_right {
     text-align: right;
 }
+
+
+/*** HEADER ***/
 
 #header {
     height: 280px;
     background: #1b1f20;
 }
 
-#header .logo {
+#header .inner {
     background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
     height: 100%;
+    margin: 0 8%;
+}
+
+.dashed-border {
+    margin-top: -10px;
+    width: 100%;
+    height: 6px;
+    background: url('/static/images/header/dashed-border.png') #1b1f20 repeat-x;
+}
+
+#menu {
+    height: 45px;
+}
+
+#menu li {
+    margin: 0 25px;
+    display: inline;
+}
+
+#menu .primeiro {
+    margin-left: 0px
+}
+
+#menu .ultimo {
+    margin-right: 0px;
+}
+
+#menu li a {
+    color: #DDD;
+    line-height: 43px;
 }
