@@ -20,6 +20,19 @@
         background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
     }
 
+    /** CONTAINERS **/
+
+    #container {
+        margin-top: 40px;
+    }
+
+    #sponsors {
+        background-color: #f0f0f0;
+        border-top: 1px solid #D8D7D4;
+        height: 157px;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 899px) and (min-width: 700px) {
@@ -42,6 +55,19 @@
         padding: 15px 0 0 13px;
         display: block;
         background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
+    }
+
+    /** CONTAINERS **/
+
+    #container {
+        margin-top: 40px;
+    }
+
+    #sponsors {
+        background-color: #f0f0f0;
+        border-top: 1px solid #D8D7D4;
+        height: 157px;
+        width: 100%;
     }
 
 }
@@ -89,10 +115,6 @@
 
 .text_right {
     text-align: right;
-}
-
-.column {
-    margin-top: 20px;
 }
 
 
