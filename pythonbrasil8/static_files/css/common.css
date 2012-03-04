@@ -105,9 +105,9 @@
 
 #header .inner {
     background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
-    height: 100%;
     margin: 0 8%;
     position: relative;
+    height: 270px;
 }
 
 .dashed-border {
