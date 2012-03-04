@@ -91,6 +91,10 @@
     text-align: right;
 }
 
+.column {
+    margin-top: 20px;
+}
+
 
 /*** HEADER ***/
 
@@ -117,19 +121,25 @@
 }
 
 #menu li {
-    margin: 0 25px;
+    margin: 0 5px;
+    padding: 10px 10px;
+    height: 29px;
     display: inline;
 }
 
-#menu .primeiro {
+#menu li.primeiro {
     margin-left: 0px
 }
 
-#menu .ultimo {
+#menu li.ultimo {
     margin-right: 0px;
 }
 
 #menu li a {
     color: #DDD;
-    line-height: 43px;
+}
+
+#menu li.active {
+    background: url('/static/images/header/sprite.png') left 3px no-repeat;
+    /** #004592 **/
 }

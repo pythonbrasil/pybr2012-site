@@ -1,5 +1,7 @@
 <!doctype html>
 
+{% load menu %}
+
 <html>
     <head>
         <title>Python Brasil 8</title>
@@ -13,12 +15,13 @@
 
         <div id="header">
             <div class="inner row">
+
                 <div id="menu" class="text_right">
                     <div class="row">
                         <div class="column grid_32">
                             <ul>
-                                <li class="primeiro">
-                                    <a href="">home</a>
+                                <li class="primeiro {% is_active request.get_full_path 'home' %}">
+                                    <a href="url home">home</a>
                                 </li>
                                 <!--<li>-->
                                 <!--    <a href="">programação</a>-->
@@ -49,6 +52,11 @@
             </div>
         </div>
         <div class="dashed-border"></div>
+
+        <div class="row">
+            23 + 24 - talks e exposition hall
+            21 + 22 - Tutorials
+        </div>
 
         <div id="sponsors">
             <div class="row">
