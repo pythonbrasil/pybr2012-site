@@ -20,8 +20,8 @@
                     <div class="row">
                         <div class="column grid_32">
                             <ul>
-                                <li class="primeiro {% is_active request.get_full_path 'home' %}">
-                                    <a href="url home">home</a>
+                                <li class="{% is_active request.get_full_path 'home' %}">
+                                    <a href="{% url home %}">home</a>
                                 </li>
                                 <!--<li>-->
                                 <!--    <a href="">programação</a>-->
@@ -29,13 +29,13 @@
                                 <li>
                                     <a href="">inscrições</a>
                                 </li>
-                                <li class="ultimo">
+                                <li>
                                     <a href="">localização</a>
                                 </li>
                                 <!--<li>-->
                                 <!--    <a href="">patrocinadores</a>-->
                                 <!--</li>-->
-                                <!--<li class="ultimo">-->
+                                <!--<li>-->
                                 <!--    <a href="">vagas de emprego</a>-->
                                 <!--</li>-->
                            </ul>

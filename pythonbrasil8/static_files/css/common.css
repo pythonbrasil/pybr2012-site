@@ -107,6 +107,7 @@
     background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
     height: 100%;
     margin: 0 8%;
+    position: relative;
 }
 
 .dashed-border {
@@ -120,26 +121,31 @@
     height: 45px;
 }
 
+#menu ul {
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 #menu li {
-    margin: 0 5px;
-    padding: 10px 10px;
-    height: 29px;
     display: inline;
-}
-
-#menu li.primeiro {
-    margin-left: 0px
-}
-
-#menu li.ultimo {
-    margin-right: 0px;
+    float: left;
 }
 
 #menu li a {
     color: #DDD;
+    padding: 10px;
+    display: block;
 }
 
 #menu li.active {
     background: url('/static/images/header/sprite.png') left 3px no-repeat;
+    padding-left: 16px;
+}
+
+#menu li.active a {
+    background: url('/static/images/header/sprite.png') right 3px no-repeat;
+    padding: 10px 16px 10px 0;
     /** #004592 **/
 }
