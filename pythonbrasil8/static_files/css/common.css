@@ -9,7 +9,7 @@
         padding-bottom: 15px;
         background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
         color: #FFF;
-        font-size: 22px;
+        font-size: 1.375em;
     }
 
     #pre-register span {
@@ -46,7 +46,7 @@
         padding-bottom: 15px;
         background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
         color: #FFF;
-        font-size: 22px;
+        font-size: 1.375em;
     }
 
     #pre-register span {
@@ -81,7 +81,7 @@
         padding-bottom: 15px;
         background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
         color: #FFF;
-        font-size: 22px;
+        font-size: 1.375em;
     }
 
     #pre-register span {
@@ -109,6 +109,10 @@
 
 /** COMMON **/
 
+body {
+    background-color: #1b1f20;
+}
+
 .text_right {
     text-align: right;
 }
@@ -122,7 +126,7 @@
 
 .dates h4 {
     color: #004592;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .dates p {
@@ -130,11 +134,21 @@
     margin-top: 5px;
 }
 
+#footer p {
+    color: #ccc;
+    font-size: 0.875em;
+    text-align: right;
+}
+
 /*** CONTAINERS ***/
 
 
 .clearfix {
     clear: both;
+}
+
+.content {
+    background-color: #FFF;
 }
 
 .dates .inner {
@@ -188,6 +202,9 @@
     position: absolute;
 }
 
+
+/*** MENU ***/
+
 #menu {
     height: 45px;
 }
@@ -218,4 +235,31 @@
 #menu li.active a {
     background: url('/static/images/header/sprite.png') right 3px no-repeat;
     padding: 10px 16px 10px 0;
+}
+
+
+/*** FOOTER ***/
+
+#footer {
+    height: 140px;
+    background: url('/static/images/header/sprite.png') #1b1f20 left -538px repeat-x;
+}
+
+#footer .inner {
+    margin: 0 8%;
+}
+
+#footer .about {
+    float: right;
+    width: 500px;
+    margin-top: 40px;
+}
+
+#footer .logo {
+    display: inline;
+    background: url('/static/images/header/sprite.png') -15px -280px no-repeat;
+    width: 44px;
+    height: 44px;
+    margin: 50px 0 0 15px;
+    float: right;
 }

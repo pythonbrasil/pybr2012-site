@@ -67,11 +67,29 @@
             </div>
         </div>
 
-        <div class="row wrapper">
+        <!--<div class="row wrapper">-->
+        <!--</div>-->
+
+        <div class="content">
+            <div id="sposors">
+            </div>
+
+            <div class="row wrapper main">
+                {% block content %}{% endblock %}
+            </div>
         </div>
 
-        <div class="row wrapper main">
-            {% block content %}{% endblock %}
+        <div id="footer">
+            <div class="inner">
+                <div class="logo"></div>
+                <div class="about">
+                    <p>
+                        PythonBrasil is the largest Brazilian gathering for the community using and developing
+                        the open-source Python programming language. It is a annual vibrant meeting ground to
+                        inspire, debate, make deals, motivate and connect face to face.
+                    </p>
+                </div>
+            </div>
         </div>
 
     </body>
