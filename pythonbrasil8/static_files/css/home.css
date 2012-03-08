@@ -1,4 +1,12 @@
-#container .sobre-o-evento a {
+.content .about a {
     color: #2471a9;
     font-size: 22px;
+    width: 22%;
+    float: left;
+}
+
+.content .about .inner {
+    font-size: 14px;
+    float: right;
+    width: 800px;
 }
