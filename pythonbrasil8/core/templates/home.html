@@ -4,18 +4,23 @@
 {% block content %}
     <div id="sposors">
         {% for sponsor in sponsors %}
-            <div class="sponsor">
+
+            <div class="sponsor column grid_2">
                 <img src="{{ sponsor.logo.url }}" />
             </div>
         {% endfor %}
     </div>
 
-    <div class="inner-row">
-        <div class="become-a-sponsor">
+    <div class="row">
+        <div class="become-a-sponsor column grid_12">
             <a href="">{% trans "Learn how to become a sponsor" %}</a>
         </div>
-        <h2 class="about">
-            <a href="">{% trans "What is" %} pythonbrasil[8]</a>
-        </h2>
+    </div>
+    <div class="row">
+        <div class="column grid_12">
+            <h2 class="about">
+                <a href="">{% trans "What is" %} pythonbrasil[8]</a>
+            </h2>
+        </div>
     </div>
 {% endblock %}
