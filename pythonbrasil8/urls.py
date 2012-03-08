@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, url, include
+from django.conf import settings
 from core.views import Home
 
 # Uncomment the next two lines to enable the admin:
@@ -9,6 +10,7 @@ urlpatterns = patterns('',
     # Examples:
 	url(r'^$',  Home.as_view(), name='home'),
     url(r'^mittun/', include('mittun.urls')),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     # url(r'^pythonbrasil8/', include('pythonbrasil8.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
