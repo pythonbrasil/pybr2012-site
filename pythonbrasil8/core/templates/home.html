@@ -1,12 +1,21 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
+    <div id="sposors">
+        {% for sponsor in sponsors %}
+            <div class="sponsor">
+                <img src="{{ sponsor.logo.url }}" />
+            </div>
+        {% endfor %}
+    </div>
+
     <div class="inner-row">
-        <h2 class="sobre-o-evento">
-            <a href="">Sobre o evento python brasil [8]</a>
-        </h2>
-        <div class="botao-patrocinador">
-            <span>saiba como se tornar um patrocinador</span>
+        <div class="become-a-sponsor">
+            <a href="">{% trans "Learn how to become a sponsor" %}</a>
         </div>
+        <h2 class="about">
+            <a href="">{% trans "What is" %} pythonbrasil[8]</a>
+        </h2>
     </div>
 {% endblock %}
