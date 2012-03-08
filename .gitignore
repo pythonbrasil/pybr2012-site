@@ -1,3 +1,4 @@
 *.sw[a-z]
 *.pyc
 *.DS_Store
+pythonbrasil8.sqlite3
