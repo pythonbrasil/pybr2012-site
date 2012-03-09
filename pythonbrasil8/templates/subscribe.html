@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/subscribe.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div id="pre-registration" class="column grid_12">
+        <h1>Pre-registration</h1>
+        <p>Please fill the form bellow to pre-register on PythonBrasil[8]. All fields are required.</p>
+
+        <form action="{% url pre-registration %}" method="post" accept-charset="utf-8">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p><button type="submit">Pre-register</button></p>
+        </form>
+    </div>
+{% endblock %}
