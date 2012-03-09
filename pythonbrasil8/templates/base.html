@@ -22,7 +22,7 @@
                             <li class="{% is_active request.get_full_path 'home' %}">
                                 <a href="{% url home %}">home</a>
                             </li>
-                            <li>
+                            <li class="{% is_active request.get_full_path 'pre-registration' %}">
                                 <a href="{% url pre-registration %}" title="register now">registration</a>
                             </li>
                             <li class="{% is_active request.get_full_path 'venue' %}">
