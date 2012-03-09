@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block content %}
-    <div id="sposors">
+    <div id="sponsors" class="row">
         {% for sponsor in sponsors %}
-
             <div class="sponsor column grid_2">
-                <img src="{{ sponsor.logo.url }}" />
+                <a href="{{ sponsor.url }}"><img src="{{ sponsor.logo.url }}" /></a>
+                <span>{{ sponsor.category.name }}</span>
             </div>
         {% endfor %}
     </div>
