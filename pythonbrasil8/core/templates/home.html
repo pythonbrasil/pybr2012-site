@@ -2,24 +2,16 @@
 {% load i18n %}
 
 {% block content %}
-    <div id="sposors">
-        {% for sponsor in sponsors %}
-            <div class="sponsor">
-                <img src="{{ sponsor.logo.url }}" />
-            </div>
-        {% endfor %}
-    </div>
-
-    <div class="inner-row">
-        <div class="become-a-sponsor">
+    <div class="row">
+        <div class="become-a-sponsor column grid_12">
             <a href="">{% trans "Learn how to become a sponsor" %}</a>
         </div>
-        <h2 class="about">
+        <div class="about">
             <a href="">{% trans "What is" %} pythonbrasil[8]</a>
             <div class="inner">
                 {{ event.description }}
             </div>
-        </h2>
+        </div>
     </div>
     <div class="clearfix"></div>
 {% endblock %}

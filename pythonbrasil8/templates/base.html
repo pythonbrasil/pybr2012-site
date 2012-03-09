@@ -14,10 +14,10 @@
     <body>
 
         <div id="header">
-            <div class="inner row">
+            <div class="inner">
 
                 <div id="menu" class="text_right">
-                    <div class="row">
+                    <div>
                         <ul>
                             <li class="{% is_active request.get_full_path 'home' %}">
                                 <a href="{% url home %}">home</a>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <div id="pre-register" class="row">
+                <div id="pre-register">
                     <p>
                         <a href=""><span>register now »</span></a>
                     </p>
@@ -52,7 +52,7 @@
         <div class="dashed-border"></div>
 
         <div class="dates">
-            <div class="row wrapper">
+            <div class="wrapper">
                 <div class="dates-container">
                     <div class="inner">
                         <h4>Tutorials</h4>
@@ -70,10 +70,8 @@
         <!--<div class="row wrapper">-->
         <!--</div>-->
 
-        <div class="content">
-            <div class="row wrapper main">
-                {% block content %}{% endblock %}
-            </div>
+        <div class="content row">
+            {% block content %}{% endblock %}
         </div>
 
         <div id="footer">
