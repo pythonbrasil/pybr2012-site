@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/static/css/grid.css" type="text/css" />
         <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
         <link rel="stylesheet" href="/static/css/home.css" type="text/css" />
+        {% block css %}{% endblock %}
     </head>
 
     <body>
@@ -22,21 +23,12 @@
                             <li class="{% is_active request.get_full_path 'home' %}">
                                 <a href="{% url home %}">home</a>
                             </li>
-                            <!--<li>-->
-                            <!--    <a href="">programação</a>-->
-                            <!--</li>-->
                             <li>
                                 <a href="">inscrições</a>
                             </li>
-                            <li>
-                                <a href="">localização</a>
+                            <li class="{% is_active request.get_full_path 'venue' %}">
+                                <a href="{% url venue %}">venue</a>
                             </li>
-                            <!--<li>-->
-                            <!--    <a href="">patrocinadores</a>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                            <!--    <a href="">vagas de emprego</a>-->
-                            <!--</li>-->
                        </ul>
                     </div>
                 </div>
@@ -67,10 +59,7 @@
             </div>
         </div>
 
-        <!--<div class="row wrapper">-->
-        <!--</div>-->
-
-        <div class="content">
+        <div class="content row">
             {% block content %}{% endblock %}
         </div>
 

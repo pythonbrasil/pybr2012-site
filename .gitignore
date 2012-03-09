@@ -3,3 +3,4 @@
 *.DS_Store
 pythonbrasil8.sqlite3
 pythonbrasil8/media
+.ropeproject
