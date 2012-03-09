@@ -1,11 +1,9 @@
 from django.views.generic import ListView
 from mittun.sponsors.models import Sponsor
 
-from core.models import Home
-
 
 class Home(ListView):
-    model = Home
+    model = Sponsor
     template_name = 'home.html'
 
     def get_context_data(self, **kwargs):
