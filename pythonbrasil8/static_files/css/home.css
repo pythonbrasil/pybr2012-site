@@ -1,4 +1,43 @@
-#container .sobre-o-evento a {
+.content .about {
+    margin: 10px 0;
+}
+
+.content .about a {
     color: #2471a9;
     font-size: 22px;
+    width: 24%;
+    float: left;
+}
+
+.content .about .inner {
+    font-size: 14px;
+    float: right;
+    width: 76%;
+}
+
+#sponsors {
+}
+
+.sponsor a {
+    line-height: 85px;
+}
+
+.sponsor a img {
+    display: inline;
+    display: inline-table;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sponsor span {
+    display: block;
+    text-align: center;
+    border-top: 1px dotted #8DBAC1;
+    text-transform: uppercase;
+    color: #484746;
+    padding-top: 6px;
+    margin: 13px 0 0 0;
+    width: 130px;
+    font-weight: bold;
+    font-size: 77%;
 }
