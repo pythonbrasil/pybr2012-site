@@ -18,5 +18,14 @@
             "category": 1,
             "logo": "/tmp/no-logo.jpg"
         }
+    },
+    {
+        "model": "events.Event",
+        "pk": 1,
+        "fields": {
+            "name": "PythonBrasil[8]",
+            "description_en_us": "bla bla",
+            "description_pt_br": "ble ble"
+        }
     }
 ]
