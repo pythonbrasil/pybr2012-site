@@ -1,14 +1,15 @@
-<!doctype html>
-
+<!DOCTYPE html>
 {% load menu %}
-
 <html>
     <head>
         <title>Python Brasil 8</title>
-        <link rel="stylesheet" href="/static/css/reset.css" type="text/css" />
-        <link rel="stylesheet" href="/static/css/grid.css" type="text/css" />
-        <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
-        <link rel="stylesheet" href="/static/css/home.css" type="text/css" />
+
+        {% block css %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
+        {% endblock %}
     </head>
 
     <body>
@@ -23,10 +24,10 @@
                                 <a href="{% url home %}">home</a>
                             </li>
                             <li>
-                                <a href="">inscrições</a>
+                                <a href="{% url pre-registration %}" title="register now">registration</a>
                             </li>
                             <li>
-                                <a href="">localização</a>
+                                <a href="">venue</a>
                             </li>
                        </ul>
                     </div>
@@ -34,7 +35,7 @@
 
                 <div id="pre-register">
                     <p>
-                        <a href=""><span>register now »</span></a>
+                        <a href="{% url pre-registration %}" title="register now"><span>register now »</span></a>
                     </p>
                 </div>
 
@@ -58,8 +59,10 @@
             </div>
         </div>
 
-        <div class="content row">
-            {% block content %}{% endblock %}
+        <div class="content">
+            <div class="row">
+                {% block content %}{% endblock %}
+            </div>
         </div>
 
         <div id="footer">
