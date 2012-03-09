@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', Home.as_view(), name='home'),
     url(r'^pre-registration/$', SubscribeView.as_view(), name='pre-registration'),
-    url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration'),
+    url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration-success'),
 	url(r'^venue/$',  VenueView.as_view(), name='venue'),
     url(r'^mittun/', include('mittun.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
