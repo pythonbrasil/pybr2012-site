@@ -122,6 +122,7 @@ body {
 }
 
 
+
 /*** TYPOGRAPHY ***/
 
 .dates h4 {
@@ -150,6 +151,10 @@ body {
 .content {
     background-color: #FFF;
     width: 100%;
+}
+
+.content .row .row {
+    margin: 15px 0;
 }
 
 .dates .inner {
