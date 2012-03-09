@@ -21,7 +21,8 @@
     line-height: 20px;
 }
 
-#sponsors {
+.sponsor {
+    text-align: center;
 }
 
 .sponsor a {
