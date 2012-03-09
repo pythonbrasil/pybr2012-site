@@ -19,3 +19,7 @@ class Home(ListView):
 
 class VenueView(TemplateView):
     template_name = 'venue.html'
+
+
+class SuccessfulPreRegistration(TemplateView):
+    template_name = 'success_pre_registration.html'

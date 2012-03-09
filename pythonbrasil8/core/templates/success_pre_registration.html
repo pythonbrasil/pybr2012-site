@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/subscribe.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div id="pre-registration" class="column grid_12">
+        <h1>Pre-registration completed successfully!</h1>
+        <p>You are now pre-registered for PythonBrasil[8]. We will contact you as soon as the registration is open.</p>
+    </div>
+{% endblock %}

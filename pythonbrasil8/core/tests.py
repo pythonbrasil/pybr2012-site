@@ -36,6 +36,15 @@ class VenueViewTestCase(TestCase):
         self.assertEqual('venue.html', views.VenueView.template_name)
 
 
+class SuccessfulPreRegistrationTestCase(TestCase):
+
+    def test_should_be_a_template_view(self):
+        assert issubclass(views.SuccessfulPreRegistration, TemplateView), "SuccessfulPreRegistration should be a TemplateView"
+
+    def test_should_render_success_pre_registration_template(self):
+        self.assertEqual("success_pre_registration.html", views.SuccessfulPreRegistration.template_name)
+
+
 class HomeViewTestCase(TestCase):
 
     @classmethod
