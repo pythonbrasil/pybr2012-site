@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.views.generic import ListView
 from mittun.sponsors.models import Sponsor
 from mittun.events.models import Event
