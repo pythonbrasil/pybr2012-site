@@ -264,3 +264,14 @@ body {
     margin: 50px 0 0 15px;
     float: right;
 }
+
+h1 {
+    font-family: arial, sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 28px;
+    line-height: 0.9em;
+    letter-spacing: -1px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

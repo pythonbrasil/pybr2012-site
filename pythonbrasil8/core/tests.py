@@ -1,5 +1,8 @@
 from django.test import TestCase
 from django.template import Context, Template
+from django.views.generic import TemplateView
+
+from .views import VenueView
 
 
 class TestMenuTemplateTag(TestCase):
@@ -17,3 +20,12 @@ class TestMenuTemplateTag(TestCase):
     #     context = Context({'request': {"get_full_path": "register"}})
 
     #     self.assertNotEqual("", template.render(context))
+
+
+class VenueViewTestCase(TestCase):
+
+    def test_should_be_a_template_view(self):
+        self.assertTrue(issubclass(VenueView, TemplateView))
+
+    def test_shoud_use_a_venue_template(self):
+        self.assertEqual('venue.html', VenueView.template_name)
