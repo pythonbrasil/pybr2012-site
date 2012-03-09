@@ -26,12 +26,12 @@
         margin-top: 40px;
     }
 
-    #sponsors {
-        background-color: #f0f0f0;
-        border-top: 1px solid #D8D7D4;
-        height: 157px;
-        width: 100%;
-    }
+    /* #sponsors { */
+    /*     background-color: #f0f0f0; */
+    /*     border-top: 1px solid #D8D7D4; */
+    /*     height: 157px; */
+    /*     width: 100%; */
+    /* } */
 
 }
 
@@ -59,12 +59,12 @@
 
     /** CONTAINERS **/
 
-    #sponsors {
-        background-color: #f0f0f0;
-        border-top: 1px solid #D8D7D4;
-        height: 157px;
-        width: 100%;
-    }
+    /* #sponsors { */
+    /*     background-color: #f0f0f0; */
+    /*     border-top: 1px solid #D8D7D4; */
+    /*     height: 157px; */
+    /*     width: 100%; */
+    /* } */
 
 }
 
@@ -99,12 +99,12 @@
         margin-top: 40px;
     }
 
-    #sponsors {
-        background-color: #f0f0f0;
-        border-top: 1px solid #D8D7D4;
-        height: 157px;
-        width: 100%;
-    }
+    /* #sponsors { */
+    /*     background-color: #f0f0f0; */
+    /*     border-top: 1px solid #D8D7D4; */
+    /*     height: 157px; */
+    /*     width: 100%; */
+    /* } */
 }
 
 /** COMMON **/
@@ -149,6 +149,7 @@ body {
 
 .content {
     background-color: #FFF;
+    width: 100%;
 }
 
 .dates .inner {
