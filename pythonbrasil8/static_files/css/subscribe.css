@@ -1,0 +1,32 @@
+#pre-registration {
+    padding: 20px 0;
+}
+
+#pre-registration h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#pre-registration p {
+    margin-bottom: 5px;
+}
+
+#pre-registration form {
+    margin-top: 20px;
+}
+
+#pre-registration form label {
+    float: left;
+    width: 70px;
+}
+
+#pre-registration form button {
+    margin: 3px 0 0 70px;
+}
+
+#pre-registration form .errorlist li {
+    color: #F00;
+    font-size: 12px;
+    margin: 10px 0 3px 70px;
+}

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.views.generic import ListView
 from django.views.generic import TemplateView
 
@@ -18,3 +19,7 @@ class Home(ListView):
 
 class VenueView(TemplateView):
     template_name = 'venue.html'
+
+
+class SuccessfulPreRegistration(TemplateView):
+    template_name = 'success_pre_registration.html'

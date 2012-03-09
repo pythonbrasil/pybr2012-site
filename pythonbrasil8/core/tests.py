@@ -10,7 +10,7 @@ from mittun.sponsors import models
 from core import views
 
 
-class TestMenuTemplateTag(TestCase):
+class MenuTemplateTagTestCase(TestCase):
 
     def test_should_make_a_menu_link_as_active(self):
         html = "{% load menu %}{% is_active request.get_full_path 'home' %}"
@@ -36,7 +36,16 @@ class VenueViewTestCase(TestCase):
         self.assertEqual('venue.html', views.VenueView.template_name)
 
 
-class TestHomeView(TestCase):
+class SuccessfulPreRegistrationTestCase(TestCase):
+
+    def test_should_be_a_template_view(self):
+        assert issubclass(views.SuccessfulPreRegistration, TemplateView), "SuccessfulPreRegistration should be a TemplateView"
+
+    def test_should_render_success_pre_registration_template(self):
+        self.assertEqual("success_pre_registration.html", views.SuccessfulPreRegistration.template_name)
+
+
+class HomeViewTestCase(TestCase):
 
     @classmethod
     def setUpClass(cls):
