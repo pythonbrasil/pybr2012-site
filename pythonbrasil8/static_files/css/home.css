@@ -1,7 +1,18 @@
 .content .about .what-is a {
     color: #2471a9;
-    font-size: 22px;
+    font-size: 28px;
     float: left;
+    letter-spacing: -1px;
+}
+
+.content .become-a-sponsor {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.content .become-a-sponsor a {
+    float: right;
+    color: #2471A9;
 }
 
 .content .about .inner {
