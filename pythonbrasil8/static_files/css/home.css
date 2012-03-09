@@ -1,18 +1,13 @@
-.content .about {
-    margin: 10px 0;
-}
-
-.content .about a {
+.content .about .what-is a {
     color: #2471a9;
     font-size: 22px;
-    width: 24%;
     float: left;
 }
 
 .content .about .inner {
     font-size: 14px;
     float: right;
-    width: 76%;
+    line-height: 20px;
 }
 
 #sponsors {

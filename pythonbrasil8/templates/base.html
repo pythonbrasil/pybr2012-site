@@ -26,8 +26,8 @@
                             <li>
                                 <a href="{% url pre-registration %}" title="register now">registration</a>
                             </li>
-                            <li>
-                                <a href="">venue</a>
+                            <li class="{% is_active request.get_full_path 'venue' %}">
+                                <a href="{% url venue %}">venue</a>
                             </li>
                        </ul>
                     </div>

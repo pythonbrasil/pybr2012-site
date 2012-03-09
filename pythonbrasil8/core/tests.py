@@ -2,7 +2,9 @@
 from django.core import management
 from django.test import TestCase
 from django.template import Context, Template
+from django.views.generic import TemplateView
 from django.views.generic import list as lview
+
 from mittun.sponsors import models
 
 from core import views
@@ -23,6 +25,15 @@ class TestMenuTemplateTag(TestCase):
     #     context = Context({'request': {"get_full_path": "register"}})
 
     #     self.assertNotEqual("", template.render(context))
+
+
+class VenueViewTestCase(TestCase):
+
+    def test_should_be_a_template_view(self):
+        self.assertTrue(issubclass(views.VenueView, TemplateView))
+
+    def test_shoud_use_a_venue_template(self):
+        self.assertEqual('venue.html', views.VenueView.template_name)
 
 
 class TestHomeView(TestCase):
