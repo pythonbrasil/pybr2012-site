@@ -15,7 +15,7 @@ class MenuTemplateTagTestCase(TestCase):
     def test_should_make_a_menu_link_as_active(self):
         html = "{% load menu %}{% is_active request.get_full_path 'home' %}"
         template = Template(html)
-        context = Context({'request': {"get_full_path": "home"}})
+        context = Context({'request': {"get_full_path": "/"}})
 
         self.assertEqual("active", template.render(context))
 
