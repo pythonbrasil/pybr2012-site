@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from django.core import management
-from django.test import TestCase
+from django.core.urlresolvers import reverse
 from django.template import Context, Template
-from django.views.generic import TemplateView
-from django.views.generic import list as lview
+from django.test import TestCase, RequestFactory, Client
+from django.views.generic import TemplateView, list as lview
 
 from mittun.sponsors import models
 
@@ -43,6 +44,21 @@ class SponsorsInfoViewTestCase(TestCase):
 
     def test_shoud_use_a_venue_template(self):
         self.assertEqual('sponsors_info.html', views.SponsorsInfoView.template_name)
+
+
+class CustomSponsorsViewTestCase(TestCase):
+
+    def setUp(self):
+        self.base_url = "http://localhost:8888"
+
+    def test_should_use_sponsors_template(self):
+        request = RequestFactory().get('sponsors')
+        response = views.CustomSponsorsView.as_view()(request)
+        self.assertIn('sponsors.html', response.template_name)
+
+    def test_should_request_the_sponsors_url_and_be_success(self):
+        response = Client().get('%s/sponsors/' % self.base_url)
+        self.assertEqual(200, response.status_code)
 
 
 class SuccessfulPreRegistrationTestCase(TestCase):

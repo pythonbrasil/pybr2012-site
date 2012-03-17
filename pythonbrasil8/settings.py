@@ -125,7 +125,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'pythonbrasil8.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, 'templates')
+    os.path.join(PROJECT_DIR, 'templates'),
 )
 
 
