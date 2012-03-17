@@ -24,7 +24,7 @@ class MenuTemplateTagTestCase(TestCase):
         template = Template(html)
         context = Context({'request': {"get_full_path": "register"}})
 
-        self.assertNotEqual("", template.render(context))
+        self.assertNotEqual("active", template.render(context))
 
 
 class VenueViewTestCase(TestCase):
