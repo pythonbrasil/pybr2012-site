@@ -131,6 +131,8 @@ TEMPLATE_DIRS = (
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
+NOSE_ARGS = ['--quiet', "-sd", '--nologcapture']
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
