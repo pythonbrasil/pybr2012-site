@@ -19,12 +19,12 @@ class MenuTemplateTagTestCase(TestCase):
 
         self.assertEqual("active", template.render(context))
 
-    # def should_make_a_menu_link_as_not_active(self):
-    #     html = "{% is_active request.get_full_path 'home' %}"
-    #     template = Template(html)
-    #     context = Context({'request': {"get_full_path": "register"}})
+    def should_make_a_menu_link_as_not_active(self):
+        html = "{% is_active request.get_full_path 'home' %}"
+        template = Template(html)
+        context = Context({'request': {"get_full_path": "register"}})
 
-    #     self.assertNotEqual("", template.render(context))
+        self.assertNotEqual("", template.render(context))
 
 
 class VenueViewTestCase(TestCase):
