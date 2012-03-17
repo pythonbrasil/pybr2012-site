@@ -4,7 +4,7 @@
 {% block title %}Venue | PythonBrasil[8] {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/venue.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/sponsors.css" type="text/css" />
 {% endblock %}
 
 {% block content %}
@@ -13,13 +13,21 @@
         <h1>ABOUT PYTHONBRASIL SPONSORS</h1>
         <div class="sponsors">
             {% for category in sponsors_categories %}
-            <h5>{{ category.name|upper }}</h5>
-            {% for sponsor in category.sponsor_set.all %}
-                <div class="sponsor">
-                    <h3>{{ sponsor.name }}</h3>
-                    <p>{{ sponsor.description }}</p>
+                <div class="category">
+                    <h5>{{ category.name }}</h5>
                 </div>
-            {% endfor %}
+                {% for sponsor in category.sponsor_set.all %}
+                    <div class="sponsor">
+                        <div class="column grid_3">
+                            <img src="{{ sponsor.logo.url }}" />
+                        </div>
+                        <div class="column grid_8">
+                            <h2>{{ sponsor.name }}</h2>
+                            <p>{{ sponsor.description }}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {% endfor %}
             {% endfor %}
         </div>
     </div>

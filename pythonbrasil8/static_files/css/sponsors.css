@@ -1,0 +1,31 @@
+.sponsor p, h2 {
+    text-align: left;
+}
+
+.sponsor h2 {
+    font-size: 20px;
+    /* margin: 0 0 10px 0; */
+}
+
+.sponsor p {
+    line-height: 18px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.category h5 {
+    color: #484746;
+    font-weight: bold;
+    font-size: 14px;
+    /* margin: 15px 0 10px 250px; */
+    text-transform: uppercase;
+    margin: 35px 0 0 250px;
+}
+
+.sponsor {
+    margin: 15px 0 35px 0;
+}
+
+.sponsor img {
+    margin-top: 5px;
+}
