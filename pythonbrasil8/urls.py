@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', Home.as_view(), name='home'),
     url(r'^pre-registration/$', SubscribeView.as_view(), name='pre-registration'),
-	url(r'^sponsor/$',  SponsorView.as_view(), name='sponsor'),
+	url(r'^sponsors/info/$',  SponsorView.as_view(), name='sponsor'),
     url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration-success'),
 	url(r'^venue/$',  VenueView.as_view(), name='venue'),
     url(r'^mittun/', include('mittun.urls')),

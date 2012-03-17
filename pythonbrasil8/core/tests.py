@@ -44,6 +44,7 @@ class SponsorViewTestCase(TestCase):
     def test_shoud_use_a_venue_template(self):
         self.assertEqual('sponsor.html', views.SponsorView.template_name)
 
+
 class SuccessfulPreRegistrationTestCase(TestCase):
 
     def test_should_be_a_template_view(self):
