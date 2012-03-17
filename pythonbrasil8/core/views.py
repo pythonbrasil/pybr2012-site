@@ -20,8 +20,8 @@ class Home(ListView):
 class VenueView(TemplateView):
     template_name = 'venue.html'
 
-class SponsorView(TemplateView):
-    template_name = 'sponsor.html'
+class SponsorsInfoView(TemplateView):
+    template_name = 'sponsors_info.html'
 
 
 class SuccessfulPreRegistration(TemplateView):

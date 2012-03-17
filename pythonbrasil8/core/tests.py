@@ -36,13 +36,13 @@ class VenueViewTestCase(TestCase):
         self.assertEqual('venue.html', views.VenueView.template_name)
 
 
-class SponsorViewTestCase(TestCase):
+class SponsorsInfoViewTestCase(TestCase):
 
     def test_should_be_a_template_view(self):
-        self.assertTrue(issubclass(views.SponsorView, TemplateView))
+        self.assertTrue(issubclass(views.SponsorsInfoView, TemplateView))
 
     def test_shoud_use_a_venue_template(self):
-        self.assertEqual('sponsor.html', views.SponsorView.template_name)
+        self.assertEqual('sponsors_info.html', views.SponsorsInfoView.template_name)
 
 
 class SuccessfulPreRegistrationTestCase(TestCase):
