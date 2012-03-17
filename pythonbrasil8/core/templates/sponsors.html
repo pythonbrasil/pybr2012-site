@@ -10,9 +10,18 @@
 {% block content %}
 <div class="row" id="venue">
     <div class="column grid_12">
-        <h1>PythonBrasil Sponsoring</h1>
-        <p>Interested in hiring talented Python hackers? Sponsor the conference and increase your company visibility.</p>
-        <a href="/static/docs/pythonbrasil_prospectus.pdf">Download our sponsoring prospectus</a>
+        <h1>ABOUT PYTHONBRASIL SPONSORS</h1>
+        <div class="sponsors">
+            {% for category in sponsors_categories %}
+            <h5>{{ category.name|upper }}</h5>
+            {% for sponsor in category.sponsor_set.all %}
+                <div class="sponsor">
+                    <h3>{{ sponsor.name }}</h3>
+                    <p>{{ sponsor.description }}</p>
+                </div>
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

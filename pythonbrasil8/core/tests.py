@@ -50,15 +50,18 @@ class CustomSponsorsViewTestCase(TestCase):
 
     def setUp(self):
         self.base_url = "http://localhost:8888"
+        request = RequestFactory().get('sponsors')
+        self.response = views.CustomSponsorsView.as_view()(request)
 
     def test_should_use_sponsors_template(self):
-        request = RequestFactory().get('sponsors')
-        response = views.CustomSponsorsView.as_view()(request)
-        self.assertIn('sponsors.html', response.template_name)
+        self.assertIn('sponsors.html', self.response.template_name)
 
     def test_should_request_the_sponsors_url_and_be_success(self):
         response = Client().get('%s/sponsors/' % self.base_url)
         self.assertEqual(200, response.status_code)
+
+    def test_should_have_sponsors_category_on_the_context(self):
+        self.assertIn('sponsors_categories', self.response.context_data.keys())
 
 
 class SuccessfulPreRegistrationTestCase(TestCase):

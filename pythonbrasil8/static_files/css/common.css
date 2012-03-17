@@ -103,6 +103,15 @@ body {
 
 /*** TYPOGRAPHY ***/
 
+.content h1 {
+    color: #2471A9;
+}
+
+.content h5 {
+    color: #484746;
+    font-weight: bold;
+}
+
 .dates h4 {
     color: #004592;
     font-size: 1.25em;
