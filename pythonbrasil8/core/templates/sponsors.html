@@ -18,12 +18,13 @@
                 </div>
                 {% for sponsor in category.sponsor_set.all %}
                     <div class="sponsor">
-                        <div class="column grid_3">
+                        <div class="column grid_3 logo">
                             <img src="{{ sponsor.logo.url }}" />
                         </div>
                         <div class="column grid_8">
                             <h2>{{ sponsor.name }}</h2>
-                            <p>{{ sponsor.description }}</p>
+                            <p class="url"><a href="{{ sponsor.url }}">{{ sponsor.url }}</a></p>
+                            <p class="description">{{ sponsor.description }}</p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -33,4 +34,3 @@
     </div>
 </div>
 {% endblock %}
-
