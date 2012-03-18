@@ -149,6 +149,16 @@ body {
     margin: 15px 0;
 }
 
+.content .become-a-sponsor {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.content .become-a-sponsor a {
+    float: right;
+    color: #2471A9;
+}
+
 .dates .inner {
     margin: 15px 20px;
     float: left;

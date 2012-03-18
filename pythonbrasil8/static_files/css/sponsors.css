@@ -1,3 +1,19 @@
+.content .page-header {
+    height: 20px;
+}
+
+.content .become-a-sponsor {
+    margin-top: 5px;
+}
+
+.category h5 {
+    color: #484746;
+    font-weight: bold;
+    font-size: 14px;
+    /* margin: 15px 0 10px 250px; */
+    text-transform: uppercase;
+    margin: 35px 0 0 250px;
+}
 .sponsor p, h2 {
     text-align: left;
 }
@@ -26,15 +42,6 @@
 
 .sponsor p.url a {
     color: #2471A9;
-}
-
-.category h5 {
-    color: #484746;
-    font-weight: bold;
-    font-size: 14px;
-    /* margin: 15px 0 10px 250px; */
-    text-transform: uppercase;
-    margin: 35px 0 0 250px;
 }
 
 .sponsor {
