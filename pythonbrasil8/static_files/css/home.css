@@ -1,13 +1,11 @@
 .content .about .what-is a {
     color: #2471a9;
     font-size: 32px;
-    float: left;
     letter-spacing: -1px;
 }
 
 .content .about .inner {
     font-size: 14px;
-    float: right;
     line-height: 20px;
 }
 
