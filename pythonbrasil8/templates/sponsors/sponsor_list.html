@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Sponsors | PythonBrasil[8] {% endblock %}
+
+{% block content %}
+<div class="row" id="venue">
+    <div class="column grid_12">
+        <h1>Sponsors</h1>
+        <ul>
+            {% for sponsor in sponsor_list %}
+                <li>
+                    <a href="{{ sponsor.url }}"><img src="{{ sponsor.logo.ulr }}" /></a>
+                    <a href="{{ sponsor.url }}">{{ sponsor.url }}</a>
+                    <p>{{ sponsor.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
