@@ -141,6 +141,10 @@ body {
     width: 100%;
 }
 
+.content .inner {
+    padding: 25px 0;
+}
+
 .content .row .row {
     margin: 15px 0;
 }
