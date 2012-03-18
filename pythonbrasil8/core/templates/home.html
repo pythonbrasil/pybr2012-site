@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
     <div id="sponsors" class="row">
         {% for sponsor in sponsors %}
