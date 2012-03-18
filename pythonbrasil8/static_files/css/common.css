@@ -90,13 +90,16 @@
 body {
     background-color: #1b1f20;
 }
-
 .text_right {
     text-align: right;
 }
 
 .text_center {
     text-align: center;
+}
+
+.content .inner {
+    padding: 25px 0;
 }
 
 
