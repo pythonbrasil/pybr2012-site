@@ -2,18 +2,18 @@
 from django.conf import settings
 from django.conf.urls.defaults import patterns, url, include
 from mittun.registration.views import SubscribeView
-from mittun.sponsors.views import SponsorsView
 
-from core.views import Home, SuccessfulPreRegistration, SponsorsInfoView, VenueView
+from core.views import Home, SuccessfulPreRegistration, SponsorsInfoView, VenueView, CustomSponsorsView
 
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', Home.as_view(), name='home'),
     url(r'^pre-registration/$', SubscribeView.as_view(), name='pre-registration'),
 	url(r'^sponsors/info/$',  SponsorsInfoView.as_view(), name='sponsors-info'),
-    url(r'^sponsors/$', SponsorsView.as_view(), name='sponsors'),
+	url(r'^sponsors/$',  CustomSponsorsView.as_view(), name='custom-sponsors'),
     url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration-success'),
 	url(r'^venue/$',  VenueView.as_view(), name='venue'),
     url(r'^mittun/', include('mittun.urls')),

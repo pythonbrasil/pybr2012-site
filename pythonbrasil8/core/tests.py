@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from django.core import management
-from django.test import TestCase
+from django.core.urlresolvers import reverse
 from django.template import Context, Template
-from django.views.generic import TemplateView
-from django.views.generic import list as lview
+from django.test import TestCase, RequestFactory, Client
+from django.views.generic import TemplateView, list as lview
 
 from mittun.sponsors import models
 
@@ -24,7 +25,7 @@ class MenuTemplateTagTestCase(TestCase):
         template = Template(html)
         context = Context({'request': {"get_full_path": "register"}})
 
-        self.assertNotEqual("", template.render(context))
+        self.assertNotEqual("active", template.render(context))
 
 
 class VenueViewTestCase(TestCase):
@@ -43,6 +44,24 @@ class SponsorsInfoViewTestCase(TestCase):
 
     def test_shoud_use_a_venue_template(self):
         self.assertEqual('sponsors_info.html', views.SponsorsInfoView.template_name)
+
+
+class CustomSponsorsViewTestCase(TestCase):
+
+    def setUp(self):
+        self.base_url = "http://localhost:8888"
+        request = RequestFactory().get('sponsors')
+        self.response = views.CustomSponsorsView.as_view()(request)
+
+    def test_should_use_sponsors_template(self):
+        self.assertIn('sponsors.html', self.response.template_name)
+
+    def test_should_request_the_sponsors_url_and_be_success(self):
+        response = Client().get('%s/sponsors/' % self.base_url)
+        self.assertEqual(200, response.status_code)
+
+    def test_should_have_sponsors_category_on_the_context(self):
+        self.assertIn('sponsors_categories', self.response.context_data.keys())
 
 
 class SuccessfulPreRegistrationTestCase(TestCase):

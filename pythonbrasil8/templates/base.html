@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
         {% block css %}{% endblock %}
     </head>
 
@@ -31,6 +30,9 @@
                             </li>
                             <li class="{% is_active request.get_full_path 'venue' %}">
                                 <a href="{% url venue %}">venue</a>
+                            </li>
+                            <li class="{% is_active request.get_full_path 'custom-sponsors' %}">
+                                <a href="{% url custom-sponsors %}">sponsors</a>
                             </li>
                        </ul>
                     </div>
@@ -63,7 +65,7 @@
         </div>
 
         <div class="content">
-            <div class="row">
+            <div class="inner row">
                 {% block content %}{% endblock %}
             </div>
         </div>

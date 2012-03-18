@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
     <div id="sponsors" class="row">
         {% for sponsor in sponsors %}
@@ -16,10 +20,10 @@
             <a href="{% url sponsors-info %}">{% trans "Learn how to become a sponsor" %}</a>
         </div>
         <div class="about grid_12">
-            <div class="what-is grid_4">
-                <a href="">{% trans "What is" %} PythonBrasil[8]</a>
+            <div class="what-is grid_5">
+                <a href="">{% trans "WHAT IS" %} PYTHONBRASIL[8]</a>
             </div>
-            <div class="inner grid_8">
+            <div class="inner grid_7">
                 {{ event.description|linebreaksbr }}
             </div>
             <div class="clearfix"></div>

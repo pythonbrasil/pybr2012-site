@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Venue | PythonBrasil[8] {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/sponsors.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="row" id="venue">
+    <div class="column grid_12">
+        <div class="page-header">
+            <div class="column grid_7">
+                <h1>ABOUT PYTHONBRASIL SPONSORS</h1>
+            </div>
+            <div class="column grid_4">
+                <p class="become-a-sponsor"><a href="{% url sponsors-info %}">Learn how to become a sponsor</a></p>
+            </div>
+        </div>
+        <div class="sponsors">
+            {% for category in sponsors_categories %}
+                <div class="category">
+                    <h5>{{ category.name }}</h5>
+                </div>
+                {% for sponsor in category.sponsor_set.all %}
+                    <div class="sponsor">
+                        <div class="column grid_3 logo">
+                            <img src="{{ sponsor.logo.url }}" />
+                        </div>
+                        <div class="column grid_8">
+                            <h2>{{ sponsor.name }}</h2>
+                            <p class="url"><a href="{{ sponsor.url }}">{{ sponsor.url }}</a></p>
+                            <p class="description">{{ sponsor.description }}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

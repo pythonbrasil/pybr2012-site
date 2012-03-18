@@ -103,6 +103,15 @@ body {
 
 /*** TYPOGRAPHY ***/
 
+.content h1 {
+    color: #2471A9;
+}
+
+.content h5 {
+    color: #484746;
+    font-weight: bold;
+}
+
 .dates h4 {
     color: #004592;
     font-size: 1.25em;
@@ -132,8 +141,22 @@ body {
     width: 100%;
 }
 
+.content .inner {
+    padding: 25px 0;
+}
+
 .content .row .row {
     margin: 15px 0;
+}
+
+.content .become-a-sponsor {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.content .become-a-sponsor a {
+    float: right;
+    color: #2471A9;
 }
 
 .dates .inner {
