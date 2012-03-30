@@ -1,3 +1,8 @@
+#sponsors {
+    height: 130px;
+    overflow: hidden;
+}
+
 .content .page-header {
     height: 20px;
 }
@@ -46,6 +51,7 @@
 
 .sponsor {
     margin: 15px 0 35px 0;
+    height: 130px;
 }
 
 .sponsor img {
