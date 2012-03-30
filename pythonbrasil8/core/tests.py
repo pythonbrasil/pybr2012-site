@@ -77,7 +77,7 @@ class HomeViewTestCase(TestCase):
     def setUpClass(cls):
         management.call_command("loaddata", "sponsors.json", verbosity=0)
 
-        cls.sponsors = list(models.Sponsor.objects.select_related('category').all().order_by('category__priority'))
+        cls.sponsors = list(models.Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk'))
 
     @classmethod
     def tearDownClass(cls):
