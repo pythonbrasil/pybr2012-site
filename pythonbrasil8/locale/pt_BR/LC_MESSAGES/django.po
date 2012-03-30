@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 01:07-0300\n"
+"POT-Creation-Date: 2012-03-30 01:20-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: core/templates/home.html:20
+#: core/templates/home.html:20 core/templates/sponsors.html:17
 msgid "Learn how to become a sponsor"
 msgstr "Veja como se tornar um patrocinador"
 
 #: core/templates/home.html:24
 msgid "WHAT IS"
+msgstr ""
+
+#: core/templates/sponsors.html:14
+msgid "ABOUT PYTHONBRASIL SPONSORS"
 msgstr ""
 
 #: core/templates/sponsors_info.html:4
@@ -87,8 +91,9 @@ msgstr "registre-se agora"
 
 #: templates/base.html:56
 msgid "Tutorials"
-msgstr "Tutoriais"  # ou seria melhor Mini-cursos?
+msgstr "Tutoriais"
 
+# ou seria melhor Mini-cursos?
 #: templates/base.html:57 templates/base.html.py:61
 msgid "November"
 msgstr "Novembro"

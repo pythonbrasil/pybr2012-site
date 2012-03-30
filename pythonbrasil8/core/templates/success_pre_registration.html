@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Pre-registration completed | {{ block.super }}{% endblock %}
+{% block title %}{% trans "Pre-registration completed" %} | {{ block.super }}{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/subscribe.css" type="text/css" />
@@ -8,8 +9,7 @@
 
 {% block content %}
     <div id="pre-registration" class="column grid_12">
-        <h1>Successful pre-registration!</h1>
-        <p>Thank you! You are now pre-registered to PythonBrasil[8]. As soon as the registration is open, we'll contact you.</p>
-
+        <h1>{% trans "Successful pre-registration!" %}</h1>
+        <p>{% trans "Thank you! You are now pre-registered to PythonBrasil[8]. As soon as the registration is open, we'll contact you." %}</p>
     </div>
 {% endblock %}
