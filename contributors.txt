@@ -1,0 +1,22 @@
+Developers and contributors of PythonBrasil[8] website
+------------------------------------------------------
+
+This section lists people who have developed or contributed in some way to the
+PythonBrasil[8] website.  It is probably not complete -- if you feel that
+you or anyone else should be on this list, please let us know (open an issue
+at https://github.com/PythonBrasil8/pythonbrasil8/issues), and we'll be glad
+to fix the problem.
+
+(contributors ordered by last surname)
+
+.. acks::
+
+   * Andrews Medina
+   * Flávia Missi
+   * Francisco Souza
+   * Mayza de Oliveira
+   * Rudá Porto
+   * Tarsis Azevedo
+   * Victor Areas
+   * Vinicius Mendes
+   * Wagner Peres
