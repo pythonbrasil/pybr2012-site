@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-30 01:07-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: core/templates/home.html:20
+msgid "Learn how to become a sponsor"
+msgstr "Veja como se tornar um patrocinador"
+
+#: core/templates/home.html:24
+msgid "WHAT IS"
+msgstr ""
+
+#: core/templates/sponsors_info.html:4
+#, fuzzy
+msgid "Sponsors Info"
+msgstr "Patrocinadores"
+
+#: core/templates/sponsors_info.html:13
+msgid "PythonBrasil Sponsoring"
+msgstr "Patrocínio da PythonBrasil"
+
+#: core/templates/sponsors_info.html:14
+msgid ""
+"Interested in hiring talented Python hackers? Sponsor the conference and "
+"increase your company visibility."
+msgstr ""
+
+#: core/templates/sponsors_info.html:15
+msgid "Download our sponsoring prospectus"
+msgstr ""
+
+#: core/templates/success_pre_registration.html:4
+msgid "Pre-registration completed"
+msgstr "Pré-inscrição completo"
+
+#: core/templates/success_pre_registration.html:12
+msgid "Successful pre-registration!"
+msgstr "Pré-inscrição concluído com sucesso!"
+
+#: core/templates/success_pre_registration.html:13
+msgid ""
+"Thank you! You are now pre-registered to PythonBrasil[8]. As soon as the "
+"registration is open, we'll contact you."
+msgstr ""
+"Obrigado! Você agora está pré-registrado na PythonBrasil[8]. Logo que as "
+"inscrições estiverem abertas, entraremos em contato."
+
+#: core/templates/venue.html:4 core/templates/venue.html.py:13
+msgid "Venue"
+msgstr ""
+
+#: templates/base.html:27
+msgid "home"
+msgstr "início"
+
+#: templates/base.html:30
+msgid "registration"
+msgstr "inscrição"
+
+#: templates/base.html:33
+msgid "venue"
+msgstr ""
+
+#: templates/base.html:36
+msgid "sponsors"
+msgstr "patrocinadores"
+
+#: templates/base.html:44
+msgid "register now"
+msgstr "registre-se agora"
+
+#: templates/base.html:56
+msgid "Tutorials"
+msgstr "Tutoriais"  # ou seria melhor Mini-cursos?
+
+#: templates/base.html:57 templates/base.html.py:61
+msgid "November"
+msgstr "Novembro"
+
+#: templates/base.html:60
+msgid "Talks & Exposition Hall"
+msgstr ""
+
+#: templates/base.html:78
+msgid ""
+"PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
+"open-source Python programming language."
+msgstr ""
+
+#: templates/base.html:79
+msgid ""
+"It is supported by the Brazilian Python Association (APyB) and by the Python "
+"Software Foundation (PSF)."
+msgstr ""
+
+#: templates/subscribe.html:12
+msgid "Pre-registration"
+msgstr "pré-inscrição"
+
+#: templates/subscribe.html:13
+msgid ""
+"Please fill the form bellow to pre-register on PythonBrasil[8]. All fields "
+"are required."
+msgstr ""
+
+#: templates/subscribe.html:18
+msgid "Pre-register"
+msgstr "registre-se agora"
