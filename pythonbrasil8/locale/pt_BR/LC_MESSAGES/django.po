@@ -1,16 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Traduções para Português do Brasil.
+# This file is distributed under the same license as the pythonbrasil8 package.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 01:27-0300\n"
+"POT-Creation-Date: 2012-03-30 02:17-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -23,15 +21,14 @@ msgid "Learn how to become a sponsor"
 msgstr "Veja como se tornar um patrocinador"
 
 #: core/templates/home.html:24
-msgid "WHAT IS"
-msgstr ""
+msgid "WHAT IS PYTHONBRASIL[8]"
+msgstr "O QUE É PYTHONBRASIL[8]"
 
 #: core/templates/sponsors.html:14
 msgid "ABOUT PYTHONBRASIL SPONSORS"
-msgstr ""
+msgstr "SOBRE OS PATROCINADORES DA PYTHONBRASIL"
 
 #: core/templates/sponsors_info.html:4
-#, fuzzy
 msgid "Sponsors Info"
 msgstr "Patrocinadores"
 
@@ -69,50 +66,55 @@ msgstr ""
 msgid "Venue"
 msgstr ""
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "home"
 msgstr "início"
 
-#: templates/base.html:30
+#: templates/base.html:31
 msgid "registration"
 msgstr "inscrição"
 
-#: templates/base.html:33
+#: templates/base.html:34
 msgid "venue"
 msgstr ""
 
-#: templates/base.html:36
+#: templates/base.html:37
 msgid "sponsors"
 msgstr "patrocinadores"
 
-#: templates/base.html:44
+#: templates/base.html:45
 msgid "register now"
 msgstr "registre-se agora"
 
-#: templates/base.html:56
+# ou seria melhor Mini-cursos?
+#: templates/base.html:57
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-# ou seria melhor Mini-cursos?
-#: templates/base.html:57 templates/base.html.py:61
+#: templates/base.html:58 templates/base.html.py:62
 msgid "November"
 msgstr "Novembro"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Talks & Exposition Hall"
-msgstr ""
+msgstr "Palestras & Salão de Exposição"
 
-#: templates/base.html:78
+#: templates/base.html:79
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
 msgstr ""
+"A PythonBrasil é uma conferência sem fins lucrativos organizada por "
+"voluntários para promoção da linguagem de programação de código aberto "
+"Python."
 
-#: templates/base.html:79
+#: templates/base.html:80
 msgid ""
 "It is supported by the Brazilian Python Association (APyB) and by the Python "
 "Software Foundation (PSF)."
 msgstr ""
+"É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
+"Foundation (PSF)."
 
 #: templates/subscribe.html:12
 msgid "Pre-registration"
