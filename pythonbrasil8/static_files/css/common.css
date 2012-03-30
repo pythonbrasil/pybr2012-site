@@ -1,88 +1,22 @@
-@media (max-width: 699px) and (min-width: 400px) {
 
-    #pre-register a {
-        width: 235px;
-        height: 39px;
-        float: right;
-        text-align: center;
-        margin: 11% 8% 0 0;
-        padding-bottom: 15px;
-        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
-        color: #FFF;
-        font-size: 1.375em;
-    }
-
-    #pre-register span {
-        height: 100%;
-        width: 90%;
-        padding: 15px 0 0 13px;
-        display: block;
-        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
-    }
-
-    /** CONTAINERS **/
-
-    #container {
-        margin-top: 40px;
-    }
-
+#pre-register a {
+    width: 185px;
+    height: 39px;
+    float: right;
+    text-align: center;
+    margin: 11% 8% 0 0;
+    padding-bottom: 15px;
+    background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+    color: #FFF;
+    font-size: 1.375em;
 }
 
-@media (max-width: 899px) and (min-width: 700px) {
-
-    #pre-register a {
-        width: 235px;
-        height: 39px;
-        float: right;
-        text-align: center;
-        margin: 11% 8% 0 0;
-        padding-bottom: 15px;
-        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
-        color: #FFF;
-        font-size: 1.375em;
-    }
-
-    #pre-register span {
-        height: 100%;
-        width: 90%;
-        padding: 15px 0 0 13px;
-        display: block;
-        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
-    }
-
-}
-
-/** my macbook **/
-@media (min-width: 900px) {
-    /** HEADER **/
-
-    #pre-register a {
-        width: 235px;
-        height: 39px;
-        float: right;
-        text-align: center;
-        margin: 11% 8% 0 0;
-        padding-bottom: 15px;
-        background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
-        color: #FFF;
-        font-size: 1.375em;
-    }
-
-    #pre-register span {
-        height: 100%;
-        width: 90%;
-        padding: 15px 0 0 13px;
-        display: block;
-        background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
-    }
-
-
-    /** CONTAINERS **/
-
-    #container {
-        margin-top: 40px;
-    }
-
+#pre-register span {
+    height: 100%;
+    width: 160px;
+    padding: 15px 0 0 13px;
+    display: block;
+    background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
 }
 
 /** COMMON **/
@@ -166,7 +100,7 @@ body {
 .dates .dates-container {
     margin: 0 auto;
     float: none;
-    width: 500px
+    width: 415px
 }
 
 .dates-container {
@@ -286,3 +220,4 @@ h1 {
     font-weight: bold;
     margin-bottom: 20px;
 }
+

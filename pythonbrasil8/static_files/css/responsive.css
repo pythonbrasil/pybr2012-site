@@ -1,0 +1,19 @@
+@media (min-width: 700px) and (max-width: 979px) {
+
+    .content .about .what-is {
+        float: none;
+        display: block;
+    }
+
+    #pre-register a {
+        margin: 87px 0;
+    }
+
+    div.row {
+        width: 750px;
+    }
+    #footer .about {
+        width: 600px;
+    }
+
+}
