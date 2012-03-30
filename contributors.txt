@@ -12,9 +12,11 @@ to fix the problem.
 .. acks::
 
    * Andrews Medina
+   * Fernando Rocha
    * Flávia Missi
    * Francisco Souza
    * Mayza de Oliveira
+   * Rafael Carício
    * Rudá Porto
    * Tarsis Azevedo
    * Victor Areas (Siminino)
