@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}Sponsors Info | PythonBrasil[8] {% endblock %}
+{% block title %}{% trans "Sponsors Info" %} | PythonBrasil[8] {% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/venue.css" type="text/css" />
@@ -10,9 +10,9 @@
 {% block content %}
 <div class="row">
     <div class="column grid_12">
-        <h1>PythonBrasil Sponsoring</h1>
-        <p>Interested in hiring talented Python hackers? Sponsor the conference and increase your company visibility.</p>
-        <a href="/static/docs/pythonbrasil_prospectus.pdf">Download our sponsoring prospectus</a>
+        <h1>{% trans "PythonBrasil Sponsoring" %}</h1>
+        <p>{% trans "Interested in hiring talented Python hackers? Sponsor the conference and increase your company visibility." %}</p>
+        <a href="/static/docs/pythonbrasil_prospectus.pdf">{% trans "Download our sponsoring prospectus" %}</a>
     </div>
 </div>
 {% endblock %}
