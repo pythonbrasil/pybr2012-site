@@ -125,7 +125,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'pythonbrasil8.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, 'templates')
+    os.path.join(PROJECT_DIR, 'templates'),
 )
 
 
@@ -148,7 +148,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'django_nose'
+    'django_nose',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging

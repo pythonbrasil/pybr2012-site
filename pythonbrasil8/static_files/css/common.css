@@ -90,7 +90,6 @@
 body {
     background-color: #1b1f20;
 }
-
 .text_right {
     text-align: right;
 }
@@ -99,9 +98,22 @@ body {
     text-align: center;
 }
 
+.content .inner {
+    padding: 25px 0;
+}
+
 
 
 /*** TYPOGRAPHY ***/
+
+.content h1 {
+    color: #2471A9;
+}
+
+.content h5 {
+    color: #484746;
+    font-weight: bold;
+}
 
 .dates h4 {
     color: #004592;
@@ -134,6 +146,16 @@ body {
 
 .content .row .row {
     margin: 15px 0;
+}
+
+.content .become-a-sponsor {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.content .become-a-sponsor a {
+    float: right;
+    color: #2471A9;
 }
 
 .dates .inner {
@@ -238,17 +260,11 @@ body {
 /*** FOOTER ***/
 
 #footer {
-    height: 140px;
     background: url('/static/images/header/sprite.png') #1b1f20 left -538px repeat-x;
-}
-
-#footer .inner {
-    margin: 0 8%;
+    padding-bottom: 20px;
 }
 
 #footer .about {
-    float: right;
-    width: 500px;
     margin-top: 40px;
 }
 
@@ -257,8 +273,7 @@ body {
     background: url('/static/images/header/sprite.png') -15px -280px no-repeat;
     width: 44px;
     height: 44px;
-    margin: 50px 0 0 15px;
-    float: right;
+    margin: 41px 0 0 20px;
 }
 
 h1 {

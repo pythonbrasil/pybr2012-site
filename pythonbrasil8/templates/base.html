@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
         {% block css %}{% endblock %}
     </head>
 
@@ -31,6 +30,9 @@
                             </li>
                             <li class="{% is_active request.get_full_path 'venue' %}">
                                 <a href="{% url venue %}">venue</a>
+                            </li>
+                            <li class="{% is_active request.get_full_path 'custom-sponsors' %}">
+                                <a href="{% url custom-sponsors %}">sponsors</a>
                             </li>
                        </ul>
                     </div>
@@ -63,24 +65,22 @@
         </div>
 
         <div class="content">
-            <div class="row">
+            <div class="inner row">
                 {% block content %}{% endblock %}
             </div>
         </div>
 
         <div id="footer">
-            <div class="inner">
-                <div class="logo"></div>
-                <div class="about">
+            <div class="row">
+                <div class="about column grid_11">
                     <p>
-                        PythonBrasil is the largest Brazilian gathering for the community using and developing
-                        the open-source Python programming language. It is a annual vibrant meeting ground to
-                        inspire, debate, make deals, motivate and connect face to face.
+                    PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open-source Python programming language.
+                    It is supported by the Brazilian Python Association (APyB) and by the Python Software Foundation (PSF).
                     </p>
                 </div>
+                <div class="logo column grid_1"></div>
             </div>
         </div>
-
     </body>
 </html>
 

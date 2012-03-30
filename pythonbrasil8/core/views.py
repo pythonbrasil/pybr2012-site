@@ -2,8 +2,20 @@
 from django.views.generic import ListView
 from django.views.generic import TemplateView
 
-from mittun.sponsors.models import Sponsor
+#from mittun.sponsors.views import SponsorsView
+from mittun.sponsors.models import Sponsor, Category
 from mittun.events.models import Event
+
+
+class CustomSponsorsView(ListView):
+
+    template_name = "sponsors.html"
+    model = Sponsor
+
+    def get_context_data(self, **kwargs):
+        context = super(CustomSponsorsView, self).get_context_data(**kwargs)
+        context['sponsors_categories'] = Category.objects.all()
+        return context
 
 
 class Home(ListView):
@@ -12,13 +24,14 @@ class Home(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        context['sponsors'] = Sponsor.objects.all()
+        context['sponsors'] = Sponsor.objects.select_related('category').all().order_by('category__priority')
         context['event'] = Event.objects.all()[0]
         return context
 
 
 class VenueView(TemplateView):
     template_name = 'venue.html'
+
 
 class SponsorsInfoView(TemplateView):
     template_name = 'sponsors_info.html'
