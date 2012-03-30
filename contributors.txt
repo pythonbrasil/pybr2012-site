@@ -7,7 +7,7 @@ you or anyone else should be on this list, please let us know (open an issue
 at https://github.com/PythonBrasil8/pythonbrasil8/issues), and we'll be glad
 to fix the problem.
 
-(contributors ordered by last surname)
+(contributors ordered by first name)
 
 .. acks::
 
