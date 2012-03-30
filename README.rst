@@ -1,12 +1,13 @@
 PythonBrasil[8] website
 =======================
 
-This is the source-code of PythonBrasil[8]'s website. The 8th edition of the conference will happen during November 2012, in Rio de Janeiro - Brazil.
+This is the source-code of PythonBrasil[8]'s website. The 8th edition of the conference will happen during November 2012, in Rio de Janeiro, Brazil.
 
 The official website is under-construction and can be seen at:
 http://www.pythonbrasil.org.br
 
 Since its begining, this website has been developed as open-source by volunteers, using mainly:
+
 - Python
 - Django
 
@@ -30,4 +31,4 @@ We need your help! Please, report bugs and share patches, based on our [Issues](
 
 Don't worry if you can't assign an issue to yourself, simply comment that you'll be working on it.
 
-
+Please, if we don't do it, add or remind us of adding your name to the contributors.txt. Thank you!
