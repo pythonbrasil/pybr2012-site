@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
+        <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
         {% block css %}{% endblock %}
     </head>
 
@@ -82,6 +83,10 @@
                 <div class="logo column grid_1"></div>
             </div>
         </div>
+
+        <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
+            <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
+        </a>
     </body>
 </html>
 
