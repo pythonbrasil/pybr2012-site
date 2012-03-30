@@ -83,6 +83,13 @@
         margin-top: 40px;
     }
 
+    #github-ribbon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
 }
 
 /** COMMON **/
@@ -231,8 +238,8 @@ body {
 #menu ul {
     padding: 5px 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 40px;
+    top: 5px;
 }
 
 #menu li {
