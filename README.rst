@@ -26,7 +26,7 @@ From the command line::
 Contribute
 ----------
 
-We need your help! Please, report bugs and share patches, based on our [Issues](https://github.com/PythonBrasil8/pythonbrasil8/issues).
+We need your help! Please, report bugs and share patches, based on our `Issues <https://github.com/PythonBrasil8/pythonbrasil8/issues>`_.
 
 Don't worry if you can't assign an issue to yourself, simply comment that you'll be working on it.
 
