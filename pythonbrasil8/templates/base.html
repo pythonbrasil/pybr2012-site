@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load menu %}
+{% load i18n %}
 <html>
     <head>
         <title>{% block title %}PythonBrasil[8]{% endblock %}</title>
@@ -10,6 +11,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css" type="text/css" />
+        <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
         {% block css %}{% endblock %}
     </head>
 
@@ -25,17 +27,17 @@
                 <div id="menu" class="text_right">
                     <div>
                         <ul>
-                            <li class="{% is_active request.get_full_path 'home' %}">
-                                <a href="{% url home %}">home</a>
+                            <li class="{% is_active request.path 'home' %}">
+                            <a href="{% url home %}">{% trans "home" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'pre-registration' %}">
-                                <a href="{% url pre-registration %}" title="register now">registration</a>
+                            <li class="{% is_active request.path 'pre-registration' %}">
+                                <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'venue' %}">
-                                <a href="{% url venue %}">venue</a>
+                            <li class="{% is_active request.path 'venue' %}">
+                                <a href="{% url venue %}">{% trans "venue" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'custom-sponsors' %}">
-                                <a href="{% url custom-sponsors %}">sponsors</a>
+                            <li class="{% is_active request.path 'custom-sponsors' %}">
+                            <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
                             </li>
                        </ul>
                     </div>
@@ -43,7 +45,7 @@
 
                 <div id="pre-register">
                     <p>
-                        <a href="{% url pre-registration %}" title="register now"><span>register now »</span></a>
+                        <a href="{% url pre-registration %}" title="register now"><span>{% trans "register now" %} »</span></a>
                     </p>
                 </div>
 
@@ -55,12 +57,12 @@
             <div class="wrapper">
                 <div class="dates-container">
                     <div class="inner">
-                        <h4>Tutorials</h4>
-                        <p>November 21 - 22</p>
+                        <h4>{% trans "Tutorials" %}</h4>
+                        <p>{% trans "November" %} 21 - 22</p>
                     </div>
                     <div class="inner">
-                        <h4>Talks & Exposition Hall</h4>
-                        <p>November 23 - 24</p>
+                        <h4>{% trans "Talks & Exposition Hall" %}</h4>
+                        <p>{% trans "November" %} 23 - 24</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -77,13 +79,17 @@
             <div class="row">
                 <div class="about column grid_11">
                     <p>
-                    PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open-source Python programming language.
-                    It is supported by the Brazilian Python Association (APyB) and by the Python Software Foundation (PSF).
+                    {% trans "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open-source Python programming language." %}
+                    {% trans "It is supported by the Brazilian Python Association (APyB) and by the Python Software Foundation (PSF)." %}
                     </p>
                 </div>
                 <div class="logo column grid_1"></div>
             </div>
         </div>
+
+        <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
+            <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
+        </a>
     </body>
 </html>
 

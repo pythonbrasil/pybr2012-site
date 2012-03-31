@@ -3,8 +3,18 @@
         "model": "sponsors.Category",
         "pk": 1,
         "fields": {
+            "name_en_us": "FOSS",
+            "name_pt_br": "FOSS",
+            "priority": 10
+        }
+    },
+    {
+        "model": "sponsors.Category",
+        "pk": 2,
+        "fields": {
             "name_en_us": "Diamond",
-            "name_pt_br": "Diamante"
+            "name_pt_br": "Diamante",
+            "priority": 0
         }
     },
     {
@@ -16,6 +26,18 @@
             "description_pt_br": "no description left for you",
             "url": "http://cobrateam.info",
             "category": 1,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
+        "model": "sponsors.Sponsor",
+        "pk": 2,
+        "fields": {
+            "name": "globo.com",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://globo.com",
+            "category": 2,
             "logo": "/tmp/no-logo.jpg"
         }
     },

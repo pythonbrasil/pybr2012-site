@@ -19,6 +19,13 @@
     background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
 }
 
+#github-ribbon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 /** COMMON **/
 
 body {
@@ -165,8 +172,8 @@ body {
 #menu ul {
     padding: 5px 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 40px;
+    top: 5px;
 }
 
 #menu li {

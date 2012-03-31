@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-
 from django.core import management
-from django.core.urlresolvers import reverse
 from django.template import Context, Template
 from django.test import TestCase, RequestFactory, Client
 from django.views.generic import TemplateView, list as lview
@@ -79,7 +77,7 @@ class HomeViewTestCase(TestCase):
     def setUpClass(cls):
         management.call_command("loaddata", "sponsors.json", verbosity=0)
 
-        cls.sponsors = list(models.Sponsor.objects.all())
+        cls.sponsors = list(models.Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk'))
 
     @classmethod
     def tearDownClass(cls):

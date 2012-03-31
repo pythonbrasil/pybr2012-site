@@ -24,7 +24,7 @@ class Home(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        context['sponsors'] = Sponsor.objects.all()
+        context['sponsors'] = Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk')
         context['event'] = Event.objects.all()[0]
         return context
 

@@ -1,5 +1,6 @@
 *.sw[a-z]
 *.pyc
 *.DS_Store
+*.mo
 pythonbrasil8.sqlite3
 .ropeproject
