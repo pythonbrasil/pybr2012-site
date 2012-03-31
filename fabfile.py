@@ -41,9 +41,9 @@ def syncdb():
         run("%(virtualenv)s/bin/python manage.py migrate --noinput" % env)
 
 
-def loaddata(fixture):
+def loaddata():
     with cd(env.app_root):
-        run("%s/bin/python manage.py loaddata %s" % (env.virtualenv, fixture))
+        run("%s/bin/python manage.py loaddata fixtures/initial_data.json" % env.virtualenv)
 
 
 def limpar_pycs():
