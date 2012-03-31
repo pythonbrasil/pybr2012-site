@@ -24,16 +24,16 @@
                 <div id="menu" class="text_right">
                     <div>
                         <ul>
-                            <li class="{% is_active request.get_full_path 'home' %}">
+                            <li class="{% is_active request.path 'home' %}">
                             <a href="{% url home %}">{% trans "home" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'pre-registration' %}">
+                            <li class="{% is_active request.path 'pre-registration' %}">
                                 <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'venue' %}">
+                            <li class="{% is_active request.path 'venue' %}">
                                 <a href="{% url venue %}">{% trans "venue" %}</a>
                             </li>
-                            <li class="{% is_active request.get_full_path 'custom-sponsors' %}">
+                            <li class="{% is_active request.path 'custom-sponsors' %}">
                             <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
                             </li>
                        </ul>
