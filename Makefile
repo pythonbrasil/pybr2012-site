@@ -1,5 +1,9 @@
 clean:
 	@find . -name "*.pyc" -delete
 
-dependencies:
-	pip install -r requirements
+deps:
+	pip install -r requirements.txt
+
+test: deps clean
+	pythonbrasil8/manage.py test
+
