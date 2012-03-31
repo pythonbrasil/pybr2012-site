@@ -21,7 +21,14 @@ Install
 -------
 
 From the command line::
-    $ (sudo) pip install -r requirements.txt
+    $ make deps
+
+
+Running
+-------
+
+dif you are using a virtualenv, all you need is::
+    $ make test
 
 
 Contribute
