@@ -42,6 +42,66 @@
         }
     },
     {
+        "model": "sponsors.Sponsor",
+        "pk": 3,
+        "fields": {
+            "name": "andrews sa",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://andrewsmedina.com",
+            "category": 2,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
+        "model": "sponsors.Sponsor",
+        "pk": 4,
+        "fields": {
+            "name": "andrews software",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://andrewsmedina.com",
+            "category": 2,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
+        "model": "sponsors.Sponsor",
+        "pk": 5,
+        "fields": {
+            "name": "andrews software sa",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://andrewsmedina.com",
+            "category": 2,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
+        "model": "sponsors.Sponsor",
+        "pk": 6,
+        "fields": {
+            "name": "andrews ltda",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://andrewsmedina.com",
+            "category": 2,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
+        "model": "sponsors.Sponsor",
+        "pk": 7,
+        "fields": {
+            "name": "andrews enterprise",
+            "description_en_us": "no description left for you",
+            "description_pt_br": "no description left for you",
+            "url": "http://andrewsmedina.com",
+            "category": 2,
+            "logo": "/tmp/no-logo.jpg"
+        }
+    },
+    {
         "model": "events.Event",
         "pk": 1,
         "fields": {
