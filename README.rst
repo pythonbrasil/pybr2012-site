@@ -24,11 +24,14 @@ From the command line::
     $ make deps
 
 
-Running
--------
+Running tests
+-------------
 
-dif you are using a virtualenv, all you need is::
+To run django tests, if you are using a virtualenv, all you need is::
     $ make test
+
+If you want run tests for js components, you can do it doing::
+    $ make jasmine
 
 
 Contribute

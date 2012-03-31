@@ -14,6 +14,24 @@
     line-height: 20px;
 }
 
+#sponsors {
+    position: relative;
+    height: 165px;
+}
+
+#sponsors .first {
+    z-index: 10 !important;
+    opacity: 1 !important;
+}
+
+#sponsors .row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0;
+}
+
 .sponsor {
     text-align: center;
 }

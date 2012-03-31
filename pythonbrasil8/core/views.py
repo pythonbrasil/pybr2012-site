@@ -22,9 +22,19 @@ class Home(ListView):
     model = Sponsor
     template_name = 'home.html'
 
+    def sponsor_groups(self):
+        groups = []
+        sponsors = list(Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk'))
+
+        while sponsors:
+            row = sponsors[:6]
+            sponsors = sponsors[6:]
+            groups.append(row)
+        return groups
+
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        context['sponsors'] = Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk')
+        context['sponsor_groups'] = self.sponsor_groups()
         context['event'] = Event.objects.all()[0]
         return context
 
