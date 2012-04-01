@@ -4,6 +4,10 @@
         margin: 87px 0;
     }
 
+    div#sponsors {
+        margin-left: 100px;
+    }
+
     .content .about .what-is {
         float: none;
         display: block;
@@ -31,6 +35,10 @@
 
     #pre-register a {
         margin: 264px 110px 0 0;
+    }
+
+    div#sponsors {
+        margin-left: 50px;
     }
 
     .content .about .what-is {

@@ -16,7 +16,7 @@
 
 #sponsors {
     position: relative;
-    height: 165px;
+    height: 100%;
 }
 
 #sponsors .first {
@@ -24,13 +24,13 @@
     opacity: 1 !important;
 }
 
-#sponsors .row {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    opacity: 0;
-}
+/*#sponsors .row {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*z-index: 9;*/
+    /*opacity: 0;*/
+/*}*/
 
 .sponsor {
     text-align: center;
