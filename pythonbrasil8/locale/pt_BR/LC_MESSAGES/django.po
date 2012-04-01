@@ -26,7 +26,7 @@ msgstr "O QUE É PYTHONBRASIL[8]"
 
 #: core/templates/sponsors.html:14
 msgid "ABOUT PYTHONBRASIL SPONSORS"
-msgstr "SOBRE OS PATROCINADORES DA PYTHONBRASIL"
+msgstr "PATROCINADORES DA PYTHONBRASIL"
 
 #: core/templates/sponsors_info.html:4
 msgid "Sponsors Info"
@@ -34,25 +34,27 @@ msgstr "Patrocinadores"
 
 #: core/templates/sponsors_info.html:13
 msgid "PythonBrasil Sponsoring"
-msgstr "Patrocínio da PythonBrasil"
+msgstr "Patrocinando a PythonBrasil"
 
 #: core/templates/sponsors_info.html:14
 msgid ""
 "Interested in hiring talented Python hackers? Sponsor the conference and "
 "increase your company visibility."
 msgstr ""
+"Interessado em contratar desenvolvedores Python talentosos? Patrocine a "
+"conferência e aumente a visibilidade da sua empresa."
 
 #: core/templates/sponsors_info.html:15
 msgid "Download our sponsoring prospectus"
-msgstr ""
+msgstr "Faça download do nosso folheto de patrocínio"
 
 #: core/templates/success_pre_registration.html:4
 msgid "Pre-registration completed"
-msgstr "Pré-inscrição completo"
+msgstr "Pré-inscrição completa"
 
 #: core/templates/success_pre_registration.html:12
 msgid "Successful pre-registration!"
-msgstr "Pré-inscrição concluído com sucesso!"
+msgstr "Pré-inscrição concluída com sucesso!"
 
 #: core/templates/success_pre_registration.html:13
 msgid ""
@@ -63,8 +65,8 @@ msgstr ""
 "inscrições estiverem abertas, entraremos em contato."
 
 #: core/templates/venue.html:4 core/templates/venue.html.py:13
-msgid "Venue"
-msgstr ""
+msgid "PythonBrasil Venue"
+msgstr "Local da PythonBrasil"
 
 #: templates/base.html:28
 msgid "home"
@@ -76,7 +78,7 @@ msgstr "inscrição"
 
 #: templates/base.html:34
 msgid "venue"
-msgstr ""
+msgstr "local"
 
 #: templates/base.html:37
 msgid "sponsors"
@@ -84,7 +86,7 @@ msgstr "patrocinadores"
 
 #: templates/base.html:45
 msgid "register now"
-msgstr "registre-se agora"
+msgstr "inscreva-se"
 
 # ou seria melhor Mini-cursos?
 #: templates/base.html:57
@@ -97,7 +99,7 @@ msgstr "Novembro"
 
 #: templates/base.html:61
 msgid "Talks & Exposition Hall"
-msgstr "Palestras & Salão de Exposição"
+msgstr "Palestras & Exposições"
 
 #: templates/base.html:79
 msgid ""
@@ -125,9 +127,9 @@ msgid ""
 "Please fill the form bellow to pre-register on PythonBrasil[8]. All fields "
 "are required."
 msgstr ""
-"Favor preencher o formulário para pré-inscrição para a PythonBrasil[8]. "
+"Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. "
 "Todos campos são obrigatórios."
 
 #: templates/subscribe.html:18
 msgid "Pre-register"
-msgstr "inscreva-se agora"
+msgstr "Pré-inscrever"
