@@ -100,3 +100,25 @@ class HomeViewTestCase(TestCase):
         context = view.get_context_data(object_list=[])
         sponsors = list(context["sponsor_groups"])
         self.assertEqual(view.sponsor_groups(), sponsors)
+
+
+class InternationalizationWorkingFormAcceptLanguageTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.base_url = "http://localhost:8888"
+        management.call_command("loaddata", "sponsors.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        management.call_command("flush", verbosity=0, interactive=False)
+
+    def test_should_return_portuguese_version_of_sponsor_category_name(self):
+        response = Client().get('%s/sponsors/' % self.base_url, HTTP_ACCEPT_LANGUAGE='pt-br')
+        self.assertEqual(200, response.status_code)
+        self.assertIn('Diamante', response.content)
+
+    def test_should_return_english_version_of_sponsor_category_name(self):
+        response = Client().get('%s/sponsors/' % self.base_url, HTTP_ACCEPT_LANGUAGE='en-us')
+        self.assertEqual(200, response.status_code)
+        self.assertIn('Diamond', response.content)
