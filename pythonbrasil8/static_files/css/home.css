@@ -1,13 +1,36 @@
+.content .about .what-is {
+    padding-bottom: 5px;
+}
+
 .content .about .what-is a {
     color: #2471a9;
     font-size: 32px;
     letter-spacing: -1px;
+    padding-bottom: 5px;
 }
 
 .content .about .inner {
     font-size: 14px;
     line-height: 20px;
 }
+
+#sponsors {
+    position: relative;
+    height: 100%;
+}
+
+#sponsors .first {
+    z-index: 10 !important;
+    opacity: 1 !important;
+}
+
+/*#sponsors .row {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*z-index: 9;*/
+    /*opacity: 0;*/
+/*}*/
 
 .sponsor {
     text-align: center;

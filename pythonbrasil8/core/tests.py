@@ -77,11 +77,14 @@ class HomeViewTestCase(TestCase):
     def setUpClass(cls):
         management.call_command("loaddata", "sponsors.json", verbosity=0)
 
-        cls.sponsors = list(models.Sponsor.objects.select_related('category').all().order_by('category__priority', 'pk'))
-
     @classmethod
     def tearDownClass(cls):
         management.call_command("flush", verbosity=0, interactive=False)
+
+    def test_should_group_sponsor_into_groups_of_six(self):
+        groups = views.Home().sponsor_groups()
+        self.assertEqual(2, len(groups))
+        self.assertEqual(6, len(groups[0]))
 
     def test_should_inherit_from_ListView(self):
         assert issubclass(views.Home, lview.ListView), "Home should inherit from ListView"
@@ -92,8 +95,8 @@ class HomeViewTestCase(TestCase):
     def test_should_use_home_html_as_template(self):
         self.assertEqual("home.html", views.Home.template_name)
 
-    def test_get_context_data_should_include_all_sponsors_in_the_context(self):
+    def test_get_context_data_should_include_all_sponsor_groups_in_the_context(self):
         view = views.Home()
         context = view.get_context_data(object_list=[])
-        sponsors = list(context["sponsors"])
-        self.assertEqual(sponsors, self.sponsors)
+        sponsors = list(context["sponsor_groups"])
+        self.assertEqual(view.sponsor_groups(), sponsors)

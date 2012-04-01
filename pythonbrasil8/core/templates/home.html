@@ -6,12 +6,16 @@
 {% endblock %}
 
 {% block content %}
-    <div id="sponsors" class="row">
+    <div id="sponsors">
+        {% for sponsors in sponsor_groups %}
+        <div class="row{% if forloop.first %} first{% endif %}">
         {% for sponsor in sponsors %}
             <div class="sponsor column grid_2">
                 <a href="{% url custom-sponsors %}" title="{{ sponsor.name }}"><img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" /></a>
                 <span>{{ sponsor.category.name }}</span>
             </div>
+        {% endfor %}
+        </div>
         {% endfor %}
     </div>
 
