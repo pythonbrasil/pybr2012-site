@@ -8,14 +8,59 @@
         <script type="text/javascript" src="lib/jasmine-1.1.0/jasmine-html.js"></script>
 
         <!-- include source files here... -->
+        <script type="text/javascript" src="../../js/mootools-1.4.5.js"></script>
+        <script type="text/javascript" src="../../js/slider.js"></script>
+        <link rel="stylesheet" href="../../css/home.css" type="text/css">
 
         <!-- include spec files here... -->
+        <script type="text/javascript" src="spec/SliderSpec.js"></script>
     </head>
     <body>
+        <div id="sponsors">
+            <div class="row first">
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="Globo.com"><img src="/media/sponsors/globocom.png" alt="Globo.com"></a>
+                    <span>Diamond</span>
+                </div>
+
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="fgv"><img src="/media/sponsors/fgv.png" alt="fgv"></a>
+                    <span>Partner</span>
+                </div>
+
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="novatec"><img src="/media/sponsors/novatec.png" alt="novatec"></a>
+                    <span>Partner</span>
+                </div>
+
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="O'reilly"><img src="/media/sponsors/oreilly.png" alt="O'reilly"></a>
+                    <span>Partner</span>
+                </div>
+
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="apyb"><img src="/media/sponsors/apyb.png" alt="apyb"></a>
+                    <span>FOSS</span>
+                </div>
+
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="cobrateam"><img src="/media/sponsors/cobrateam.png" alt="cobrateam"></a>
+                    <span>FOSS</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="sponsor column grid_2">
+                    <a href="/sponsors/" title="andrews"><img src="/media/sponsors/cobrateam_1.png" alt="andrews"></a>
+                    <span>FOSS</span>
+                </div>
+
+            </div>
+        </div>
         <script type="text/javascript">
             jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
             jasmine.getEnv().execute();
-        </script>
+            </script>
 
-    </body>
-</html>
+        </body>
+    </html>

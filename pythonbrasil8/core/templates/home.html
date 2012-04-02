@@ -34,3 +34,14 @@
         </div>
     </div>
 {% endblock %}
+
+{% block js_bottom %}
+<script src="/static/js/mootools-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/js/slider.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" charset="utf-8">
+window.addEvent('domready', function(){
+    var slider = new Slider({slides: $$('#sponsors .row')});
+    slider.cycle();
+});
+</script>
+{% endblock %}
