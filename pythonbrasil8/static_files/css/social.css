@@ -1,6 +1,5 @@
-div.social{
-    position: absolute;
-    right: 10px;
+#social .bar {
+    margin-top: 15px;
+    float: right;
     width: 300px;
-    margin-top: 10px;
 }

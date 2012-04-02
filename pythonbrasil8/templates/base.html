@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/social.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css" type="text/css" />
         <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
         {% block css %}{% endblock %}
@@ -71,7 +72,7 @@
 
         <div class="content">
             {% block social %}
-                <div class="social" style="position:aboslute; right:10px;">
+                <div id="social" class="row">
                    {% include "social.html" with twitter_data_text="Teste de envio para o twitter #PythonBrasil"%}
                 </div>
             {% endblock %}
