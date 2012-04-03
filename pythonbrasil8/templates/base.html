@@ -48,8 +48,13 @@
                     <p>
                         <a href="{% url pre-registration %}" title="register now"><span>{% trans "register now" %} »</span></a>
                     </p>
-                </div>
 
+                </div>
+                {% block social %}
+                    <div id="social" class="row">
+                       {% include "social.html" with twitter_data_text="Teste de envio para o twitter #PythonBrasil"%}
+                    </div>
+                {% endblock %}
             </div>
         </div>
         <div class="dashed-border"></div>
@@ -71,11 +76,6 @@
         </div>
 
         <div class="content">
-            {% block social %}
-                <div id="social" class="row">
-                   {% include "social.html" with twitter_data_text="Teste de envio para o twitter #PythonBrasil"%}
-                </div>
-            {% endblock %}
             <div class="inner row">
                 {% block content %}{% endblock %}
             </div>
