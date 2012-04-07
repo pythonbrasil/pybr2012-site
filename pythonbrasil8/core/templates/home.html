@@ -41,7 +41,9 @@
 <script type="text/javascript" language="javascript" charset="utf-8">
 window.addEvent('domready', function(){
     var slider = new Slider({slides: $$('#sponsors .row')});
-    slider.cycle();
+    setInterval(function() {
+        slider.next();
+    }, 4000);
 });
 </script>
 {% endblock %}

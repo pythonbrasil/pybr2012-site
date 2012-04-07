@@ -10,17 +10,29 @@ var Slider = new Class({
         this.slides.addClass('animation');
     },
     cycle: function(){
-        if (this.slides.length > 1) {
-            var that = this;
-            setInterval(function() {
-                if (that.index < that.slides.length - 1) {
-                    that.index = that.index + 1;
-                } else {
-                    that.index = 0;
-                }
-                that.show(that.index);
-            }, 4000);
+        if (this.slides.length <= 1)
+            return;
+
+        var that = this;
+        setInterval(function() {
+            if (that.index < that.slides.length - 1) {
+                that.index = that.index + 1;
+            } else {
+                that.index = 0;
+            }
+            that.show(that.index);
+        }, 4000);
+    },
+    next: function() {
+        if (this.slides.length <= 1)
+            return;
+
+        if (this.index < this.slides.length -1) {
+            this.index = this.index - 1;
+        } else {
+            this.index = 0;
         }
+        this.show(this.index);
     },
     slides: [],
     index: 0,
