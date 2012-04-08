@@ -1,35 +1,11 @@
-#sponsors {
-    height: 130px;
-    overflow: hidden;
-}
-
-.content .page-header {
-    height: 20px;
-}
-
-.content .become-a-sponsor {
-    margin-top: 5px;
-}
-
 .category h5 {
     color: #484746;
     font-weight: bold;
-    font-size: 14px;
-    /* margin: 15px 0 10px 250px; */
     text-transform: uppercase;
-    margin: 35px 0 0 250px;
-}
-.sponsor p, h2 {
-    text-align: left;
 }
 
 .sponsor h2 {
     font-size: 20px;
-    /* margin: 0 0 10px 0; */
-}
-
-.sponsor .logo {
-    text-align: center;
 }
 
 .sponsor p {
@@ -50,10 +26,22 @@
 }
 
 .sponsor {
-    margin: 15px 0 35px 0;
-    height: 130px;
+    border-bottom: 1px dotted #8DBAC1;
+    padding-bottom: 20px;
 }
 
-.sponsor img {
-    margin-top: 5px;
+.become {
+    font-size: 12px;
+    color: #fff;
+    background-color: #2471A9;
+    display: block;
+    padding: 10px;
+}
+
+.sponsors-nav li {
+    padding: 5px 0;
+}
+
+.sponsors-nav a {
+    color: #2471A9;
 }

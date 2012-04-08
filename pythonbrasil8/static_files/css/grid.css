@@ -27,3 +27,7 @@
 	width: auto;
 	display: inline-block;
 }
+
+.first, .last {
+    margin: 0 10px 0 0;
+}
