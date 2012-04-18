@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_nose',
     'south',
+    'registration',
 )
 
 LOGGING = {
@@ -115,6 +116,9 @@ LOGGING = {
         },
     }
 }
+
+#django-registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
 
 try:
     from settings_local import *
