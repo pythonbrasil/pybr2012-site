@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h2>pythonbrasil[8] registration</h2>
-	<div class="form">
-	    <form method="post" action="">
+<div class="row">
+    <div class="column grid_12">
+        <h1>pythonbrasil[8] registration</h1>
+        <form method="post" action="">
             {% csrf_token %}
-	        {{ form.as_p }}
-	        <p><input type="submit" value="Register" /></p>
-	    </form>
+            {{ form.as_p }}
+            <p><input type="submit" value="Register" /></p>
+        </form>
     </div>
+</div>
 {% endblock %}
