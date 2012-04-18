@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'pythonbrasil8.core',
     'mittun.events',
     'mittun.registration',
