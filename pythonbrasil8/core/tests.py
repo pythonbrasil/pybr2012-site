@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, list as lview
 
 from mittun.sponsors import models
 
-from core import views
+import views
 
 
 class MenuTemplateTagTestCase(TestCase):
