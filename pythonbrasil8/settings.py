@@ -30,12 +30,14 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
+# If you set this to False, Django will not use timezone-aware datetimes.
+USE_TZ = False
+
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
-ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static_files'),
 )
@@ -73,6 +75,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'pythonbrasil8.urls'
 
+# Python dotted path to the WSGI application used by Django's runserver.
+WSGI_APPLICATION = 'pythonbrasil8.wsgi.application'
+
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
 )
@@ -103,9 +108,15 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
+            'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
