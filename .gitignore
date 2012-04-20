@@ -2,5 +2,12 @@
 *.pyc
 *.DS_Store
 *.mo
-pythonbrasil8.sqlite3
+*.sqlite3
 .ropeproject
+settings_local.py
+.idea
+/build
+/lib
+/include
+/bin
+/man
