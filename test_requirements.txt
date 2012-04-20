@@ -1,1 +1,2 @@
+django==1.4
 jasmine-splinter-runner==0.6.5
