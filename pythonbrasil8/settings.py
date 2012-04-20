@@ -18,7 +18,7 @@ DATABASES = {
     }
 }
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = (
     ('en-us', 'English'),
