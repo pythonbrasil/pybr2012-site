@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     'django_nose',
     'south',
     'registration',
+    'dashboard',
 )
 
 LOGGING = {
