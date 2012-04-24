@@ -38,12 +38,10 @@ What will this do?
 Running tests
 -------------
 
-To run django tests, if you are using a virtualenv, all you need is::
-    $ make test
+This project has both server side and client side tests. To run the test suites do::
 
-If you want run tests for js components, you can do it doing::
-    $ make jasmine
-
+    make test
+    make jasmine
 
 Contribute
 ----------
