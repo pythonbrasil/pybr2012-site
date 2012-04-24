@@ -20,8 +20,19 @@ The aim of this app is to provide features useful to any conference website. One
 Install
 -------
 
-From the command line::
-    $ make deps
+Clone the repository and bootstrap your development environment::
+
+    git clone https://github.com/PythonBrasil8/pythonbrasil8.git
+    cd pythonbrasil8
+    python bootstrap/bootstrap.py
+
+What will this do?
+
+1. download the source;
+2. create a *virtualenv* for your project;
+3. install all dependencies with *pip*;
+4. setup a *settings_local.py* for your development environment;
+5. create a *sqlite3* database with some *initial_data*.
 
 
 Running tests
