@@ -20,19 +20,28 @@ The aim of this app is to provide features useful to any conference website. One
 Install
 -------
 
-From the command line::
-    $ make deps
+Clone the repository and bootstrap your development environment::
+
+    git clone https://github.com/PythonBrasil8/pythonbrasil8.git
+    cd pythonbrasil8
+    python bootstrap/bootstrap.py
+
+What will this do?
+
+1. download the source;
+2. create a *virtualenv* for your project;
+3. install all dependencies with *pip*;
+4. setup a *settings_local.py* for your development environment;
+5. create a *sqlite3* database with some *initial_data*.
 
 
 Running tests
 -------------
 
-To run django tests, if you are using a virtualenv, all you need is::
-    $ make test
+This project has both server side and client side tests. To run the test suites do::
 
-If you want run tests for js components, you can do it doing::
-    $ make jasmine
-
+    make test
+    make jasmine
 
 Contribute
 ----------
