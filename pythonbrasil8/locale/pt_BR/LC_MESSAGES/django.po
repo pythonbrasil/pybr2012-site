@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 02:17-0300\n"
+"POT-Creation-Date: 2012-04-25 23:44-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: core/templates/home.html:20 core/templates/sponsors.html:17
+#: core/templates/home.html:24 core/templates/sponsors.html:40
 msgid "Learn how to become a sponsor"
 msgstr "Veja como se tornar um patrocinador"
 
-#: core/templates/home.html:24
-msgid "WHAT IS PYTHONBRASIL[8]"
-msgstr "O QUE É PYTHONBRASIL[8]"
+#: core/templates/home.html:28
+msgid "WHAT IS"
+msgstr "O QUE É"
 
-#: core/templates/sponsors.html:14
+#: core/templates/sponsors.html:13
 msgid "ABOUT PYTHONBRASIL SPONSORS"
 msgstr "PATROCINADORES DA PYTHONBRASIL"
 
@@ -32,11 +32,11 @@ msgstr "PATROCINADORES DA PYTHONBRASIL"
 msgid "Sponsors Info"
 msgstr "Patrocinadores"
 
-#: core/templates/sponsors_info.html:13
+#: core/templates/sponsors_info.html:9
 msgid "PythonBrasil Sponsoring"
 msgstr "Patrocinando a PythonBrasil"
 
-#: core/templates/sponsors_info.html:14
+#: core/templates/sponsors_info.html:10
 msgid ""
 "Interested in hiring talented Python hackers? Sponsor the conference and "
 "increase your company visibility."
@@ -44,9 +44,9 @@ msgstr ""
 "Interessado em contratar desenvolvedores Python talentosos? Patrocine a "
 "conferência e aumente a visibilidade da sua empresa."
 
-#: core/templates/sponsors_info.html:15
+#: core/templates/sponsors_info.html:11
 msgid "Download our sponsoring prospectus"
-msgstr "Faça download do nosso folheto de patrocínio"
+msgstr "Faça download do nosso plano de captação de recursos"
 
 #: core/templates/success_pre_registration.html:4
 msgid "Pre-registration completed"
@@ -64,44 +64,75 @@ msgstr ""
 "Obrigado! Você agora está pré-inscrito na PythonBrasil[8]. Logo que as "
 "inscrições estiverem abertas, entraremos em contato."
 
-#: core/templates/venue.html:4 core/templates/venue.html.py:13
+#: core/templates/venue.html:4
+#, fuzzy
+msgid "Venue"
+msgstr "Local"
+
+#: core/templates/venue.html:13
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
 
-#: templates/base.html:28
+#: dashboard/templates/dashboard/base.html:31
+msgid "Welcome"
+msgstr "Bem-vindo"
+
+#: dashboard/templates/dashboard/base.html:34
+msgid "logout"
+msgstr "sair"
+
+#: dashboard/templates/dashboard/base.html:52
+#, fuzzy
+msgid ""
+"PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
+"open source Python programming language."
+msgstr ""
+"A PythonBrasil é uma conferência sem fins lucrativos organizada por "
+"voluntários para promoção da linguagem de programação de código aberto "
+"Python."
+
+#: dashboard/templates/dashboard/base.html:53 templates/base.html:90
+msgid ""
+"It is supported by the Brazilian Python Association (APyB) and by the Python "
+"Software Foundation (PSF)."
+msgstr ""
+"É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
+"Foundation (PSF)."
+
+#: templates/base.html:33
 msgid "home"
 msgstr "início"
 
-#: templates/base.html:31
+#: templates/base.html:36
 msgid "registration"
 msgstr "inscrição"
 
-#: templates/base.html:34
+#: templates/base.html:39
 msgid "venue"
 msgstr "local"
 
-#: templates/base.html:37
+#: templates/base.html:42
 msgid "sponsors"
 msgstr "patrocinadores"
 
-#: templates/base.html:45
+#: templates/base.html:50
 msgid "register now"
 msgstr "inscreva-se"
 
 # ou seria melhor Mini-cursos?
-#: templates/base.html:57
+#: templates/base.html:67
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:58 templates/base.html.py:62
+#: templates/base.html:68 templates/base.html.py:72
 msgid "November"
 msgstr "Novembro"
 
-#: templates/base.html:61
+#: templates/base.html:71
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:79
+#: templates/base.html:89
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -110,26 +141,21 @@ msgstr ""
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
 
-#: templates/base.html:80
-msgid ""
-"It is supported by the Brazilian Python Association (APyB) and by the Python "
-"Software Foundation (PSF)."
-msgstr ""
-"É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
-"Foundation (PSF)."
-
 #: templates/subscribe.html:12
 msgid "Pre-registration"
-msgstr "pré-inscrição"
+msgstr "Pré-inscrição"
 
 #: templates/subscribe.html:13
 msgid ""
 "Please fill the form bellow to pre-register on PythonBrasil[8]. All fields "
 "are required."
 msgstr ""
-"Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. "
-"Todos campos são obrigatórios."
+"Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
+"campos são obrigatórios."
 
 #: templates/subscribe.html:18
 msgid "Pre-register"
 msgstr "Pré-inscrever"
+
+#~ msgid "WHAT IS PYTHONBRASIL[8]"
+#~ msgstr "O QUE É PYTHONBRASIL[8]"
