@@ -18,7 +18,7 @@
     </head>
 
     <body>
-
+        <div id="fb-root"></div>
         <div id="header">
             <div class="inner">
 
@@ -97,6 +97,17 @@
         <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
             <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
         </a>
+        {% block js_social %}
+            <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <script>(function(d, id){
+                var js; if (d.getElementById(id)) {return;}
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js#appId=133043916794035&xfbml=1";
+                d.getElementsByTagName('head')[0].appendChild(js);
+                })(document, 'facebook-jssdk');
+            </script>
+        {% endblock %}
         {% block js_bottom %}{% endblock %}
     </body>
 </html>
