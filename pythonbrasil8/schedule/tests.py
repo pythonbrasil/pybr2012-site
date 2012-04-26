@@ -20,5 +20,11 @@ class SessionModelTestCase(TestCase):
     def test_should_have_type(self):
         self.assert_field_in('type', Session)
 
+    def test_type_should_have_choices(self):
+        type_field = Session._meta.get_field_by_name('type')[0]
+        choices = [choice[0] for choice in type_field._choices]
+        self.assertIn('talk', choices)
+        self.assertIn('tutorial', choices)
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
