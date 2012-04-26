@@ -103,6 +103,7 @@ INSTALLED_APPS = (
     'django_nose',
     'south',
     'registration',
+    'pythonbrasil8.dashboard',
 )
 
 LOGGING = {
@@ -131,6 +132,8 @@ LOGGING = {
 
 #django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 try:
     from settings_local import *
