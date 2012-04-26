@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.db.models import ManyToManyField
 
 from pythonbrasil8.schedule.models import Session
 
@@ -25,6 +26,10 @@ class SessionModelTestCase(TestCase):
         choices = [choice[0] for choice in type_field._choices]
         self.assertIn('talk', choices)
         self.assertIn('tutorial', choices)
+
+    def test_speakers_shoudl_be_a_ManyToManyField(self):
+        speakers_field = Session._meta.get_field_by_name('speakers')[0]
+        self.assertIsInstance(speakers_field, ManyToManyField)
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())

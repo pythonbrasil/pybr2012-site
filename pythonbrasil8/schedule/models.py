@@ -14,4 +14,4 @@ class Session(models.Model):
     description = models.TextField()
     type = models.CharField(max_length=20, choices=TYPE)
     tags = models.CharField(max_length=255)
-    speakers = models.ForeignKey(User)
+    speakers = models.ManyToManyField(User)
