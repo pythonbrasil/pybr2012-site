@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-25 23:44-0300\n"
+"POT-Creation-Date: 2012-04-26 00:03-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,3 +159,12 @@ msgstr "Pré-inscrever"
 
 #~ msgid "WHAT IS PYTHONBRASIL[8]"
 #~ msgstr "O QUE É PYTHONBRASIL[8]"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Subscription date"
+msgstr "Data de subscrição"
