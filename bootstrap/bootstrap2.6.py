@@ -1761,14 +1761,15 @@ def create_bootstrap_script(extra_text, python_version=''):
                + content)
     return content.replace('##EXT' 'END##', extra_text)
 
+
 # coding: utf-8
 import os
 from os.path import abspath, basename, dirname, join, pardir
 import subprocess
 
 
+# get current dir
 def adjust_options(options, args):
-    # get current dir
     BOOTSTRAP_PATH = abspath(dirname(__file__))
 
     # erase args
@@ -1778,27 +1779,17 @@ def adjust_options(options, args):
     # set virtualenv's dir
     args.append(join(BOOTSTRAP_PATH, pardir))
 
-
+# override default options
 def extend_parser(parser):
-    # overide default options
     parser.set_defaults(unzip_setuptools=True,
                         use_distribute=True)
 
 
+# delegate the final hooks to an external script so we don't need to change this.
 def after_install(options, home_dir):
-    # Install project requirements
-    subprocess.call(['make', 'deps'])
-    subprocess.call(['make', 'settings'])
-    subprocess.call(['make', 'setup'])
+    from hooks import after_install
+    after_install(options, home_dir)
 
-    print \
-"""
-Ready to develop! Try running the tests:
-
-    make test
-    make jasmine
-
-"""
 
 def convert(s):
     b = base64.b64decode(s.encode('ascii'))
