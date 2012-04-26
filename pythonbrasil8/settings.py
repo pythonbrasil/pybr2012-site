@@ -104,7 +104,7 @@ INSTALLED_APPS = (
     'south',
     'registration',
     'pythonbrasil8.dashboard',
-    'pythonbrasil8.sessions',
+    'pythonbrasil8.schedule',
 )
 
 LOGGING = {
