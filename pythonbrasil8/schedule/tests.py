@@ -1,7 +1,9 @@
 from django.test import TestCase
+from django.test.client import RequestFactory
 from django.db.models import ManyToManyField
 
 from pythonbrasil8.schedule.models import Session
+from pythonbrasil8.schedule.views import session_subscribe_view
 
 
 class SessionModelTestCase(TestCase):
@@ -33,3 +35,10 @@ class SessionModelTestCase(TestCase):
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
+
+
+class SessionViewTestCase(TestCase):
+
+    def test_should_returns_200_when_accessed_by_get(self):
+        request = RequestFactory().get("/")
+        self.assertEqual(200, session_subscribe_view(request).status_code)
