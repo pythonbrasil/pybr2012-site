@@ -3,7 +3,7 @@ from django.test.client import RequestFactory
 from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 
-from views import IndexView
+from pythonbrasil8.dashboard.views import IndexView
 
 
 class DashboardIndexTestCase(TestCase):

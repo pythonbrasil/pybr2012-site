@@ -28,10 +28,10 @@
                     <div>
                         <ul>
                             <li>
-                                <a href="#">Welcome, {{ request.user }}</a>
+                                <a href="#">{% trans "Welcome" %}, {{ request.user }}</a>
                             </li>
                             <li>
-                                <a href="/auth/logout/">logout</a>
+                                <a href="/auth/logout/">{% trans "logout" %}</a>
                             </li>
                        </ul>
                     </div>
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="about column grid_11">
                     <p>
-                    {% trans "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open-source Python programming language." %}
+                    {% trans "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open source Python programming language." %}
                     {% trans "It is supported by the Brazilian Python Association (APyB) and by the Python Software Foundation (PSF)." %}
                     </p>
                 </div>
