@@ -3,6 +3,7 @@ from django.test.client import RequestFactory
 from django.db.models import ManyToManyField
 
 from pythonbrasil8.schedule.models import Session
+from pythonbrasil8.schedule.forms import SessionForm
 from pythonbrasil8.schedule.views import session_subscribe_view
 
 
@@ -42,3 +43,9 @@ class SessionViewTestCase(TestCase):
     def test_should_returns_200_when_accessed_by_get(self):
         request = RequestFactory().get("/")
         self.assertEqual(200, session_subscribe_view(request).status_code)
+
+
+class SessionFormTestCase(TestCase):
+
+    def test_model_should_be_Session(self):
+        self.assertEqual(Session, SessionForm._meta.model)
