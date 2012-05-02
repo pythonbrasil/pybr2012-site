@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.test.client import RequestFactory
 from django.db.models import ManyToManyField
+from django.contrib.auth.models import User
 
 from pythonbrasil8.schedule.models import Session
 from pythonbrasil8.schedule.forms import SessionForm
@@ -47,6 +48,27 @@ class SessionViewTestCase(TestCase):
     def test_should_be_use_a_expected_template(self):
         request = RequestFactory().get("/")
         self.assertEqual('schedule/subscribe.html', session_subscribe_view(request).template_name)
+
+    def test_should_be_form_in_context(self):
+        request = RequestFactory().get("/")
+        result = session_subscribe_view(request)
+        self.assertIn('form', result.context_data)
+        self.assertIsInstance(result.context_data['form'], SessionForm)
+
+    def test_should_create_a_session_with_the_post_data(self):
+        user = User.objects.create(username="foo")
+        data = {
+            "title": "some title",
+            "description": "some description",
+            "type": "talk",
+            "tags": "some, tags",
+            "speakers": user.id,
+        }
+        request = RequestFactory().post("/", data)
+        result = session_subscribe_view(request)
+        self.assertEqual(302, result.status_code)
+        session = Session.objects.get(title=data["title"])
+        self.assertTrue(session.id)
 
 
 class SessionFormTestCase(TestCase):
