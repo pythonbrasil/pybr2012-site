@@ -44,6 +44,10 @@ class SessionViewTestCase(TestCase):
         request = RequestFactory().get("/")
         self.assertEqual(200, session_subscribe_view(request).status_code)
 
+    def test_should_be_use_a_expected_template(self):
+        request = RequestFactory().get("/")
+        self.assertEqual('schedule/subscribe.html', session_subscribe_view(request).template_name)
+
 
 class SessionFormTestCase(TestCase):
 
