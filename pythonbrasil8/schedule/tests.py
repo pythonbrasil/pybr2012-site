@@ -41,17 +41,20 @@ class SessionModelTestCase(TestCase):
 
 class SessionViewTestCase(TestCase):
 
+    def setUp(self):
+        self.request = RequestFactory().get("/")
+        self.request.user = User()
+
     def test_should_returns_200_when_accessed_by_get(self):
-        request = RequestFactory().get("/")
-        self.assertEqual(200, session_subscribe_view(request).status_code)
+        result = session_subscribe_view(self.request)
+        self.assertEqual(200, result.status_code)
 
     def test_should_be_use_a_expected_template(self):
-        request = RequestFactory().get("/")
-        self.assertEqual('schedule/subscribe.html', session_subscribe_view(request).template_name)
+        result = session_subscribe_view(self.request)
+        self.assertEqual('schedule/subscribe.html', result.template_name)
 
     def test_should_be_form_in_context(self):
-        request = RequestFactory().get("/")
-        result = session_subscribe_view(request)
+        result = session_subscribe_view(self.request)
         self.assertIn('form', result.context_data)
         self.assertIsInstance(result.context_data['form'], SessionForm)
 
@@ -65,6 +68,7 @@ class SessionViewTestCase(TestCase):
             "speakers": user.id,
         }
         request = RequestFactory().post("/", data)
+        request.user = User()
         result = session_subscribe_view(request)
         self.assertEqual(302, result.status_code)
         session = Session.objects.get(title=data["title"])
