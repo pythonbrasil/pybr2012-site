@@ -5,12 +5,12 @@ from pythonbrasil8.schedule.forms import SessionForm
 
 
 def session_subscribe_view(request):
-    form = SessionForm(request.POST or {})
+    form = SessionForm(request.POST or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect("/dashboard/")
 
     context = {
-        "form": SessionForm(request.POST),
+        "form": form,
     }
     return TemplateResponse(request, "schedule/subscribe.html", context)
