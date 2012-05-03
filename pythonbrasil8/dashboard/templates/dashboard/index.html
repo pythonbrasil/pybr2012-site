@@ -1,6 +1,13 @@
 {% extends "dashboard/base.html" %}
 
 {% block content %}
-=)
+<div class="sessions">
+    <h2>Session</h2>
+    <ul>
+    {% for session in sessions %}
+        <li>{{ session.title}} - {{ sesion.description }}</li>
+    {% endfor %}
+    </ul>
+    <a href="/dashboard/subscribe/">subscribe a session (talk/tutorial)</a>
 {% endblock %}
 
