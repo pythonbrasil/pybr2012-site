@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 from pythonbrasil8.dashboard import choices
 
 
-class AccoutProfile(models.Model):
+class AccountProfile(models.Model):
     user = models.OneToOneField(User)
+    name = models.CharField(max_length=20)
     description = models.CharField(max_length=20)
     type = models.CharField(max_length=50, choices=choices.ATTENDANT_CHOICES)
-    t_shirt = models.CharField(max_length=50, choices=choices.T_SHIRT_CHOICES)
+    tshirt = models.CharField(max_length=50, choices=choices.T_SHIRT_CHOICES)
     locale = models.CharField(max_length=255, null=True, blank=True)
     gender = models.CharField(max_length=20, null=True, blank=True, choices=choices.GENDER_CHOICES)
     age = models.CharField(max_length=20, null=True, blank=True, choices=choices.AGE_CHOICES)

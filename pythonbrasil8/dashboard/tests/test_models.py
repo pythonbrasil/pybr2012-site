@@ -1,55 +1,55 @@
 from django.test import TestCase
 from django.db import models
 
-from pythonbrasil8.dashboard.models import AccoutProfile
+from pythonbrasil8.dashboard.models import AccountProfile
 
 
-class AccoutProfileTestCase(TestCase):
+class AccountProfileTestCase(TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.field_names = AccoutProfile._meta.get_all_field_names()
+        self.field_names = AccountProfile._meta.get_all_field_names()
 
     def test_should_has_user_field(self):
         self.assertIn('user', self.field_names)
 
     def test_user_field_should_be_one_to_one_field(self):
-        field = AccoutProfile._meta.get_field_by_name('user')[0]
+        field = AccountProfile._meta.get_field_by_name('user')[0]
         self.assertEqual(models.OneToOneField, field.__class__)
 
     def test_should_has_description_field(self):
         self.assertIn('description', self.field_names)
 
     def test_description_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('description')[0]
+        field = AccountProfile._meta.get_field_by_name('description')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_description_field_should_has_20_of_max_length(self):
-        field = AccoutProfile._meta.get_field_by_name('description')[0]
+        field = AccountProfile._meta.get_field_by_name('description')[0]
         self.assertEqual(20, field.max_length)
 
     def test_should_has_type_field(self):
         self.assertIn('type', self.field_names)
 
     def test_type_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('type')[0]
+        field = AccountProfile._meta.get_field_by_name('type')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_type_field_should_has_expected_choices(self):
-        field = AccoutProfile._meta.get_field_by_name('type')[0]
+        field = AccountProfile._meta.get_field_by_name('type')[0]
         self.assertIn(('Student', 'Student'), field.choices)
         self.assertIn(('APyB', 'APyB Associated'), field.choices)
         self.assertIn(('Normal', 'Normal'), field.choices)
 
-    def test_should_has_t_shirt_field(self):
-        self.assertIn('t_shirt', self.field_names)
+    def test_should_has_tshirt_field(self):
+        self.assertIn('tshirt', self.field_names)
 
-    def test_t_shirt_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('t_shirt')[0]
+    def test_tshirt_field_should_be_char_field(self):
+        field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_t_shirt_field_should_has_expected_choices(self):
-        field = AccoutProfile._meta.get_field_by_name('t_shirt')[0]
+    def test_tshirt_field_should_has_expected_choices(self):
+        field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         female_choices = (
             'Female', (
                 ('P','P'),
@@ -74,11 +74,11 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn('locale', self.field_names)
 
     def test_locale_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('locale')[0]
+        field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_locale_field_should_be_optional(self):
-        field = AccoutProfile._meta.get_field_by_name('locale')[0]
+        field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
@@ -86,18 +86,18 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn('gender', self.field_names)
 
     def test_gender_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('gender')[0]
+        field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_gender_field_should_has_expected_choices(self):
-        field = AccoutProfile._meta.get_field_by_name('gender')[0]
+        field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertIn(('female', 'female'), field.choices)
         self.assertIn(('male', 'male'), field.choices)
         self.assertIn(('transsexual', 'transsexual'), field.choices)
         self.assertIn(('other', 'other'), field.choices)
 
     def test_gender_field_should_be_optional(self):
-        field = AccoutProfile._meta.get_field_by_name('gender')[0]
+        field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
@@ -105,11 +105,11 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn('age', self.field_names)
 
     def test_age_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('age')[0]
+        field = AccountProfile._meta.get_field_by_name('age')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_age_field_should_has_expected_choices(self):
-        field = AccoutProfile._meta.get_field_by_name('age')[0]
+        field = AccountProfile._meta.get_field_by_name('age')[0]
         self.assertIn(('--9', '--9'), field.choices)
         self.assertIn(('10-19', '10-19'), field.choices)
         self.assertIn(('20-29', '20-29'), field.choices)
@@ -121,7 +121,7 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn(('80-+', '80-+'), field.choices)
 
     def test_age_field_should_be_optional(self):
-        field = AccoutProfile._meta.get_field_by_name('age')[0]
+        field = AccountProfile._meta.get_field_by_name('age')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
@@ -129,11 +129,11 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn('profession', self.field_names)
 
     def test_profession_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('profession')[0]
+        field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_profession_field_should_has_expected_choices(self):
-        field = AccoutProfile._meta.get_field_by_name('profession')[0]
+        field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertIn(('student', 'student'), field.choices)
         self.assertIn(('trainee', 'trainee'), field.choices)
         self.assertIn(('developer', 'developer'), field.choices)
@@ -144,7 +144,7 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn(('other', 'other'), field.choices)
 
     def test_profession_field_should_be_optional(self):
-        field = AccoutProfile._meta.get_field_by_name('profession')[0]
+        field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
@@ -152,25 +152,25 @@ class AccoutProfileTestCase(TestCase):
         self.assertIn('institution', self.field_names)
 
     def test_institution_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('institution')[0]
+        field = AccountProfile._meta.get_field_by_name('institution')[0]
         self.assertEqual(models.CharField, field.__class__)
 
     def test_institution_field_should_be_optional(self):
-        field = AccoutProfile._meta.get_field_by_name('institution')[0]
+        field = AccountProfile._meta.get_field_by_name('institution')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
     def test_institution_field_should_has_verbose_name_company_university_institution(self):
-        field = AccoutProfile._meta.get_field_by_name('institution')[0]
+        field = AccountProfile._meta.get_field_by_name('institution')[0]
         self.assertEquals('Company / University / Institution', field.verbose_name)
 
     def test_should_has_payement_field(self):
         self.assertIn('payement', self.field_names)
 
     def test_payement_field_should_be_char_field(self):
-        field = AccoutProfile._meta.get_field_by_name('payement')[0]
+        field = AccountProfile._meta.get_field_by_name('payement')[0]
         self.assertEqual(models.BooleanField, field.__class__)
 
     def test_payement_field_should_has_default_False(self):
-        field = AccoutProfile._meta.get_field_by_name('payement')[0]
+        field = AccountProfile._meta.get_field_by_name('payement')[0]
         self.assertFalse(field.default)
