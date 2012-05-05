@@ -1,0 +1,12 @@
+.editions {
+    font-size: 1.25em;
+    padding:20px 0;
+}
+
+.editions .edition {
+    margin: 10px 0;
+}
+
+.editions .edition a, .editions .edition a:hover, .editions .edition a:visited {
+    color: #004592;
+}
