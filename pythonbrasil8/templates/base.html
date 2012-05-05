@@ -113,6 +113,18 @@
         <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
             <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
         </a>
+
+        <script src="/static/js/mootools-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            (function(global) {
+                $$('#language-select a').addEvent('click', function(event){
+                    var href = this.get('href');
+                    event.stop()
+                    Cookie.write('{% setting "LANGUAGE_COOKIE_NAME" %}', href.slice(1, href.length));
+                    global.location.reload();
+                });
+            })(window);
+        </script>
         {% block js_social %}
             <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
             <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -125,16 +137,6 @@
             </script>
         {% endblock %}
         {% block js_bottom %}{% endblock %}
-        <script>
-            (function(global) {
-                $$('#language-select a').addEvent('click', function(event){
-                    var href = this.get('href');
-                    event.stop()
-                    Cookie.write('{% setting "LANGUAGE_COOKIE_NAME" %}', href.slice(1, href.length));
-                    window.location.reload();
-                });
-            })(window);
-        </script>
     </body>
 </html>
 
