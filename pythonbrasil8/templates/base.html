@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load menu %}
 {% load i18n %}
+{% load setting %}
 <html>
     <head>
         <title>{% block title %}PythonBrasil[8]{% endblock %}</title>
@@ -47,6 +48,23 @@
                             
                        </ul>
                     </div>
+                </div>
+
+                <div id="language-select">
+                    <ul>
+                        <li class="pt-br{% if request.LANGUAGE_CODE == "pt-br" %} selected{% endif %}">
+                            <a href="#pt-br">
+                                <span class="flag"></span>
+                                português
+                            </a>
+                        </li>
+                        <li class="en-us{% if request.LANGUAGE_CODE == "en-us" %} selected{% endif %}">
+                            <a href="#en-us">
+                                <span class="flag"></span>
+                                english
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <div id="pre-register">
@@ -113,6 +131,16 @@
             </script>
         {% endblock %}
         {% block js_bottom %}{% endblock %}
+        <script>
+            (function(global) {
+                $$('#language-select a').addEvent('click', function(event){
+                    var href = this.get('href');
+                    event.stop()
+                    Cookie.write('{% setting "LANGUAGE_COOKIE_NAME" %}', href.slice(1, href.length));
+                    window.location.reload();
+                });
+            })(window);
+        </script>
     </body>
 </html>
 

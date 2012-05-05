@@ -195,6 +195,43 @@ body {
     padding: 10px 16px 10px 0;
 }
 
+#language-select {
+    right: 50px;
+    position: absolute;
+    top: 60px;
+}
+
+#language-select li {
+    float: left;
+    margin-left: 10px;
+}
+
+#language-select li a {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+}
+
+#language-select .selected a {
+    color: white;
+}
+
+#language-select .flag {
+    display: inline-block;
+    height: 11px;
+    width: 16px;
+    overflow: hidden;
+    background-image: url('/static/images/header/flags.png');
+}
+
+#language-select .pt-br .flag {
+    background-position: 0 0;
+}
+
+#language-select .en-us .flag {
+    background-position: -18px 0;
+}
+
 
 /*** FOOTER ***/
 
