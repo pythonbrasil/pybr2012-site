@@ -47,10 +47,12 @@ class ProfileViewTestCase(TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.request = RequestFactory().get("/")
         self.user = User.objects.create(username="user")
-        self.request.user = self.user
         self.account_profile = AccountProfile.objects.create(user=self.user)
+
+    def setUp(self):
+        self.request = RequestFactory().get("/")
+        self.request.user = User.objects.get(id=self.user.id)
         self.response = ProfileView.as_view()(self.request, pk=self.account_profile.id)
 
     @classmethod
@@ -74,3 +76,23 @@ class ProfileViewTestCase(TestCase):
     def test_should_have_200_status_code_when_user_is_logged_in(self):
         self.assertEqual(200, self.response.status_code)
 
+    def test_update_account_user_with_success(self):
+        data = {
+            'id': self.account_profile.id,
+            'user': self.user.id,
+            'name': 'siminino',
+            'description': 'simi test',
+            'type': 'Student',
+            'tshirt': 'M'
+        }
+
+        request = RequestFactory().post('/', data)
+        request.user = self.request.user
+        response = ProfileView.as_view()(request, pk=self.account_profile.id)
+        self.assertEqual(302, response.status_code)
+
+        profile = AccountProfile.objects.get(id=self.account_profile.id)
+        self.assertEqual('siminino', profile.name)
+        self.assertEqual('simi test', profile.description)
+        self.assertEqual('Student', profile.type)
+        self.assertEqual('M', profile.tshirt)
