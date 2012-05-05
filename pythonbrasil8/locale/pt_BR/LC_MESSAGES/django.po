@@ -115,6 +115,10 @@ msgstr "local"
 msgid "sponsors"
 msgstr "patrocinadores"
 
+#: templates/base.html:44
+msgid "previous version"
+msgstr "versões anteriores"
+
 #: templates/base.html:50
 msgid "register now"
 msgstr "inscreva-se"
