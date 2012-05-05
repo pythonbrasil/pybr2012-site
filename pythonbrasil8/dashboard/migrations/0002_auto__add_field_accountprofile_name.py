@@ -7,28 +7,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-
-        # Adding model 'AccountProfile'
-        db.create_table('dashboard_accountprofile', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['auth.User'], unique=True)),
-            ('description', self.gf('django.db.models.fields.CharField')(max_length=20)),
-            ('type', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('tshirt', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('locale', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
-            ('gender', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
-            ('age', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
-            ('profession', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('institution', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
-            ('payement', self.gf('django.db.models.fields.BooleanField')(default=False)),
-        ))
-        db.send_create_signal('dashboard', ['AccountProfile'])
+        
+        # Adding field 'AccountProfile.name'
+        db.add_column('dashboard_accountprofile', 'name', self.gf('django.db.models.fields.CharField')(default=datetime.date(2012, 5, 5), max_length=20), keep_default=False)
 
 
     def backwards(self, orm):
-
-        # Deleting model 'AccountProfile'
-        db.delete_table('dashboard_accountprofile')
+        
+        # Deleting field 'AccountProfile.name'
+        db.delete_column('dashboard_accountprofile', 'name')
 
 
     models = {
@@ -47,7 +34,7 @@ class Migration(SchemaMigration):
         },
         'auth.user': {
             'Meta': {'object_name': 'User'},
-            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 4, 28, 23, 48, 10, 524432)'}),
+            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 5, 5, 9, 40, 14, 278467)'}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
             'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'groups': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Group']", 'symmetrical': 'False', 'blank': 'True'}),
@@ -55,7 +42,7 @@ class Migration(SchemaMigration):
             'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 4, 28, 23, 48, 10, 524237)'}),
+            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 5, 5, 9, 40, 14, 278356)'}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
@@ -76,6 +63,7 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'institution': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'locale': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             'payement': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'profession': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
             'tshirt': ('django.db.models.fields.CharField', [], {'max_length': '50'}),

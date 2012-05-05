@@ -1,26 +1,30 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, UpdateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
 from pythonbrasil8.schedule.models import Session
 from pythonbrasil8.dashboard.forms import ProfileForm
+from pythonbrasil8.dashboard.models import AccountProfile
 
 
-class DashBoardView(TemplateView):
+class LoguinRequiredMixin(object):
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(DashBoardView, self).dispatch(*args, **kwargs)
+        return super(LoguinRequiredMixin, self).dispatch(*args, **kwargs)
 
 
-class ProfileView(DashBoardView):
+class DashBoardView(LoguinRequiredMixin, TemplateView):
+    pass
+
+
+class ProfileView(LoguinRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
+    model = AccountProfile
+    form_class = ProfileForm
+    success_url = 'success'
 
-    def get_context_data(self, *args, **kwargs):
-        context = super(ProfileView, self).get_context_data(*args, **kwargs)
-        context['form'] = ProfileForm()
-        return context
 
 class IndexView(DashBoardView):
     template_name = 'dashboard/index.html'

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 from pythonbrasil8.dashboard.views import IndexView, ProfileView
 from pythonbrasil8.dashboard.forms import ProfileForm
+from pythonbrasil8.dashboard.models import AccountProfile
 from pythonbrasil8.schedule.models import Session
 
 
@@ -44,24 +45,32 @@ class DashboardIndexTestCase(TestCase):
 
 class ProfileViewTestCase(TestCase):
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         self.request = RequestFactory().get("/")
-        self.request.user = User.objects.create(username="user")
+        self.user = User.objects.create(username="user")
+        self.request.user = self.user
+        self.account_profile = AccountProfile.objects.create(user=self.user)
+        self.response = ProfileView.as_view()(self.request, pk=self.account_profile.id)
+
+    @classmethod
+    def tearDownClass(self):
+        self.account_profile.delete()
 
     def test_should_use_expected_template(self):
-        response = ProfileView.as_view()(self.request)
-        self.assertTemplateUsed(response, 'dashboard/profile.html')
+        self.assertTemplateUsed(self.response, 'dashboard/profile.html')
+
+    def test_model_should_be_AccountProfile(self):
+        self.assertEqual(AccountProfile, ProfileView.model)
+
+    def test_form_should_be_ProfileForm(self):
+        self.assertEqual(ProfileForm, ProfileView.form_class)
 
     def test_should_redirects_if_user_is_not_logged_in(self):
         self.request.user.is_authenticated = lambda : False
-        result = ProfileView.as_view()(self.request)
+        result = ProfileView.as_view()(self.request, pk=self.account_profile.id)
         self.assertEqual(302, result.status_code)
 
     def test_should_have_200_status_code_when_user_is_logged_in(self):
-        result = ProfileView.as_view()(self.request)
-        self.assertEqual(200, result.status_code)
+        self.assertEqual(200, self.response.status_code)
 
-    def test_should_have_form_on_context(self):
-        result = ProfileView.as_view()(self.request)
-        self.assertIn('form', result.context_data)
-        self.assertIsInstance(result.context_data['form'], ProfileForm)
