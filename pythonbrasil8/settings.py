@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'registration',
     'pythonbrasil8.dashboard',
     'pythonbrasil8.schedule',
+    'pythonbrasil8.subscription',
 )
 
 LOGGING = {
