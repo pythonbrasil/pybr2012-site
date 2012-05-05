@@ -1,10 +1,10 @@
 from django.test import TestCase
 
-from pythonbrasil8.dashboard.forms import AddUserForm
-from pythonbrasil8.dashboard.models import AccoutProfile
+from pythonbrasil8.dashboard.forms import ProfileForm
+from pythonbrasil8.dashboard.models import AccountProfile
 
 
-class AddUserFormTestCase(TestCase):
+class ProfileFormTestCase(TestCase):
 
-    def test_forms_model_should_be_User(self):
-        self.assertEquals(AccoutProfile, AddUserForm.Meta.model)
+    def test_model_should_be_AccountProfile(self):
+        self.assertEqual(AccountProfile, ProfileForm._meta.model)

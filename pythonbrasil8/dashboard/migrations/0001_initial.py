@@ -7,14 +7,14 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
+
         # Adding model 'AccoutProfile'
-        db.create_table('dashboard_accoutprofile', (
+        db.create_table('dashboard_accountprofile', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('user', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['auth.User'], unique=True)),
             ('description', self.gf('django.db.models.fields.CharField')(max_length=20)),
             ('type', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('t_shirt', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('tshirt', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('locale', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
             ('gender', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
             ('age', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
@@ -22,13 +22,13 @@ class Migration(SchemaMigration):
             ('institution', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
             ('payement', self.gf('django.db.models.fields.BooleanField')(default=False)),
         ))
-        db.send_create_signal('dashboard', ['AccoutProfile'])
+        db.send_create_signal('dashboard', ['AccountProfile'])
 
 
     def backwards(self, orm):
-        
+
         # Deleting model 'AccoutProfile'
-        db.delete_table('dashboard_accoutprofile')
+        db.delete_table('dashboard_accountprofile')
 
 
     models = {
@@ -68,8 +68,8 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'dashboard.accoutprofile': {
-            'Meta': {'object_name': 'AccoutProfile'},
+        'dashboard.accountprofile': {
+            'Meta': {'object_name': 'AccountProfile'},
             'age': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             'gender': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
@@ -78,7 +78,7 @@ class Migration(SchemaMigration):
             'locale': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'payement': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'profession': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            't_shirt': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
+            'tshirt': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'type': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'user': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['auth.User']", 'unique': 'True'})
         }

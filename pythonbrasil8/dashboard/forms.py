@@ -1,8 +1,9 @@
 from django.forms import ModelForm
 
-from pythonbrasil8.dashboard.models import AccoutProfile
+from pythonbrasil8.dashboard.models import AccountProfile
 
 
-class AddUserForm(ModelForm):
+class ProfileForm(ModelForm):
+
     class Meta:
-        model = AccoutProfile
+        model = AccountProfile

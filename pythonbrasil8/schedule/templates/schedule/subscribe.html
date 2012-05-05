@@ -1,0 +1,10 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<h1>Send a proposal</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <p><input type="submit" value="send"/></p>
+</form>
+{% endblock %}
