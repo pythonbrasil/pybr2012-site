@@ -39,8 +39,12 @@
                                 <a href="{% url venue %}">{% trans "venue" %}</a>
                             </li>
                             <li class="{% is_active request.path 'custom-sponsors' %}">
-                            <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
+                                <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
                             </li>
+                            <li class="{% is_active request.path 'previous-version' %}">
+                                <a href="{% url previous-version %}">{% trans "previous version" %}</a>
+                            </li>
+                            
                        </ul>
                     </div>
                 </div>

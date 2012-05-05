@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.conf.urls import patterns, url, include
+from django.views.generic import TemplateView
+
 from mittun.registration.views import SubscribeView
 
 from core.views import Home, SuccessfulPreRegistration, SponsorsInfoView, VenueView, CustomSponsorsView
@@ -14,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^pre-registration/$', SubscribeView.as_view(), name='pre-registration'),
     url(r'^sponsors/info/$',  SponsorsInfoView.as_view(), name='sponsors-info'),
     url(r'^sponsors/$',  CustomSponsorsView.as_view(), name='custom-sponsors'),
+    url(r'^previous_version/$', TemplateView.as_view(template_name="previous_pythonbrasil.html"), name='previous-version'),
     url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration-success'),
     url(r'^venue/$',  VenueView.as_view(), name='venue'),
     url(r'^mittun/', include('mittun.urls')),
