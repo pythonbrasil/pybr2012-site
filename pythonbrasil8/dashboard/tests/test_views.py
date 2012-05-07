@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.test.client import RequestFactory
+from django.test.client import RequestFactory, Client
 from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 
@@ -13,7 +13,7 @@ class DashboardIndexTestCase(TestCase):
 
     def setUp(self):
         self.request = RequestFactory().get("/")
-        self.request.user = User.objects.create(username="user")
+        self.request.user = User.objects.create_user(username="user", password='test')
         session = Session.objects.create(
             title="Python for dummies",
             description="about python, universe and everything",
@@ -42,12 +42,18 @@ class DashboardIndexTestCase(TestCase):
         self.assertIn('sessions', result.context_data)
         self.assertQuerysetEqual(result.context_data['sessions'], [u"Python for dummies",], lambda s: s.title)
 
+    def test_get_url_should_return_200(self):
+        client = Client()
+        client.login(username=self.request.user.username, password='test')
+        response = client.get('/dashboard/')
+        self.assertEqual(200, response.status_code)
+
 
 class ProfileViewTestCase(TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.user = User.objects.create(username="user")
+        self.user = User.objects.create_user(username="user", password="test")
         self.account_profile = AccountProfile.objects.create(user=self.user)
 
     def setUp(self):
@@ -96,3 +102,9 @@ class ProfileViewTestCase(TestCase):
         self.assertEqual('simi test', profile.description)
         self.assertEqual('Student', profile.type)
         self.assertEqual('M', profile.tshirt)
+
+    def test_get_url_should_return_200(self):
+        client = Client()
+        client.login(username=self.request.user.username, password='test')
+        response = client.get('/dashboard/profile/%d/' % self.account_profile.id)
+        self.assertEqual(200, response.status_code)
