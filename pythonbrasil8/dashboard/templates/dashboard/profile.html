@@ -1,10 +1,18 @@
 {% extends "dashboard/base.html" %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/profile.css" type="text/css" />
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="column grid_12">
             <h1>Edit Profile</h1>
-            {{ form.as_p }}
+            <form id="profile_form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="salvar" />
+            </form>
         </div>
     </div>
 {% endblock %}

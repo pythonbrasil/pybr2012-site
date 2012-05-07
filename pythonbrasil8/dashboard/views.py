@@ -23,7 +23,7 @@ class ProfileView(LoguinRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
     model = AccountProfile
     form_class = ProfileForm
-    success_url = 'success'
+    success_url = '/dashboard/'
 
 
 class IndexView(DashBoardView):
