@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, url, include
+from django.conf.urls import patterns, url
 
 from pythonbrasil8.dashboard.views import IndexView, ProfileView
 
