@@ -7,3 +7,4 @@ class ProfileForm(ModelForm):
 
     class Meta:
         model = AccountProfile
+        exclude = ('user', 'payement',)
