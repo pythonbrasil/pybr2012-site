@@ -28,7 +28,10 @@
                     <div>
                         <ul>
                             <li>
-                                <a href="#">{% trans "Welcome" %}, {{ request.user }}</a>
+                                <a href="/dashboard/">{% trans "Welcome" %}, {{ request.user }}</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/profile/{{ request.user.id }}">Profile</a>
                             </li>
                             <li>
                                 <a href="/auth/logout/">{% trans "logout" %}</a>
