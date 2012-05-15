@@ -137,6 +137,9 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 LOGIN_REDIRECT_URL = '/dashboard/'
 
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
+
 try:
     from settings_local import *
 except ImportError:

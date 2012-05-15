@@ -1,5 +1,8 @@
 import os
 
+EMAIL_HOST_USER = 'youremail@domain.com'
+EMAIL_HOST_PASSWORD = 'yourpass'
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 DATABASES = {
