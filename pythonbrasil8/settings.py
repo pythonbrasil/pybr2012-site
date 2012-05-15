@@ -142,6 +142,21 @@ EMAIL_USE_TLS = True
 
 AUTH_PROFILE_MODULE = 'dashboard.AccountProfile'
 
+PAGSEGURO = {
+    'email': 'ps@pythonbrasil.org.br',
+    'charset': 'UTF-8',
+    'token': 'radiogaga',
+    'currency': 'BRL',
+    'itemId1': '0001',
+    'itemDescription1': u'Inscrição na PythonBrasil 2012',
+    'itemQuantity1': 1,
+}
+
+PAGSEGURO_BASE = 'https://ws.pagseguro.uol.com.br/v2'
+PAGSEGURO_CHECKOUT = '%s/checkout' % PAGSEGURO_BASE
+PAGSEGURO_TRANSACTIONS = '%s/transactions' % PAGSEGURO_BASE
+PAGSEGURO_TRANSACTIONS_NOTIFICATIONS = '%s/notifications' % PAGSEGURO_TRANSACTIONS
+
 try:
     from settings_local import *
 except ImportError:
