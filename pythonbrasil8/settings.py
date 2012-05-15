@@ -140,6 +140,8 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
+AUTH_PROFILE_MODULE = 'dashboard.AccountProfile'
+
 try:
     from settings_local import *
 except ImportError:
