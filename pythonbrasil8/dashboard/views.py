@@ -25,6 +25,10 @@ class ProfileView(LoguinRequiredMixin, UpdateView):
     form_class = ProfileForm
     success_url = '/dashboard/'
 
+    def get(self, *args, **kwargs):
+        self.kwargs['pk'] = self.request.user.get_profile().id
+        return super(ProfileView, self).get(*args, **kwargs)
+
 
 class IndexView(DashBoardView):
     template_name = 'dashboard/index.html'
@@ -33,4 +37,3 @@ class IndexView(DashBoardView):
         context = super(IndexView, self).get_context_data(*args, **kwargs)
         context['sessions'] = Session.objects.filter(speakers=self.request.user)
         return context
-
