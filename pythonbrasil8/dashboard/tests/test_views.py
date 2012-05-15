@@ -109,5 +109,5 @@ class ProfileViewTestCase(TestCase):
     def test_get_url_should_return_200(self):
         client = Client()
         client.login(username=self.request.user.username, password='test')
-        response = client.get('/dashboard/profile/%d/' % self.account_profile.id)
+        response = client.get('/dashboard/profile/')
         self.assertEqual(200, response.status_code)
