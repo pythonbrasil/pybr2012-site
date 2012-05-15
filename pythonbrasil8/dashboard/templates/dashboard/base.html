@@ -28,10 +28,10 @@
                     <div>
                         <ul>
                             <li>
-                                <a href="/dashboard/">{% trans "Welcome" %}, {{ request.user }}</a>
+                                <a href="/dashboard/">dashboard</a>
                             </li>
                             <li>
-                                <a href="/dashboard/profile/" >Profile</a>
+                                <a href="/dashboard/profile/">{{ request.user }} (edit your profile)</a>
                             </li>
                             <li>
                                 <a href="/auth/logout/">{% trans "logout" %}</a>

@@ -26,7 +26,7 @@ class ProfileView(LoguinRequiredMixin, UpdateView):
     success_url = '/dashboard/'
 
     def get(self, *args, **kwargs):
-        self.kwargs['pk'] = self.request.user.accountprofile.id
+        self.kwargs['pk'] = self.request.user.get_profile().id
         return super(ProfileView, self).get(*args, **kwargs)
 
 

@@ -1,7 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
 
 from pythonbrasil8.dashboard import choices
+
+from registration.signals import user_activated
 
 
 class AccountProfile(models.Model):
@@ -16,3 +19,8 @@ class AccountProfile(models.Model):
     profession = models.CharField(max_length=50, null=True, blank=True, choices=choices.PROFESSION_CHOICES)
     institution = models.CharField(max_length=100, null=True, blank=True, verbose_name='Company / University / Institution')
     payement = models.BooleanField(default=False)
+
+
+@receiver(user_activated)
+def create_account_profile(user, request, *args, **kwargs):
+    AccountProfile.objects.create(user=user)
