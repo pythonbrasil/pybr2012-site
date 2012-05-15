@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.db import models
 from django.contrib.auth.models import User
 
-from pythonbrasil8.subscription.models import Subscription
+from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
 class SubscriptionModelTestCase(TestCase):
@@ -35,6 +35,22 @@ class SubscriptionModelTestCase(TestCase):
         date_field = Subscription._meta.get_field_by_name('date')[0]
         self.assertIsInstance(date_field, models.DateTimeField)
         self.assertTrue(date_field.auto_now_add)
+
+    def assert_field_in(self, field_name, model):
+        self.assertIn(field_name, model._meta.get_all_field_names())
+
+
+class TransacitonModelTestCase(TestCase):
+
+    def test_should_have_code(self):
+        self.assert_field_in('code', Transaction)
+
+    def test_should_have_subscription(self):
+        self.assert_field_in('subscription', Transaction)
+
+        subscription_field = Transaction._meta.get_field_by_name('subscription')[0]
+        self.assertIsInstance(subscription_field, models.ForeignKey)
+        self.assertEqual(Subscription, subscription_field.related.parent_model)
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
