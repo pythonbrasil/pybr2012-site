@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.db import models
+from django.contrib.auth.models import User
 
 from pythonbrasil8.dashboard.models import AccountProfile
+from pythonbrasil8.subscription.models import Subscription
 
 
 class AccountProfileTestCase(TestCase):
@@ -174,3 +176,20 @@ class AccountProfileTestCase(TestCase):
     def test_payement_field_should_has_default_False(self):
         field = AccountProfile._meta.get_field_by_name('payement')[0]
         self.assertFalse(field.default)
+
+    def test_have_talk_subscription_should_be_false_when_use_hasnt_a_subscription(self):
+        user = User.objects.create(username="tony")
+        profile = AccountProfile.objects.create(user=user)
+        self.assertFalse(profile.has_talk_subscription())
+
+    def test_have_talk_subscription_shoud_be_true_when_user_has_a_subscription(self):
+        user = User.objects.create(username="tony")
+        profile = AccountProfile.objects.create(user=user)
+        Subscription.objects.create(user=user, type="talk")
+        self.assertTrue(profile.has_talk_subscription())
+
+    def test_talk_subscription_shoud_be_returns_the_talk_subscription(self):
+        user = User.objects.create(username="tony")
+        profile = AccountProfile.objects.create(user=user)
+        subscription = Subscription.objects.create(user=user, type="talk")
+        self.assertEqual(subscription, profile.talk_subscription())

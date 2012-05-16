@@ -20,6 +20,12 @@ class AccountProfile(models.Model):
     institution = models.CharField(max_length=100, null=True, blank=True, verbose_name='Company / University / Institution')
     payement = models.BooleanField(default=False)
 
+    def has_talk_subscription(self):
+        return self.user.subscription_set.exists()
+
+    def talk_subscription(self):
+        return self.user.subscription_set.all()[0]
+
 
 @receiver(user_activated)
 def create_account_profile(user, request, *args, **kwargs):
