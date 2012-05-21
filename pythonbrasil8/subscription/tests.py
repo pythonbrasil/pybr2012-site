@@ -1,8 +1,10 @@
 from django.test import TestCase
+from django.test.client import RequestFactory
 from django.db import models
 from django.contrib.auth.models import User
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
+from pythonbrasil8.subscription.views import SubscriptionView
 
 
 class SubscriptionModelTestCase(TestCase):
@@ -54,3 +56,23 @@ class TransacitonModelTestCase(TestCase):
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
+
+
+class SubscriptionViewTestCase(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create(username="Wolverine")
+        self.request = RequestFactory().post("/", {})
+        self.request.user = self.user
+
+    def test_subscription_view_should_create_a_subscription_for_the_current_user(self):
+        response = SubscriptionView.as_view()(self.request)
+        self.assertTrue(Subscription.objects.filter(user=self.user).exists())
+        self.assertEqual(200, response.status_code)
+        self.assertEqual("subscription created with success!", response.content)
+
+    def test_should_returns_error_when_user_is_not_logged(self):
+        self.request.user = None
+        response = SubscriptionView.as_view()(self.request)
+        self.assertEqual(500, response.status_code)
+        self.assertEqual("you should be logged in.", response.content)
