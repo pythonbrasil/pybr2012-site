@@ -6,3 +6,4 @@ MySQL-python==1.2.3
 South==0.7.3
 django-registration==0.8
 requests==0.12.1
+lxml==2.3.4
