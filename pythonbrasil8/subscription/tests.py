@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
 from pythonbrasil8.subscription.views import SubscriptionView
+from pythonbrasil8.subscription import views
 
 
 class SubscriptionModelTestCase(TestCase):
@@ -65,6 +66,21 @@ class SubscriptionViewTestCase(TestCase):
         self.request = RequestFactory().post("/", {})
         self.request.user = self.user
 
+        self.requests_original = views.requests
+
+        class ResponseMock(object):
+            content = "<code>xpto123</code>"
+            def ok(self):
+                return True
+
+        def post(self, *args, **kwargs):
+            return ResponseMock()
+
+        views.requests.post = post
+
+    def tearDown(self):
+        views.requests = self.requests_original
+
     def test_subscription_view_should_create_a_subscription_for_the_current_user(self):
         response = SubscriptionView.as_view()(self.request)
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
@@ -76,3 +92,15 @@ class SubscriptionViewTestCase(TestCase):
         response = SubscriptionView.as_view()(self.request)
         self.assertEqual(500, response.status_code)
         self.assertEqual("you should be logged in.", response.content)
+
+    def test_generate_transaction(self):
+        subscription = Subscription.objects.create(
+            status='pending',
+            type='talk',
+           user=self.user,
+        )
+
+        transaction = SubscriptionView().generate_transaction(subscription)
+        self.assertEqual(subscription, transaction.subscription)
+        self.assertEqual("xpto123", transaction.code)
+
