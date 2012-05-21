@@ -99,8 +99,6 @@ class SubscriptionViewTestCase(TestCase):
             type='talk',
            user=self.user,
         )
-
         transaction = SubscriptionView().generate_transaction(subscription)
         self.assertEqual(subscription, transaction.subscription)
         self.assertEqual("xpto123", transaction.code)
-
