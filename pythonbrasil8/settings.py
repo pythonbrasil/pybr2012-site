@@ -45,6 +45,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 SECRET_KEY = 'i)=$2sz)alxoe0v9qtpur*_cmwyxuft!#w=#i3)=+4fvu1*)ex'
@@ -101,6 +102,7 @@ INSTALLED_APPS = (
     'mittun.sponsors',
     'django.contrib.admin',
     'django_nose',
+    'compressor',
     'south',
     'registration',
     'pythonbrasil8.dashboard',
@@ -156,6 +158,9 @@ PAGSEGURO_BASE = 'https://ws.pagseguro.uol.com.br/v2'
 PAGSEGURO_CHECKOUT = '%s/checkout' % PAGSEGURO_BASE
 PAGSEGURO_TRANSACTIONS = '%s/transactions' % PAGSEGURO_BASE
 PAGSEGURO_TRANSACTIONS_NOTIFICATIONS = '%s/notifications' % PAGSEGURO_TRANSACTIONS
+
+COMPRESS_OFFLINE = True
+COMPRESS_ENABLED = True
 
 try:
     from settings_local import *

@@ -2,17 +2,20 @@
 {% load menu %}
 {% load i18n %}
 {% load setting %}
+{% load compress %}
 <html>
     <head>
         <title>{% block title %}PythonBrasil[8]{% endblock %}</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+        {% compress css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/social.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css" type="text/css" />
+        {% endcompress %}
         <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
         {% block css %}{% endblock %}
         {% block js_top %}{% endblock %}
@@ -45,7 +48,7 @@
                             <li class="{% is_active request.path 'previous-version' %}">
                                 <a href="{% url previous-version %}">{% trans "previous version" %}</a>
                             </li>
-                            
+
                        </ul>
                     </div>
                 </div>
@@ -120,6 +123,7 @@
             <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
         </a>
 
+        {% compress js %}
         <script src="/static/js/mootools-1.4.5.js" type="text/javascript" charset="utf-8"></script>
         <script>
             (function(global) {
@@ -131,9 +135,12 @@
                 });
             })(window);
         </script>
+        {% endcompress %}
+
         {% block js_social %}
             <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
             <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            {% compress js %}
             <script>(function(d, id){
                 var js; if (d.getElementById(id)) {return;}
                 js = d.createElement('script'); js.id = id; js.async = true;
@@ -141,6 +148,7 @@
                 d.getElementsByTagName('head')[0].appendChild(js);
                 })(document, 'facebook-jssdk');
             </script>
+            {% endcompress %}
         {% endblock %}
         {% block js_bottom %}{% endblock %}
     </body>
