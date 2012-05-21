@@ -15,6 +15,7 @@ def update_app():
 
 def collect_static_files():
     with cd(env.app_root):
+        run("%(virtualenv)s/bin/python manage.py compress" % env)
         run("%(virtualenv)s/bin/python manage.py collectstatic -v 0 --noinput" % env)
 
 
