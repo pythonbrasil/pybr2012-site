@@ -3,7 +3,7 @@ from django.views.generic import ListView
 from django.views.generic import TemplateView
 
 #from mittun.sponsors.views import SponsorsView
-from mittun.sponsors.models import Sponsor, Category
+from mittun.sponsors.models import Sponsor, Category, Job
 from mittun.events.models import Event
 
 
@@ -49,3 +49,8 @@ class SponsorsInfoView(TemplateView):
 
 class SuccessfulPreRegistration(TemplateView):
     template_name = 'success_pre_registration.html'
+
+class SponsorsJobsView(ListView):
+    template_name = 'sponsors_jobs.html'
+    model = Job
+    context_object_name = 'jobs'

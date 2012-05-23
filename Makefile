@@ -19,7 +19,10 @@ setup: deps
 	@python manage.py loaddata pythonbrasil8/fixtures/initial_data.json
 
 settings:
-	@test -e pythonbrasil8/settings_local.py || cp pythonbrasil8/settings_local.py{.example,}
+	cp pythonbrasil8/settings_local.py{.example,}
 
 run:
 	@python manage.py runserver 0.0.0.0:8000
+
+help:
+	grep '^[^#[:space:]].*:' Makefile | awk -F ":" '{print $$1}'

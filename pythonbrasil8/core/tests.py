@@ -122,3 +122,22 @@ class InternationalizationWorkingFormAcceptLanguageTestCase(TestCase):
         response = Client().get('%s/sponsors/' % self.base_url, HTTP_ACCEPT_LANGUAGE='en-us')
         self.assertEqual(200, response.status_code)
         self.assertIn('Diamond', response.content)
+
+class SporsorsJobViewTestCase(TestCase):
+
+    def setUp(self):
+        self.sponsors_jobs_view = views.SponsorsJobsView()
+
+    def test_url_should_be_accessable(self):
+        response = Client().get('/sponsors/jobs/')
+        self.assertEqual(200, response.status_code)
+
+    def test_template_name_should_be_sporsors_jobs(self):
+        self.assertEqual("sponsors_jobs.html", self.sponsors_jobs_view.template_name)
+
+    def test_model_should_be_jobs(self):
+        self.assertEqual(models.Job, self.sponsors_jobs_view.model)
+
+    def test_context_object_name_should_be_jobs(self):
+        self.assertEqual("jobs", self.sponsors_jobs_view.context_object_name)
+

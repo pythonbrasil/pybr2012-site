@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="jobs">
+    <h2>Python Jobs</h2>
+    {% for job in jobs %}
+        <div class='job'>
+            <img src="{{ job.company.logo.url }}" title='{{ job.company.name }}'/>
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
