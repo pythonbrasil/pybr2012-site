@@ -157,3 +157,8 @@ class NotificationViewTestCase(TestCase):
         NotificationView().transaction_canceled(subscription.id)
         transaction = Transaction.objects.get(id=transaction.id)
         self.assertEqual("canceled", transaction.status)
+
+    def test_methods_by_status(self):
+        methods_by_status = NotificationView().methods_by_status
+        self.assertEqual("transaction_done", methods_by_status[3].__name__)
+        self.assertEqual("transaction_canceled", methods_by_status[7].__name__)

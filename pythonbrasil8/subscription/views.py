@@ -42,6 +42,13 @@ class SubscriptionView(LoguinRequiredMixin, View):
 
 class NotificationView(View):
 
+    def __init__(self, *args, **kwargs):
+        self.methods_by_status = {
+            3: self.transaction_done,
+            7: self.transaction_canceled,
+        }
+        return super(NotificationView, self).__init__(*args, **kwargs)
+
     def transaction(self, transaction_code):
         url_transacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS, transaction_code, settings.PAGSEGURO[    "email"], settings.PAGSEGURO["token"])
         url_notificacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS_NOTIFICATIONS, transaction_code, settings.PAGSEGURO["email"], settings.PAGSEGURO["token"])
