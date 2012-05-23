@@ -23,3 +23,6 @@ settings:
 
 run:
 	@python manage.py runserver 0.0.0.0:8000
+
+help:
+	grep '^[^#[:space:]].*:' Makefile | awk -F ":" '{print $$1}'
