@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
-from pythonbrasil8.subscription.views import SubscriptionView
+from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
 from pythonbrasil8.subscription import views
 
 
@@ -63,7 +63,7 @@ class SubscriptionViewTestCase(TestCase):
 
     def setUp(self):
         self.user = User.objects.create(username="Wolverine")
-        self.request = RequestFactory().post("/", {})
+        self.request = RequestFactory().get("/", {})
         self.request.user = self.user
 
         self.requests_original = views.requests
@@ -102,3 +102,27 @@ class SubscriptionViewTestCase(TestCase):
         transaction = SubscriptionView().generate_transaction(subscription)
         self.assertEqual(subscription, transaction.subscription)
         self.assertEqual("xpto123", transaction.code)
+
+
+class NotificationViewTestCase(TestCase):
+
+    def setUp(self):
+        self.requests_original = views.requests
+
+        class ResponseMock(object):
+            content = "<xml><status>3</status><reference>3</reference></xml>"
+            def ok(self):
+                return True
+
+        def get(self, *args, **kwargs):
+            return ResponseMock()
+
+        views.requests.get = get
+
+    def tearDown(self):
+        views.requests = self.requests_original
+
+    def test_transaction_should_get_info_about_transaction(self):
+        status, ref = NotificationView().transaction("code")
+        self.assertEqual(3, status)
+        self.assertEqual(3, ref)
