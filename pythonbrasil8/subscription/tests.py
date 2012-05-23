@@ -84,14 +84,14 @@ class SubscriptionViewTestCase(TestCase):
     def test_subscription_view_should_create_a_subscription_for_the_current_user(self):
         response = SubscriptionView.as_view()(self.request)
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
-        self.assertEqual(200, response.status_code)
-        self.assertEqual("subscription created with success!", response.content)
+        self.assertEqual(302, response.status_code)
+        self.assertEqual("/dashboard/", response.items()[1][1])
 
     def test_should_returns_error_when_user_is_not_logged(self):
-        self.request.user = None
+        self.request.user.is_authenticated = lambda : False
         response = SubscriptionView.as_view()(self.request)
-        self.assertEqual(500, response.status_code)
-        self.assertEqual("you should be logged in.", response.content)
+        self.assertEqual(302, response.status_code)
+        self.assertIn('/accounts/login/', response.items()[1][1])
 
     def test_generate_transaction(self):
         subscription = Subscription.objects.create(

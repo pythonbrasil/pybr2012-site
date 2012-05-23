@@ -1,15 +1,17 @@
 from django.views.generic import View
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.conf import settings
 
 from lxml import etree
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
+from pythonbrasil8.dashboard.views import LoguinRequiredMixin
 
 import requests
 
 
-class SubscriptionView(View):
+class SubscriptionView(LoguinRequiredMixin, View):
+
     def generate_transaction(self, subscription):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         payload = settings.PAGSEGURO
@@ -29,12 +31,10 @@ class SubscriptionView(View):
         return Transaction.objects.none()
 
     def post(self, request, *args, **kwargs):
-        if request.user:
-            subscription = Subscription.objects.create(
-                status='pending',
-                type='talk',
-                user=request.user,
-            )
-            self.generate_transaction(subscription)
-            return HttpResponse("subscription created with success!")
-        return HttpResponse("you should be logged in.", status=500)
+        subscription = Subscription.objects.create(
+            status='pending',
+            type='talk',
+            user=request.user,
+        )
+        self.generate_transaction(subscription)
+        return HttpResponseRedirect("/dashboard/")
