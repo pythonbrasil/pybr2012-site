@@ -1,3 +1,5 @@
+from settings import *
+
 import os
 
 EMAIL_HOST_USER = 'youremail@domain.com'

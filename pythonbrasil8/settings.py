@@ -161,8 +161,3 @@ PAGSEGURO_TRANSACTIONS_NOTIFICATIONS = '%s/notifications' % PAGSEGURO_TRANSACTIO
 
 COMPRESS_OFFLINE = True
 COMPRESS_ENABLED = False
-
-try:
-    from settings_local import *
-except ImportError:
-    pass
