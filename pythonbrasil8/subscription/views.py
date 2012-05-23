@@ -1,5 +1,5 @@
 from django.views.generic import View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 
 from lxml import etree
@@ -72,3 +72,15 @@ class NotificationView(View):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "canceled"
         transaction.save()
+
+    def post(self, request):
+        notification_code = request.POST.get("notificationCode")
+
+        if notification_code:
+            status, subscription_id = self.transaction(notification_code)
+            method = self.methods_by_status.get(status)
+
+            if method:
+                method(subscription_id)
+
+        return HttpResponse("OK")

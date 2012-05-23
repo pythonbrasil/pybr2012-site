@@ -162,3 +162,23 @@ class NotificationViewTestCase(TestCase):
         methods_by_status = NotificationView().methods_by_status
         self.assertEqual("transaction_done", methods_by_status[3].__name__)
         self.assertEqual("transaction_canceled", methods_by_status[7].__name__)
+
+    def test_post(self):
+        subscription = Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        transaction = Transaction.objects.create(
+            subscription=subscription,
+            status="pending",
+            code="xpto",
+        )
+        notification_view = NotificationView()
+        notification_view.transaction = (lambda code: (3, 1))
+        request = RequestFactory().post("/", {"notificationCode": "123"})
+
+        response = notification_view.post(request)
+
+        transaction = Transaction.objects.get(id=transaction.id)
+        self.assertEqual("done", transaction.status)
+        self.assertEqual("OK", response.content)
