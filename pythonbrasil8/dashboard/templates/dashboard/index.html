@@ -19,7 +19,7 @@
         <p>Sua inscrição já foi efetuada. Mas o pagamento da taxa ainda não foi efetuado. <a href="#">Deseja efetuar o pagamento agora?</a></p>
         {% endif %}
     {% else %}
-        <p>Você ainda não está inscrito na pythonbrasil[8]. <a href="#">Deseja inscrever-se agora?</a></p>
+    <p>Você ainda não está inscrito na pythonbrasil[8]. <a href="{% url talk-subscription %}">Deseja inscrever-se agora?</a></p>
     {% endif %}
 </div>
 {% endblock %}
