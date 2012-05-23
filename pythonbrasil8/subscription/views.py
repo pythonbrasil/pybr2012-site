@@ -26,13 +26,13 @@ class SubscriptionView(LoguinRequiredMixin, View):
             transaction = Transaction.objects.create(
                 subscription=subscription,
                 code=transaction_code,
+                status='pending',
             )
             return transaction
         return Transaction.objects.none()
 
     def get(self, request, *args, **kwargs):
         subscription = Subscription.objects.create(
-            status='pending',
             type='talk',
             user=request.user,
         )
@@ -55,3 +55,13 @@ class NotificationView(View):
             referencia = int(dom.xpath("//reference")[0].text)
             return status_transacao, referencia
         return None, None
+
+    def transaction_done(self, subscription_id):
+        transaction = Transaction.objects.get(subscription_id=subscription_id)
+        transaction.status = "done"
+        transaction.save()
+
+    def transaction_canceled(self, subscription_id):
+        transaction = Transaction.objects.get(subscription_id=subscription_id)
+        transaction.status = "canceled"
+        transaction.save()

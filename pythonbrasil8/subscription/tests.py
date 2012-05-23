@@ -48,6 +48,9 @@ class TransacitonModelTestCase(TestCase):
     def test_should_have_code(self):
         self.assert_field_in('code', Transaction)
 
+    def test_should_have_status(self):
+        self.assert_field_in('status', Transaction)
+
     def test_should_have_subscription(self):
         self.assert_field_in('subscription', Transaction)
 
@@ -95,9 +98,8 @@ class SubscriptionViewTestCase(TestCase):
 
     def test_generate_transaction(self):
         subscription = Subscription.objects.create(
-            status='pending',
             type='talk',
-           user=self.user,
+            user=self.user,
         )
         transaction = SubscriptionView().generate_transaction(subscription)
         self.assertEqual(subscription, transaction.subscription)
@@ -107,6 +109,7 @@ class SubscriptionViewTestCase(TestCase):
 class NotificationViewTestCase(TestCase):
 
     def setUp(self):
+        self.user = User.objects.create(username="Wolverine")
         self.requests_original = views.requests
 
         class ResponseMock(object):
@@ -126,3 +129,31 @@ class NotificationViewTestCase(TestCase):
         status, ref = NotificationView().transaction("code")
         self.assertEqual(3, status)
         self.assertEqual(3, ref)
+
+    def test_transaction_done(self):
+        subscription = Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        transaction = Transaction.objects.create(
+            subscription=subscription,
+            status="pending",
+            code="xpto",
+        )
+        NotificationView().transaction_done(subscription.id)
+        transaction = Transaction.objects.get(id=transaction.id)
+        self.assertEqual("done", transaction.status)
+
+    def test_transaction_canceled(self):
+        subscription = Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        transaction = Transaction.objects.create(
+            subscription=subscription,
+            status="pending",
+            code="xpto",
+        )
+        NotificationView().transaction_canceled(subscription.id)
+        transaction = Transaction.objects.get(id=transaction.id)
+        self.assertEqual("canceled", transaction.status)
