@@ -160,4 +160,10 @@ PAGSEGURO_TRANSACTIONS = '%s/transactions' % PAGSEGURO_BASE
 PAGSEGURO_TRANSACTIONS_NOTIFICATIONS = '%s/notifications' % PAGSEGURO_TRANSACTIONS
 
 COMPRESS_OFFLINE = True
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
+
+try:
+    from settings_local import *
+except ImportError:
+    pass
+>>>>>>> upstream/master
