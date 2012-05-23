@@ -18,4 +18,3 @@ class Subscription(models.Model):
 class Transaction(models.Model):
     subscription = models.ForeignKey("Subscription")
     code = models.CharField(max_length=50)
-
