@@ -11,7 +11,7 @@ jasminedeps: deps
 	@pip install -r test_requirements.txt
 
 jasmine: jasminedeps
-	@jasmine-splinter -f `pwd`/pythonbrasil8/static_files/tests/jasmine/SpecRunner.html
+	@jasmine-splinter -f `pwd`/pythonbrasil8/static_files/tests/jasmine/SpecRunner.html -b chrome
 
 setup: deps
 	@python manage.py syncdb
