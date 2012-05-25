@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from pythonbrasil8.schedule.models import Session
 from pythonbrasil8.schedule.forms import SessionForm
-from pythonbrasil8.schedule.views import session_subscribe_view
+from pythonbrasil8.schedule.views import SubscribeView
 
 
 class SessionModelTestCase(TestCase):
@@ -46,15 +46,15 @@ class SessionViewTestCase(TestCase):
         self.request.user = User()
 
     def test_should_returns_200_when_accessed_by_get(self):
-        result = session_subscribe_view(self.request)
+        result = SubscribeView.as_view()(self.request)
         self.assertEqual(200, result.status_code)
 
     def test_should_be_use_a_expected_template(self):
-        result = session_subscribe_view(self.request)
-        self.assertEqual('schedule/subscribe.html', result.template_name)
+        result = SubscribeView.as_view()(self.request)
+        self.assertEqual(['schedule/subscribe.html'], result.template_name)
 
     def test_should_be_form_in_context(self):
-        result = session_subscribe_view(self.request)
+        result = SubscribeView.as_view()(self.request)
         self.assertIn('form', result.context_data)
         self.assertIsInstance(result.context_data['form'], SessionForm)
 
@@ -69,7 +69,7 @@ class SessionViewTestCase(TestCase):
         }
         request = RequestFactory().post("/", data)
         request.user = User()
-        result = session_subscribe_view(request)
+        result = SubscribeView.as_view()(request)
         self.assertEqual(302, result.status_code)
         session = Session.objects.get(title=data["title"])
         self.assertTrue(session.id)
