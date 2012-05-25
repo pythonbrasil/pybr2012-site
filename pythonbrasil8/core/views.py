@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView
 from django.views.generic import TemplateView
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 #from mittun.sponsors.views import SponsorsView
 from mittun.sponsors.models import Sponsor, Category, Job
@@ -50,7 +52,14 @@ class SponsorsInfoView(TemplateView):
 class SuccessfulPreRegistration(TemplateView):
     template_name = 'success_pre_registration.html'
 
+
 class SponsorsJobsView(ListView):
     template_name = 'sponsors_jobs.html'
     model = Job
     context_object_name = 'jobs'
+
+
+class LoginRequiredMixin(object):
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(*args, **kwargs)
