@@ -5,12 +5,12 @@ from django.conf import settings
 from lxml import etree
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
-from pythonbrasil8.dashboard.views import LoguinRequiredMixin
+from pythonbrasil8.core.views import LoginRequiredMixin
 
 import requests
 
 
-class SubscriptionView(LoguinRequiredMixin, View):
+class SubscriptionView(LoginRequiredMixin, View):
 
     def generate_transaction(self, subscription):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}

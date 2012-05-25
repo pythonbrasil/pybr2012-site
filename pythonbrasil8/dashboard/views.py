@@ -1,25 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView, UpdateView
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required
 
 from pythonbrasil8.schedule.models import Session
 from pythonbrasil8.dashboard.forms import ProfileForm
 from pythonbrasil8.dashboard.models import AccountProfile
+from pythonbrasil8.core.views import LoginRequiredMixin
 
 
-class LoguinRequiredMixin(object):
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(LoguinRequiredMixin, self).dispatch(*args, **kwargs)
-
-
-class DashBoardView(LoguinRequiredMixin, TemplateView):
+class DashBoardView(LoginRequiredMixin, TemplateView):
     pass
 
 
-class ProfileView(LoguinRequiredMixin, UpdateView):
+class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
     model = AccountProfile
     form_class = ProfileForm
