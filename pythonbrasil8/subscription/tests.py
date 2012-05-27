@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.test.client import RequestFactory
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse, NoReverseMatch
 
 from pythonbrasil8.subscription.models import Subscription, Transaction
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
@@ -9,6 +10,12 @@ from pythonbrasil8.subscription import views
 
 
 class SubscriptionModelTestCase(TestCase):
+
+    def test_name_url(self):
+        try:
+            reverse('talk-subscription')
+        except NoReverseMatch:
+            self.fail("Reversal of url named 'talk-subscription' failed with NoReverseMatch")
 
     def test_should_have_type(self):
         self.assert_field_in('type', Subscription)
