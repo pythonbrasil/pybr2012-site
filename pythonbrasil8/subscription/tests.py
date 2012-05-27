@@ -132,6 +132,12 @@ class NotificationViewTestCase(TestCase):
     def tearDown(self):
         views.requests = self.requests_original
 
+    def test_name_url(self):
+        try:
+            reverse('notification')
+        except NoReverseMatch:
+            self.fail("Reversal of url named 'notification' failed with NoReverseMatch")
+
     def test_transaction_should_get_info_about_transaction(self):
         status, ref = NotificationView().transaction("code")
         self.assertEqual(3, status)
