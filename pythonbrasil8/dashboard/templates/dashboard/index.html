@@ -14,12 +14,12 @@
     <h2>Subscription</h2>
     {% if request.user.get_profile.has_talk_subscription %}
         {% if request.user.get_profile.talk_subscription.status == "ok" %}
-        <p>Você já está cadastrado na pythonbrasil[8]</p>
+            <p>Você já está cadastrado na pythonbrasil[8]</p>
         {% else %}
-        <p>Sua inscrição já foi efetuada. Mas o pagamento da taxa ainda não foi efetuado. <a href="#">Deseja efetuar o pagamento agora?</a></p>
+            <p>Sua inscrição já foi efetuada. Mas o pagamento da taxa ainda não foi efetuado. <a href="https://pagseguro.uol.com.br/v2/checkout/payment.html?code={{ request.user.get_profile.talk_subscription.transactions_set.0.code }}">Deseja efetuar o pagamento agora?</a></p>
         {% endif %}
     {% else %}
-    <p>Você ainda não está inscrito na pythonbrasil[8]. <a href="{% url talk-subscription %}">Deseja inscrever-se agora?</a></p>
+        <p>Você ainda não está inscrito na pythonbrasil[8]. <a href="{% url talk-subscription %}">Deseja inscrever-se agora?</a></p>
     {% endif %}
 </div>
 {% endblock %}
