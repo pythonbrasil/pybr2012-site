@@ -40,3 +40,7 @@ We need your help! Please, report bugs and share patches, based on our `Issues <
 Don't worry if you can't assign an issue to yourself, simply comment that you'll be working on it.
 
 Please, if we don't do it, add or remind us of adding your name to the contributors.txt. Thank you!
+
+Build status
+------------
+.. image:: https://secure.travis-ci.org/PythonBrasil8/pythonbrasil8.png?branch=master
