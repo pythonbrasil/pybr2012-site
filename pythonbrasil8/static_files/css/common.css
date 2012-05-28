@@ -1,4 +1,3 @@
-
 #pre-register a {
     width: 185px;
     height: 39px;
@@ -122,8 +121,9 @@ body {
 }
 
 .dates {
-    background: url('/static/images/header/white-dashed-border.png') #efefef repeat-x;
+    background-color: #efefef;
     height: 85px;
+    border-bottom: 1px solid #ddd;
 }
 
 
@@ -236,7 +236,7 @@ body {
 /*** FOOTER ***/
 
 #footer {
-    background: url('/static/images/header/sprite.png') #1b1f20 left -538px repeat-x;
+    background-color: #1b1f20;
     padding-bottom: 20px;
 }
 
