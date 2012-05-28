@@ -11,6 +11,9 @@ from pythonbrasil8.subscription import views
 
 class SubscriptionModelTestCase(TestCase):
 
+    def setUp(self):
+        self.user = User.objects.create(username="Wolverine")
+
     def test_name_url(self):
         try:
             reverse('talk-subscription')
@@ -46,6 +49,32 @@ class SubscriptionModelTestCase(TestCase):
         self.assertIsInstance(date_field, models.DateTimeField)
         self.assertTrue(date_field.auto_now_add)
 
+    def test_subscription_done_should_be_false_if_has_not_a_transaction(self):
+        self.assertFalse(Subscription().done())
+
+    def test_subscription_done_should_be_false_if_transactions_isnt_done(self):
+        subscription = Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        Transaction.objects.create(
+            subscription=subscription,
+            status="pending",
+            code="xpto",
+        )
+        self.assertFalse(subscription.done())
+
+    def test_subscription_done_should_be_truth_if_transactions_is_done(self):
+        subscription = Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        Transaction.objects.create(
+            subscription=subscription,
+            status="done",
+            code="xpto",
+        )
+        self.assertTrue(subscription.done())
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 

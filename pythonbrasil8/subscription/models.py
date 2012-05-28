@@ -13,6 +13,9 @@ class Subscription(models.Model):
     user = models.ForeignKey(User)
     type = models.CharField(max_length=25, choices=TYPE)
 
+    def done(self):
+        return self.transaction_set.filter(status="done").exists()
+
 
 class Transaction(models.Model):
     subscription = models.ForeignKey("Subscription")
