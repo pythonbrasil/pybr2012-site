@@ -1,5 +1,7 @@
 from django.views.generic import View
 from django.http import HttpResponseRedirect, HttpResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
 from lxml import etree
@@ -72,6 +74,10 @@ class NotificationView(View):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "canceled"
         transaction.save()
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super(NotificationView, self).dispatch(*args, **kwargs)
 
     def post(self, request):
         notification_code = request.POST.get("notificationCode")
