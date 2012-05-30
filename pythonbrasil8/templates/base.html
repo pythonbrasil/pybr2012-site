@@ -23,6 +23,37 @@
 
     <body>
         <div id="fb-root"></div>
+        <div id="header2">
+            <div class="row">
+                <div class="column grid_3">
+                    <div id="logo2">
+                        <a href="{% url home %}" title="PythonBrasil[8]">PythonBrasil[8]</a>
+                    </div>
+                </div>
+                <div class="column grid_9" id="menu">
+                    <ul>
+                        <li class="{% is_active request.path 'home' %}">
+                        <a href="{% url home %}">{% trans "home" %}</a>
+                        </li>
+                        <li class="{% is_active request.path 'pre-registration' %}">
+                            <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
+                        </li>
+                        <li class="{% is_active request.path 'venue' %}">
+                            <a href="{% url venue %}">{% trans "venue" %}</a>
+                        </li>
+                        <li class="{% is_active request.path 'custom-sponsors' %}">
+                            <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
+                        </li>
+                        <li class="{% is_active request.path 'previous-version' %}">
+                            <a href="{% url previous-version %}">{% trans "previous version" %}</a>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+            <div id="social" class="row">
+                {% include "social.html" with twitter_data_text="Vai rolar a #PythonBrasil8 no Rio. Impossível perder."%}
+            </div>
+        {% comment %}
         <div id="header">
             <div class="inner">
 
@@ -69,13 +100,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <div id="pre-register">
-                    <p>
-                        <a href="{% url pre-registration %}" title="register now"><span>{% trans "register now" %} »</span></a>
-                    </p>
-
-                </div>
                 {% block social %}
                     <div id="social" class="row">
                        {% include "social.html" with twitter_data_text="Vai rolar a #PythonBrasil8 no Rio. Impossível perder."%}
@@ -83,6 +107,7 @@
                 {% endblock %}
             </div>
         </div>
+        {% endcomment %}
         <div class="dates">
             <div class="wrapper">
                 <div class="dates-container">

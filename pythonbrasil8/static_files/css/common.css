@@ -141,8 +141,22 @@ body {
 }
 
 #logo {
-    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+    background: url('/static/images/header/logo.png') no-repeat;
     position: absolute;
+}
+
+#header2 {
+    padding: 20px;
+}
+
+#logo2 {
+    background: url('/static/images/header/logo.png') no-repeat;
+}
+
+#logo2 a {
+    display: block;
+    height: 37px;
+    text-indent: -9999px;
 }
 
 #logo a {
@@ -168,10 +182,7 @@ body {
 }
 
 #menu ul {
-    padding: 5px 0;
-    position: absolute;
-    right: 40px;
-    top: 5px;
+    float: right;
 }
 
 #menu li {
@@ -186,12 +197,11 @@ body {
 }
 
 #menu li.active {
-    background: url('/static/images/header/sprite.png') left 3px no-repeat;
+    background-color: #004592;
     padding-left: 16px;
 }
 
 #menu li.active a {
-    background: url('/static/images/header/sprite.png') right 3px no-repeat;
     padding: 10px 16px 10px 0;
 }
 
