@@ -2,6 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+PRICES = (
+    ('student', 150),
+    ('apyb', 150),
+    ('individual', 250),
+)
+
+
 class Subscription(models.Model):
 
     TYPE = (

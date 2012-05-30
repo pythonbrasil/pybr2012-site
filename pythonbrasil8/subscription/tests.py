@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse, NoReverseMatch
 
-from pythonbrasil8.subscription.models import Subscription, Transaction
+from pythonbrasil8.subscription.models import Subscription, Transaction, PRICES
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
 from pythonbrasil8.subscription import views
 
@@ -224,3 +224,13 @@ class NotificationViewTestCase(TestCase):
         transaction = Transaction.objects.get(id=transaction.id)
         self.assertEqual("done", transaction.status)
         self.assertEqual("OK", response.content)
+
+class PricesTestCase(TestCase):
+
+    def test_prices(self):
+        expected = (
+            ('student', 150),
+            ('apyb', 150),
+            ('individual', 250),
+        )
+        self.assertTupleEqual(expected, PRICES)
