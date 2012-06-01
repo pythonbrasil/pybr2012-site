@@ -45,6 +45,7 @@ class SponsorsInfoViewTestCase(TestCase):
 
 
 class CustomSponsorsViewTestCase(TestCase):
+    fixtures = ['sponsors.json']
 
     def setUp(self):
         self.base_url = "http://localhost:8888"
@@ -61,6 +62,17 @@ class CustomSponsorsViewTestCase(TestCase):
     def test_should_have_sponsors_category_on_the_context(self):
         self.assertIn('sponsors_categories', self.response.context_data.keys())
 
+    def test_should_order_the_sponsors_correctly(self):
+        sponsor_categories = self.response.context_data['sponsors_categories']
+
+        self.assertEqual(3, len(sponsor_categories))
+        sponsor_1_category = sponsor_categories[0].name_en_us
+        sponsor_2_category = sponsor_categories[1].name_en_us
+        sponsor_3_category = sponsor_categories[2].name_en_us
+
+        self.assertEqual("Diamond", sponsor_1_category)
+        self.assertEqual("Gold", sponsor_2_category)
+        self.assertEqual("FOSS", sponsor_3_category)
 
 class SuccessfulPreRegistrationTestCase(TestCase):
 
