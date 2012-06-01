@@ -61,6 +61,7 @@ body {
 .dates p {
     color: #474747;
     margin-top: 5px;
+    line-height: 26px;
 }
 
 #footer p {
@@ -96,19 +97,20 @@ body {
     color: #2471A9;
 }
 
-.dates .inner {
-    margin: 15px 20px;
-    float: left;
+.dates {
+    background-color: #efefef;
+    height: 85px;
+    border-bottom: 1px solid #ddd;
 }
 
 .dates .dates-container {
-    margin: 0 auto;
-    float: none;
-    width: 415px
+    float: left;
+    width: 902px;
+    margin-left: 160px;
 }
 
-.dates-container {
-    width: 39%;
+.dates .inner {
+    margin: 15px 150px 15px 0px;
     float: left;
 }
 
@@ -119,13 +121,6 @@ body {
 .wrapper {
     margin: 0 8%;
 }
-
-.dates {
-    background-color: #efefef;
-    height: 85px;
-    border-bottom: 1px solid #ddd;
-}
-
 
 /*** HEADER ***/
 

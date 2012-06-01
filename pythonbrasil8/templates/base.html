@@ -39,11 +39,14 @@
                             <li class="{% is_active request.path 'pre-registration' %}">
                                 <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
                             </li>
+                            <li class="{% is_active request.path 'schedule' %}">
+                                <a href="{% url schedule %}" title="register now">{% trans "schedule" %}</a>
+                            </li>
                             <li class="{% is_active request.path 'venue' %}">
                                 <a href="{% url venue %}">{% trans "venue" %}</a>
                             </li>
                             <li class="{% is_active request.path 'custom-sponsors' %}">
-                                <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
+                                <a href="{% url custom-sponsors %}">{% trans "sponsor" %}</a>
                             </li>
                             <li class="{% is_active request.path 'previous-version' %}">
                                 <a href="{% url previous-version %}">{% trans "previous version" %}</a>
@@ -87,12 +90,16 @@
             <div class="wrapper">
                 <div class="dates-container">
                     <div class="inner">
-                        <h4>{% trans "Tutorials" %}</h4>
-                        <p>{% trans "November" %} 21 - 22</p>
+                        <p>{% trans "Sprints" %}</p>
+                        <h4>{% trans "November" %} 20</h4>
                     </div>
                     <div class="inner">
-                        <h4>{% trans "Talks & Exposition Hall" %}</h4>
-                        <p>{% trans "November" %} 23 - 24</p>
+                        <p>{% trans "Tutorials" %}</p>
+                        <h4>{% trans "November" %} 21 - 22</h4>
+                    </div>
+                    <div class="inner">
+                        <p>{% trans "Talks & Exposition Hall" %}</p>
+                        <h4>{% trans "November" %} 23 - 24</h4>
                     </div>
                     <div class="clearfix"></div>
                 </div>
