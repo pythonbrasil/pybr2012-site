@@ -30,6 +30,11 @@
     padding-bottom: 20px;
 }
 
+.sponsor .logo {
+  height: 100px;
+  overflow: hidden;
+}
+
 .become {
     font-size: 12px;
     color: #fff;
