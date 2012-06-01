@@ -18,6 +18,15 @@
         }
     },
     {
+        "model": "sponsors.Category",
+        "pk": 3,
+        "fields": {
+            "name_en_us": "Gold",
+            "name_pt_br": "Ouro",
+            "priority": 1
+        }
+    },    
+    {
         "model": "sponsors.Sponsor",
         "pk": 1,
         "fields": {
@@ -49,7 +58,7 @@
             "description_en_us": "no description left for you",
             "description_pt_br": "no description left for you",
             "url": "http://andrewsmedina.com",
-            "category": 2,
+            "category": 3,
             "logo": "/tmp/no-logo.jpg"
         }
     },
@@ -61,7 +70,7 @@
             "description_en_us": "no description left for you",
             "description_pt_br": "no description left for you",
             "url": "http://andrewsmedina.com",
-            "category": 2,
+            "category": 3,
             "logo": "/tmp/no-logo.jpg"
         }
     },

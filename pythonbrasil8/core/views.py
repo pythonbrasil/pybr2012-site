@@ -16,7 +16,7 @@ class CustomSponsorsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CustomSponsorsView, self).get_context_data(**kwargs)
-        context['sponsors_categories'] = Category.objects.all()
+        context['sponsors_categories'] = Category.objects.all().order_by('priority')
         return context
 
 
