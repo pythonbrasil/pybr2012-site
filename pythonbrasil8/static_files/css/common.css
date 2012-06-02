@@ -261,5 +261,28 @@ a:visited {color: #1E5D8B}
     margin: 41px 0 0 20px;
 }
 
+.btn {
+    border-radius: 3px;
+    border: 1px solid #2471A9;
+    background-color: #2471A9;
+    background-image: linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -moz-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -ms-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -o-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -webkit-linear-gradient(top, #24AAFF, #2471A9);
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    padding: 5px 10px;
+    text-align: center;
+}
 
+.btn:hover {
+    background-image: none;
+    text-decoration: none;
+}
 
+.btn:visited, .btn:active, .btn:hover {
+    color: #FFF;
+}
