@@ -8,9 +8,9 @@ env.app_root = os.path.join(env.project_root, 'pythonbrasil8')
 env.virtualenv = '/home/pythonbrasil/env'
 
 
-def update_app():
+def update_app(tag):
     with cd(env.project_root):
-        run("git pull")
+        run("git pull origin %s" % tag)
 
 
 def collect_static_files():
@@ -52,8 +52,8 @@ def limpar_pycs():
         run("find . -name \"*.pyc\" | xargs rm -f ")
 
 
-def deploy():
-    update_app()
+def deploy(tag):
+    update_app(tag)
     pip_install()
     limpar_pycs()
     collect_static_files()
