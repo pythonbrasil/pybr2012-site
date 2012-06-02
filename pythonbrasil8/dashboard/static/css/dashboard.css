@@ -7,7 +7,7 @@
     display: block;
     font-size: 20px;
     margin: 0 auto;
-    width: 42%;
+    width: 45%;
 }
 
 #menu-dashboard ul li {
@@ -16,12 +16,12 @@
 
 #menu-dashboard ul li a {
     display: block;
-    padding: 20px 5px;
+    padding: 20px 10px;
 }
 
 #menu-dashboard ul li a:hover, #menu-dashboard ul li a.active {
     border: 1px #CCC solid;
     border-bottom: 0;
     background-color: #FFF;
-    padding: 20px 4px;
+    padding: 20px 9px;
 }
