@@ -10,11 +10,11 @@
 {% block content %}
 <div class="row">
     <div class="column grid_12">
-        <h1>{% trans "ABOUT PYTHONBRASIL SPONSORS" %}</h1>
+        <h1>{% trans "PYTHONBRASIL SPONSORS" %}</h1>
     </div>
 </div>
 <div class="row">
-    <div class="column grid_10">
+    <div class="column grid_10" id="sponsors-info">
     {% for category in sponsors_categories %}
         {% if category.sponsor_set.all %}
         <div class="row category">

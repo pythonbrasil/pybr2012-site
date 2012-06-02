@@ -31,70 +31,52 @@
         The conference is organized by the Python community for the community. We try to keep registration far cheaper than most comparable technology conferences, to keep PythonBrasil accessible to the widest group possible. {% endblocktrans %} <a href="{% url pre-registration %}">{% trans "Join us!" %}</a>
         <br><br>
         </p>
+        <div class="contact">
+            <h2>{% trans "Contact" %}</h2>
+            <ul>
+                <li>
+                    <img src="{{ STATIC_URL }}images/about/ico_email.png" alt="Mail us" width="58" height="59" />
+                    <span class="contact">Tati Al-Chueyr, Conference Chair</span>
+                    <a href="mailto:tati_alchueyr@python.org.br">tati_alchueyr@python.org.br</a>
+                </li>
+                <li>
+                    <img src="{{ STATIC_URL }}images/about/ico_email.png" alt="Mail us" width="58" height="59" />
+                    <span class="contact">Álvaro Justen "Turicas", Conference Chair</span>
+                    <a href="mailto:alvaro@python.org.br">alvaro@python.org.br</a>
+                </li>
+                <li>
+                    <img src="{{ STATIC_URL }}images/about/ico_mailing.png" alt="Mail us" width="58" height="59" />
+                    <span class="contact">PythonBrasil[8] Organizers:</span>
+                    <a href="mailto:alvaro@python.org.br">organizers@python.org.br</a>
+                </li>
+            </ul>
+        </div>
 
-        <h2>{% trans "Contact" %}</h2>
-        <ul>
-            <li>
-                <span>Tati Al-Chueyr, Conference Chair</span>
-                <a href="mailto:tati_alchueyr@python.org.br">tati_alchueyr@python.org.br</a>
-                <span>+55 (21) 8230-8416</span>
-            </li>
-            <li>
-                <span>Álvaro Justen "Turicas", Conference Chair</span>
-                <a href="mailto:alvaro@python.org.br">alvaro@python.org.br</a>
-                <span>+55 (21) 9898-0141</span>
-            </li>
-            <li>
-                PythonBrasil[8] Organizers: <a href="mailto:alvaro@python.org.br">organizers@python.org.br</a>
-            </li>
-        </ul>
+        <div class="previous">
+            <h2>{% trans "Previous editions" %}</h2>
 
-        <h2>{% trans "Previous editions" %}</h2>
-
-        <p>
-            {% blocktrans %}
-            Find out more about the previous editions of our conference:
-            {% endblocktrans %}
-        </p>
-
-        <ul class="previous-editions">
-            <li>
-                <a href="http://2011.pythonbrasil.org.br/">PythonBrasil[7]</a>
-                <span>São Paulo (SP)</span>
-                <span>{% trans "28th September - 1st October 2011" %}</span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2010">PythonBrasil[6]</a>
-                <span>Curitiba (PR)</span>
-                <span>{% trans "21th - 23th October 2010" %}</span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2009">PythonBrasil[5]</a>
-                <span>Caxias do Sul (RS)</span>
-                <span>{% trans "10th - 12th September 2009" %}</span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2008">PythonBrasil[4]</a>
-                <span>Rio de Janeiro (RJ)</span>
-                <span>{% trans "18th - 20th September 2008" %}</span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2007">PythonBrasil[3]</a>
-                <span>Joinville (SC)</span>
-                <span>{% trans "30th August - 1st September 2007" %}</span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2006">PythonBrasil[2]</a>
-                <span>Brasília (DF)</span>
-                <span>{% trans "1st - 2nd June 2006" %}</span>
-                <span></span>
-            </li>
-            <li>
-                <a href="http://old.pythonbrasil.org.br/2005">PythonBrasil[1]</a>
-                <span>Campinas (SP)</span>
-                <span>{% trans "28th - 29th April 2005" %}</span>
-            </li>
-        </ul>
+            <p>
+                {% blocktrans %}
+                This is the eighth edition of PythonBrasil. 
+                Find out more about the previous editions of the conference, clicking on the edition numbers bellow:
+                {% endblocktrans %}
+            </p>
+            <div class="list">
+                [<a href="http://old.pythonbrasil.org.br/2005">1</a>,
+                <a href="http://old.pythonbrasil.org.br/2006">2</a>,
+                <a href="http://old.pythonbrasil.org.br/2007">3</a>,
+                <a href="http://old.pythonbrasil.org.br/2008">4</a>,
+                <a href="http://old.pythonbrasil.org.br/2009">5</a>,
+                <a href="http://old.pythonbrasil.org.br/2010">6</a>,
+                <a href="http://2011.pythonbrasil.org.br/">7</a>]
+            </div>
+            <p>
+                {% blocktrans %}
+                You can also see a complete list containing the dates and locations of the previous editions of PythonBrasil
+                {% endblocktrans %}
+                <a href="{% url previous-editions %}">{% trans "clicking here" %}</a>.
+            </p>
+        </div>
 
     </div>
 {% endblock %}
