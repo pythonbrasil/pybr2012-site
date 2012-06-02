@@ -6,6 +6,15 @@
     margin-bottom: 20px;
 }
 
+#login-dashboard .errorlist {
+    margin: 10px 0 2px 100px;
+}
+
+#login-dashboard .errorlist li {
+    color: #F00;
+    font-size: 80%;
+}
+
 #login-dashboard .login {
     float: left;
     margin: 0 100px 0 10px;
