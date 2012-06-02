@@ -124,11 +124,6 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(('male', 'Male'), field.choices)
         self.assertIn(('other', 'Other'), field.choices)
 
-    def test_gender_field_should_be_optional(self):
-        field = AccountProfile._meta.get_field_by_name('gender')[0]
-        self.assertTrue(field.null)
-        self.assertTrue(field.blank)
-
     def test_gender_should_have_verbose_name(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertEqual(u"Gender", field.verbose_name)

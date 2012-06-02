@@ -15,7 +15,7 @@ class AccountProfile(models.Model):
     type = models.CharField(max_length=50, choices=choices.ATTENDANT_CHOICES, verbose_name=ugettext(u"Registration type"))
     tshirt = models.CharField(max_length=50, choices=choices.T_SHIRT_CHOICES, verbose_name=ugettext(u"T-Shirt size"))
     locale = models.CharField(max_length=255, null=True, blank=True, verbose_name=ugettext(u"State"))
-    gender = models.CharField(max_length=20, null=True, blank=True, choices=choices.GENDER_CHOICES, verbose_name=ugettext(u"Gender"))
+    gender = models.CharField(max_length=20, choices=choices.GENDER_CHOICES, verbose_name=ugettext(u"Gender"))
     age = models.CharField(max_length=20, null=True, blank=True, choices=choices.AGE_CHOICES, verbose_name=ugettext(u"Age"))
     profession = models.CharField(max_length=50, null=True, blank=True, choices=choices.PROFESSION_CHOICES, verbose_name=ugettext(u"Profession"))
     institution = models.CharField(max_length=100, null=True, blank=True, verbose_name=ugettext(u"Company / University / Institution"))

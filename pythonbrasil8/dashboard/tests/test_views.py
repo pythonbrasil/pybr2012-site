@@ -91,7 +91,8 @@ class ProfileViewTestCase(TestCase):
             'name': 'siminino',
             'description': 'simi test',
             'type': 'Student',
-            'tshirt': 'M'
+            'tshirt': 'M',
+            'gender': 'male',
         }
 
         request = RequestFactory().post('/', data)
