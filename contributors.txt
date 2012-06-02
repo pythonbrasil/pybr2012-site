@@ -12,9 +12,12 @@ to fix the problem.
 .. acks::
 
    * Andrews Medina
+   * Bruno Carvalho
    * Fernando Rocha
    * Flávia Missi
    * Francisco Souza
+   * Henrique Bastos
+   * Jayson Reis
    * Mayza de Oliveira
    * Rafael Carício
    * Rudá Porto
