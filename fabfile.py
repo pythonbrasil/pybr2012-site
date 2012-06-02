@@ -52,7 +52,7 @@ def limpar_pycs():
         run("find . -name \"*.pyc\" | xargs rm -f ")
 
 
-def deploy(tag):
+def deploy(tag="master"):
     update_app(tag)
     pip_install()
     limpar_pycs()
