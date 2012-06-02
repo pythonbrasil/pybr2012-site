@@ -6,6 +6,7 @@ import os
 env.project_root = '/home/pythonbrasil/pythonbrasil8'
 env.app_root = os.path.join(env.project_root, 'pythonbrasil8')
 env.virtualenv = '/home/pythonbrasil/env'
+env.hosts = ['2012.pythonbrasil.org.br']
 
 
 def update_app(tag):
