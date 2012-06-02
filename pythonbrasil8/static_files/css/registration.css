@@ -1,0 +1,29 @@
+#registration p {
+    margin-bottom: 20px;
+}
+
+#registration form input {
+    width: 200px;
+}
+#registration form label {
+    float: left;
+    width: 140px;
+}
+
+#registration form p {
+    clear: both;
+    margin-bottom: 5px;
+}
+
+#registration form .errorlist {
+    margin: 10px 0 2px 140px;
+}
+
+#registration form .errorlist li {
+    color: #F00;
+    font-size: 80%;
+}
+
+#registration .btn {
+    margin-left: 140px;
+}
