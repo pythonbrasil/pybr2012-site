@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 15:36-0300\n"
+"POT-Creation-Date: 2012-06-02 15:55-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,34 +77,181 @@ msgstr "Local"
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
 
-#: dashboard/templates/dashboard/base.html:37
-msgid "logout"
-msgstr "sair"
+#: dashboard/choices.py:6 dashboard/choices.py:47
+msgid "Student"
+msgstr ""
 
-#: dashboard/templates/dashboard/base.html:55
+#: dashboard/choices.py:7
+msgid "APyB Associated"
+msgstr ""
+
+#: dashboard/choices.py:8
+msgid "Normal"
+msgstr ""
+
+#: dashboard/choices.py:12 dashboard/choices.py:29
+msgid "Female"
+msgstr ""
+
+#: dashboard/choices.py:13 dashboard/choices.py:19
+msgid "P"
+msgstr ""
+
+#: dashboard/choices.py:14 dashboard/choices.py:20
+msgid "M"
+msgstr ""
+
+#: dashboard/choices.py:15 dashboard/choices.py:21
+msgid "G"
+msgstr ""
+
+#: dashboard/choices.py:22
+msgid "GG"
+msgstr ""
+
+#: dashboard/choices.py:23
+msgid "GGX"
+msgstr ""
+
+#: dashboard/choices.py:30
+msgid "Male"
+msgstr ""
+
+#: dashboard/choices.py:31 dashboard/choices.py:54
+msgid "Other"
+msgstr ""
+
+#: dashboard/choices.py:35
+msgid "<=9"
+msgstr ""
+
+#: dashboard/choices.py:36
+msgid "10-19"
+msgstr ""
+
+#: dashboard/choices.py:37
+msgid "20-29"
+msgstr ""
+
+#: dashboard/choices.py:38
+msgid "30-39"
+msgstr ""
+
+#: dashboard/choices.py:39
+msgid "40-49"
+msgstr ""
+
+#: dashboard/choices.py:40
+msgid "50-59"
+msgstr ""
+
+#: dashboard/choices.py:41
+msgid "60-69"
+msgstr ""
+
+#: dashboard/choices.py:42
+msgid "70-79"
+msgstr ""
+
+#: dashboard/choices.py:43
+msgid ">=80"
+msgstr ""
+
+#: dashboard/choices.py:48
+msgid "Trainee"
+msgstr ""
+
+#: dashboard/choices.py:49
+msgid "Developer"
+msgstr ""
+
+#: dashboard/choices.py:50
+msgid "Software engineer"
+msgstr ""
+
+#: dashboard/choices.py:51
+msgid "Manager"
+msgstr ""
+
+#: dashboard/choices.py:52
+msgid "Sysadmin"
+msgstr ""
+
+#: dashboard/choices.py:53
+msgid "Teacher"
+msgstr ""
+
+#: dashboard/choices.py:85
+msgid "Other country"
+msgstr ""
+
+#: dashboard/models.py:13
+msgid "Name"
+msgstr "Nome"
+
+#: dashboard/models.py:14
 #, fuzzy
-msgid ""
-"PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
-"open source Python programming language."
-msgstr ""
-"A PythonBrasil é uma conferência sem fins lucrativos organizada por "
-"voluntários para promoção da linguagem de programação de código aberto "
-"Python."
+msgid "Description"
+msgstr "Data de subscrição"
 
-#: dashboard/templates/dashboard/base.html:56 templates/base.html:120
-msgid ""
-"It is supported by the Brazilian Python Association (APyB) and by the Python "
-"Software Foundation (PSF)."
-msgstr ""
-"É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
-"Foundation (PSF)."
+#: dashboard/models.py:15
+#, fuzzy
+msgid "Registration type"
+msgstr "inscrição"
+
+#: dashboard/models.py:16
+msgid "T-Shirt size"
+msgstr "Tamanho de camiseta"
+
+#: dashboard/models.py:17
+msgid "State"
+msgstr "Estado"
+
+#: dashboard/models.py:18
+msgid "Gender"
+msgstr "Gênero"
+
+#: dashboard/models.py:19
+msgid "Age"
+msgstr "Idade"
+
+#: dashboard/models.py:20
+msgid "Profession"
+msgstr "Profissão"
+
+#: dashboard/models.py:21
+msgid "Company / University / Institution"
+msgstr "Empresa / Unversidade / Instituição"
+
+#: dashboard/models.py:23
+msgid "Twitter profile"
+msgstr "Twitter"
+
+#: dashboard/models.py:24
+msgid "Public profile (visible to everyone)?"
+msgstr "Perfil público (visivel para todos)?"
+
+#: dashboard/templates/dashboard/base.html:17
+msgid "edit your profile"
+msgstr "edite sua conta"
+
+#: dashboard/templates/dashboard/base.html:17
+msgid "Edit your profile"
+msgstr "Edite sua conta"
+
+#: dashboard/templates/dashboard/base.html:20
+msgid "Logout"
+msgstr "Sair"
+
+#: dashboard/templates/dashboard/profile.html:16
+msgid "Save"
+msgstr "Salvar"
 
 #: templates/about.html:4
 msgid "About"
 msgstr "Sobre"
 
 #: templates/about.html:13
-#, fuzzy
 msgid "About PythonBrasil"
 msgstr "Sobre a PythonBrasil"
 
@@ -177,31 +324,31 @@ msgstr ""
 
 #: templates/about.html:64
 msgid "28th September - 1st October 2011"
-msgstr ""
+msgstr "28 de setembro a 1º de outubro de 2011"
 
 #: templates/about.html:69
 msgid "21th - 23th October 2010"
-msgstr ""
+msgstr "21 a 23 de outubro de 2010"
 
 #: templates/about.html:74
 msgid "10th - 12th September 2009"
-msgstr ""
+msgstr "10 a 12 de setembro de 2009"
 
 #: templates/about.html:79
 msgid "18th - 20th September 2008"
-msgstr ""
+msgstr "18 a 20 de setembro de 2008"
 
 #: templates/about.html:84
 msgid "30th August - 1st September 2007"
-msgstr ""
+msgstr "30 de agosto a 1 setembro 2007"
 
 #: templates/about.html:89
 msgid "1st - 2nd June 2006"
-msgstr ""
+msgstr "1 a 2 de junho de 2006"
 
 #: templates/about.html:95
 msgid "28th - 29th April 2005"
-msgstr ""
+msgstr "28 a 29 de abril de 2005"
 
 #: templates/base.html:37
 msgid "about"
@@ -220,7 +367,6 @@ msgid "venue"
 msgstr "local"
 
 #: templates/base.html:49
-#, fuzzy
 msgid "sponsor"
 msgstr "patrocínio"
 
@@ -228,32 +374,40 @@ msgstr "patrocínio"
 msgid "register now"
 msgstr "inscreva-se"
 
-#: templates/base.html:89
+#: templates/base.html:90
 msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
-#: templates/base.html:90
-msgid "June"
-msgstr "Junho"
+#: templates/base.html:91
+msgid "June 15th"
+msgstr "15 de junho"
 
-#: templates/base.html:93
+#: templates/base.html:94
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/base.html:94 templates/base.html.py:98 templates/base.html:102
-msgid "November"
-msgstr "Novembro"
+#: templates/base.html:95
+msgid "November 20th"
+msgstr "20 de novembro"
 
 # ou seria melhor Mini-cursos?
-#: templates/base.html:97
+#: templates/base.html:98
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:101
+#: templates/base.html:99
+msgid "November 21th - 22th"
+msgstr "21 e 22 de novembro"
+
+#: templates/base.html:102
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:119
+#: templates/base.html:103
+msgid "November 23th - 24th"
+msgstr "23 a 24 de novembro"
+
+#: templates/base.html:121
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -261,6 +415,14 @@ msgstr ""
 "A PythonBrasil é uma conferência sem fins lucrativos organizada por "
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
+
+#: templates/base.html:122
+msgid ""
+"It is supported by the Brazilian Python Association (APyB) and by the Python "
+"Software Foundation (PSF)."
+msgstr ""
+"É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
+"Foundation (PSF)."
 
 #: templates/subscribe.html:12
 msgid "Pre-registration"
@@ -278,6 +440,15 @@ msgstr ""
 msgid "Pre-register"
 msgstr "Pré-inscrever"
 
+#, fuzzy
+#~ msgid ""
+#~ "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
+#~ "open source Python programming language."
+#~ msgstr ""
+#~ "A PythonBrasil é uma conferência sem fins lucrativos organizada por "
+#~ "voluntários para promoção da linguagem de programação de código aberto "
+#~ "Python."
+
 #~ msgid "home"
 #~ msgstr "início"
 
@@ -290,11 +461,5 @@ msgstr "Pré-inscrever"
 #~ msgid "WHAT IS PYTHONBRASIL[8]"
 #~ msgstr "O QUE É PYTHONBRASIL[8]"
 
-#~ msgid "Name"
-#~ msgstr "Nome"
-
 #~ msgid "Email"
 #~ msgstr "Email"
-
-#~ msgid "Subscription date"
-#~ msgstr "Data de subscrição"
