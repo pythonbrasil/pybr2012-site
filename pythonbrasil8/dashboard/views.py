@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import TemplateView, UpdateView
+from django.views.generic import ListView, TemplateView, UpdateView
 
-from pythonbrasil8.schedule.models import Session
+from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.dashboard.forms import ProfileForm
 from pythonbrasil8.dashboard.models import AccountProfile
-from pythonbrasil8.core.views import LoginRequiredMixin
+from pythonbrasil8.schedule.models import Session
 
 
 class DashBoardView(LoginRequiredMixin, TemplateView):
@@ -33,3 +33,11 @@ class IndexView(DashBoardView):
         context = super(IndexView, self).get_context_data(*args, **kwargs)
         context['sessions'] = Session.objects.filter(speakers=self.request.user)
         return context
+
+
+class SessionsView(LoginRequiredMixin, ListView):
+    context_object_name = u"sessions"
+    template_name = u"dashboard/sessions.html"
+
+    def get_queryset(self):
+        return Session.objects.filter(speakers=self.request.user)
