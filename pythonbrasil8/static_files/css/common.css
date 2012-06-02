@@ -104,14 +104,17 @@ body {
 }
 
 .dates .dates-container {
-    float: left;
-    width: 902px;
-    margin-left: 160px;
+    margin: 0 auto;
+    width: 800px;
 }
 
 .dates .inner {
-    margin: 15px 150px 15px 0px;
+    margin: 15px 70px 15px 0px;
     float: left;
+}
+
+.dates .inner.last {
+    margin-right: 0;
 }
 
 .inner-row {
