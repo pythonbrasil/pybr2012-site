@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.test import TestCase
 from django.db import models
 from django.contrib.auth.models import User
@@ -102,14 +103,43 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_locale_field_should_be_optional(self):
-        field = AccountProfile._meta.get_field_by_name('locale')[0]
-        self.assertTrue(field.null)
-        self.assertTrue(field.blank)
-
     def test_locale_field_should_have_verbose_name(self):
         field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertEqual(u"State", field.verbose_name)
+
+    def test_locale_field_should_have_brazilian_states_choices(self):
+        expected = (
+            ('AC', 'Acre'),
+            ('AL', 'Alagoas'),
+            ('AM', 'Amazonas'),
+            ('AP', 'Amapá'),
+            ('BA', 'Bahia'),
+            ('CE', 'Ceará'),
+            ('DF', 'Distrito Federal'),
+            ('ES', 'Espírito Santo'),
+            ('GO', 'Goiás'),
+            ('MA', 'Maranhão'),
+            ('MS', 'Mato Grosso do Sul'),
+            ('MT', 'Mato Grosso'),
+            ('MG', 'Minas Gerais'),
+            ('PA', 'Pará'),
+            ('PB', 'Paraíba'),
+            ('PE', 'Pernambuco'),
+            ('PI', 'Piauí'),
+            ('PR', 'Paraná'),
+            ('RJ', 'Rio de Janeiro'),
+            ('RN', 'Rio Grande do Norte'),
+            ('RO', 'Rondônia'),
+            ('RR', 'Roraima'),
+            ('RS', 'Rio Grande do Sul'),
+            ('SC', 'Santa Catarina'),
+            ('SE', 'Sergipe'),
+            ('SP', 'São Paulo'),
+            ('TO', 'Tocantins'),
+            ('00', 'Other country')
+        )
+        field = AccountProfile._meta.get_field_by_name('locale')[0]
+        self.assertEqual(expected, field.choices)
 
     def test_should_have_gender_field(self):
         self.assertIn('gender', self.field_names)

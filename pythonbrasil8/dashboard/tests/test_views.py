@@ -93,6 +93,7 @@ class ProfileViewTestCase(TestCase):
             'type': 'Student',
             'tshirt': 'M',
             'gender': 'male',
+            'locale': 'AC',
         }
 
         request = RequestFactory().post('/', data)
