@@ -44,6 +44,7 @@ class Home(ListView):
 class AboutView(TemplateView):
     template_name = 'about.html'
 
+
 class VenueView(TemplateView):
     template_name = 'venue.html'
 

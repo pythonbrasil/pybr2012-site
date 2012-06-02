@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 from mittun.registration.views import SubscribeView
 from pythonbrasil8.subscription.views import NotificationView
 
-from core.views import Home, SuccessfulPreRegistration, SponsorsInfoView, VenueView, CustomSponsorsView, SponsorsJobsView
+from core.views import Home, AboutView, SuccessfulPreRegistration, SponsorsInfoView, VenueView, CustomSponsorsView, SponsorsJobsView
 
 from django.contrib import admin
 
@@ -20,8 +20,8 @@ urlpatterns = patterns('',
     url(r'^schedule/$',  CustomSponsorsView.as_view(), name='schedule'),
     url(r'^sponsors/jobs/$', SponsorsJobsView.as_view(), name='sponsors-jobs'),
     url(r'^successful-subscribed/$', SuccessfulPreRegistration.as_view(), name='pre-registration-success'),
+    url(r'about/$',  AboutView.as_view(), name='about'),
     url(r'^venue/$',  VenueView.as_view(), name='venue'),
-    url(r'^mittun/', include('mittun.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 
     url(r'^notification/$', NotificationView.as_view(), name='notification'),
