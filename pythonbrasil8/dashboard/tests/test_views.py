@@ -87,7 +87,6 @@ class ProfileViewTestCase(TestCase):
 
     def test_update_account_user_with_success(self):
         data = {
-            'id': self.account_profile.id,
             'user': self.user.id,
             'name': 'siminino',
             'description': 'simi test',
@@ -97,7 +96,7 @@ class ProfileViewTestCase(TestCase):
 
         request = RequestFactory().post('/', data)
         request.user = self.request.user
-        response = ProfileView.as_view()(request, pk=self.account_profile.id)
+        response = ProfileView().dispatch(request)
         self.assertEqual(302, response.status_code)
 
         profile = AccountProfile.objects.get(id=self.account_profile.id)
