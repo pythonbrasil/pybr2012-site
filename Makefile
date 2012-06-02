@@ -2,13 +2,13 @@ clean:
 	@find . -name "*.pyc" -delete
 
 deps:
-	@pip install -r requirements.txt
+	@pip install -qr requirements.txt
 
 test: deps clean
 	@python manage.py test
 
 jasminedeps: deps
-	@pip install -r test_requirements.txt
+	@pip install -qr test_requirements.txt
 
 jasmine: jasminedeps
 	@jasmine-splinter -f `pwd`/pythonbrasil8/static_files/tests/jasmine/SpecRunner.html -b chrome
