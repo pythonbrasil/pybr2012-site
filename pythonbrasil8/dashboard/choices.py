@@ -10,17 +10,17 @@ ATTENDANT_CHOICES = (
 
 T_SHIRT_CHOICES = (
     (ugettext('Female'), (
-            ('P', ugettext('P')),
+            ('S', ugettext('S')),
             ('M', ugettext('M')),
-            ('G', ugettext('G')),
+            ('L', ugettext('L')),
         )
     ),
     ('Male', (
-            ('P', ugettext('P')),
+            ('S', ugettext('S')),
             ('M', ugettext('M')),
-            ('G', ugettext('G')),
-            ('GG', ugettext('GG')),
-            ('GGX', ugettext('GGX')),
+            ('L', ugettext('L')),
+            ('XL', ugettext('XL')),
+            ('XXL', ugettext('XXL')),
         )
     )
 )
@@ -51,6 +51,7 @@ PROFESSION_CHOICES = (
     ('manager', ugettext('Manager')),
     ('sysadmin', ugettext('Sysadmin')),
     ('teacher', ugettext('Teacher')),
+    ('researcher', ugettext('Researcher')),
     ('other', ugettext('Other')),
 )
 

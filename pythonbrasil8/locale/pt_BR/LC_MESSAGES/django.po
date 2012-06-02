@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 15:55-0300\n"
+"POT-Creation-Date: 2012-06-02 15:59-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr ""
 
 #: core/templates/sponsors_info.html:12
 msgid "Sponsoring prospectus (English version)"
-msgstr ""
+msgstr "Plano de captação (versão em inglês)"
 
 #: core/templates/sponsors_info.html:13
 msgid "Sponsoring prospectus (Portuguese version)"
-msgstr ""
+msgstr "Plano de captação (versão em português)"
 
 #: core/templates/success_pre_registration.html:4
 msgid "Pre-registration completed"
@@ -69,7 +69,6 @@ msgstr ""
 "inscrições estiverem abertas, entraremos em contato."
 
 #: core/templates/venue.html:4
-#, fuzzy
 msgid "Venue"
 msgstr "Local"
 
@@ -79,31 +78,31 @@ msgstr "Local da PythonBrasil"
 
 #: dashboard/choices.py:6 dashboard/choices.py:47
 msgid "Student"
-msgstr ""
+msgstr "Estudante"
 
 #: dashboard/choices.py:7
 msgid "APyB Associated"
-msgstr ""
+msgstr "Associado APyB"
 
 #: dashboard/choices.py:8
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: dashboard/choices.py:12 dashboard/choices.py:29
 msgid "Female"
-msgstr ""
+msgstr "Feminino"
 
 #: dashboard/choices.py:13 dashboard/choices.py:19
 msgid "P"
-msgstr ""
+msgstr "P"
 
 #: dashboard/choices.py:14 dashboard/choices.py:20
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: dashboard/choices.py:15 dashboard/choices.py:21
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: dashboard/choices.py:22
 msgid "GG"
@@ -405,7 +404,7 @@ msgstr "Palestras & Exposições"
 
 #: templates/base.html:103
 msgid "November 23th - 24th"
-msgstr "23 a 24 de novembro"
+msgstr "23 e 24 de novembro"
 
 #: templates/base.html:121
 msgid ""
