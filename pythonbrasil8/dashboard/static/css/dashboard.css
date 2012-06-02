@@ -1,13 +1,12 @@
 #menu-dashboard {
     background-color: #EEE;
-    height: 60px;
+    background: url(../img/pixel.png) #EEE repeat-x 0 60px;
 }
 
 #menu-dashboard ul {
     display: block;
     font-size: 20px;
     margin: 0 auto;
-    padding: 20px 0 0;
     width: 42%;
 }
 
@@ -15,6 +14,14 @@
     display: inline-block;
 }
 
-#menu-dashboard ul li:not(:first-child) {
-    margin-left:10px;
+#menu-dashboard ul li a {
+    display: block;
+    padding: 20px 5px;
+}
+
+#menu-dashboard ul li a:hover, #menu-dashboard ul li a.active {
+    border: 1px #CCC solid;
+    border-bottom: 0;
+    background-color: #FFF;
+    padding: 20px 4px;
 }
