@@ -26,7 +26,6 @@ urlpatterns = patterns('',
     url(r'^notification/$', NotificationView.as_view(), name='notification'),
 
     url(r'^dashboard/', include('pythonbrasil8.dashboard.urls')),
-    url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^auth/', include('registration.auth_urls', namespace="auth", app_name="registration")),
+    url(r'^accounts/', include('registration.backends.default.urls', app_name="registration", namespace="auth")),
     url(r'^admin/', include(admin.site.urls)),
 )
