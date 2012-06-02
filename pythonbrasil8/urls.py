@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.conf.urls import patterns, url, include
+from django.contrib import admin
+from django.views.generic import TemplateView
 
 from mittun.registration.views import SubscribeView
 from pythonbrasil8.subscription.views import NotificationView
 
 from core.views import Home, AboutView, SuccessfulPreRegistration, ScheduleView, SponsorsInfoView, VenueView, CustomSponsorsView, SponsorsJobsView
 
-from django.contrib import admin
 
 admin.autodiscover()
 
