@@ -54,14 +54,14 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         female_choices = (
             'Female', (
-                ('P','P'),
+                ('P', 'P'),
                 ('M', 'M'),
                 ('G', 'G'),
             )
         )
         male_choices = (
             'Male', (
-                ('P','P'),
+                ('P', 'P'),
                 ('M', 'M'),
                 ('G', 'G'),
                 ('GG', 'GG'),
@@ -93,10 +93,9 @@ class AccountProfileTestCase(TestCase):
 
     def test_gender_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
-        self.assertIn(('female', 'female'), field.choices)
-        self.assertIn(('male', 'male'), field.choices)
-        self.assertIn(('transsexual', 'transsexual'), field.choices)
-        self.assertIn(('other', 'other'), field.choices)
+        self.assertIn(('female', 'Female'), field.choices)
+        self.assertIn(('male', 'Male'), field.choices)
+        self.assertIn(('other', 'Other'), field.choices)
 
     def test_gender_field_should_be_optional(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
@@ -112,7 +111,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_age_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
-        self.assertIn(('--9', '--9'), field.choices)
+        self.assertIn(('--9', '<=9'), field.choices)
         self.assertIn(('10-19', '10-19'), field.choices)
         self.assertIn(('20-29', '20-29'), field.choices)
         self.assertIn(('30-39', '30-39'), field.choices)
@@ -120,7 +119,7 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(('50-59', '50-59'), field.choices)
         self.assertIn(('60-69', '60-69'), field.choices)
         self.assertIn(('70-79', '70-79'), field.choices)
-        self.assertIn(('80-+', '80-+'), field.choices)
+        self.assertIn(('80-+', '>=80'), field.choices)
 
     def test_age_field_should_be_optional(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
@@ -136,14 +135,14 @@ class AccountProfileTestCase(TestCase):
 
     def test_profession_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
-        self.assertIn(('student', 'student'), field.choices)
-        self.assertIn(('trainee', 'trainee'), field.choices)
-        self.assertIn(('developer', 'developer'), field.choices)
-        self.assertIn(('software engineer', 'software engineer'), field.choices)
-        self.assertIn(('manager', 'manager'), field.choices)
-        self.assertIn(('sys-admin', 'sys-admin'), field.choices)
-        self.assertIn(('teacher', 'teacher'), field.choices)
-        self.assertIn(('other', 'other'), field.choices)
+        self.assertIn(('student', 'Student'), field.choices)
+        self.assertIn(('trainee', 'Trainee'), field.choices)
+        self.assertIn(('developer', 'Developer'), field.choices)
+        self.assertIn(('software engineer', 'Software engineer'), field.choices)
+        self.assertIn(('manager', 'Manager'), field.choices)
+        self.assertIn(('sysadmin', 'Sysadmin'), field.choices)
+        self.assertIn(('teacher', 'Teacher'), field.choices)
+        self.assertIn(('other', 'Other'), field.choices)
 
     def test_profession_field_should_be_optional(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
