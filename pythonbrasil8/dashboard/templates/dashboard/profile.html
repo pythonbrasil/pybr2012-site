@@ -1,4 +1,5 @@
 {% extends "dashboard/base.html" %}
+{% load i18n %}
 
 {% block css %}
     {{ block.super }}
@@ -12,7 +13,7 @@
             <form id="profile_form" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="submit" value="salvar" />
+                <button type="submit">{% trans "Save" %}</button>
             </form>
         </div>
     </div>

@@ -1,5 +1,30 @@
 #profile_form p {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+}
+
+#profile_form p label {
+    display: inline-block;
+    width: 260px;
+}
+
+#profile_form p input, #profile_form p select {
+    width: 250px;
+}
+
+#profile_form button {
+    border-radius: 3px;
+    border: 1px solid #333;
+    background-color: #666;
+    background-image: -moz-linear-gradient(center top , #333, #666);
+    color: #FFF;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px 0 0 265px;
+    width: 65px;
+}
+
+#profile_form button:hover {
+    background-image: none;
 }
 
 #profile_form .errorlist {
