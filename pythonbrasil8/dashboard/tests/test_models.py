@@ -74,18 +74,18 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         female_choices = (
             'Female', (
-                ('P', 'P'),
+                ('S', 'S'),
                 ('M', 'M'),
-                ('G', 'G'),
+                ('L', 'L'),
             )
         )
         male_choices = (
             'Male', (
-                ('P', 'P'),
+                ('S', 'S'),
                 ('M', 'M'),
-                ('G', 'G'),
-                ('GG', 'GG'),
-                ('GGX', 'GGX'),
+                ('L', 'L'),
+                ('XL', 'XL'),
+                ('XXL', 'XXL'),
             )
         )
 
