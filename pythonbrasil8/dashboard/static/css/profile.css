@@ -3,11 +3,11 @@
 }
 
 #profile_form p label {
-    display: inline-block;
+    float: left;
     width: 260px;
 }
 
-#profile_form p input, #profile_form p select {
+#profile_form p input, #profile_form p select, #profile_form p textarea {
     width: 250px;
 }
 
