@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 15:59-0300\n"
+"POT-Creation-Date: 2012-06-02 16:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Fernando Rocha <fernandogrd@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
+"Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,7 +93,7 @@ msgid "Female"
 msgstr "Feminino"
 
 #: dashboard/choices.py:13 dashboard/choices.py:19
-msgid "P"
+msgid "S"
 msgstr "P"
 
 #: dashboard/choices.py:14 dashboard/choices.py:20
@@ -101,102 +101,76 @@ msgid "M"
 msgstr "M"
 
 #: dashboard/choices.py:15 dashboard/choices.py:21
-msgid "G"
+msgid "L"
 msgstr "G"
 
 #: dashboard/choices.py:22
-msgid "GG"
-msgstr ""
+msgid "XL"
+msgstr "GG"
 
 #: dashboard/choices.py:23
-msgid "GGX"
-msgstr ""
+msgid "XXL"
+msgstr "XGG"
 
 #: dashboard/choices.py:30
 msgid "Male"
-msgstr ""
+msgstr "Masculino"
 
-#: dashboard/choices.py:31 dashboard/choices.py:54
+#: dashboard/choices.py:31 dashboard/choices.py:55
 msgid "Other"
-msgstr ""
+msgstr "Outros"
 
 #: dashboard/choices.py:35
-msgid "<=9"
-msgstr ""
-
-#: dashboard/choices.py:36
-msgid "10-19"
-msgstr ""
-
-#: dashboard/choices.py:37
-msgid "20-29"
-msgstr ""
-
-#: dashboard/choices.py:38
-msgid "30-39"
-msgstr ""
-
-#: dashboard/choices.py:39
-msgid "40-49"
-msgstr ""
-
-#: dashboard/choices.py:40
-msgid "50-59"
-msgstr ""
-
-#: dashboard/choices.py:41
-msgid "60-69"
-msgstr ""
-
-#: dashboard/choices.py:42
-msgid "70-79"
-msgstr ""
+msgid "9 or less"
+msgstr "9 ou menos"
 
 #: dashboard/choices.py:43
-msgid ">=80"
-msgstr ""
+msgid "80 or more"
+msgstr "80 ou mais"
 
 #: dashboard/choices.py:48
 msgid "Trainee"
-msgstr ""
+msgstr "Estagiário"
 
 #: dashboard/choices.py:49
 msgid "Developer"
-msgstr ""
+msgstr "Desenvolvedor"
 
 #: dashboard/choices.py:50
 msgid "Software engineer"
-msgstr ""
+msgstr "Engenheiro de software"
 
 #: dashboard/choices.py:51
 msgid "Manager"
-msgstr ""
+msgstr "Gerente"
 
 #: dashboard/choices.py:52
 msgid "Sysadmin"
-msgstr ""
+msgstr "Administrador de Sistemas"
 
 #: dashboard/choices.py:53
 msgid "Teacher"
-msgstr ""
+msgstr "Professor"
 
-#: dashboard/choices.py:85
+#: dashboard/choices.py:54
+msgid "Researcher"
+msgstr "Pesquisador"
+
+#: dashboard/choices.py:86
 msgid "Other country"
-msgstr ""
+msgstr "Outro país"
 
 #: dashboard/models.py:13
 msgid "Name"
 msgstr "Nome"
 
 #: dashboard/models.py:14
-#, fuzzy
 msgid "Description"
-msgstr "Data de subscrição"
+msgstr "Descrição"
 
 #: dashboard/models.py:15
-#, fuzzy
 msgid "Registration type"
-msgstr "inscrição"
+msgstr "Tipo de inscrição"
 
 #: dashboard/models.py:16
 msgid "T-Shirt size"
@@ -232,11 +206,11 @@ msgstr "Perfil público (visivel para todos)?"
 
 #: dashboard/templates/dashboard/base.html:17
 msgid "edit your profile"
-msgstr "edite sua conta"
+msgstr "edite seu perfil"
 
 #: dashboard/templates/dashboard/base.html:17
 msgid "Edit your profile"
-msgstr "Edite sua conta"
+msgstr "Edite seu perfil"
 
 #: dashboard/templates/dashboard/base.html:20
 msgid "Logout"
@@ -307,12 +281,11 @@ msgstr "Junte-se a nós!"
 
 #: templates/about.html:35
 msgid "Contact"
-msgstr ""
+msgstr "Contato"
 
 #: templates/about.html:52
-#, fuzzy
 msgid "Previous editions"
-msgstr "versões anteriores"
+msgstr "Versões anteriores"
 
 #: templates/about.html:55
 msgid ""
@@ -320,6 +293,9 @@ msgid ""
 "            Find out more about the previous editions of our conference:\n"
 "            "
 msgstr ""
+"\n"
+"            Saiba mais sobre as edições anteriores da conferência:\n"
+"            "
 
 #: templates/about.html:64
 msgid "28th September - 1st October 2011"
@@ -438,27 +414,3 @@ msgstr ""
 #: templates/subscribe.html:18
 msgid "Pre-register"
 msgstr "Pré-inscrever"
-
-#, fuzzy
-#~ msgid ""
-#~ "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
-#~ "open source Python programming language."
-#~ msgstr ""
-#~ "A PythonBrasil é uma conferência sem fins lucrativos organizada por "
-#~ "voluntários para promoção da linguagem de programação de código aberto "
-#~ "Python."
-
-#~ msgid "home"
-#~ msgstr "início"
-
-#~ msgid "Download our sponsoring prospectus"
-#~ msgstr "Faça download do nosso plano de captação de recursos"
-
-#~ msgid "Welcome"
-#~ msgstr "Bem-vindo"
-
-#~ msgid "WHAT IS PYTHONBRASIL[8]"
-#~ msgstr "O QUE É PYTHONBRASIL[8]"
-
-#~ msgid "Email"
-#~ msgstr "Email"
