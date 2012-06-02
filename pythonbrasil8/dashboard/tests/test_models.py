@@ -19,6 +19,21 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('user')[0]
         self.assertEqual(models.OneToOneField, field.__class__)
 
+    def test_should_have_name(self):
+        self.assertIn('name', self.field_names)
+
+    def test_name_should_be_CharField(self):
+        field = AccountProfile._meta.get_field_by_name('name')[0]
+        self.assertIsInstance(field, models.CharField)
+
+    def test_name_should_have_at_most_20_characters(self):
+        field = AccountProfile._meta.get_field_by_name('name')[0]
+        self.assertEqual(20, field.max_length)
+
+    def test_name_should_have_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('name')[0]
+        self.assertEqual(u"Name", field.verbose_name)
+
     def test_should_have_description_field(self):
         self.assertIn('description', self.field_names)
 
@@ -42,6 +57,10 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(('Student', 'Student'), field.choices)
         self.assertIn(('APyB', 'APyB Associated'), field.choices)
         self.assertIn(('Normal', 'Normal'), field.choices)
+
+    def test_type_should_have_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('type')[0]
+        self.assertEqual(u"Registration type", field.verbose_name)
 
     def test_should_have_tshirt_field(self):
         self.assertIn('tshirt', self.field_names)
@@ -72,6 +91,10 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(female_choices, field.choices)
         self.assertIn(male_choices, field.choices)
 
+    def test_tshirt_field_should_have_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('tshirt')[0]
+        self.assertEqual(u"T-Shirt size", field.verbose_name)
+
     def test_should_have_locale_field(self):
         self.assertIn('locale', self.field_names)
 
@@ -83,6 +106,10 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
+
+    def test_locale_field_should_have_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('locale')[0]
+        self.assertEqual(u"State", field.verbose_name)
 
     def test_should_have_gender_field(self):
         self.assertIn('gender', self.field_names)
@@ -101,6 +128,10 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
+
+    def test_gender_should_have_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('gender')[0]
+        self.assertEqual(u"Gender", field.verbose_name)
 
     def test_should_have_age_field(self):
         self.assertIn('age', self.field_names)
@@ -126,6 +157,10 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
+    def test_age_should_have_a_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('age')[0]
+        self.assertEqual(u"Age", field.verbose_name)
+
     def test_should_have_profession_field(self):
         self.assertIn('profession', self.field_names)
 
@@ -148,6 +183,10 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
+
+    def test_profession_should_have_a_verbose_name(self):
+        field = AccountProfile._meta.get_field_by_name('profession')[0]
+        self.assertEqual(u"Profession", field.verbose_name)
 
     def test_should_have_institution_field(self):
         self.assertIn('institution', self.field_names)
