@@ -20,7 +20,7 @@
                 <a href="{% url edit-profile %}" title="{% trans "edit your profile" %}" class="{% is_active request.path 'edit-profile' %}">{{ request.user }} ({% trans "Edit your profile" %})</a>
             </li>
             <li>
-                <a href="{% url auth:auth_logout %}" title="{% trans "Logout" %}" class="{% is_active request.path 'auth:auth_logout' %}">{% trans "Logout" %}</a>
+                <a href="{% url auth:auth_logout %}?next=/" title="{% trans "Logout" %}" class="{% is_active request.path 'auth:auth_logout' %}">{% trans "Logout" %}</a>
             </li>
         </ul>
     </div>
