@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.conf.urls import patterns, url, include
+from registration.forms import RegistrationForm
 
 from mittun.registration.views import SubscribeView
 from pythonbrasil8.subscription.views import NotificationView
@@ -26,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^notification/$', NotificationView.as_view(), name='notification'),
 
     url(r'^dashboard/', include('pythonbrasil8.dashboard.urls')),
-    url(r'^accounts/', include('registration.backends.default.urls', app_name="registration", namespace="auth")),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'extra_context': {'registration_form': RegistrationForm()}}, name='auth_login'),
+    url(r'^accounts/', include('registration.backends.default.urls', app_name='registration', namespace='auth')),
     url(r'^admin/', include(admin.site.urls)),
 )
