@@ -50,7 +50,6 @@ body {
 
 .content h5 {
     color: #484746;
-    font-weight: bold;
 }
 
 .dates h4 {
@@ -257,7 +256,6 @@ h1 {
     font-size: 28px;
     line-height: 0.9em;
     letter-spacing: -1px;
-    font-weight: bold;
     margin-bottom: 20px;
 }
 
