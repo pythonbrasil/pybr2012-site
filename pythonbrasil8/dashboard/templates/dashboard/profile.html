@@ -13,7 +13,7 @@
             <form id="profile_form" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">{% trans "Save" %}</button>
+                <button class="btn" type="submit">{% trans "Save" %}</button>
             </form>
         </div>
     </div>

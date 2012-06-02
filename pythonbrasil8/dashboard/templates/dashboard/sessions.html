@@ -11,14 +11,14 @@
         <div class="column grid_12">
             <h1>Proposals</h1>
             {% if sessions %}
-                <ul>
-                    {% for session in session %}
-                        <li>{{ session.title }}</li>
+                <ul id="proposals">
+                    {% for session in sessions %}
+                        <li>- {{ session.title }}</li>
                     {% endfor %}
                 </ul>
-                <p><a href="{% url session-subscribe %}" title="{% trans "Submit a proposal" %}">{% trans "Submit a proposal" %}</a>.</p>
+                <p><a href="{% url session-subscribe %}" title="{% trans "Submit a proposal" %}" class="btn">{% trans "Submit a proposal" %}</a></p>
             {% else %}
-            <p>{% trans "You don't have any session yet." %} <a href="{% url session-subscribe %}" title="{% trans "Submit a proposal" %}">{% trans "Why don't you send a proposal?" %}</a></p>
+            <p>{% trans "You did not submit any proposal yet." %} <a href="{% url session-subscribe %}" title="{% trans "Submit a proposal" %}">{% trans "Why don't you send one?" %}</a></p>
             {% endif %}
         </div>
     </div>
