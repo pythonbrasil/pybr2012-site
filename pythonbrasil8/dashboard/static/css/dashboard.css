@@ -1,0 +1,20 @@
+#menu-dashboard {
+    background-color: #EEE;
+    height: 60px;
+}
+
+#menu-dashboard ul {
+    display: block;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+    width: 42%;
+}
+
+#menu-dashboard ul li {
+    display: inline-block;
+}
+
+#menu-dashboard ul li:not(:first-child) {
+    margin-left:10px;
+}

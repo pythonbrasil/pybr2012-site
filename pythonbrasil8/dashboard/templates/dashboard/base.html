@@ -1,69 +1,25 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load menu %}
 {% load i18n %}
-<html>
-    <head>
-        <title>{% block title %}PythonBrasil[8]{% endblock %}</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/dashboard.css" />
+{% endblock %}
 
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css" type="text/css" />
-        <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
-        {% block css %}{% endblock %}
-        {% block js_top %}{% endblock %}
-    </head>
-
-    <body>
-        <div id="header">
-            <div class="inner">
-
-                <div id="logo">
-                    <a href="{% url home %}" title="PythonBrasil[8]">PythonBrasil[8]</a>
-                </div>
-
-                <div id="menu" class="text_right">
-                    <div>
-                        <ul>
-                            <li>
-                                <a href="/dashboard/">dashboard</a>
-                            </li>
-                            <li>
-                                <a href="/dashboard/profile/">{{ request.user }} (edit your profile)</a>
-                            </li>
-                            <li>
-                                <a href="/auth/logout/">{% trans "logout" %}</a>
-                            </li>
-                       </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="content">
-            <div class="inner row">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
-
-        <div id="footer">
-            <div class="row">
-                <div class="about column grid_11">
-                    <p>
-                    {% trans "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the open source Python programming language." %}
-                    {% trans "It is supported by the Brazilian Python Association (APyB) and by the Python Software Foundation (PSF)." %}
-                    </p>
-                </div>
-                <div class="logo column grid_1"></div>
-            </div>
-        </div>
-
-        <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
-            <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
-        </a>
-        {% block js_bottom %}{% endblock %}
-    </body>
-</html>
-
+{% block greybar %}
+<div id="menu-dashboard">
+    <div class="wrapper">
+        <ul>
+            <li>
+                <a href="{% url dashboard-index %}" title="Dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a href="{% url edit-profile %}" title="{% trans "edit your profile" %}">{{ request.user }} ({% trans "Edit your profile" %})</a>
+            </li>
+            <li>
+                <a href="{% url auth:auth_logout %}" title="{% trans "Logout" %}">{% trans "Logout" %}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
