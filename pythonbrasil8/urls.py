@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.conf.urls import patterns, url, include
-from django.views.generic import TemplateView
 
 from mittun.registration.views import SubscribeView
 from pythonbrasil8.subscription.views import NotificationView
