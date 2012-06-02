@@ -20,14 +20,15 @@ The aim of this app is to provide features useful to any conference website. One
 Install
 -------
 
-From the command line::
+From the command line: ::
+
     $ make deps
 
 
 Running tests
 -------------
 
-This project has both server side and client side tests. To run the test suites do::
+This project has both server side and client side tests. To run the test suites do: ::
 
     make test
     make jasmine
