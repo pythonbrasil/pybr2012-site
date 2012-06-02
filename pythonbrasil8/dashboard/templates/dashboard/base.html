@@ -17,15 +17,16 @@
     </head>
 
     <body>
-        <div id="header2">
-            <div class="row">
-                <div class="column grid_3">
-                    <div id="logo2">
-                        <a href="{% url home %}" title="PythonBrasil[8]">PythonBrasil[8]</a>
-                    </div>
+        <div id="header">
+            <div class="inner">
+
+                <div id="logo">
+                    <a href="{% url home %}" title="PythonBrasil[8]">PythonBrasil[8]</a>
                 </div>
-                <div class="column grid_9" id="menu">
-                    <ul>
+
+                <div id="menu" class="text_right">
+                    <div>
+                        <ul>
                             <li>
                                 <a href="/dashboard/">dashboard</a>
                             </li>
@@ -35,8 +36,10 @@
                             <li>
                                 <a href="/auth/logout/">{% trans "logout" %}</a>
                             </li>
-                   </ul>
+                       </ul>
+                    </div>
                 </div>
+
             </div>
         </div>
         <div class="content">

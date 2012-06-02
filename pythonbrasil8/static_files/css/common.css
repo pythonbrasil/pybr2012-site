@@ -61,6 +61,7 @@ body {
 .dates p {
     color: #474747;
     margin-top: 5px;
+    line-height: 26px;
 }
 
 #footer p {
@@ -96,20 +97,24 @@ body {
     color: #2471A9;
 }
 
-.dates .inner {
-    margin: 15px 20px;
-    float: left;
+.dates {
+    background-color: #efefef;
+    height: 85px;
+    border-bottom: 1px solid #ddd;
 }
 
 .dates .dates-container {
     margin: 0 auto;
-    float: none;
-    width: 415px
+    width: 800px;
 }
 
-.dates-container {
-    width: 39%;
+.dates .inner {
+    margin: 15px 70px 15px 0px;
     float: left;
+}
+
+.dates .inner.last {
+    margin-right: 0;
 }
 
 .inner-row {
@@ -119,13 +124,6 @@ body {
 .wrapper {
     margin: 0 8%;
 }
-
-.dates {
-    background-color: #efefef;
-    height: 85px;
-    border-bottom: 1px solid #ddd;
-}
-
 
 /*** HEADER ***/
 
@@ -141,22 +139,8 @@ body {
 }
 
 #logo {
-    background: url('/static/images/header/logo.png') no-repeat;
+    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
     position: absolute;
-}
-
-#header2 {
-    padding: 20px;
-}
-
-#logo2 {
-    background: url('/static/images/header/logo.png') no-repeat;
-}
-
-#logo2 a {
-    display: block;
-    height: 37px;
-    text-indent: -9999px;
 }
 
 #logo a {
@@ -182,7 +166,10 @@ body {
 }
 
 #menu ul {
-    float: right;
+    padding: 5px 0;
+    position: absolute;
+    right: 40px;
+    top: 5px;
 }
 
 #menu li {
@@ -197,11 +184,12 @@ body {
 }
 
 #menu li.active {
-    background-color: #004592;
+    background: url('/static/images/header/sprite.png') left 3px no-repeat;
     padding-left: 16px;
 }
 
 #menu li.active a {
+    background: url('/static/images/header/sprite.png') right 3px no-repeat;
     padding: 10px 16px 10px 0;
 }
 

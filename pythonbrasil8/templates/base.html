@@ -23,37 +23,6 @@
 
     <body>
         <div id="fb-root"></div>
-        <div id="header2">
-            <div class="row">
-                <div class="column grid_3">
-                    <div id="logo2">
-                        <a href="{% url home %}" title="PythonBrasil[8]">PythonBrasil[8]</a>
-                    </div>
-                </div>
-                <div class="column grid_9" id="menu">
-                    <ul>
-                        <li class="{% is_active request.path 'home' %}">
-                        <a href="{% url home %}">{% trans "home" %}</a>
-                        </li>
-                        <li class="{% is_active request.path 'pre-registration' %}">
-                            <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
-                        </li>
-                        <li class="{% is_active request.path 'venue' %}">
-                            <a href="{% url venue %}">{% trans "venue" %}</a>
-                        </li>
-                        <li class="{% is_active request.path 'custom-sponsors' %}">
-                            <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
-                        </li>
-                        <li class="{% is_active request.path 'previous-version' %}">
-                            <a href="{% url previous-version %}">{% trans "previous version" %}</a>
-                        </li>
-                   </ul>
-                </div>
-            </div>
-            <div id="social" class="row">
-                {% include "social.html" with twitter_data_text="Vai rolar a #PythonBrasil8 no Rio. Impossível perder."%}
-            </div>
-        {% comment %}
         <div id="header">
             <div class="inner">
 
@@ -70,11 +39,14 @@
                             <li class="{% is_active request.path 'pre-registration' %}">
                                 <a href="{% url pre-registration %}" title="register now">{% trans "registration" %}</a>
                             </li>
+                            <li class="{% is_active request.path 'schedule' %}">
+                                <a href="{% url schedule %}" title="register now">{% trans "schedule" %}</a>
+                            </li>
                             <li class="{% is_active request.path 'venue' %}">
                                 <a href="{% url venue %}">{% trans "venue" %}</a>
                             </li>
                             <li class="{% is_active request.path 'custom-sponsors' %}">
-                                <a href="{% url custom-sponsors %}">{% trans "sponsors" %}</a>
+                                <a href="{% url custom-sponsors %}">{% trans "sponsor" %}</a>
                             </li>
                             <li class="{% is_active request.path 'previous-version' %}">
                                 <a href="{% url previous-version %}">{% trans "previous version" %}</a>
@@ -100,6 +72,13 @@
                         </li>
                     </ul>
                 </div>
+
+                <div id="pre-register">
+                    <p>
+                        <a href="{% url pre-registration %}" title="register now"><span>{% trans "register now" %} »</span></a>
+                    </p>
+
+                </div>
                 {% block social %}
                     <div id="social" class="row">
                        {% include "social.html" with twitter_data_text="Vai rolar a #PythonBrasil8 no Rio. Impossível perder."%}
@@ -107,17 +86,24 @@
                 {% endblock %}
             </div>
         </div>
-        {% endcomment %}
         <div class="dates">
             <div class="wrapper">
                 <div class="dates-container">
                     <div class="inner">
-                        <h4>{% trans "Tutorials" %}</h4>
-                        <p>{% trans "November" %} 21 - 22</p>
+                        <p>{% trans "Call for proposals" %}</p>
+                        <h4>{% trans "June" %} 15</h4>
                     </div>
                     <div class="inner">
-                        <h4>{% trans "Talks & Exposition Hall" %}</h4>
-                        <p>{% trans "November" %} 23 - 24</p>
+                        <p>{% trans "Sprints" %}</p>
+                        <h4>{% trans "November" %} 20</h4>
+                    </div>
+                    <div class="inner">
+                        <p>{% trans "Tutorials" %}</p>
+                        <h4>{% trans "November" %} 21 - 22</h4>
+                    </div>
+                    <div class="inner last">
+                        <p>{% trans "Talks & Exposition Hall" %}</p>
+                        <h4>{% trans "November" %} 23 - 24</h4>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -174,6 +160,18 @@
             {% endcompress %}
         {% endblock %}
         {% block js_bottom %}{% endblock %}
+
+        <script type="text/javascript">
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-32336189-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+        </script>
     </body>
 </html>
 
