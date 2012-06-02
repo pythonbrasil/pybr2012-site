@@ -21,7 +21,7 @@
         </div>
         <div class="register">
             <h2>{% trans "Not registered yet?" %}</h2>
-            <form method="post" action="{% url auth:registration_register %}">
+            <form method="post" action="{% url registration_register %}">
                 {% csrf_token %}
                 {{ registration_form.as_p }}
                 <button class="btn" type="submit">{% trans "Register" %}</button>
