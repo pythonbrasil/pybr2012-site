@@ -193,3 +193,41 @@ class AccountProfileTestCase(TestCase):
         profile = AccountProfile.objects.create(user=user)
         subscription = Subscription.objects.create(user=user, type="talk")
         self.assertEqual(subscription, profile.talk_subscription())
+
+    def test_should_have_twitter_field(self):
+        self.assertIn('twitter', self.field_names)
+
+    def test_twitter_should_be_a_CharField(self):
+        f = AccountProfile._meta.get_field_by_name('twitter')[0]
+        self.assertIsInstance(f, models.CharField)
+
+    def test_twitter_should_have_at_most_15_characters(self):
+        f = AccountProfile._meta.get_field_by_name('twitter')[0]
+        self.assertEqual(15, f.max_length)
+
+    def test_twitter_should_accept_blank(self):
+        f = AccountProfile._meta.get_field_by_name('twitter')[0]
+        self.assertTrue(f.blank)
+
+    def test_twitter_should_be_nullable(self):
+        f = AccountProfile._meta.get_field_by_name('twitter')[0]
+        self.assertTrue(f.null)
+
+    def test_twitter_should_have_verbose_name(self):
+        f = AccountProfile._meta.get_field_by_name('twitter')[0]
+        self.assertEqual(u"Twitter profile", f.verbose_name)
+
+    def test_should_have_field_for_public_displayable(self):
+        self.assertIn('public', self.field_names)
+
+    def test_public_should_be_a_BooleanField(self):
+        f = AccountProfile._meta.get_field_by_name('public')[0]
+        self.assertIsInstance(f, models.BooleanField)
+
+    def test_public_should_be_true_by_default(self):
+        f = AccountProfile._meta.get_field_by_name('public')[0]
+        self.assertEqual(True, f.default)
+
+    def test_public_should_have_verbose_name(self):
+        f = AccountProfile._meta.get_field_by_name('public')[0]
+        self.assertEqual(u"Public profile (visible to everyone)?", f.verbose_name)
