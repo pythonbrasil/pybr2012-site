@@ -6,8 +6,9 @@
 .ropeproject
 settings_local.py
 .idea
-/build
-/lib
-/include
 /bin
+/build
+/include
+/lib
 /man
+/pythonbrasil8/static/*

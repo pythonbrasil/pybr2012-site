@@ -24,5 +24,8 @@ settings:
 run:
 	@python manage.py runserver 0.0.0.0:8000
 
+translate:
+	@cd pythonbrasil8 && django-admin.py makemessages -a && django-admin.py compilemessages
+
 help:
 	grep '^[^#[:space:]].*:' Makefile | awk -F ":" '{print $$1}'
