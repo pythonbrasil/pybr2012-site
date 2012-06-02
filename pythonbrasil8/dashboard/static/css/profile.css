@@ -28,10 +28,10 @@
 }
 
 #profile_form .errorlist {
-    margin-bottom: 2px;
+    margin: 3px 0 2px 265px;
 }
 
 #profile_form .errorlist li {
     color: red;
-    font-size: 12px;
+    font-size: 14px;
 }
