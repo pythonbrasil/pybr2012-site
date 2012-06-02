@@ -12,23 +12,7 @@
 }
 
 #profile_form button {
-    border-radius: 3px;
-    border: 1px solid #333;
-    background-color: #666;
-    background-image: linear-gradient(top, #333, #666);
-    background-image: -moz-linear-gradient(top, #333, #666);
-    background-image: -ms-linear-gradient(top, #333, #666);
-    background-image: -o-linear-gradient(top, #333, #666);
-    background-image: -webkit-linear-gradient(top, #333, #666);
-    color: #FFF;
-    cursor: pointer;
-    font-size: 15px;
     margin: 10px 0 0 265px;
-    width: 65px;
-}
-
-#profile_form button:hover {
-    background-image: none;
 }
 
 #profile_form .errorlist {

@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
+from django.contrib.auth.models import User
+from django.core.management import call_command
 from django.test import TestCase
 from django.test.client import RequestFactory, Client
 from django.views.generic import TemplateView
-from django.contrib.auth.models import User
+from django.views.generic.list import ListView
 
-from pythonbrasil8.dashboard.views import IndexView, ProfileView
+from pythonbrasil8.core.views import LoginRequiredMixin
+from pythonbrasil8.dashboard.views import IndexView, ProfileView, SessionsView
 from pythonbrasil8.dashboard.forms import ProfileForm
 from pythonbrasil8.dashboard.models import AccountProfile
 from pythonbrasil8.schedule.models import Session
@@ -112,3 +116,36 @@ class ProfileViewTestCase(TestCase):
         client.login(username=self.request.user.username, password='test')
         response = client.get('/dashboard/profile/')
         self.assertEqual(200, response.status_code)
+
+
+class SessionsTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "sessions.json", verbosity=0)
+        cls.factory = RequestFactory()
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
+    def test_should_inherit_from_ListView(self):
+        assert issubclass(SessionsView, ListView)
+
+    def test_should_inherit_from_LoginRequiredMixin(self):
+        assert issubclass(SessionsView, LoginRequiredMixin)
+
+    def test_template_name_should_be_dashboard_slash_sessions(self):
+        self.assertEqual(u"dashboard/sessions.html", SessionsView.template_name)
+
+    def test_should_use_sessions_as_context_object_name(self):
+        self.assertEqual(u"sessions", SessionsView.context_object_name)
+
+    def test_queryset_should_return_sessions_of_the_request_user(self):
+        expected = [Session.objects.get(pk=1)]
+        request = self.factory.get("/dashboard/sessions")
+        request.user = User.objects.get(username="chico")
+        v = SessionsView()
+        v.request = request
+        sessions = v.get_queryset()
+        self.assertEqual(expected, list(sessions))

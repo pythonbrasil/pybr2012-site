@@ -1,26 +1,32 @@
 {% extends "dashboard/base.html" %}
+{% load i18n %}
 
-{% block content %}
-<div class="sessions">
-    <h2>Session</h2>
-    <ul>
-    {% for session in sessions %}
-        <li>{{ session.title}} - {{ sesion.description }}</li>
-    {% endfor %}
-    </ul>
-    <a href="/dashboard/subscribe/">subscribe a session (talk/tutorial)</a>
-</div>
-<div class="subscriptions">
-    <h2>Subscription</h2>
-    {% if request.user.get_profile.has_talk_subscription %}
-        {% if request.user.get_profile.talk_subscription.done %}
-            <p>Você já está inscrito na pythonbrasil[8]</p>
-        {% else %}
-            <p>Sua inscrição já foi efetuada. Mas o pagamento da taxa ainda não foi efetuado. <a href="https://pagseguro.uol.com.br/v2/checkout/payment.html?code={{ request.user.get_profile.talk_subscription.transaction_set.all.0.code }}">Deseja efetuar o pagamento agora?</a></p>
-        {% endif %}
-    {% else %}
-        <p>Você ainda não está inscrito na pythonbrasil[8]. <a href="{% url talk-subscription %}">Deseja inscrever-se agora?</a></p>
-    {% endif %}
-</div>
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/dashboard-index.css" />
 {% endblock %}
 
+{% block content %}
+<div class="row">
+    <div class="column grid_12">
+        <h1>Registration</h1>
+        {% if request.user.get_profile.has_talk_subscription %}
+            {% if request.user.get_profile.talk_subscription.done %}
+                <p>{% trans "Your registration to PythonBrasil[8] is confirmed, we'll see you at the conference!" %}</p>
+            {% else %}
+            <p>
+                {% blocktrans %}
+                    You registration has been received, but in order to confirm it, you need to pay the registration tax. Click the button bellow to make the payment now:
+                {% endblocktrans %}
+                <a href="https://pagseguro.uol.com.br/v2/checkout/payment.html?code={{ request.user.get_profile.talk_subscription.transaction_set.all.0.code }}" title="{% trans "Pay and confirm the registration for PythonBrasil[8]" %}" class="btn">{% trans "Pay registration" %}</a>
+            </p>
+            {% endif %}
+        {% else %}
+            <p>{% trans "You are registered in the website, but you are not registered for the conference yet. To register to the conference, please click in the button bellow:" %}</p>
+            <p id="register-to-the-conference">
+                <a href="{% url talk-subscription %}" title="{% trans "Register to the conference" %}" class="btn">{% trans "Register to the conference" %}</a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

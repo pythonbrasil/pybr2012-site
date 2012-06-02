@@ -74,18 +74,18 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         female_choices = (
             'Female', (
-                ('P', 'P'),
+                ('S', 'S'),
                 ('M', 'M'),
-                ('G', 'G'),
+                ('L', 'L'),
             )
         )
         male_choices = (
             'Male', (
-                ('P', 'P'),
+                ('S', 'S'),
                 ('M', 'M'),
-                ('G', 'G'),
-                ('GG', 'GG'),
-                ('GGX', 'GGX'),
+                ('L', 'L'),
+                ('XL', 'XL'),
+                ('XXL', 'XXL'),
             )
         )
 
@@ -167,7 +167,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_age_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
-        self.assertIn(('--9', '<=9'), field.choices)
+        self.assertIn(('--9', '9 or less'), field.choices)
         self.assertIn(('10-19', '10-19'), field.choices)
         self.assertIn(('20-29', '20-29'), field.choices)
         self.assertIn(('30-39', '30-39'), field.choices)
@@ -175,7 +175,7 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(('50-59', '50-59'), field.choices)
         self.assertIn(('60-69', '60-69'), field.choices)
         self.assertIn(('70-79', '70-79'), field.choices)
-        self.assertIn(('80-+', '>=80'), field.choices)
+        self.assertIn(('80-+', '80 or more'), field.choices)
 
     def test_age_field_should_be_optional(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
