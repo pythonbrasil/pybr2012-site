@@ -44,9 +44,21 @@ body {
 
 /*** TYPOGRAPHY ***/
 
-.content h1 {
+h1 {
     color: #2471A9;
+    font-family: arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 0.9em;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
 }
+
+h2 {color: black; font-size: 20px; font-weight:bold; margin: 20px 0 10px; text-transform: uppercase;}
+a {color: #1E5D8B}
+a:visited {color: #1E5D8B}
+
+
 
 .content h5 {
     color: #484746;
@@ -249,13 +261,5 @@ body {
     margin: 41px 0 0 20px;
 }
 
-h1 {
-    font-family: arial, sans-serif;
-    text-transform: uppercase;
-    color: black;
-    font-size: 28px;
-    line-height: 0.9em;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-}
+
 
