@@ -32,13 +32,13 @@ h1 {
 
 .btn {
     border-radius: 3px;
-    border: 1px solid #333;
-    background-color: #666;
-    background-image: linear-gradient(top, #333, #666);
-    background-image: -moz-linear-gradient(top, #333, #666);
-    background-image: -ms-linear-gradient(top, #333, #666);
-    background-image: -o-linear-gradient(top, #333, #666);
-    background-image: -webkit-linear-gradient(top, #333, #666);
+    border: 1px solid #2471A9;
+    background-color: #2471A9;
+    background-image: linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -moz-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -ms-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -o-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -webkit-linear-gradient(top, #24AAFF, #2471A9);
     color: #FFF;
     cursor: pointer;
     display: block;
