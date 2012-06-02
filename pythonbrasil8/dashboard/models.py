@@ -5,7 +5,6 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext
 
 from pythonbrasil8.dashboard import choices
-
 from registration.signals import user_activated
 
 
