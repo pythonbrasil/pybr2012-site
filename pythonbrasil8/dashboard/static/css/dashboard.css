@@ -1,0 +1,31 @@
+#menu-dashboard {
+    background-color: #EEE;
+    background: url(../img/pixel.png) #EEE repeat-x 0 60px;
+}
+
+#menu-dashboard ul {
+    display: block;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 45%;
+}
+
+#menu-dashboard ul li {
+    display: inline-block;
+}
+
+#menu-dashboard ul li a {
+    display: block;
+    padding: 20px 10px;
+}
+
+#menu-dashboard ul li a:hover, #menu-dashboard ul li a.active {
+    border: 1px #CCC solid;
+    border-bottom: 0;
+    background-color: #FFF;
+    padding: 20px 9px;
+}
+
+h1 {
+    font-weight: normal;
+}

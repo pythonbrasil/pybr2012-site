@@ -82,29 +82,31 @@
                 {% endblock %}
             </div>
         </div>
+        {% block greybar %}
         <div class="dates">
             <div class="wrapper">
-                <div class="dates-container">
-                    <div class="inner">
-                        <p>{% trans "Call for proposals" %}</p>
-                        <h4>{% trans "June" %} 15</h4>
+                    <div class="dates-container">
+                        <div class="inner">
+                            <p>{% trans "Call for proposals" %}</p>
+                            <h4>{% trans "June" %} 15</h4>
+                        </div>
+                        <div class="inner">
+                            <p>{% trans "Sprints" %}</p>
+                            <h4>{% trans "November" %} 20</h4>
+                        </div>
+                        <div class="inner">
+                            <p>{% trans "Tutorials" %}</p>
+                            <h4>{% trans "November" %} 21 - 22</h4>
+                        </div>
+                        <div class="inner last">
+                            <p>{% trans "Talks & Exposition Hall" %}</p>
+                            <h4>{% trans "November" %} 23 - 24</h4>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="inner">
-                        <p>{% trans "Sprints" %}</p>
-                        <h4>{% trans "November" %} 20</h4>
-                    </div>
-                    <div class="inner">
-                        <p>{% trans "Tutorials" %}</p>
-                        <h4>{% trans "November" %} 21 - 22</h4>
-                    </div>
-                    <div class="inner last">
-                        <p>{% trans "Talks & Exposition Hall" %}</p>
-                        <h4>{% trans "November" %} 23 - 24</h4>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
             </div>
         </div>
+        {% endblock %}
 
         <div class="content">
             <div class="inner row">

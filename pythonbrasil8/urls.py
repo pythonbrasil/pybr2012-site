@@ -28,6 +28,6 @@ urlpatterns = patterns('',
 
     url(r'^dashboard/', include('pythonbrasil8.dashboard.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^auth/', include('registration.auth_urls')),
+    url(r'^auth/', include('registration.auth_urls', namespace="auth", app_name="registration")),
     url(r'^admin/', include(admin.site.urls)),
 )

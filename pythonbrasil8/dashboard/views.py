@@ -21,6 +21,10 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         self.kwargs['pk'] = self.request.user.get_profile().id
         return super(ProfileView, self).get(*args, **kwargs)
 
+    def post(self, *args, **kwargs):
+        self.kwargs['pk'] = self.request.user.get_profile().id
+        return super(ProfileView, self).post(*args, **kwargs)
+
 
 class IndexView(DashBoardView):
     template_name = 'dashboard/index.html'
