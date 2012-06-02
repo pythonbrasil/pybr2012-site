@@ -12,45 +12,45 @@ class AccountProfileTestCase(TestCase):
     def setUpClass(self):
         self.field_names = AccountProfile._meta.get_all_field_names()
 
-    def test_should_has_user_field(self):
+    def test_should_have_user_field(self):
         self.assertIn('user', self.field_names)
 
     def test_user_field_should_be_one_to_one_field(self):
         field = AccountProfile._meta.get_field_by_name('user')[0]
         self.assertEqual(models.OneToOneField, field.__class__)
 
-    def test_should_has_description_field(self):
+    def test_should_have_description_field(self):
         self.assertIn('description', self.field_names)
 
     def test_description_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('description')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_description_field_should_has_20_of_max_length(self):
+    def test_description_field_should_have_20_of_max_length(self):
         field = AccountProfile._meta.get_field_by_name('description')[0]
         self.assertEqual(20, field.max_length)
 
-    def test_should_has_type_field(self):
+    def test_should_have_type_field(self):
         self.assertIn('type', self.field_names)
 
     def test_type_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_type_field_should_has_expected_choices(self):
+    def test_type_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]
         self.assertIn(('Student', 'Student'), field.choices)
         self.assertIn(('APyB', 'APyB Associated'), field.choices)
         self.assertIn(('Normal', 'Normal'), field.choices)
 
-    def test_should_has_tshirt_field(self):
+    def test_should_have_tshirt_field(self):
         self.assertIn('tshirt', self.field_names)
 
     def test_tshirt_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_tshirt_field_should_has_expected_choices(self):
+    def test_tshirt_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
         female_choices = (
             'Female', (
@@ -72,7 +72,7 @@ class AccountProfileTestCase(TestCase):
         self.assertIn(female_choices, field.choices)
         self.assertIn(male_choices, field.choices)
 
-    def test_should_has_locale_field(self):
+    def test_should_have_locale_field(self):
         self.assertIn('locale', self.field_names)
 
     def test_locale_field_should_be_char_field(self):
@@ -84,14 +84,14 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
-    def test_should_has_gender_field(self):
+    def test_should_have_gender_field(self):
         self.assertIn('gender', self.field_names)
 
     def test_gender_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_gender_field_should_has_expected_choices(self):
+    def test_gender_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
         self.assertIn(('female', 'female'), field.choices)
         self.assertIn(('male', 'male'), field.choices)
@@ -103,14 +103,14 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
-    def test_should_has_age_field(self):
+    def test_should_have_age_field(self):
         self.assertIn('age', self.field_names)
 
     def test_age_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_age_field_should_has_expected_choices(self):
+    def test_age_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
         self.assertIn(('--9', '--9'), field.choices)
         self.assertIn(('10-19', '10-19'), field.choices)
@@ -127,14 +127,14 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
-    def test_should_has_profession_field(self):
+    def test_should_have_profession_field(self):
         self.assertIn('profession', self.field_names)
 
     def test_profession_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_profession_field_should_has_expected_choices(self):
+    def test_profession_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
         self.assertIn(('student', 'student'), field.choices)
         self.assertIn(('trainee', 'trainee'), field.choices)
@@ -150,7 +150,7 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
-    def test_should_has_institution_field(self):
+    def test_should_have_institution_field(self):
         self.assertIn('institution', self.field_names)
 
     def test_institution_field_should_be_char_field(self):
@@ -162,18 +162,18 @@ class AccountProfileTestCase(TestCase):
         self.assertTrue(field.null)
         self.assertTrue(field.blank)
 
-    def test_institution_field_should_has_verbose_name_company_university_institution(self):
+    def test_institution_field_should_have_verbose_name_company_university_institution(self):
         field = AccountProfile._meta.get_field_by_name('institution')[0]
         self.assertEquals('Company / University / Institution', field.verbose_name)
 
-    def test_should_has_payement_field(self):
+    def test_should_have_payement_field(self):
         self.assertIn('payement', self.field_names)
 
     def test_payement_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('payement')[0]
         self.assertEqual(models.BooleanField, field.__class__)
 
-    def test_payement_field_should_has_default_False(self):
+    def test_payement_field_should_have_default_False(self):
         field = AccountProfile._meta.get_field_by_name('payement')[0]
         self.assertFalse(field.default)
 
