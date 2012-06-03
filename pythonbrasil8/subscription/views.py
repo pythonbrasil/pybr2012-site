@@ -3,6 +3,7 @@ import requests
 
 from django.conf import settings
 from django.contrib import messages
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext
@@ -11,6 +12,7 @@ from django.views.generic import View
 from lxml import etree
 
 from pythonbrasil8.core.views import LoginRequiredMixin
+from pythonbrasil8.dashboard.models import AccountProfile
 from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
@@ -36,6 +38,11 @@ class SubscriptionView(LoginRequiredMixin, View):
         return Transaction.objects.none()
 
     def get(self, request, *args, **kwargs):
+        profile = AccountProfile.objects.filter(user=request.user)
+        if not profile or not profile[0].name:
+            msg = ugettext("In order to issue your registration to the conference, you need to complete your profile.")
+            messages.error(request, msg,fail_silently=True)
+            return HttpResponseRedirect(reverse("edit-profile"))
         subscription = Subscription.objects.create(
             type='talk',
             user=request.user,

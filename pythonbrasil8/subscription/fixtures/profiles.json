@@ -1,0 +1,56 @@
+[
+    {
+        "model": "auth.User",
+        "pk": 1,
+        "fields": {
+            "username": "chico",
+            "password": "123",
+            "email": "chico@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "auth.User",
+        "pk": 2,
+        "fields": {
+            "username": "chica",
+            "password": "1234",
+            "email": "chica@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "auth.User",
+        "pk": 3,
+        "fields": {
+            "username": "xico",
+            "password": "1234",
+            "email": "xico@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "dashboard.AccountProfile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "name": "Chico",
+            "description": "no description left for you",
+            "type": "student",
+            "tshirt": "L",
+            "locale": "RJ",
+            "gender": "male",
+            "public": 1
+        }
+    },
+    {
+        "model": "dashboard.AccountProfile",
+        "pk": 2,
+        "fields": {
+            "user": 3,
+            "name": "",
+            "description": "",
+            "type": "",
+            "tshirt": "",
+            "locale": "",
+            "gender": ""
+        }
+    }
+]

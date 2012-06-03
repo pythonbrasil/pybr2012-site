@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
+from django.contrib.auth.models import User
+from django.core.management import call_command
+from django.core.urlresolvers import reverse, NoReverseMatch
+from django.http import HttpResponseRedirect
+from django.db import models
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.db import models
-from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse, NoReverseMatch
 
+from pythonbrasil8.subscription import views
 from pythonbrasil8.subscription.models import Subscription, Transaction, PRICES
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
-from pythonbrasil8.subscription import views
 
 
 class SubscriptionModelTestCase(TestCase):
@@ -100,8 +103,16 @@ class TransacitonModelTestCase(TestCase):
 
 class SubscriptionViewTestCase(TestCase):
 
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "profiles.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
     def setUp(self):
-        self.user = User.objects.create(username="Wolverine")
+        self.user = User.objects.get(pk=1)
         self.request = RequestFactory().get("/", {})
         self.request.user = self.user
 
@@ -140,6 +151,22 @@ class SubscriptionViewTestCase(TestCase):
         transaction = SubscriptionView().generate_transaction(subscription)
         self.assertEqual(subscription, transaction.subscription)
         self.assertEqual("xpto123", transaction.code)
+
+    def test_should_redirect_to_the_profile_url_if_the_user_does_not_have_a_profile(self):
+        request = RequestFactory().get("/")
+        request.user = User.objects.get(pk=2)
+        response = SubscriptionView.as_view()(request)
+        self.assertIsInstance(response, HttpResponseRedirect)
+        expected_url = reverse("edit-profile")
+        self.assertEqual(expected_url, response["Location"])
+
+    def test_should_redirect_to_the_profile_url_if_the_profile_does_not_contain_a_name(self):
+        request = RequestFactory().get("/")
+        request.user = User.objects.get(pk=3)
+        response = SubscriptionView.as_view()(request)
+        self.assertIsInstance(response, HttpResponseRedirect)
+        expected_url = reverse("edit-profile")
+        self.assertEqual(expected_url, response["Location"])
 
 
 class NotificationViewTestCase(TestCase):
