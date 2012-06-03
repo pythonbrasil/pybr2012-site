@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "News" %} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/news.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="row" id="news">
+        <h1>{% trans "PythonBrasil News" %}</h1>
+
+        <div class="news-item" id="4">
+            <h2>{% trans "Buy your tickets for PythonBrasil[8] - registration is now available!" %}</h2>
+            <p class="date">Published on June 3 2012, by Tati Al-Chueyr</p>
+            <p class="body">
+                We are happy to announce that <a href="http://2012.pythonbrasil.org.br/register"> registration for PythonBrasil[8] conference</a> has opened! Early birds tickets of US$ 90 ( R$ 150) for students and US$ 150 (R$ 250) for individuals are available until the 31th of August.
+                <br><br>
+                The eighth edition of the conference will be held from 21 to 24 November 2012 in Rio de Janeiro. It will provide lectures of international recognized speakers, including: Brett Cannon (CPython core developer at Google), Andrea Gavana (core developer of the wxPython GUI framework) and Massimo DiPierro (creator of the web2py framework, for web development), as well as Brazilian experts. Furthermore, there will be sponsors' expositions, lightning talks, coding dojos and open spaces.
+                <br><br>
+                PythonBrasil[8] will be a perfect opportunity to the meet, discuss, inspire and make deals around the Python programming language. Check our <a href="http://2012.pythonbrasil.org.br/"> web page for PythonBrasil[8]</a> for more details and stay up to date following our <a href="http://www.twitter.com/pythonbrasil" target="_blank">twitter</a>!
+            </p>
+        </div>
+        <div class="news-item" id="3">
+            <h2>{% trans "Keynotes of PythonBrasil[8] - who would you like to see?" %}</h2>
+            <p class="date">Published on May 15 2012, by Tati Al-Chueyr</p>
+            <p class="body">
+            Provided the partnership with PyAr, the Argentinian Python community, the PythonBrasil[8] conference will be able to gather several international recognized keynotes.
+            <br><br>
+            Despite this partnership, as the conference is organized by the Python community for the community, we are doing a public survey to know who the attendees of the conference would like to watch speaking as keynotes. The survey has open questions - so you are free to suggest your favorite developers & speakers. Please, take 3 minutes of your time, and <a href="https://docs.google.com/spreadsheet/viewform?formkey=dFc1SmdPUjdLaFpBNUF1VjNCY091b2c6MQ#gid=0" target="_blank">click here to answer the keynotes survey</a>.
+            <br><br>
+            The eighth edition of PythonBrasil will be held from 21 to 24 November 2012 in Rio de Janeiro, and it is being organized with the community support. For the first time the <a href="http://2012.pythonbrasil.org.br/">conference's website</a> is being developed from scratch by an open-source community, with the help of <a href="https://github.com/pythonbrasil8/pythonbrasil8" target="_blank">Github</a>. Thank you, for being part of PythonBrasil[8] organization!</p>
+        </div>
+        <div class="news-item" id="2">
+            <h2>{% trans "Choose the books that will be raffled during PythonBrasil[8]" %}</h2>
+            <p class="date">Published on May 10 2012, by Tati Al-Chueyr</p>
+            <p class="body">
+                Some of the partners of PythonBrasil[8] are renowned publishers, which are kindly donating books to be raffled during the conference. One of this publishers is Novatec, a Brazilian company that is supporting the community with books in Portuguese, including "Python e Django", by the current president of APyB (Brazilian Python Association) - Osvaldo Santana.
+                <br><br>
+                Among the partners, there is also the international publisher O'Reilly, responsible for the "Python Cookbook", written by the trio Alex Martelli, Anna Ravenscroft and David Ascher. Another publisher that is also supporting PythonBrasil[8] is Pearson, responsible for the famous "Python Essential Reference", by David M. Beazley.
+                <br><br>
+                The excellent news is: not only these two international publishers will donate books, but they are also giving our community the chance of deciding which books will be donated! There are extremelly new titles (from 2012!) on several topics related to Python, including Python 3k and how to mine the social web with the programming language.
+                <br><br>
+                In order to choose your preferred books, please, reply to these very quick surveys:
+            </p>
+            <ul>
+                <li> - <a href="https://docs.google.com/spreadsheet/viewform?formkey=dFByRXNiUk9qYVFMTWFxR05BUWhTU1E6MQ#gid=0" target="_blank">Pearson books survey</a></li>
+                <li> - <a href="https://docs.google.com/spreadsheet/viewform?formkey=dE1UOTMya2VzdG0xcGw1dVRYRU5sdWc6MA" target="_blank">O'Reilly books survey</a></li>
+            </ul>
+            <p class="body">
+               And before we leave this news - did you schedule PythonBrasil[8] in your calendar? It will happen from the 21st to the 24th of November, in Rio de Janeiro. Stay up to date following our <a href="http://www.twitter.com/pythonbrasil" target="_blank">twitter</a>!
+            </p>
+        </div>
+        <div class="news-item" id="1">
+            <h2>{% trans  "PythonBrasil[8] venue is set: SulAmérica Convention Center"%}</h2>
+            <img src="{{ STATIC_URL }}/images/news/sulamerica_convention_center.png" alt="SulAmérica Convention Center - venue for PythonBrasil[8]" width="310" height="195" />
+            <p class="date">Published on April 13 2012, by Tati Al-Chueyr</p>
+            <p class="body">
+                After searching and analysing venues to host PythonBrasil[8] for several weeks, this issue is solved. It is a great satisfaction to announce that we signed today the contract with <a href="http://www.ccsulamerica.com.br/" target="_blank">SulAmérica Convention Center</a>.
+                <br><br>
+                During PythonBrasil[8], SulAmérica will host the main conference, including Talks, Lightning Talks, OpenSpaces and the Exposition Hall, from the 23rd to the 24th November 2012.
+                <br><br>
+                This convention center is a modern complex located in the downtown of Rio de Janeiro, only 20 minutes from the international Tom Jobim Airport. It is one of the most famous venues of the country. It hosts some of the renowned national and international events every year linked to various industries. It is in a privileged area, a few meters from a subway station and in a neighboarhood where bus lines from all over the city pass by.
+                <br><br>
+                A diverse hotel network can also be found nearby, making SulAmérica the perfect place to host PythonBrasil and gather pythonistas from all over the world. As soon as possible, we'll make available more information about the surroundings, at the <a href="http://2012.pythonbrasil.org.br/venue/">venue page</a>.
+                <br><br>
+                We'd like to thank our first sponsor -  <a href="http://www.globo.com/" target="_blank">Globo.com</a> - which is supporting hiring this venue, together with the <a href="http://associacao.python.org.br/" target="_blank">Brazilian Python Association</a> (APyB).
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
