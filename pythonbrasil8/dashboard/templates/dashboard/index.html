@@ -22,9 +22,9 @@
             </p>
             {% endif %}
         {% else %}
-            <p>{% trans "You are registered in the website, but you are not registered for the conference yet. To register to the conference, please click in the button below:" %}</p>
+            <p>{% trans "You are registered in the website, but you are not registered for the conference yet. To register to the conference, please click in the button below. After that, you will be able to pay the registration tax corresponding to your registration type." %}</p>
             <p id="register-to-the-conference">
-                <a href="{% url talk-subscription %}" title="{% trans "Register to the conference" %}" class="btn">{% trans "Register to the conference" %}</a>
+                <a href="{% url talk-subscription %}" title="{% trans "Register to the conference" %}" class="btn green">{% trans "Register to the conference" %}</a>
             </p>
         {% endif %}
     </div>

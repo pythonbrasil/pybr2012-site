@@ -287,6 +287,16 @@ a:visited {color: #1E5D8B}
     color: #FFF;
 }
 
+.btn.green {
+    border-color: #480;
+    background-color: #480;
+    background-image: -moz-linear-gradient(top, #240, #480)
+}
+
+.btn.green:hover {
+    background-image: -moz-linear-gradient(top, #250, #480)
+}
+
 a.become {color:white}
 #sponsors-info a.become:visited {color:white}
 
