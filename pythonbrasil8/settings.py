@@ -150,7 +150,6 @@ PAGSEGURO = {
     'token': 'radiogaga',
     'currency': 'BRL',
     'itemId1': '0001',
-    'itemDescription1': u'Inscrição na PythonBrasil 2012',
     'itemQuantity1': 1,
 }
 
