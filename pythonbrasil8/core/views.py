@@ -57,10 +57,6 @@ class SponsorsInfoView(TemplateView):
     template_name = 'sponsors_info.html'
 
 
-class SuccessfulPreRegistration(TemplateView):
-    template_name = 'success_pre_registration.html'
-
-
 class SponsorsJobsView(ListView):
     template_name = 'sponsors_jobs.html'
     model = Job

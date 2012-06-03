@@ -12,19 +12,19 @@
         <p>{% trans "In order to pay your registration for attending to PythonBrasil[8] or to propose a talk, you need to have an account." %}</p>
 
         <div class="login">
-            <h2>{% trans "Login" %}</h2>
+            <h2>{% trans "Log In" %}</h2>
             <form method="post" action="">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn" type="submit">{% trans "Login" %}</button>
+                <button class="btn" type="submit">{% trans "Log In" %}</button>
             </form>
         </div>
         <div class="register">
-            <h2>{% trans "Not registered yet?" %}</h2>
+            <h2>{% trans "Don't have an account? Sign Up now!" %}</h2>
             <form method="post" action="{% url registration_register %}">
                 {% csrf_token %}
                 {{ registration_form.as_p }}
-                <button class="btn" type="submit">{% trans "Register" %}</button>
+                <button class="btn" type="submit">{% trans "Sign Up" %}</button>
             </form>
         </div>
     </div>

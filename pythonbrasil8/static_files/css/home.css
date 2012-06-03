@@ -84,15 +84,15 @@
 		*display: inline;
 		letter-spacing: 0;
 		vertical-align: top;
-		width: 304px;
-		margin-right: 18px;
+		width: 274px;
+        margin-right: 30px;
   }
 
   .multicolumn li.fat {
 		width: 508px;
   }
   .multicolumn li.thin {
-		width: 100px;
+		width: 110px;
         text-align:right;
   }
 
@@ -110,6 +110,7 @@
 	.up_to_date li {
 		overflow: hidden;
 		width: 90%;
+        margin-right: 0
 	}
 
 .ico {

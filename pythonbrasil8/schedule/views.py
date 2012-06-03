@@ -13,3 +13,4 @@ class SubscribeView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('dashboard-index')
+
