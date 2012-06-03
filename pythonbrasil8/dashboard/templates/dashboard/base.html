@@ -26,13 +26,15 @@
     </div>
 </div>
 
-{% if messages %}
 <div id="messages">
     <div class="row">
         {% for message in messages %}
             <div class="{{message.tags}}">{{message}}</div>
         {% endfor %}
+
+        {% if request.user.get_profile.has_talk_subscription and not request.user.get_profile.talk_subscription.done %}
+            <div class="success">You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!</div>
+        {% endif %}
     </div>
 </div>
-{% endif %}
 {% endblock %}
