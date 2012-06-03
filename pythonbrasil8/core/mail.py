@@ -31,7 +31,7 @@ class MailSender(object):
         return not self.t.isAlive()
 
 
-def send_mail(sender, receivers, subject, body):
+def send(sender, receivers, subject, body):
     m = MailSender(sender, receivers, subject, body)
     m.send_mail()
     return m

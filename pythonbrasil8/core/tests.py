@@ -167,7 +167,7 @@ class SporsorsJobViewTestCase(TestCase):
 class MailSenderTestCase(TestCase):
 
     def test_shoul_send_mail(self):
-        m = mail.send_mail(u"me@pythonbrasil.org.br", [u"he@pythonbrasil.org.br"], u"Hi", u"hello")
+        m = mail.send(u"me@pythonbrasil.org.br", [u"he@pythonbrasil.org.br"], u"Hi", u"hello")
         m.wait()
         email = django_mail.outbox[0]
         self.assertEqual(u"Hi", email.subject)
