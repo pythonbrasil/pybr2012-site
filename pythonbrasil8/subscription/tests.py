@@ -187,11 +187,12 @@ class SubscriptionViewTestCase(TestCase):
         self.assertEqual("xpto123", transaction.code)
 
     def test_should_redirect_to_the_profile_url_if_the_user_does_not_have_a_profile(self):
-        request = RequestFactory().get("/")
+        request = RequestFactory().get("/dashboard/subscription/talk/")
         request.user = User.objects.get(pk=2)
         response = SubscriptionView.as_view()(request)
         self.assertIsInstance(response, HttpResponseRedirect)
-        expected_url = reverse("edit-profile")
+        base_url = reverse("edit-profile")
+        expected_url = "%s?next=%s" % (base_url, request.path)
         self.assertEqual(expected_url, response["Location"])
 
     def test_should_redirect_to_the_profile_url_if_the_profile_does_not_contain_a_name(self):
@@ -199,7 +200,8 @@ class SubscriptionViewTestCase(TestCase):
         request.user = User.objects.get(pk=3)
         response = SubscriptionView.as_view()(request)
         self.assertIsInstance(response, HttpResponseRedirect)
-        expected_url = reverse("edit-profile")
+        base_url = reverse("edit-profile")
+        expected_url = "%s?next=%s" % (base_url, request.path)
         self.assertEqual(expected_url, response["Location"])
 
 

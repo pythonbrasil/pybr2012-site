@@ -47,7 +47,8 @@ class SubscriptionView(LoginRequiredMixin, View):
         if not profile or not profile[0].name:
             msg = ugettext("In order to issue your registration to the conference, you need to complete your profile.")
             messages.error(request, msg, fail_silently=True)
-            return HttpResponseRedirect(reverse("edit-profile"))
+            url = "%s?next=%s" % (reverse("edit-profile"), request.path)
+            return HttpResponseRedirect(url)
         subscription = Subscription.objects.create(
             type='talk',
             user=request.user,
