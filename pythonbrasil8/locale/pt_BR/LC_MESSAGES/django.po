@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 16:26-0300\n"
+"POT-Creation-Date: 2012-06-03 03:28-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -20,12 +20,54 @@ msgstr ""
 msgid "Learn how to become a sponsor"
 msgstr "Veja como se tornar um patrocinador"
 
-#: core/templates/home.html:28
-msgid "WHAT IS"
-msgstr "O QUE É"
+#: core/templates/home.html:29
+msgid "ARE YOU SPEAKING OR ATTENDING?"
+msgstr ""
+
+#: core/templates/home.html:30
+msgid "grab a badge"
+msgstr ""
+
+#: core/templates/home.html:36
+msgid "FROM THE BLOG"
+msgstr ""
+
+#: core/templates/home.html:37
+msgid "latest news"
+msgstr ""
+
+#: core/templates/home.html:40
+msgid "Buy your tickets for PythonBrasil[8] - registration is now available!"
+msgstr ""
+
+#: core/templates/home.html:44
+msgid "Keynotes of PythonBrasil[8] - you can help choosing the last ones!"
+msgstr ""
+
+#: core/templates/home.html:48
+msgid "Help us choosing the books O'Reilly and Pearson will be rafling"
+msgstr ""
+
+#: core/templates/home.html:52
+msgid "PythonBrasil[8] venue set: contract was signed today!"
+msgstr ""
+
+#: core/templates/home.html:58
+msgid "STAY UP TO DATE"
+msgstr ""
+
+#: core/templates/home.html:59
+msgid "follow us"
+msgstr ""
+
+#: core/templates/sponsors.html:4
+#, fuzzy
+msgid "Sponsors"
+msgstr "patrocínio"
 
 #: core/templates/sponsors.html:13
-msgid "ABOUT PYTHONBRASIL SPONSORS"
+#, fuzzy
+msgid "PYTHONBRASIL SPONSORS"
 msgstr "PATROCINADORES DA PYTHONBRASIL"
 
 #: core/templates/sponsors_info.html:4
@@ -204,23 +246,109 @@ msgstr "Twitter"
 msgid "Public profile (visible to everyone)?"
 msgstr "Perfil público (visivel para todos)?"
 
+#: dashboard/views.py:30
+msgid "Profile successfully updated."
+msgstr ""
+
 #: dashboard/templates/dashboard/base.html:17
+msgid "Proposals"
+msgstr ""
+
+#: dashboard/templates/dashboard/base.html:20
 msgid "edit your profile"
 msgstr "edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:17
+#: dashboard/templates/dashboard/base.html:20
 msgid "Edit your profile"
 msgstr "Edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:20
+#: dashboard/templates/dashboard/base.html:23
+msgid "Change password"
+msgstr ""
+
+#: dashboard/templates/dashboard/base.html:26
+#: templates/registration/logout.html:7
 msgid "Logout"
 msgstr "Sair"
 
+#: dashboard/templates/dashboard/index.html:12
+#, fuzzy
+msgid "Registration"
+msgstr "inscrição"
+
+#: dashboard/templates/dashboard/index.html:15
+msgid ""
+"Your registration to PythonBrasil[8] is confirmed, we'll see you at the "
+"conference!"
+msgstr ""
+
+#: dashboard/templates/dashboard/index.html:18
+msgid ""
+"\n"
+"                    You registration has been received, but in order to "
+"confirm it, you need to pay the registration tax. Click the button below to "
+"make the payment now:\n"
+"                "
+msgstr ""
+
+#: dashboard/templates/dashboard/index.html:21
+msgid "Pay and confirm the registration for PythonBrasil[8]"
+msgstr ""
+
+#: dashboard/templates/dashboard/index.html:21
+#, fuzzy
+msgid "Pay registration"
+msgstr "inscrição"
+
+#: dashboard/templates/dashboard/index.html:25
+msgid ""
+"You are registered in the website, but you are not registered for the "
+"conference yet. To register to the conference, please click in the button "
+"below. After that, you will be able to pay the registration tax "
+"corresponding to your registration type."
+msgstr ""
+
+#: dashboard/templates/dashboard/index.html:27
+msgid "Register to the conference"
+msgstr ""
+
 #: dashboard/templates/dashboard/profile.html:16
+#: templates/registration/registration_form.html:16
 msgid "Save"
 msgstr "Salvar"
 
-#: templates/about.html:4
+#: dashboard/templates/dashboard/sessions.html:19
+#: dashboard/templates/dashboard/sessions.html:21
+msgid "Submit a proposal"
+msgstr ""
+
+#: dashboard/templates/dashboard/sessions.html:21
+msgid "You did not submit any proposal yet."
+msgstr ""
+
+#: dashboard/templates/dashboard/sessions.html:21
+msgid "Why don't you send one?"
+msgstr ""
+
+#: subscription/views.py:44
+msgid ""
+"In order to issue your registration to the conference, you need to complete "
+"your profile."
+msgstr ""
+
+#: subscription/views.py:56
+msgid ""
+"Failed to generate a transaction within the payment gateway. Please contact "
+"the event staff to complete your registration."
+msgstr ""
+
+#: subscription/views.py:58
+msgid ""
+"You're one step closer to participate in PythonBrasil[8]! Now all you have "
+"to do is to pay the registration fee and you will be in!"
+msgstr ""
+
+#: templates/about.html:4 templates/previous_editions.html:4
 msgid "About"
 msgstr "Sobre"
 
@@ -283,106 +411,98 @@ msgstr "Junte-se a nós!"
 msgid "Contact"
 msgstr "Contato"
 
-#: templates/about.html:52
+#: templates/about.html:56
 msgid "Previous editions"
 msgstr "Versões anteriores"
 
-#: templates/about.html:55
+#: templates/about.html:59
 msgid ""
 "\n"
-"            Find out more about the previous editions of our conference:\n"
-"            "
+"                This is the eighth edition of PythonBrasil.\n"
+"                Find out more about the previous editions of the conference, "
+"clicking on the edition numbers below:\n"
+"                "
 msgstr ""
-"\n"
-"            Saiba mais sobre as edições anteriores da conferência:\n"
-"            "
-
-#: templates/about.html:64
-msgid "28th September - 1st October 2011"
-msgstr "28 de setembro a 1º de outubro de 2011"
-
-#: templates/about.html:69
-msgid "21th - 23th October 2010"
-msgstr "21 a 23 de outubro de 2010"
 
 #: templates/about.html:74
-msgid "10th - 12th September 2009"
-msgstr "10 a 12 de setembro de 2009"
+msgid ""
+"\n"
+"                You can also see a complete list containing the dates and "
+"locations of the previous editions of PythonBrasil\n"
+"                "
+msgstr ""
 
-#: templates/about.html:79
-msgid "18th - 20th September 2008"
-msgstr "18 a 20 de setembro de 2008"
-
-#: templates/about.html:84
-msgid "30th August - 1st September 2007"
-msgstr "30 de agosto a 1 setembro 2007"
-
-#: templates/about.html:89
-msgid "1st - 2nd June 2006"
-msgstr "1 a 2 de junho de 2006"
-
-#: templates/about.html:95
-msgid "28th - 29th April 2005"
-msgstr "28 a 29 de abril de 2005"
+#: templates/about.html:77
+msgid "clicking here"
+msgstr ""
 
 #: templates/base.html:37
 msgid "about"
 msgstr "sobre"
 
-#: templates/base.html:40
+#: templates/base.html:44
 msgid "registration"
 msgstr "inscrição"
 
-#: templates/base.html:43
+#: templates/base.html:49
 msgid "schedule"
 msgstr "programação"
 
-#: templates/base.html:46
+#: templates/base.html:52
 msgid "venue"
 msgstr "local"
 
-#: templates/base.html:49
+#: templates/base.html:55
 msgid "sponsor"
 msgstr "patrocínio"
 
-#: templates/base.html:74
+#: templates/base.html:59
+#, fuzzy
+msgid "logout"
+msgstr "Sair"
+
+#: templates/base.html:63
+msgid "login"
+msgstr ""
+
+#: templates/base.html:88
 msgid "register now"
 msgstr "inscreva-se"
 
-#: templates/base.html:90
+#: templates/base.html:103
 msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
-#: templates/base.html:91
+#: templates/base.html:104
 msgid "June 15th"
 msgstr "15 de junho"
 
-#: templates/base.html:94
+#: templates/base.html:107
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/base.html:95
+#: templates/base.html:108
 msgid "November 20th"
 msgstr "20 de novembro"
 
 # ou seria melhor Mini-cursos?
-#: templates/base.html:98
+#: templates/base.html:111
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:99
+#: templates/base.html:112
 msgid "November 21th - 22th"
 msgstr "21 e 22 de novembro"
 
-#: templates/base.html:102
+#: templates/base.html:115
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:103
+#: templates/base.html:116
 msgid "November 23th - 24th"
 msgstr "23 e 24 de novembro"
 
-#: templates/base.html:121
+#: templates/base.html:134
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -391,7 +511,7 @@ msgstr ""
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
 
-#: templates/base.html:122
+#: templates/base.html:135
 msgid ""
 "It is supported by the Brazilian Python Association (APyB) and by the Python "
 "Software Foundation (PSF)."
@@ -399,13 +519,57 @@ msgstr ""
 "É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
 "Foundation (PSF)."
 
+#: templates/previous_editions.html:13
+#, fuzzy
+msgid "PythonBrasil[1:8]"
+msgstr "Local da PythonBrasil"
+
+#: templates/previous_editions.html:18
+msgid "28th - 29th April 2005"
+msgstr "28 a 29 de abril de 2005"
+
+#: templates/previous_editions.html:23
+msgid "1st - 2nd June 2006"
+msgstr "1 a 2 de junho de 2006"
+
+#: templates/previous_editions.html:28
+msgid "30th August - 1st September 2007"
+msgstr "30 de agosto a 1 setembro 2007"
+
+#: templates/previous_editions.html:33
+msgid "18th - 20th September 2008"
+msgstr "18 a 20 de setembro de 2008"
+
+#: templates/previous_editions.html:38
+msgid "10th - 12th September 2009"
+msgstr "10 a 12 de setembro de 2009"
+
+#: templates/previous_editions.html:43
+msgid "21th - 23th October 2010"
+msgstr "21 a 23 de outubro de 2010"
+
+#: templates/previous_editions.html:48
+msgid "28th September - 1st October 2011"
+msgstr "28 de setembro a 1º de outubro de 2011"
+
+#: templates/schedule.html:4
+#, fuzzy
+msgid "Schedule"
+msgstr "programação"
+
+#: templates/schedule.html:13
+#, fuzzy
+msgid "PythonBrasil Schedule"
+msgstr "Local da PythonBrasil"
+
 #: templates/subscribe.html:12
 msgid "Pre-registration"
 msgstr "Pré-inscrição"
 
 #: templates/subscribe.html:13
+#, fuzzy
 msgid ""
-"Please fill the form bellow to pre-register on PythonBrasil[8]. All fields "
+"Please fill the form below to pre-register on PythonBrasil[8]. All fields "
 "are required."
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
@@ -414,3 +578,108 @@ msgstr ""
 #: templates/subscribe.html:18
 msgid "Pre-register"
 msgstr "Pré-inscrever"
+
+#: templates/registration/activate.html:8
+#: templates/registration/activation_complete.html:7
+#: templates/registration/registration_complete.html:7
+#: templates/registration/registration_form.html:11
+#, fuzzy
+msgid "pythonbrasil[8] registration"
+msgstr "inscrição"
+
+#: templates/registration/activate.html:11
+#, python-format
+msgid ""
+"\n"
+"            <p>Thanks for signing up! Now you can <a href=\"%(login_url)s"
+"\">login</a> and start your registration on the event!</p>\n"
+"        "
+msgstr ""
+
+#: templates/registration/activate.html:15
+msgid ""
+"Either your activation link was incorrect, or the activation key for your "
+"account has expired."
+msgstr ""
+
+#: templates/registration/activation_complete.html:9
+#, python-format
+msgid ""
+"\n"
+"        <p>Thanks for signing up! You can now <a href=\"%(login_url)s"
+"\">login</a> and finish your registration to the event!</p>\n"
+"        "
+msgstr ""
+
+#: templates/registration/login.html:12
+msgid "In order to access the dashboard, you need to be authenticated."
+msgstr ""
+
+#: templates/registration/login.html:15 templates/registration/login.html:19
+#: templates/registration/logout.html:9
+msgid "Login"
+msgstr ""
+
+#: templates/registration/login.html:23
+msgid "Not registered yet?"
+msgstr ""
+
+#: templates/registration/login.html:27
+#, fuzzy
+msgid "Register"
+msgstr "inscreva-se"
+
+#: templates/registration/logout.html:8
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: templates/registration/logout.html:9
+msgid "Login again"
+msgstr ""
+
+#: templates/registration/password_change_done.html:7
+#: templates/registration/password_change_form.html:12
+msgid "Password change"
+msgstr ""
+
+#: templates/registration/password_change_done.html:10
+#, python-format
+msgid ""
+"\n"
+"            <p>Password successfully changed, you can <a href=\"%(dash_url)s"
+"\" title=\"Dashboard\">go back to the dashboard</a> now.</p>\n"
+"        "
+msgstr ""
+
+#: templates/registration/password_change_form.html:13
+msgid "Please fill the form below to change your password:"
+msgstr ""
+
+#: templates/registration/password_change_form.html:17
+msgid "Send"
+msgstr ""
+
+#: templates/registration/registration_complete.html:8
+msgid ""
+"An activation link has been sent to the email address you supplied, along "
+"with instructions for activating your account."
+msgstr ""
+
+#: templates/registration/registration_form.html:12
+#, fuzzy
+msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
+msgstr ""
+"Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
+"campos são obrigatórios."
+
+#~ msgid "WHAT IS"
+#~ msgstr "O QUE É"
+
+#~ msgid ""
+#~ "\n"
+#~ "            Find out more about the previous editions of our conference:\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "            Saiba mais sobre as edições anteriores da conferência:\n"
+#~ "            "
