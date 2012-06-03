@@ -33,7 +33,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     def post(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id
         r = super(ProfileView, self).post(*args, **kwargs)
-        if 300 < r.status_code < 400:
+        if 300 < r.status_code < 400 and self.get_success_url() == "/dashboard/profile/":
             messages.success(self.request, ugettext(u"Profile successfully updated."), fail_silently=True)
         return r
 
