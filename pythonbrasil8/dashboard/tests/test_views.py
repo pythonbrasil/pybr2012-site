@@ -79,7 +79,7 @@ class ProfileViewTestCase(TestCase):
         self.assertEqual(ProfileForm, ProfileView.form_class)
 
     def test_success_url_should_be_deashboard(self):
-        self.assertEqual('/dashboard/', ProfileView.success_url)
+        self.assertEqual('/dashboard/profile/', ProfileView.success_url)
 
     def test_should_redirects_if_user_is_not_logged_in(self):
         self.request.user.is_authenticated = lambda : False

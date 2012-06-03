@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from django.contrib import messages
+from django.utils.translation import ugettext
 from django.views.generic import ListView, TemplateView, UpdateView
 
 from pythonbrasil8.core.views import LoginRequiredMixin
@@ -15,7 +17,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
     model = AccountProfile
     form_class = ProfileForm
-    success_url = '/dashboard/'
+    success_url = '/dashboard/profile/'
 
     def get(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id
@@ -23,7 +25,10 @@ class ProfileView(LoginRequiredMixin, UpdateView):
 
     def post(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id
-        return super(ProfileView, self).post(*args, **kwargs)
+        r = super(ProfileView, self).post(*args, **kwargs)
+        if 300 < r.status_code < 400:
+            messages.success(self.request, ugettext(u"Profile successfully updated."), fail_silently=True)
+        return r
 
 
 class IndexView(DashBoardView):
