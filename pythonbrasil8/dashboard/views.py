@@ -17,7 +17,14 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
     model = AccountProfile
     form_class = ProfileForm
-    success_url = '/dashboard/profile/'
+
+    def get_success_url(self):
+        return self.request.POST.get("next", "/dashboard/profile/")
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfileView, self).get_context_data(**kwargs)
+        context["next"] = self.request.GET.get("next")
+        return context
 
     def get(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id

@@ -78,9 +78,6 @@ class ProfileViewTestCase(TestCase):
     def test_form_should_be_ProfileForm(self):
         self.assertEqual(ProfileForm, ProfileView.form_class)
 
-    def test_success_url_should_be_deashboard(self):
-        self.assertEqual('/dashboard/profile/', ProfileView.success_url)
-
     def test_should_redirects_if_user_is_not_logged_in(self):
         self.request.user.is_authenticated = lambda: False
         result = ProfileView.as_view()(self.request, pk=self.account_profile.id)
@@ -111,11 +108,35 @@ class ProfileViewTestCase(TestCase):
         self.assertEqual('Student', profile.type)
         self.assertEqual('M', profile.tshirt)
 
+    def test_update_should_redirect_to_the_next_page_if_any(self):
+        data = {
+            'user': self.user.id,
+            'name': 'siminino',
+            'description': 'simi test',
+            'type': 'Student',
+            'tshirt': 'M',
+            'gender': 'male',
+            'locale': 'AC',
+            'next': '/',
+        }
+
+        request = RequestFactory().post('/', data)
+        request.user = self.request.user
+        response = ProfileView().dispatch(request)
+        self.assertEqual(302, response.status_code)
+        self.assertEqual("/", response["Location"])
+
     def test_get_url_should_return_200(self):
         client = Client()
         client.login(username=self.request.user.username, password='test')
         response = client.get('/dashboard/profile/')
         self.assertEqual(200, response.status_code)
+
+    def test_get_should_include_next_page_in_the_context(self):
+        request = RequestFactory().get("/google/?next=/")
+        request.user = self.request.user
+        response = ProfileView().dispatch(request)
+        self.assertEqual("/", response.context_data["next"])
 
 
 class SessionsTestCase(TestCase):
