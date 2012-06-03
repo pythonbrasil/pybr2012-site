@@ -29,3 +29,29 @@
 h1 {
     font-weight: normal;
 }
+
+#messages {
+    background-color: #FFF;
+    padding: 20px 0;
+}
+
+#messages > .row > div {
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 15px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    width: 400px;
+}
+
+#messages .success {
+    border: 1px solid rgba(50, 90, 0, .2);
+    background-color: rgba(100, 255, 0, .4);
+    color: rgb(50, 90, 0);
+}
+
+#messages .error {
+    border: 1px solid rgba(40, 0, 0, .2);
+    background-color: rgba(200, 90, 90, .4);
+    color: rgb(255, 0, 0);
+}
