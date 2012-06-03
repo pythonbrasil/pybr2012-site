@@ -25,7 +25,7 @@
         </div>
         <div class="about">
             <div class="what-is column grid_5">
-                <a href="">{% trans "WHAT IS" %} PYTHONBRASIL[8]</a>
+                <a href="{% url about %}" title="{% trans "About PythonBrasil" %}">{% trans "WHAT IS" %} PYTHONBRASIL[8]</a>
             </div>
             <div class="inner column grid_7">
                 {{ event.description|linebreaksbr }}
