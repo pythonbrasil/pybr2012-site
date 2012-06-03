@@ -49,6 +49,9 @@
                                 <a href="{% url custom-sponsors %}">{% trans "sponsor" %}</a>
                             </li>
                             {% if request.user.is_authenticated %}
+                                <li class="{% is_active request.path 'dashboard-index' %}">
+                                    <a href="{% url dashboard-index %}" title="dashboard">dashboard</a>
+                                </li>
                                 <li class="{% is_active request.path 'auth_logout' %}">
                                     <a href="{% url auth_logout %}?next={{ request.path }}">{% trans "logout" %}</a>
                                 </li>

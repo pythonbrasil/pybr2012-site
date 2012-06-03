@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.urlresolvers import reverse, NoReverseMatch
@@ -100,6 +101,11 @@ class TransacitonModelTestCase(TestCase):
         self.assertIsInstance(subscription_field, models.ForeignKey)
         self.assertEqual(Subscription, subscription_field.related.parent_model)
 
+    def test_get_checkout_url(self):
+        t = Transaction(code="123")
+        expected_url = settings.PAGSEGURO_WEBCHECKOUT + "123"
+        self.assertEqual(expected_url, t.get_checkout_url())
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
@@ -134,12 +140,36 @@ class SubscriptionViewTestCase(TestCase):
 
     def tearDown(self):
         views.requests = self.requests_original
+        Subscription.objects.all().delete()
 
-    def test_subscription_view_should_create_a_subscription_for_the_current_user(self):
+    def test_subscription_view_should_redirect_to_dashboard_if_it_fails_to_create_the_transaction(self):
+        class ResponseMock(object):
+            content = None
+
+            @property
+            def ok(self):
+                return False
+
+        requests_original = views.requests
+        try:
+            views.requests.post = lambda self, *args, **kwargs: ResponseMock()
+            request = RequestFactory().get("/", {})
+            request.user = User.objects.get(pk=1)
+            v = SubscriptionView()
+            v._notify_staff = lambda u: None
+            response = v.dispatch(request)
+            self.assertFalse(Subscription.objects.filter(user__pk=1).exists())
+            self.assertEqual(302, response.status_code)
+            self.assertEqual("/dashboard/", response["Location"])
+        finally:
+            views.requests = requests_original
+
+    def test_subscription_view_should_create_a_subscription_for_the_current_user_and_redirect_to_payment_gateway(self):
         response = SubscriptionView.as_view()(self.request)
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
         self.assertEqual(302, response.status_code)
-        self.assertEqual("/dashboard/", response.items()[1][1])
+        expected_url = settings.PAGSEGURO_WEBCHECKOUT + "xpto123"
+        self.assertEqual(expected_url, response["Location"])
 
     def test_subscription_view_should_create_a_subscription_for_the_user_type(self):
         SubscriptionView.as_view()(self.request)
@@ -162,11 +192,12 @@ class SubscriptionViewTestCase(TestCase):
         self.assertEqual("xpto123", transaction.code)
 
     def test_should_redirect_to_the_profile_url_if_the_user_does_not_have_a_profile(self):
-        request = RequestFactory().get("/")
+        request = RequestFactory().get("/dashboard/subscription/talk/")
         request.user = User.objects.get(pk=2)
         response = SubscriptionView.as_view()(request)
         self.assertIsInstance(response, HttpResponseRedirect)
-        expected_url = reverse("edit-profile")
+        base_url = reverse("edit-profile")
+        expected_url = "%s?next=%s" % (base_url, request.path)
         self.assertEqual(expected_url, response["Location"])
 
     def test_should_redirect_to_the_profile_url_if_the_profile_does_not_contain_a_name(self):
@@ -174,7 +205,8 @@ class SubscriptionViewTestCase(TestCase):
         request.user = User.objects.get(pk=3)
         response = SubscriptionView.as_view()(request)
         self.assertIsInstance(response, HttpResponseRedirect)
-        expected_url = reverse("edit-profile")
+        base_url = reverse("edit-profile")
+        expected_url = "%s?next=%s" % (base_url, request.path)
         self.assertEqual(expected_url, response["Location"])
 
 
@@ -269,7 +301,7 @@ class NotificationViewTestCase(TestCase):
 class PricesTestCase(TestCase):
 
     def test_prices(self):
-        expected =  {
+        expected = {
             'Student': 150,
             'APyB Associated': 150,
             'Speaker': 150,
