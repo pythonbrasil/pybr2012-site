@@ -24,13 +24,62 @@
             <a href="{% url sponsors-info %}">{% trans "Learn how to become a sponsor" %}</a>
         </div>
         <div class="about">
-            <div class="what-is column grid_5">
-                <a href="">{% trans "WHAT IS" %} PYTHONBRASIL[8]</a>
-            </div>
-            <div class="inner column grid_7">
-                {{ event.description|linebreaksbr }}
-            </div>
-            <div class="clearfix"></div>
+
+
+
+<section id="more_info" class="more_info">
+			<ul class="multicolumn">
+				<li>
+					<h2>ARE YOU SPEAKING OR ATTENDING?</h2>
+					<p class="subterm">grab a badge</p>
+					<a href="badges.html" class="grab_badge">
+						<img src="{{ STATIC_URL }}images/home/grab_badge.png" alt="Grab a badge">
+					</a>
+				</li>
+				<li class="fat">
+					<h2>FROM THE BLOG</h2>
+					<p class="subterm">latest news</p>
+					<ul class="news">
+						<li class="fat">
+						    <a href="#" class="title">Buy your tickets for PythonBrasil[8] - registration is now available!</a>
+                            <p class="date">Published on June 3 2012</p>
+						</li>
+						<li class="fat">
+						    <a href="#" class="title">Keynotes of PythonBrasil[8] - you can help choosing the last ones!</a>
+                            <p class="date">Published on May 15 2012 </p>
+						</li>
+						<li class="fat">
+						    <a href="#" class="title">Help us choosing the books O'Reilly and Pearson will be rafling</a>
+                            <p class="date">Published on May 10 2012 </p>
+						</li>
+						<li class="fat">
+						    <a href="#" class="title">PythonBrasil[8] venue set: contract was signed today!</a>
+                            <p class="date">Published on April 23 2012</p>
+						</li>
+					</ul>
+				</li>
+				<li class="thin">
+					<h2>STAY UP TO DATE</h2>
+					<p class="subterm">follow us</p>
+					<ul class="up_to_date">
+						<li>
+                            <a href="http://www.twitter.com/pythonbrasil" title="PythonBrasil Twitter"><img src="{{ STATIC_URL }}images/home/ico_twitter.png" alt="PythonBrasil Twitter"></a>
+						</li>
+						<li>
+                            <a href="http://www.facebook.com/pythonbrasil8" title="PythonBrasil[8] Facebook page"><img src="{{ STATIC_URL }}images/home/ico_facebook.png" alt="PythonBrasil Facebook">
+						</li>
+						<li>
+                            <a href="http://www.google.com/calendar/embed?src=calendario%40python.org.br&ctz=America/Sao_Paulo" title="PythonBrasil[8] calendar"><img src="{{ STATIC_URL }}images/home/ico_calendar.png" alt="PythonBrasil[8] Calendar">
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+
+
+
+
         </div>
     </div>
 {% endblock %}
