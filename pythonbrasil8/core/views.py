@@ -48,6 +48,7 @@ class AboutView(TemplateView):
 class ScheduleView(TemplateView):
     template_name = 'schedule.html'
 
+
 class VenueView(TemplateView):
     template_name = 'venue.html'
 

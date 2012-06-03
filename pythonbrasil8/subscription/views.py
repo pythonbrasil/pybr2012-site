@@ -1,15 +1,20 @@
-from django.views.generic import View
+# -*- coding: utf-8 -*-
+import requests
+
+from django.conf import settings
+from django.contrib import messages
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.utils.decorators import method_decorator
+from django.utils.translation import ugettext
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
-
+from django.views.generic import View
 from lxml import etree
 
-from pythonbrasil8.subscription.models import Subscription, Transaction
+from pythonbrasil8.core import mail
 from pythonbrasil8.core.views import LoginRequiredMixin
-
-import requests
+from pythonbrasil8.dashboard.models import AccountProfile
+from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
 class SubscriptionView(LoginRequiredMixin, View):
@@ -34,12 +39,30 @@ class SubscriptionView(LoginRequiredMixin, View):
         return Transaction.objects.none()
 
     def get(self, request, *args, **kwargs):
+        profile = AccountProfile.objects.filter(user=request.user)
+        if not profile or not profile[0].name:
+            msg = ugettext("In order to issue your registration to the conference, you need to complete your profile.")
+            messages.error(request, msg, fail_silently=True)
+            return HttpResponseRedirect(reverse("edit-profile"))
         subscription = Subscription.objects.create(
             type='talk',
             user=request.user,
         )
-        self.generate_transaction(subscription)
+        t = self.generate_transaction(subscription)
+
+        if not t:
+            self._notify_staff(request.user)
+            subscription.delete()
+            messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."), fail_silently=True)
+        else:
+            messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"), fail_silently=True)
         return HttpResponseRedirect("/dashboard/")
+
+    def _notify_staff(self, user):
+        msg = u"There was a failure in the communication with PagSeguro, the user %(email)s could not be registered."
+        kw = {"email": user.email}
+        body = msg % kw
+        mail.send(settings.EMAIL_HOST_USER, ["organizers@python.org.br"], "PagSeguro Communication Failure", body)
 
 
 class NotificationView(View):
@@ -52,7 +75,10 @@ class NotificationView(View):
         return super(NotificationView, self).__init__(*args, **kwargs)
 
     def transaction(self, transaction_code):
-        url_transacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS, transaction_code, settings.PAGSEGURO[    "email"], settings.PAGSEGURO["token"])
+        url_transacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS,
+                                                     transaction_code,
+                                                     settings.PAGSEGURO["email"],
+                                                     settings.PAGSEGURO["token"])
         url_notificacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS_NOTIFICATIONS, transaction_code, settings.PAGSEGURO["email"], settings.PAGSEGURO["token"])
 
         response = requests.get(url_transacao)

@@ -1,12 +1,15 @@
+# -*- coding: utf-8 -*-
+from django.contrib.auth.models import User
+from django.core.management import call_command
+from django.core.urlresolvers import reverse, NoReverseMatch
+from django.http import HttpResponseRedirect
+from django.db import models
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.db import models
-from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse, NoReverseMatch
 
+from pythonbrasil8.subscription import views
 from pythonbrasil8.subscription.models import Subscription, Transaction, PRICES
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
-from pythonbrasil8.subscription import views
 
 
 class SubscriptionModelTestCase(TestCase):
@@ -75,6 +78,7 @@ class SubscriptionModelTestCase(TestCase):
             code="xpto",
         )
         self.assertTrue(subscription.done())
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
@@ -100,8 +104,16 @@ class TransacitonModelTestCase(TestCase):
 
 class SubscriptionViewTestCase(TestCase):
 
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "profiles.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
     def setUp(self):
-        self.user = User.objects.create(username="Wolverine")
+        self.user = User.objects.get(pk=1)
         self.request = RequestFactory().get("/", {})
         self.request.user = self.user
 
@@ -109,6 +121,7 @@ class SubscriptionViewTestCase(TestCase):
 
         class ResponseMock(object):
             content = "<code>xpto123</code>"
+
             def ok(self):
                 return True
 
@@ -127,7 +140,7 @@ class SubscriptionViewTestCase(TestCase):
         self.assertEqual("/dashboard/", response.items()[1][1])
 
     def test_should_returns_error_when_user_is_not_logged(self):
-        self.request.user.is_authenticated = lambda : False
+        self.request.user.is_authenticated = lambda: False
         response = SubscriptionView.as_view()(self.request)
         self.assertEqual(302, response.status_code)
         self.assertIn('/accounts/login/', response.items()[1][1])
@@ -141,6 +154,22 @@ class SubscriptionViewTestCase(TestCase):
         self.assertEqual(subscription, transaction.subscription)
         self.assertEqual("xpto123", transaction.code)
 
+    def test_should_redirect_to_the_profile_url_if_the_user_does_not_have_a_profile(self):
+        request = RequestFactory().get("/")
+        request.user = User.objects.get(pk=2)
+        response = SubscriptionView.as_view()(request)
+        self.assertIsInstance(response, HttpResponseRedirect)
+        expected_url = reverse("edit-profile")
+        self.assertEqual(expected_url, response["Location"])
+
+    def test_should_redirect_to_the_profile_url_if_the_profile_does_not_contain_a_name(self):
+        request = RequestFactory().get("/")
+        request.user = User.objects.get(pk=3)
+        response = SubscriptionView.as_view()(request)
+        self.assertIsInstance(response, HttpResponseRedirect)
+        expected_url = reverse("edit-profile")
+        self.assertEqual(expected_url, response["Location"])
+
 
 class NotificationViewTestCase(TestCase):
 
@@ -150,6 +179,7 @@ class NotificationViewTestCase(TestCase):
 
         class ResponseMock(object):
             content = "<xml><status>3</status><reference>3</reference></xml>"
+
             def ok(self):
                 return True
 
@@ -224,6 +254,7 @@ class NotificationViewTestCase(TestCase):
         transaction = Transaction.objects.get(id=transaction.id)
         self.assertEqual("done", transaction.status)
         self.assertEqual("OK", response.content)
+
 
 class PricesTestCase(TestCase):
 

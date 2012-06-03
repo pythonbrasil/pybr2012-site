@@ -1,8 +1,7 @@
 # encoding: utf-8
-import datetime
 from south.db import db
 from south.v2 import SchemaMigration
-from django.db import models
+
 
 class Migration(SchemaMigration):
 
@@ -24,12 +23,9 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal('dashboard', ['AccountProfile'])
 
-
     def backwards(self, orm):
-
         # Deleting model 'AccountProfile'
         db.delete_table('dashboard_accountprofile')
-
 
     models = {
         'auth.group': {

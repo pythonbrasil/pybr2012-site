@@ -28,4 +28,14 @@
         </ul>
     </div>
 </div>
+
+{% if messages %}
+<div id="messages">
+    <div class="row">
+        {% for message in messages %}
+            <div class="{{message.tags}}">{{message}}</li>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 {% endblock %}
