@@ -36,14 +36,8 @@
                             <li class="{% is_active request.path 'about' %}">
                             <a href="{% url about %}">{% trans "about" %}</a>
                             </li>
-                            <li class="{% is_active request.path 'dashboard-index' %}">
-                                <a href="{% url dashboard-index %}" title="register now">
-                                    {% if request.user.is_authenticated %}
-                                    dashboard
-                                    {% else %}
-                                    {% trans "registration" %}
-                                    {% endif %}
-                                </a>
+                            <li class="{% is_active request.path 'register' %}">
+                                <a href="{% url register %}" title="register">{% trans "register" %}</a>
                             </li>
                             <li class="{% is_active request.path 'schedule' %}">
                                 <a href="{% url schedule %}" title="schedule">{% trans "schedule" %}</a>
@@ -85,7 +79,7 @@
                 </div>
 
                 <div id="pre-register">
-                    <p> <a href="{% url dashboard-index %}" title="{% trans "get your tickets now" %}"><span>{% trans "get your tickets now" %} »</span></a> </p>
+                    <p> <a href="{% url dashboard-index %}" title="{% trans "buy your tickets now" %}"><span>{% trans "buy your tickets now" %} »</span></a> </p>
 
                 </div>
                 {% block social %}
