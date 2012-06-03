@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.urlresolvers import reverse, NoReverseMatch
@@ -134,12 +135,36 @@ class SubscriptionViewTestCase(TestCase):
 
     def tearDown(self):
         views.requests = self.requests_original
+        Subscription.objects.all().delete()
 
-    def test_subscription_view_should_create_a_subscription_for_the_current_user(self):
+    def test_subscription_view_should_redirect_to_dashboard_if_it_fails_to_create_the_transaction(self):
+        class ResponseMock(object):
+            content = None
+
+            @property
+            def ok(self):
+                return False
+
+        requests_original = views.requests
+        try:
+            views.requests.post = lambda self, *args, **kwargs: ResponseMock()
+            request = RequestFactory().get("/", {})
+            request.user = User.objects.get(pk=1)
+            v = SubscriptionView()
+            v._notify_staff = lambda u: None
+            response = v.dispatch(request)
+            self.assertFalse(Subscription.objects.filter(user__pk=1).exists())
+            self.assertEqual(302, response.status_code)
+            self.assertEqual("/dashboard/", response["Location"])
+        finally:
+            views.requests = requests_original
+
+    def test_subscription_view_should_create_a_subscription_for_the_current_user_and_redirect_to_payment_gateway(self):
         response = SubscriptionView.as_view()(self.request)
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
         self.assertEqual(302, response.status_code)
-        self.assertEqual("/dashboard/", response.items()[1][1])
+        expected_url = "%s/xpto123" % settings.PAGSEGURO_CHECKOUT
+        self.assertEqual(expected_url, response["Location"])
 
     def test_subscription_view_should_create_a_subscription_for_the_user_type(self):
         SubscriptionView.as_view()(self.request)
@@ -269,7 +294,7 @@ class NotificationViewTestCase(TestCase):
 class PricesTestCase(TestCase):
 
     def test_prices(self):
-        expected =  {
+        expected = {
             'Student': 150,
             'APyB Associated': 150,
             'Speaker': 150,

@@ -57,10 +57,12 @@ class SubscriptionView(LoginRequiredMixin, View):
         if not t:
             self._notify_staff(request.user)
             subscription.delete()
+            url = "/dashboard/"
             messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."), fail_silently=True)
         else:
             messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"), fail_silently=True)
-        return HttpResponseRedirect("/dashboard/")
+            url = "%s/%s" % (settings.PAGSEGURO_CHECKOUT, t.code)
+        return HttpResponseRedirect(url)
 
     def _notify_staff(self, user):
         msg = u"There was a failure in the communication with PagSeguro, the user %(email)s could not be registered."
