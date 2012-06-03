@@ -26,31 +26,31 @@
         <div class="about">
 			<ul class="multicolumn">
 				<li>
-                <h2>{% trans "ARE YOU SPEAKING OR ATTENDING?" %}</h2>
-                <p class="subterm">{% trans "grab a badge" %}</p>
-					<a href="badges/" class="grab_badge">
-						<img src="{{ STATIC_URL }}images/home/grab_badge.png" alt="Grab a badge">
-					</a>
+                    <h2>{% trans "ARE YOU SPEAKING OR ATTENDING?" %}</h2>
+                    <p class="subterm">{% trans "grab a badge" %}</p>
+                    <a href="{% url badges %}" class="grab_badge">
+                        <img src="{{ STATIC_URL }}images/home/grab_badge.png" alt="Grab a badge">
+                    </a>
 				</li>
 				<li class="fat">
                 <h2>{% trans "FROM THE BLOG" %}</h2>
                     <p class="subterm">{% trans "latest news" %}</p>
 					<ul class="news">
 						<li class="fat">
-                            <a href="/news/#4" class="title">{% trans "Buy your tickets for PythonBrasil[8] - registration is now available!" %}</a>
-                            <p class="date">Published on June 3 2012</p>
+                            <a href="{% url news %}#4" class="title">{% trans "Buy your tickets for PythonBrasil[8] - registration is now available!" %}</a>
+                            <p class="date">{% trans "Published on June 3 2012" %}</p>
 						</li>
 						<li class="fat">
-                            <a href="/news/#3" class="title">{% trans "Keynotes of PythonBrasil[8] - who would you like to see?" %}</a>
-                            <p class="date">Published on May 15 2012 </p>
+                            <a href="{% url news %}#3" class="title">{% trans "Keynotes of PythonBrasil[8] - who would you like to see?" %}</a>
+                            <p class="date">{% trans "Published on May 15 2012" %} </p>
 						</li>
 						<li class="fat">
-                            <a href="/news/#2" class="title">{% trans "Choose the books that will be raffled during PythonBrasil[8]" %}</a>
-                            <p class="date">Published on May 10 2012 </p>
+                            <a href="{% url news %}#2" class="title">{% trans "Choose the books that will be raffled during PythonBrasil[8]" %}</a>
+                            <p class="date">{% trans "Published on May 10 2012" %}</p>
 						</li>
 						<li class="fat">
-                            <a href="/news/#1" class="title">{% trans  "PythonBrasil[8] venue is set: SulAmérica Convention Center"%}</a>
-                            <p class="date">Published on April 23 2012</p>
+                            <a href="{% url news %}#1" class="title">{% trans "PythonBrasil[8] venue is set: SulAmérica Convention Center"%}</a>
+                            <p class="date">{% trans "Published on April 23 2012" %}</p>
 						</li>
 					</ul>
 				</li>
