@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-PRICES = (
-    ('student', 150),
-    ('apyb', 150),
-    ('individual', 250),
-)
+PRICES = {
+    'Student': 150,
+    'APyB Associated': 150,
+    'Speaker': 150,
+    'Individual': 250,
+    'Corporate': 350
+}
 
 
 class Subscription(models.Model):
@@ -27,3 +29,4 @@ class Transaction(models.Model):
     subscription = models.ForeignKey("Subscription")
     code = models.CharField(max_length=50)
     status = models.CharField(max_length=25)
+    price = models.DecimalField(max_digits=5, decimal_places=2)

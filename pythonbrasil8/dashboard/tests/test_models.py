@@ -56,8 +56,8 @@ class AccountProfileTestCase(TestCase):
     def test_type_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]
         self.assertIn(('Student', 'Student'), field.choices)
-        self.assertIn(('APyB', 'APyB Associated'), field.choices)
-        self.assertIn(('Normal', 'Normal'), field.choices)
+        self.assertIn(('APyB Associated', 'APyB Associated'), field.choices)
+        self.assertIn(('Individual', 'Individual'), field.choices)
 
     def test_type_should_have_verbose_name(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]

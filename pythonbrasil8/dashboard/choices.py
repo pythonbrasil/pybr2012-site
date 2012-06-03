@@ -3,9 +3,10 @@ from django.utils.translation import ugettext
 
 
 ATTENDANT_CHOICES = (
+    ('Corporate', ugettext('Corporate')),
+    ('Individual', ugettext('Individual')),
     ('Student', ugettext('Student')),
-    ('APyB', ugettext('APyB Associated')),
-    ('Normal', ugettext('Normal'))
+    ('APyB Associated', ugettext('APyB Associated'))
 )
 
 T_SHIRT_CHOICES = (

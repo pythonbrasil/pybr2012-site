@@ -14,7 +14,7 @@ from lxml import etree
 from pythonbrasil8.core import mail
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.dashboard.models import AccountProfile
-from pythonbrasil8.subscription.models import Subscription, Transaction
+from pythonbrasil8.subscription.models import PRICES, Subscription, Transaction
 
 
 class SubscriptionView(LoginRequiredMixin, View):
@@ -22,7 +22,10 @@ class SubscriptionView(LoginRequiredMixin, View):
     def generate_transaction(self, subscription):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         payload = settings.PAGSEGURO
-        payload["itemAmount1"] = "%.2f" % 255
+        profile = AccountProfile.objects.get(user=subscription.user)
+        price =  PRICES[profile.type]
+        payload["itemAmount1"] = "%.2f" % price
+        payload['itemDescription1'] = ugettext(u'Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition') % ugettext(profile.type)
         payload["reference"] = "%d" % subscription.pk
         response = requests.post(settings.PAGSEGURO_CHECKOUT, data=payload, headers=headers)
 
@@ -34,6 +37,7 @@ class SubscriptionView(LoginRequiredMixin, View):
                 subscription=subscription,
                 code=transaction_code,
                 status='pending',
+                price=price
             )
             return transaction
         return Transaction.objects.none()

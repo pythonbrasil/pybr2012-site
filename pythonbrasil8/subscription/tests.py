@@ -64,6 +64,7 @@ class SubscriptionModelTestCase(TestCase):
             subscription=subscription,
             status="pending",
             code="xpto",
+            price="897.02"
         )
         self.assertFalse(subscription.done())
 
@@ -76,6 +77,7 @@ class SubscriptionModelTestCase(TestCase):
             subscription=subscription,
             status="done",
             code="xpto",
+            price="543.21"
         )
         self.assertTrue(subscription.done())
 
@@ -138,6 +140,11 @@ class SubscriptionViewTestCase(TestCase):
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
         self.assertEqual(302, response.status_code)
         self.assertEqual("/dashboard/", response.items()[1][1])
+
+    def test_subscription_view_should_create_a_subscription_for_the_user_type(self):
+        SubscriptionView.as_view()(self.request)
+        transaction = Transaction.objects.get(subscription__user=self.user)
+        self.assertEqual(transaction.price, PRICES["Student"])
 
     def test_should_returns_error_when_user_is_not_logged(self):
         self.request.user.is_authenticated = lambda: False
@@ -211,6 +218,7 @@ class NotificationViewTestCase(TestCase):
             subscription=subscription,
             status="pending",
             code="xpto",
+            price="123.54"
         )
         NotificationView().transaction_done(subscription.id)
         transaction = Transaction.objects.get(id=transaction.id)
@@ -225,6 +233,7 @@ class NotificationViewTestCase(TestCase):
             subscription=subscription,
             status="pending",
             code="xpto",
+            price="115.84"
         )
         NotificationView().transaction_canceled(subscription.id)
         transaction = Transaction.objects.get(id=transaction.id)
@@ -244,6 +253,7 @@ class NotificationViewTestCase(TestCase):
             subscription=subscription,
             status="pending",
             code="xpto",
+            price=123.45
         )
         notification_view = NotificationView()
         notification_view.transaction = (lambda code: (3, 1))
@@ -259,9 +269,11 @@ class NotificationViewTestCase(TestCase):
 class PricesTestCase(TestCase):
 
     def test_prices(self):
-        expected = (
-            ('student', 150),
-            ('apyb', 150),
-            ('individual', 250),
-        )
-        self.assertTupleEqual(expected, PRICES)
+        expected =  {
+            'Student': 150,
+            'APyB Associated': 150,
+            'Speaker': 150,
+            'Individual': 250,
+            'Corporate': 350
+        }
+        self.assertEqual(expected, PRICES)

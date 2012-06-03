@@ -33,7 +33,7 @@
             "user": 1,
             "name": "Chico",
             "description": "no description left for you",
-            "type": "student",
+            "type": "Student",
             "tshirt": "L",
             "locale": "RJ",
             "gender": "male",
