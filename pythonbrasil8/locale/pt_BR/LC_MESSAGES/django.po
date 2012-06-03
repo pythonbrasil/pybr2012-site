@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-03 03:28-0300\n"
+"POT-Creation-Date: 2012-06-03 17:39-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -22,51 +22,49 @@ msgstr "Veja como se tornar um patrocinador"
 
 #: core/templates/home.html:29
 msgid "ARE YOU SPEAKING OR ATTENDING?"
-msgstr ""
+msgstr "VOCÊ É PARTICIPANTE OU PALESTRANTE?"
 
 #: core/templates/home.html:30
 msgid "grab a badge"
-msgstr ""
+msgstr "baixe o banner"
 
 #: core/templates/home.html:36
 msgid "FROM THE BLOG"
-msgstr ""
+msgstr "DIRETO DO BLOG"
 
 #: core/templates/home.html:37
 msgid "latest news"
-msgstr ""
+msgstr "últimas novidades"
 
-#: core/templates/home.html:40
+#: core/templates/home.html:40 templates/news.html:15
 msgid "Buy your tickets for PythonBrasil[8] - registration is now available!"
+msgstr "Compre seus ingressos para PythonBrasil[8] - inscrições abertas!"
+
+#: core/templates/home.html:44 templates/news.html:26
+msgid "Keynotes of PythonBrasil[8] - who would you like to see?"
+msgstr "Keynotes da PythonBrasil[8] - quem você gostaria de ver?"
+
+#: core/templates/home.html:48 templates/news.html:36
+msgid "Choose the books that will be raffled during PythonBrasil[8]"
 msgstr ""
 
-#: core/templates/home.html:44
-msgid "Keynotes of PythonBrasil[8] - you can help choosing the last ones!"
-msgstr ""
-
-#: core/templates/home.html:48
-msgid "Help us choosing the books O'Reilly and Pearson will be rafling"
-msgstr ""
-
-#: core/templates/home.html:52
-msgid "PythonBrasil[8] venue set: contract was signed today!"
-msgstr ""
+#: core/templates/home.html:52 templates/news.html:56
+msgid "PythonBrasil[8] venue is set: SulAmérica Convention Center"
+msgstr "Local da PythonBrasil[8] definido: Centro de Convenções SulAmérica"
 
 #: core/templates/home.html:58
 msgid "STAY UP TO DATE"
-msgstr ""
+msgstr "ATUALIZE-SE"
 
 #: core/templates/home.html:59
 msgid "follow us"
-msgstr ""
+msgstr "acompanhe"
 
 #: core/templates/sponsors.html:4
-#, fuzzy
 msgid "Sponsors"
-msgstr "patrocínio"
+msgstr "Patrocinadores"
 
 #: core/templates/sponsors.html:13
-#, fuzzy
 msgid "PYTHONBRASIL SPONSORS"
 msgstr "PATROCINADORES DA PYTHONBRASIL"
 
@@ -118,87 +116,91 @@ msgstr "Local"
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
 
-#: dashboard/choices.py:6 dashboard/choices.py:47
+#: dashboard/choices.py:6
+msgid "Corporate"
+msgstr "Corporativo"
+
+#: dashboard/choices.py:7
+msgid "Individual"
+msgstr ""
+
+#: dashboard/choices.py:8 dashboard/choices.py:48
 msgid "Student"
 msgstr "Estudante"
 
-#: dashboard/choices.py:7
+#: dashboard/choices.py:9
 msgid "APyB Associated"
 msgstr "Associado APyB"
 
-#: dashboard/choices.py:8
-msgid "Normal"
-msgstr "Normal"
-
-#: dashboard/choices.py:12 dashboard/choices.py:29
+#: dashboard/choices.py:13 dashboard/choices.py:30
 msgid "Female"
 msgstr "Feminino"
 
-#: dashboard/choices.py:13 dashboard/choices.py:19
+#: dashboard/choices.py:14 dashboard/choices.py:20
 msgid "S"
 msgstr "P"
 
-#: dashboard/choices.py:14 dashboard/choices.py:20
+#: dashboard/choices.py:15 dashboard/choices.py:21
 msgid "M"
 msgstr "M"
 
-#: dashboard/choices.py:15 dashboard/choices.py:21
+#: dashboard/choices.py:16 dashboard/choices.py:22
 msgid "L"
 msgstr "G"
 
-#: dashboard/choices.py:22
+#: dashboard/choices.py:23
 msgid "XL"
 msgstr "GG"
 
-#: dashboard/choices.py:23
+#: dashboard/choices.py:24
 msgid "XXL"
 msgstr "XGG"
 
-#: dashboard/choices.py:30
+#: dashboard/choices.py:31
 msgid "Male"
 msgstr "Masculino"
 
-#: dashboard/choices.py:31 dashboard/choices.py:55
+#: dashboard/choices.py:32 dashboard/choices.py:56
 msgid "Other"
 msgstr "Outros"
 
-#: dashboard/choices.py:35
+#: dashboard/choices.py:36
 msgid "9 or less"
 msgstr "9 ou menos"
 
-#: dashboard/choices.py:43
+#: dashboard/choices.py:44
 msgid "80 or more"
 msgstr "80 ou mais"
 
-#: dashboard/choices.py:48
+#: dashboard/choices.py:49
 msgid "Trainee"
 msgstr "Estagiário"
 
-#: dashboard/choices.py:49
+#: dashboard/choices.py:50
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: dashboard/choices.py:50
+#: dashboard/choices.py:51
 msgid "Software engineer"
 msgstr "Engenheiro de software"
 
-#: dashboard/choices.py:51
+#: dashboard/choices.py:52
 msgid "Manager"
 msgstr "Gerente"
 
-#: dashboard/choices.py:52
+#: dashboard/choices.py:53
 msgid "Sysadmin"
 msgstr "Administrador de Sistemas"
 
-#: dashboard/choices.py:53
+#: dashboard/choices.py:54
 msgid "Teacher"
 msgstr "Professor"
 
-#: dashboard/choices.py:54
+#: dashboard/choices.py:55
 msgid "Researcher"
 msgstr "Pesquisador"
 
-#: dashboard/choices.py:86
+#: dashboard/choices.py:87
 msgid "Other country"
 msgstr "Outro país"
 
@@ -248,11 +250,11 @@ msgstr "Perfil público (visivel para todos)?"
 
 #: dashboard/views.py:30
 msgid "Profile successfully updated."
-msgstr ""
+msgstr "Perfil atualizado com sucesso."
 
 #: dashboard/templates/dashboard/base.html:17
 msgid "Proposals"
-msgstr ""
+msgstr "Propostas"
 
 #: dashboard/templates/dashboard/base.html:20
 msgid "edit your profile"
@@ -264,14 +266,14 @@ msgstr "Edite seu perfil"
 
 #: dashboard/templates/dashboard/base.html:23
 msgid "Change password"
-msgstr ""
+msgstr "Altere sua senha"
 
 #: dashboard/templates/dashboard/base.html:26
 #: templates/registration/logout.html:7
 msgid "Logout"
 msgstr "Sair"
 
-#: dashboard/templates/dashboard/index.html:12
+#: dashboard/templates/dashboard/index.html:12 templates/register.html:4
 #, fuzzy
 msgid "Registration"
 msgstr "inscrição"
@@ -281,6 +283,7 @@ msgid ""
 "Your registration to PythonBrasil[8] is confirmed, we'll see you at the "
 "conference!"
 msgstr ""
+"Sua inscrição na PythonBrasil[8] está confirmada, nos vemos na conferência!"
 
 #: dashboard/templates/dashboard/index.html:18
 msgid ""
@@ -290,15 +293,19 @@ msgid ""
 "make the payment now:\n"
 "                "
 msgstr ""
+"\n"
+"                    Você está cadastrado(a) no site, mas para efetuar a "
+"inscrição no evento, é necessário pagar a taxa de inscrição. Clique no botão "
+"abaixo para pagar agora:\n"
+"                "
 
 #: dashboard/templates/dashboard/index.html:21
 msgid "Pay and confirm the registration for PythonBrasil[8]"
-msgstr ""
+msgstr "Pague e confirme sua inscrição na PythonBrasil[8]"
 
 #: dashboard/templates/dashboard/index.html:21
-#, fuzzy
 msgid "Pay registration"
-msgstr "inscrição"
+msgstr "Pagar a inscrição"
 
 #: dashboard/templates/dashboard/index.html:25
 msgid ""
@@ -307,10 +314,14 @@ msgid ""
 "below. After that, you will be able to pay the registration tax "
 "corresponding to your registration type."
 msgstr ""
+"Você se cadastrou no site, mas não está inscrito na conferência ainda Para "
+"se inscrever na conferência, por favor, clique no botão abaixo. Clicando "
+"sobre ele, você poderá pagar a inscrição, de acordo com o tipoe de inscrição "
+"escolhida."
 
 #: dashboard/templates/dashboard/index.html:27
 msgid "Register to the conference"
-msgstr ""
+msgstr "Inscreva-se na conferência"
 
 #: dashboard/templates/dashboard/profile.html:16
 #: templates/registration/registration_form.html:16
@@ -324,29 +335,40 @@ msgstr ""
 
 #: dashboard/templates/dashboard/sessions.html:21
 msgid "You did not submit any proposal yet."
-msgstr ""
+msgstr "Você não enviou nenhuma proposta de palestra ainda."
 
 #: dashboard/templates/dashboard/sessions.html:21
 msgid "Why don't you send one?"
-msgstr ""
+msgstr "Por que você não envia uma?"
 
-#: subscription/views.py:44
+#: subscription/views.py:27
+#, python-format
+msgid ""
+"Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition"
+msgstr ""
+"Pagamento de uma Inscrição %s na conferência PythonBrasil[8], edição de 2012"
+
+#: subscription/views.py:46
 msgid ""
 "In order to issue your registration to the conference, you need to complete "
 "your profile."
-msgstr ""
+msgstr "Para se inscrever na conferência, você precisa preencher o seu perfil."
 
-#: subscription/views.py:56
+#: subscription/views.py:58
 msgid ""
 "Failed to generate a transaction within the payment gateway. Please contact "
 "the event staff to complete your registration."
 msgstr ""
+"Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
+"a organização."
 
-#: subscription/views.py:58
+#: subscription/views.py:60
 msgid ""
 "You're one step closer to participate in PythonBrasil[8]! Now all you have "
 "to do is to pay the registration fee and you will be in!"
 msgstr ""
+"Você está a um passo de participar da PythonBrasil[8]! Agora basta pagar a "
+"taxa de inscrição e se preparar para a conferência!"
 
 #: templates/about.html:4 templates/previous_editions.html:4
 msgid "About"
@@ -423,6 +445,11 @@ msgid ""
 "clicking on the edition numbers below:\n"
 "                "
 msgstr ""
+"\n"
+"                Esta é a oitava edição da PythonBrasil.\n"
+"                Conheça mais sobre as edições anteriores da conferência, "
+"clicando sobre o número da edição abaixo:\n"
+"                "
 
 #: templates/about.html:74
 msgid ""
@@ -431,78 +458,90 @@ msgid ""
 "locations of the previous editions of PythonBrasil\n"
 "                "
 msgstr ""
+"\n"
+"                Você também pode ver a lista completa com datas e locais das "
+"edições anteriores da PythonBrasil\n"
+"                "
 
 #: templates/about.html:77
 msgid "clicking here"
-msgstr ""
+msgstr "clicando aqui"
+
+#: templates/badges.html:4
+msgid "Badges"
+msgstr "Banners"
+
+#: templates/badges.html:12
+msgid "Get a badge!"
+msgstr "Baixe o banner!"
 
 #: templates/base.html:37
 msgid "about"
 msgstr "sobre"
 
-#: templates/base.html:44
-msgid "registration"
-msgstr "inscrição"
+#: templates/base.html:40
+#, fuzzy
+msgid "register"
+msgstr "inscreva-se"
 
-#: templates/base.html:49
+#: templates/base.html:43
 msgid "schedule"
 msgstr "programação"
 
-#: templates/base.html:52
+#: templates/base.html:46
 msgid "venue"
 msgstr "local"
 
-#: templates/base.html:55
+#: templates/base.html:49
 msgid "sponsor"
 msgstr "patrocínio"
 
-#: templates/base.html:59
-#, fuzzy
+#: templates/base.html:53
 msgid "logout"
-msgstr "Sair"
+msgstr "sair"
 
-#: templates/base.html:63
+# TODO
+#: templates/base.html:57
 msgid "login"
 msgstr ""
 
-#: templates/base.html:88
-msgid "register now"
-msgstr "inscreva-se"
+#: templates/base.html:82
+msgid "buy your tickets now"
+msgstr "pague sua entrada agora"
 
-#: templates/base.html:103
+#: templates/base.html:97
 msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
-#: templates/base.html:104
+#: templates/base.html:98
 msgid "June 15th"
 msgstr "15 de junho"
 
-#: templates/base.html:107
+#: templates/base.html:101
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/base.html:108
+#: templates/base.html:102
 msgid "November 20th"
 msgstr "20 de novembro"
 
-# ou seria melhor Mini-cursos?
-#: templates/base.html:111
+#: templates/base.html:105
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:112
+#: templates/base.html:106
 msgid "November 21th - 22th"
 msgstr "21 e 22 de novembro"
 
-#: templates/base.html:115
+#: templates/base.html:109
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:116
+#: templates/base.html:110
 msgid "November 23th - 24th"
 msgstr "23 e 24 de novembro"
 
-#: templates/base.html:134
+#: templates/base.html:128
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -511,7 +550,7 @@ msgstr ""
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
 
-#: templates/base.html:135
+#: templates/base.html:129
 msgid ""
 "It is supported by the Brazilian Python Association (APyB) and by the Python "
 "Software Foundation (PSF)."
@@ -519,10 +558,17 @@ msgstr ""
 "É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
 "Foundation (PSF)."
 
+#: templates/news.html:4
+msgid "News"
+msgstr "Notícias"
+
+#: templates/news.html:12
+msgid "PythonBrasil News"
+msgstr "Novidades da PythonBrasil"
+
 #: templates/previous_editions.html:13
-#, fuzzy
 msgid "PythonBrasil[1:8]"
-msgstr "Local da PythonBrasil"
+msgstr "PythonBrasil[1:8]"
 
 #: templates/previous_editions.html:18
 msgid "28th - 29th April 2005"
@@ -552,22 +598,40 @@ msgstr "21 a 23 de outubro de 2010"
 msgid "28th September - 1st October 2011"
 msgstr "28 de setembro a 1º de outubro de 2011"
 
-#: templates/schedule.html:4
+#: templates/register.html:12
+msgid "Registration Prices"
+msgstr "Valores de inscrição"
+
+#: templates/register.html:56
+msgid "Early Bird Rate:"
+msgstr "Antecipada:"
+
+# TODO: Check
+#: templates/register.html:60
 #, fuzzy
+msgid "Regular Rate:"
+msgstr "Normal:"
+
+#: templates/register.html:65
+#, fuzzy
+msgid "Last week Rate:"
+msgstr "Última semana"
+
+#: templates/schedule.html:4
 msgid "Schedule"
-msgstr "programação"
+msgstr "Programação"
 
 #: templates/schedule.html:13
-#, fuzzy
 msgid "PythonBrasil Schedule"
-msgstr "Local da PythonBrasil"
+msgstr "Programação da PythonBrasil"
 
+# TODO: Morreu?
 #: templates/subscribe.html:12
 msgid "Pre-registration"
 msgstr "Pré-inscrição"
 
+# TODO: Morreu?
 #: templates/subscribe.html:13
-#, fuzzy
 msgid ""
 "Please fill the form below to pre-register on PythonBrasil[8]. All fields "
 "are required."
@@ -575,6 +639,7 @@ msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
 
+# TODO: Morreu?
 #: templates/subscribe.html:18
 msgid "Pre-register"
 msgstr "Pré-inscrever"
@@ -583,9 +648,8 @@ msgstr "Pré-inscrever"
 #: templates/registration/activation_complete.html:7
 #: templates/registration/registration_complete.html:7
 #: templates/registration/registration_form.html:11
-#, fuzzy
 msgid "pythonbrasil[8] registration"
-msgstr "inscrição"
+msgstr "inscrição na pythonbrasil[8]"
 
 #: templates/registration/activate.html:11
 #, python-format
@@ -595,12 +659,19 @@ msgid ""
 "\">login</a> and start your registration on the event!</p>\n"
 "        "
 msgstr ""
+"\n"
+"            <p>Obrigada por cadastrar-se no site! Agora você pode fazer <a "
+"href=\"%(login_url)s\">login</a> e pagar a taxa de inscrição para o evento!</"
+"p>\n"
+"        "
 
 #: templates/registration/activate.html:15
 msgid ""
 "Either your activation link was incorrect, or the activation key for your "
 "account has expired."
 msgstr ""
+"Ou o link de ativação da sua conta está incorreto, ou a chave para  ativação "
+"da sua conta expirou."
 
 #: templates/registration/activation_complete.html:9
 #, python-format
@@ -610,10 +681,19 @@ msgid ""
 "\">login</a> and finish your registration to the event!</p>\n"
 "        "
 msgstr ""
+"\n"
+"        <p>Obrigada por se cadastrar no site! Você já pode <a href="
+"\"%(login_url)s\">entrar no site</a> e pagar a taxa de inscrição para o "
+"evento!</p>\n"
+"        "
 
 #: templates/registration/login.html:12
-msgid "In order to access the dashboard, you need to be authenticated."
+msgid ""
+"In order to pay your registration for attending to PythonBrasil[8] or to "
+"propose a talk, you need to have an account."
 msgstr ""
+"É necessário realizar login para pagar a taxa de inscrição do  evento e/ou "
+"para submeter palestras PythonBrasil[8]."
 
 #: templates/registration/login.html:15 templates/registration/login.html:19
 #: templates/registration/logout.html:9
@@ -671,6 +751,19 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "registration"
+#~ msgstr "inscrição"
+
+#~ msgid "Help us choosing the books O'Reilly and Pearson will be rafling"
+#~ msgstr ""
+#~ "Ajude-nos a escolher os livros da O'Reilly e da Pearson a serem sorteados"
+
+#~ msgid "register now"
+#~ msgstr "inscreva-se"
 
 #~ msgid "WHAT IS"
 #~ msgstr "O QUE É"
