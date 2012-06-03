@@ -101,6 +101,11 @@ class TransacitonModelTestCase(TestCase):
         self.assertIsInstance(subscription_field, models.ForeignKey)
         self.assertEqual(Subscription, subscription_field.related.parent_model)
 
+    def test_get_checkout_url(self):
+        t = Transaction(code="123")
+        expected_url = settings.PAGSEGURO_WEBCHECKOUT + "123"
+        self.assertEqual(expected_url, t.get_checkout_url())
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 

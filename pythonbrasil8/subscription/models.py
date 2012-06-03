@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -30,3 +32,6 @@ class Transaction(models.Model):
     code = models.CharField(max_length=50)
     status = models.CharField(max_length=25)
     price = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def get_checkout_url(self):
+        return settings.PAGSEGURO_WEBCHECKOUT + self.code
