@@ -1,13 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="row">
     <div class="column grid_12">
-        <h1>Logout</h1>
-
-        <p>Thanks for spending some quality time with the Web site today.</p>
-
-        <a href="{% url auth_login %}">login again</a>
+        <h1>{% trans "Logout" %}</h1>
+        <p>{% trans "Thanks for spending some quality time with the Web site today." %}</p>
+        <a href="{% url auth_login %}" title="{% trans "Login" %}">{% trans "Login again" %}</a>
     </div>
 </div>
 {% endblock %}

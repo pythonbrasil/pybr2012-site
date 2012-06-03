@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="row">
     <div class="column grid_12">
-	    <h1>pythonbrasil[8] registration</h1>
-        <p>An activation link has been sent to the email address you supplied, along with instructions for activating your account.</p>
+        <h1>{% trans "pythonbrasil[8] registration" %}</h1>
+        <p>{% trans "An activation link has been sent to the email address you supplied, along with instructions for activating your account." %}</p>
     </div>
 </div>
 {% endblock %}
