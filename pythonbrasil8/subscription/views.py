@@ -1,15 +1,17 @@
-from django.views.generic import View
+# -*- coding: utf-8 -*-
+import requests
+
+from django.conf import settings
+from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from django.utils.decorators import method_decorator
+from django.utils.translation import ugettext
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
-
+from django.views.generic import View
 from lxml import etree
 
-from pythonbrasil8.subscription.models import Subscription, Transaction
 from pythonbrasil8.core.views import LoginRequiredMixin
-
-import requests
+from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
 class SubscriptionView(LoginRequiredMixin, View):
@@ -38,7 +40,14 @@ class SubscriptionView(LoginRequiredMixin, View):
             type='talk',
             user=request.user,
         )
-        self.generate_transaction(subscription)
+        t = self.generate_transaction(subscription)
+
+        # TODO: notify staff that it failed to generate the transation
+        if not t:
+            subscription.delete()
+            messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."))
+        else:
+            messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"))
         return HttpResponseRedirect("/dashboard/")
 
 
