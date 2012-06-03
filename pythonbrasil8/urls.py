@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 
     url(r'^dashboard/', include('pythonbrasil8.dashboard.urls')),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'extra_context': {'registration_form': RegistrationForm()}}, name='auth_login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {"next_page": "/"}, name='auth_logout'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
