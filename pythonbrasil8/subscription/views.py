@@ -62,7 +62,7 @@ class SubscriptionView(LoginRequiredMixin, View):
             messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."), fail_silently=True)
         else:
             messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"), fail_silently=True)
-            url = "%s/%s" % (settings.PAGSEGURO_CHECKOUT, t.code)
+            url = settings.PAGSEGURO_WEBCHECKOUT + t.code
         return HttpResponseRedirect(url)
 
     def _notify_staff(self, user):

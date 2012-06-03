@@ -163,7 +163,7 @@ class SubscriptionViewTestCase(TestCase):
         response = SubscriptionView.as_view()(self.request)
         self.assertTrue(Subscription.objects.filter(user=self.user).exists())
         self.assertEqual(302, response.status_code)
-        expected_url = "%s/xpto123" % settings.PAGSEGURO_CHECKOUT
+        expected_url = settings.PAGSEGURO_WEBCHECKOUT + "xpto123"
         self.assertEqual(expected_url, response["Location"])
 
     def test_subscription_view_should_create_a_subscription_for_the_user_type(self):
