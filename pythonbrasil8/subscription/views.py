@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 from lxml import etree
 
+from pythonbrasil8.core import mail
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.dashboard.models import AccountProfile
 from pythonbrasil8.subscription.models import Subscription, Transaction
@@ -49,13 +50,19 @@ class SubscriptionView(LoginRequiredMixin, View):
         )
         t = self.generate_transaction(subscription)
 
-        # TODO: notify staff that it failed to generate the transation
         if not t:
+            self._notify_staff(request.user)
             subscription.delete()
             messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."), fail_silently=True)
         else:
             messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"), fail_silently=True)
         return HttpResponseRedirect("/dashboard/")
+
+    def _notify_staff(self, user):
+        msg = u"There was a failure in the communication with PagSeguro, the user %(email)s could not be registered."
+        kw = {"email": user.email}
+        body = msg % kw
+        mail.send(settings.EMAIL_HOST_USER, ["organizers@python.org.br"], "PagSeguro Communication Failure", body)
 
 
 class NotificationView(View):
