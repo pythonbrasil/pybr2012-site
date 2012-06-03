@@ -41,7 +41,7 @@ class SubscriptionView(LoginRequiredMixin, View):
         profile = AccountProfile.objects.filter(user=request.user)
         if not profile or not profile[0].name:
             msg = ugettext("In order to issue your registration to the conference, you need to complete your profile.")
-            messages.error(request, msg,fail_silently=True)
+            messages.error(request, msg, fail_silently=True)
             return HttpResponseRedirect(reverse("edit-profile"))
         subscription = Subscription.objects.create(
             type='talk',
@@ -68,7 +68,10 @@ class NotificationView(View):
         return super(NotificationView, self).__init__(*args, **kwargs)
 
     def transaction(self, transaction_code):
-        url_transacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS, transaction_code, settings.PAGSEGURO[    "email"], settings.PAGSEGURO["token"])
+        url_transacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS,
+                                                     transaction_code,
+                                                     settings.PAGSEGURO["email"],
+                                                     settings.PAGSEGURO["token"])
         url_notificacao = "%s/%s?email=%s&token=%s" % (settings.PAGSEGURO_TRANSACTIONS_NOTIFICATIONS, transaction_code, settings.PAGSEGURO["email"], settings.PAGSEGURO["token"])
 
         response = requests.get(url_transacao)

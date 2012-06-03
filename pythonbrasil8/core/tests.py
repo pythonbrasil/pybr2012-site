@@ -83,6 +83,7 @@ class CustomSponsorsViewTestCase(TestCase):
         self.assertEqual("Gold", sponsor_2_category)
         self.assertEqual("FOSS", sponsor_3_category)
 
+
 class SuccessfulPreRegistrationTestCase(TestCase):
 
     def test_should_be_a_template_view(self):
@@ -144,6 +145,7 @@ class InternationalizationWorkingFormAcceptLanguageTestCase(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertIn('Diamond', response.content)
 
+
 class SporsorsJobViewTestCase(TestCase):
 
     def setUp(self):
@@ -161,4 +163,3 @@ class SporsorsJobViewTestCase(TestCase):
 
     def test_context_object_name_should_be_jobs(self):
         self.assertEqual("jobs", self.sponsors_jobs_view.context_object_name)
-

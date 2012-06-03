@@ -33,7 +33,7 @@ class DashboardIndexTestCase(TestCase):
         self.assertEqual('dashboard/index.html', IndexView.template_name)
 
     def test_should_redirects_if_user_is_not_logged_in(self):
-        self.request.user.is_authenticated = lambda : False
+        self.request.user.is_authenticated = lambda: False
         result = IndexView.as_view()(self.request)
         self.assertEqual(302, result.status_code)
 
@@ -44,7 +44,7 @@ class DashboardIndexTestCase(TestCase):
     def test_should_have_sessions_on_context(self):
         result = IndexView.as_view()(self.request)
         self.assertIn('sessions', result.context_data)
-        self.assertQuerysetEqual(result.context_data['sessions'], [u"Python for dummies",], lambda s: s.title)
+        self.assertQuerysetEqual(result.context_data['sessions'], [u"Python for dummies", ], lambda s: s.title)
 
     def test_get_url_should_return_200(self):
         client = Client()
@@ -82,7 +82,7 @@ class ProfileViewTestCase(TestCase):
         self.assertEqual('/dashboard/profile/', ProfileView.success_url)
 
     def test_should_redirects_if_user_is_not_logged_in(self):
-        self.request.user.is_authenticated = lambda : False
+        self.request.user.is_authenticated = lambda: False
         result = ProfileView.as_view()(self.request, pk=self.account_profile.id)
         self.assertEqual(302, result.status_code)
 

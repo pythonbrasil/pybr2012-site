@@ -78,6 +78,7 @@ class SubscriptionModelTestCase(TestCase):
             code="xpto",
         )
         self.assertTrue(subscription.done())
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
@@ -120,6 +121,7 @@ class SubscriptionViewTestCase(TestCase):
 
         class ResponseMock(object):
             content = "<code>xpto123</code>"
+
             def ok(self):
                 return True
 
@@ -138,7 +140,7 @@ class SubscriptionViewTestCase(TestCase):
         self.assertEqual("/dashboard/", response.items()[1][1])
 
     def test_should_returns_error_when_user_is_not_logged(self):
-        self.request.user.is_authenticated = lambda : False
+        self.request.user.is_authenticated = lambda: False
         response = SubscriptionView.as_view()(self.request)
         self.assertEqual(302, response.status_code)
         self.assertIn('/accounts/login/', response.items()[1][1])
@@ -177,6 +179,7 @@ class NotificationViewTestCase(TestCase):
 
         class ResponseMock(object):
             content = "<xml><status>3</status><reference>3</reference></xml>"
+
             def ok(self):
                 return True
 
@@ -251,6 +254,7 @@ class NotificationViewTestCase(TestCase):
         transaction = Transaction.objects.get(id=transaction.id)
         self.assertEqual("done", transaction.status)
         self.assertEqual("OK", response.content)
+
 
 class PricesTestCase(TestCase):
 

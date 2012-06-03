@@ -2,21 +2,17 @@
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
-from django.db import models
+
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
         # Adding field 'AccountProfile.name'
         db.add_column('dashboard_accountprofile', 'name', self.gf('django.db.models.fields.CharField')(default=datetime.date(2012, 5, 5), max_length=20), keep_default=False)
 
-
     def backwards(self, orm):
-        
         # Deleting field 'AccountProfile.name'
         db.delete_column('dashboard_accountprofile', 'name')
-
 
     models = {
         'auth.group': {
