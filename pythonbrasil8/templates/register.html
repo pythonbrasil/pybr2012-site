@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Registration" %} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/register.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h1>{% trans "Registration Prices" %}</h1>
+
+        <section class="registration">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th align="left">Conference Registration</th>
+                            <th align="center">Early Bird Rate</th>
+                            <th align="center">Regular Rate</th>
+                            <th align="center">Last Week Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><a href="#corporate" title="Registration Information">Corporate</a></td>
+                            <td align="center">R$ 350,00</td>
+                            <td align="center">R$ 450,00</td>
+                            <td align="center">R$ 550,00</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><a href="#individual" title="Registration Information">Individual</a></td>
+                            <td align="center">R$ 250,00</td>
+                            <td align="center">R$ 350,00</td>
+                            <td align="center">R$ 450,00</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <a href="#student" title="Registration Information">Student</a>,
+                                <a href="#speaker" title="Registration Information">Speaker</a> or
+                                <a href="#apyb" title="Registration Information">APyB member</a>
+                            </td>
+                            <td align="center">R$ 150,00</td>
+                            <td align="center">R$ 250,00</td>
+                            <td align="center">R$ 350,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <div class="inner-note">
+                    <ul>
+                        <li>
+                            <p class="subtitle">{% trans "Early Bird Rate:" %}</p>
+                            <p>until August 31, 2012</p>
+                        </li>
+                        <li>
+                            <p class="subtitle">{% trans "Regular Rate:" %}</p>
+                            <p>from September 1, 2012</p>
+                            <p>until November 15, 2012</p>
+                        </li>
+                        <li>
+                            <p class="subtitle">{% trans "Last week Rate:" %}</p>
+                            <p>since November 16, 2012</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn" type="submit">Buy your ticket!</button>
+
+            <h2 id="corporate">Corporate</h2>
+            <p>
+                If your company is paying for you to attend PythonBrasil, you should register at the corporate rate.
+                You'll be helping to keep the conference affordable for all, especially for students and those needing financial aid.
+                Government employees should also register at the corporate rate.
+            </p>
+
+            <h2 id="individual">Individual</h2>
+            <p>
+                If you are paying for yourself to attend PythonBrasil,
+                and you are not member of the APyB (Brazilian Python Association),
+                feel free to come as an individual.
+            </p>
+
+            <h2 id="student">Student</h2>
+            <p>
+                This rate is for full-time students.
+                You must present the documentation that proofs this condition in the first day of the conference.
+            </p>
+
+            <h2 id="speaker">Speaker</h2>
+            <p>
+                The selected speakers will be announced <span class="strong">August 25, 2012</span>.
+                Therefore, if you are not an APyB member nor a student, we suggest you wait until this date, in order to buy your ticket.
+            </p>
+
+            <h2 id="apyb">APyB member</h2>
+            <p>
+                This rate is for members of the <a href="http://associacao.python.org.br/">Brazilian Python Association</a> (APyB),
+                with the annual fee payed (R$ 40,00 for non-students per year).
+                If in doubt, check the <a href="http://associacao.python.org.br/associados/relacao">status of your membership</a>.
+            </p>
+
+        </section>
+
+    </div>
+{% endblock %}
+
+
