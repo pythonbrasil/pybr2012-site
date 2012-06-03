@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Badges" %} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/badges.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h1>{% trans "Get a badge!" %}</h1>
+
+
+		<section class="badges">
+			<ul>
+				<li class="item">
+					<div class="item_media">
+						<p>
+							<img src="{{ STATIC_URL }}images/badges/im_attending_aside.png" alt="I'm Attending Conferencia Rails 2011">
+						</p>
+					</div>
+					<div class="item_body">
+						<pre><code>&lt;a href="http://2012.pythonbrasil.org.br" &gt;
+  &lt;img src="http://2012.pythonbrasil.org.br/images/badges/im_attending_aside.png"
+  width="200" height="180" alt="I'm Attending PythonBrasil[8]"/&gt;
+&lt;/a&gt;</code></pre>
+					</div>
+				</li>
+				<li class="item">
+					<div class="item_media">
+						<p>
+							<img src="{{ STATIC_URL }}images/badges/I_speak_aside.png" alt="I'm speaking at Conferencia Rails 2011">
+						</p>
+					</div>
+					<div class="item_body">
+						<pre><code>&lt;a href="http://2012.pythonbrasil.org.br" &gt;
+  &lt;img src="http://2012.pythonbrasil.org.br/images/badges/I_speak_aside.png"
+  width="200" height="180" alt="I'm Speaking at PythonBrasil[8]"/&gt;
+&lt;/a&gt;</code></pre>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+
+    </div>
+{% endblock %}
