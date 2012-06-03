@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.core import management
+from django.core import mail as django_mail, management
 from django.template import Context, Template
 from django.test import TestCase, RequestFactory, Client
 from django.views.generic import TemplateView, list as lview
-
 from mittun.sponsors import models
 
-import views
+from pythonbrasil8.core import mail, views
 
 
 class MenuTemplateTagTestCase(TestCase):
@@ -163,3 +162,15 @@ class SporsorsJobViewTestCase(TestCase):
 
     def test_context_object_name_should_be_jobs(self):
         self.assertEqual("jobs", self.sponsors_jobs_view.context_object_name)
+
+
+class MailSenderTestCase(TestCase):
+
+    def test_shoul_send_mail(self):
+        m = mail.send_mail(u"me@pythonbrasil.org.br", [u"he@pythonbrasil.org.br"], u"Hi", u"hello")
+        m.wait()
+        email = django_mail.outbox[0]
+        self.assertEqual(u"Hi", email.subject)
+        self.assertEqual(u"hello", email.body)
+        self.assertEqual([u"he@pythonbrasil.org.br"], email.to)
+        self.assertEqual(u"me@pythonbrasil.org.br", email.from_email)
