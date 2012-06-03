@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-03 17:39-0300\n"
+"POT-Creation-Date: 2012-06-03 19:25-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -253,22 +253,18 @@ msgid "Profile successfully updated."
 msgstr "Perfil atualizado com sucesso."
 
 #: dashboard/templates/dashboard/base.html:17
-msgid "Proposals"
-msgstr "Propostas"
-
-#: dashboard/templates/dashboard/base.html:20
 msgid "edit your profile"
 msgstr "edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:20
+#: dashboard/templates/dashboard/base.html:17
 msgid "Edit your profile"
 msgstr "Edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:23
+#: dashboard/templates/dashboard/base.html:20
 msgid "Change password"
 msgstr "Altere sua senha"
 
-#: dashboard/templates/dashboard/base.html:26
+#: dashboard/templates/dashboard/base.html:23
 #: templates/registration/logout.html:7
 msgid "Logout"
 msgstr "Sair"
@@ -331,7 +327,7 @@ msgstr "Salvar"
 #: dashboard/templates/dashboard/sessions.html:19
 #: dashboard/templates/dashboard/sessions.html:21
 msgid "Submit a proposal"
-msgstr ""
+msgstr "Submeta uma palestra"
 
 #: dashboard/templates/dashboard/sessions.html:21
 msgid "You did not submit any proposal yet."
@@ -341,20 +337,19 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: subscription/views.py:27
+#: subscription/views.py:28
 #, python-format
-msgid ""
-"Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition"
+msgid "Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition"
 msgstr ""
 "Pagamento de uma Inscrição %s na conferência PythonBrasil[8], edição de 2012"
 
-#: subscription/views.py:46
+#: subscription/views.py:48
 msgid ""
 "In order to issue your registration to the conference, you need to complete "
 "your profile."
 msgstr "Para se inscrever na conferência, você precisa preencher o seu perfil."
 
-#: subscription/views.py:58
+#: subscription/views.py:60
 msgid ""
 "Failed to generate a transaction within the payment gateway. Please contact "
 "the event staff to complete your registration."
@@ -362,7 +357,7 @@ msgstr ""
 "Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
 "a organização."
 
-#: subscription/views.py:60
+#: subscription/views.py:62
 msgid ""
 "You're one step closer to participate in PythonBrasil[8]! Now all you have "
 "to do is to pay the registration fee and you will be in!"
@@ -480,7 +475,6 @@ msgid "about"
 msgstr "sobre"
 
 #: templates/base.html:40
-#, fuzzy
 msgid "register"
 msgstr "inscreva-se"
 
@@ -500,14 +494,18 @@ msgstr "patrocínio"
 msgid "logout"
 msgstr "sair"
 
-# TODO
 #: templates/base.html:57
-msgid "login"
+msgid "log in"
 msgstr ""
 
 #: templates/base.html:82
+msgid "buy your ticket now"
+msgstr "pague sua inscrição agora"
+
+#: templates/base.html:82
+#, fuzzy
 msgid "buy your tickets now"
-msgstr "pague sua entrada agora"
+msgstr "pague sua inscrição agora"
 
 #: templates/base.html:97
 msgid "Call for proposals"
@@ -652,11 +650,11 @@ msgid "pythonbrasil[8] registration"
 msgstr "inscrição na pythonbrasil[8]"
 
 #: templates/registration/activate.html:11
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
 "            <p>Thanks for signing up! Now you can <a href=\"%(login_url)s"
-"\">login</a> and start your registration on the event!</p>\n"
+"\">log in</a> and start your registration on the event!</p>\n"
 "        "
 msgstr ""
 "\n"
@@ -674,11 +672,11 @@ msgstr ""
 "da sua conta expirou."
 
 #: templates/registration/activation_complete.html:9
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
-"        <p>Thanks for signing up! You can now <a href=\"%(login_url)s"
-"\">login</a> and finish your registration to the event!</p>\n"
+"        <p>Thanks for signing up! You can now <a href=\"%(login_url)s\">log "
+"in</a> and finish your registration to the event!</p>\n"
 "        "
 msgstr ""
 "\n"
@@ -696,21 +694,23 @@ msgstr ""
 "para submeter palestras PythonBrasil[8]."
 
 #: templates/registration/login.html:15 templates/registration/login.html:19
-#: templates/registration/logout.html:9
-msgid "Login"
+msgid "Log In"
 msgstr ""
 
 #: templates/registration/login.html:23
-msgid "Not registered yet?"
+msgid "Don't have an account? Sign Up now!"
 msgstr ""
 
 #: templates/registration/login.html:27
-#, fuzzy
-msgid "Register"
-msgstr "inscreva-se"
+msgid "Sign Up"
+msgstr ""
 
 #: templates/registration/logout.html:8
 msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: templates/registration/logout.html:9
+msgid "Login"
 msgstr ""
 
 #: templates/registration/logout.html:9
@@ -751,6 +751,13 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#, fuzzy
+#~ msgid "Register"
+#~ msgstr "inscreva-se"
+
+#~ msgid "Proposals"
+#~ msgstr "Propostas"
 
 #~ msgid "Normal"
 #~ msgstr "Normal"
