@@ -45,9 +45,9 @@ class SubscriptionView(LoginRequiredMixin, View):
         # TODO: notify staff that it failed to generate the transation
         if not t:
             subscription.delete()
-            messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."))
+            messages.error(request, ugettext("Failed to generate a transaction within the payment gateway. Please contact the event staff to complete your registration."), fail_silently=True)
         else:
-            messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"))
+            messages.success(request, ugettext("You're one step closer to participate in PythonBrasil[8]! Now all you have to do is to pay the registration fee and you will be in!"), fail_silently=True)
         return HttpResponseRedirect("/dashboard/")
 
 
