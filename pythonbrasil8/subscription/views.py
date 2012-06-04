@@ -119,7 +119,7 @@ class NotificationView(View):
         context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
                    "subscription": transaction.subscription}
         body = render_to_string("email_unsuccessful_registration.txt", context)
-        subject = "PythonBrasil[8] - Registration Confirmation"
+        subject = "PythonBrasil[8] - Registration Unsuccessful "
         mail.send(settings.EMAIL_SENDER,
                   transaction.subscription.user.email,
                   subject,
