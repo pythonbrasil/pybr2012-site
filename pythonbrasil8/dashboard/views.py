@@ -17,14 +17,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'dashboard/profile.html'
     model = AccountProfile
     form_class = ProfileForm
-
-    def get_success_url(self):
-        return self.request.POST.get("next", "/dashboard/profile/")
-
-    def get_context_data(self, **kwargs):
-        context = super(ProfileView, self).get_context_data(**kwargs)
-        context["next"] = self.request.GET.get("next")
-        return context
+    success_url = "/dashboard/"
 
     def get(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id
@@ -33,7 +26,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     def post(self, *args, **kwargs):
         self.kwargs['pk'] = self.request.user.get_profile().id
         r = super(ProfileView, self).post(*args, **kwargs)
-        if 300 < r.status_code < 400 and self.get_success_url() == "/dashboard/profile/":
+        if 300 < r.status_code < 400:
             messages.success(self.request, ugettext(u"Profile successfully updated."), fail_silently=True)
         return r
 

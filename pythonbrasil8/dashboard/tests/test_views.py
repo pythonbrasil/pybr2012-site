@@ -83,6 +83,9 @@ class ProfileViewTestCase(TestCase):
         result = ProfileView.as_view()(self.request, pk=self.account_profile.id)
         self.assertEqual(302, result.status_code)
 
+    def test_success_url_should_be_dashboard_index(self):
+        self.assertEqual("/dashboard/", ProfileView.success_url)
+
     def test_should_have_200_status_code_when_user_is_logged_in(self):
         self.assertEqual(200, self.response.status_code)
 
@@ -108,35 +111,11 @@ class ProfileViewTestCase(TestCase):
         self.assertEqual('Student', profile.type)
         self.assertEqual('M', profile.tshirt)
 
-    def test_update_should_redirect_to_the_next_page_if_any(self):
-        data = {
-            'user': self.user.id,
-            'name': 'siminino',
-            'description': 'simi test',
-            'type': 'Student',
-            'tshirt': 'M',
-            'gender': 'male',
-            'locale': 'AC',
-            'next': '/',
-        }
-
-        request = RequestFactory().post('/', data)
-        request.user = self.request.user
-        response = ProfileView().dispatch(request)
-        self.assertEqual(302, response.status_code)
-        self.assertEqual("/", response["Location"])
-
     def test_get_url_should_return_200(self):
         client = Client()
         client.login(username=self.request.user.username, password='test')
         response = client.get('/dashboard/profile/')
         self.assertEqual(200, response.status_code)
-
-    def test_get_should_include_next_page_in_the_context(self):
-        request = RequestFactory().get("/google/?next=/")
-        request.user = self.request.user
-        response = ProfileView().dispatch(request)
-        self.assertEqual("/", response.context_data["next"])
 
 
 class SessionsTestCase(TestCase):
