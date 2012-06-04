@@ -47,6 +47,28 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+                <div class="note">
+                <div class="inner-note">
+                    <ul>
+                        <li>
+                            <p class="subtitle">{% trans "Early Bird Rate:" %}</p>
+                            <p>{% trans "until August 31, 2012" %}</p>
+                        </li>
+                        <li>
+                            <p class="subtitle">{% trans "Regular Rate:" %}</p>
+                            <p>{% trans "from September 1, 2012" %}</p>
+                            <p>{% trans "until November 15, 2012" %}</p>
+                        </li>
+                        <li>
+                            <p class="subtitle">{% trans "Last week Rate:" %}</p>
+                            <p>{% trans "since November 16, 2012" %}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a class="btn" href="{% url dashboard-index %}">{% trans "Buy your ticket!" %}</a>
+            <div class="table">
                 <table>
                     <thead>
                         <tr>
@@ -73,28 +95,9 @@
                     </tbody>
                 </table>
             </div>
-
-            <div class="note">
-                <div class="inner-note">
-                    <ul>
-                        <li>
-                            <p class="subtitle">{% trans "Early Bird Rate:" %}</p>
-                            <p>{% trans "until August 31, 2012" %}</p>
-                        </li>
-                        <li>
-                            <p class="subtitle">{% trans "Regular Rate:" %}</p>
-                            <p>{% trans "from September 1, 2012" %}</p>
-                            <p>{% trans "until November 15, 2012" %}</p>
-                        </li>
-                        <li>
-                            <p class="subtitle">{% trans "Last week Rate:" %}</p>
-                            <p>{% trans "since November 16, 2012" %}</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <a class="btn" href="{% url dashboard-index %}">{% trans "Buy your ticket!" %}</a>
+            <a class="btn soon" href="">{% trans "Soon the tickets for the tutorials will be available!" %}</a>
+        </div>
+        <div clas="row">
 
             <h2>{% trans "Registration Types" %}</h2>
 
