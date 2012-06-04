@@ -98,7 +98,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'pythonbrasil8.core',
     'mittun.events',
-    'mittun.registration',
     'mittun.sponsors',
     'django.contrib.admin',
     'django_nose',
