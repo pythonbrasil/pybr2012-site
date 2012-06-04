@@ -1,5 +1,5 @@
 #pre-register a {
-    width: 240px;
+    width: 254px;
     height: 39px;
     float: right;
     text-align: center;
@@ -13,7 +13,7 @@
 #pre-register span {
     height: 100%;
     width: 230px;
-    padding: 15px 0 0 4px;
+    padding: 15px 0 0 14px;
     display: block;
     background: url('/static/images/header/sprite.png') #004592 -2px -52px no-repeat;
 }
@@ -304,7 +304,7 @@ h2 {
 font-family: 'Open Sans', arial, sans-serif;
 text-transform: uppercase;
 color: black;
-font-size: 24px;
+font-size: 20px;
 line-height: 0.9em;
 letter-spacing: -1px;
 }
