@@ -26,10 +26,6 @@
     text-decoration: none;
 }
 
-h1 {
-    font-weight: normal;
-}
-
 #messages {
     background-color: #FFF;
     padding: 20px 0;
@@ -41,7 +37,7 @@ h1 {
     line-height: 17px;
     margin: 0 auto 10px;
     padding: 15px 20px;
-    width: 400px;
+    width: 600px;
 }
 
 #messages .success {

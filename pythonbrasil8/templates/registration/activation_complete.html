@@ -4,11 +4,9 @@
 {% block content %}
 <div class="row">
     <div class="column grid_12">
-        <h1>{% trans "pythonbrasil[8] registration" %}</h1>
+        <h1>{% trans "pythonbrasil account activated" %}</h1>
         {% url auth_login as login_url %}
-        {% blocktrans %}
-        <p>Thanks for signing up! You can now <a href="{{ login_url }}">log in</a> and finish your registration to the event!</p>
-        {% endblocktrans %}
+        <p>{% trans "Thanks for signing up! Please," %} <a href="{{ login_url }}">{% trans "log in" %}</a>{% trans " in order to buy your ticket!" %}</p>
     </div>
 </div>
 {% endblock %}

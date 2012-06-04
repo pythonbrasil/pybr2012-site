@@ -57,7 +57,7 @@
                                 </li>
                             {% else %}
                                 <li class="{% is_active request.path 'auth_login' %}">
-                                    <a href="{% url auth_login %}?next={{ request.path }}">{% trans "log in" %}</a>
+                                    <a href="{% url auth_login %}">{% trans "log in" %}</a>
                                 </li>
                             {% endif %}
                        </ul>
@@ -82,7 +82,7 @@
                 </div>
 
                 <div id="pre-register">
-                    <p> <a href="{% url dashboard-index %}" title="{% trans "buy your ticket now" %}"><span>{% trans "buy your tickets now" %} »</span></a> </p>
+                    <p> <a href="{% url dashboard-index %}" title="{% trans "buy your ticket now" %}"><span>{% trans "buy your ticket now" %} »</span></a> </p>
 
                 </div>
                 {% block social %}

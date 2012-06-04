@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
+from django.template.loader import render_to_string
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext
 from django.views.decorators.csrf import csrf_exempt
@@ -101,11 +102,28 @@ class NotificationView(View):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "done"
         transaction.save()
+        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
+                   "subscription": transaction.subscription}
+        body = render_to_string("email_successful_registration.txt", context)
+        subject = "PythonBrasil[8] - Registration Confirmation"
+        mail.send(settings.EMAIL_SENDER,
+                  transaction.subscription.user.email,
+                  subject,
+                  body)
+
 
     def transaction_canceled(self, subscription_id):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "canceled"
         transaction.save()
+        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
+                   "subscription": transaction.subscription}
+        body = render_to_string("email_unsuccessful_registration.txt", context)
+        subject = "PythonBrasil[8] - Registration Confirmation"
+        mail.send(settings.EMAIL_SENDER,
+                  transaction.subscription.user.email,
+                  subject,
+                  body)
 
     @method_decorator(csrf_exempt)
     def dispatch(self, *args, **kwargs):

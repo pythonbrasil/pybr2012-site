@@ -8,8 +8,8 @@
 {% block content %}
 <div class="row" id="login-dashboard">
     <div class="column grid_12">
-        <h1>Dashboard</h1>
-        <p>{% trans "In order to pay your registration for attending to PythonBrasil[8] or to propose a talk, you need to have an account." %}</p>
+        <h1>pythonbrasil login</h1>
+        <p>{% trans "In order to pay your registration for attending to PythonBrasil[8] or to propose a talk, an account is required. Please, log in or sign up, if you don't have an account yet." %}</p>
 
         <div class="login">
             <h2>{% trans "Log In" %}</h2>
@@ -20,7 +20,7 @@
             </form>
         </div>
         <div class="register">
-            <h2>{% trans "Don't have an account? Sign Up now!" %}</h2>
+            <h2>{% trans "Don't have an account yet? Sign Up now!" %}</h2>
             <form method="post" action="{% url registration_register %}">
                 {% csrf_token %}
                 {{ registration_form.as_p }}
