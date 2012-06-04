@@ -68,7 +68,8 @@ table td {
 
 .registration .button {text-align:center}
 
-.btn {clear: both; width:120px}
+.btn {clear: both; margin-bottom:20px; width:120px}
+.btn.soon {margin-bottom:0; width:200px}
 
 h2 {margin-bottom: 20px;}
 

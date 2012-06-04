@@ -32,7 +32,8 @@ body {
     font-size: 15px;
 }
 p, li {
-    line-height: 18px
+    line-height: 18px;
+    letter-spacing:0px
 }
 .text_right {
     text-align: right;
