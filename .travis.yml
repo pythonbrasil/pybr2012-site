@@ -12,3 +12,6 @@ before_script:
   - sudo cp chromedriver /usr/local/bin
   - sudo chmod 777 /usr/local/bin/chromedriver
 script: make test && make jasmine
+branches:
+  only:
+    - master
