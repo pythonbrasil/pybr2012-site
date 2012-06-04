@@ -26,7 +26,7 @@ def pip_install():
 
 def start():
     with cd(env.app_root):
-        run('%(virtualenv)s/bin/gunicorn_django -p gunicorn.pid --bind=127.0.0.1:8080 --daemon --workers=3' % env)
+        run('DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/gunicorn --pid=gunicorn.pid --bind=127.0.0.1:8080 --daemon --workers=3 pythonbrasil8.wsgi:application' % env)
 
 
 def reload():
