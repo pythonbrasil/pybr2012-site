@@ -212,8 +212,16 @@ class SubscriptionViewTestCase(TestCase):
 
 class NotificationViewTestCase(TestCase):
 
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "profiles.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
     def setUp(self):
-        self.user = User.objects.create(username="Wolverine")
+        self.user = User.objects.get(pk=1)
         self.requests_original = views.requests
 
         class ResponseMock(object):

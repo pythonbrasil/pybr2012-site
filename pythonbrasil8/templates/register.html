@@ -16,34 +16,59 @@
                 <table>
                     <thead>
                         <tr>
-                            <th align="left">Conference Registration</th>
-                            <th align="center">Early Bird Rate</th>
-                            <th align="center">Regular Rate</th>
-                            <th align="center">Last Week Rate</th>
+                            <th align="left">{% trans "Conference Registration" %}</th>
+                            <th align="center">{% trans "Early Bird Rate" %}</th>
+                            <th align="center">{% trans "Regular Rate" %}</th>
+                            <th align="center">{% trans "Last Week Rate" %}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td align="left"><a href="#corporate" title="Registration Information">Corporate</a></td>
+                            <td align="left"><a href="#corporate" title="{% trans "Registration Information" %}">{% trans "Corporate" %}</a></td>
                             <td align="center">R$ 350,00</td>
                             <td align="center">R$ 450,00</td>
                             <td align="center">R$ 550,00</td>
                         </tr>
                         <tr>
-                            <td align="left"><a href="#individual" title="Registration Information">Individual</a></td>
+                            <td align="left"><a href="#individual" title="{% trans "Registration Information" %}">Individual</a></td>
                             <td align="center">R$ 250,00</td>
                             <td align="center">R$ 350,00</td>
                             <td align="center">R$ 450,00</td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <a href="#student" title="Registration Information">Student</a>,
-                                <a href="#speaker" title="Registration Information">Speaker</a> or
-                                <a href="#apyb" title="Registration Information">APyB member</a>
+                                <a href="#student" title="{% trans "Registration Information" %}">{% trans "Student" %}</a>,
+                                <a href="#speaker" title="{% trans "Registration Information" %}">{% trans "Speaker" %}</a> or
+                                <a href="#apyb" title="{% trans "Registration Information" %}">{% trans "APyB member" %}</a>
                             </td>
                             <td align="center">R$ 150,00</td>
                             <td align="center">R$ 250,00</td>
                             <td align="center">R$ 350,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th align="left">{% trans "Tutorial Registration" %}</th>
+                            <th align="center">{% trans "Rate" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <a href="#corporate" title="{% trans "Registration Information" %}">{% trans "Corporate" %}</a> or
+                                <a href="#individual" title="{% trans "Registration Information" %}">Individual</a>
+                            </td>
+                            <td align="center">R$ 200,00 {% trans "each" %}</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <a href="#student" title="{% trans "Registration Information" %}">{% trans "Student" %}</a>,
+                                <a href="#speaker" title="{% trans "Registration Information" %}">{% trans "Speaker" %}</a> or
+                                <a href="#apyb" title="{% trans "Registration Information" %}">{% trans "APyB member" %}</a>
+                            </td>
+                            <td align="center">R$ 150,00 {% trans "each" %}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,59 +79,79 @@
                     <ul>
                         <li>
                             <p class="subtitle">{% trans "Early Bird Rate:" %}</p>
-                            <p>until August 31, 2012</p>
+                            <p>{% trans "until August 31, 2012" %}</p>
                         </li>
                         <li>
                             <p class="subtitle">{% trans "Regular Rate:" %}</p>
-                            <p>from September 1, 2012</p>
-                            <p>until November 15, 2012</p>
+                            <p>{% trans "from September 1, 2012" %}</p>
+                            <p>{% trans "until November 15, 2012" %}</p>
                         </li>
                         <li>
                             <p class="subtitle">{% trans "Last week Rate:" %}</p>
-                            <p>since November 16, 2012</p>
+                            <p>{% trans "since November 16, 2012" %}</p>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <a class="btn" href="{% url dashboard-index %}">Buy your ticket!</a>
+            <a class="btn" href="{% url dashboard-index %}">{% trans "Buy your ticket!" %}</a>
 
-            <h2 id="corporate">Corporate</h2>
+            <h2>{% trans "Registration Types" %}</h2>
+
+            <h3 id="corporate">{% trans "Corporate" %}</h3>
             <p>
+                {% blocktrans %}
                 If your company is paying for you to attend PythonBrasil, you should register at the corporate rate.
                 You'll be helping to keep the conference affordable for all, especially for students and those needing financial aid.
                 Government employees should also register at the corporate rate.
+                {% endblocktrans %}
             </p>
 
-            <h2 id="individual">Individual</h2>
+            <h3 id="individual">{% trans "Individual" %}</h3>
             <p>
+                {% blocktrans %}
                 If you are paying for yourself to attend PythonBrasil,
                 and you are not member of the APyB (Brazilian Python Association),
                 feel free to come as an individual.
+                {% endblocktrans %}
             </p>
 
-            <h2 id="student">Student</h2>
+            <h3 id="student">{% trans "Student" %}</h3>
             <p>
+                {% blocktrans %}
                 This rate is for full-time students.
                 You must present the documentation that proofs this condition in the first day of the conference.
+                {% endblocktrans %}
             </p>
 
-            <h2 id="speaker">Speaker</h2>
+            <h3 id="speaker">{% trans "Speaker" %}</h3>
             <p>
+                {% blocktrans %}
                 The selected speakers will be announced <span class="strong">August 25, 2012</span>.
                 Therefore, if you are not an APyB member nor a student, we suggest you wait until this date, in order to buy your ticket.
+                {% endblocktrans %}
             </p>
 
-            <h2 id="apyb">APyB member</h2>
+            <h3 id="apyb">{% trans "APyB member" %}</h3>
             <p>
+                {% blocktrans %}
                 This rate is for members of the <a href="http://associacao.python.org.br/">Brazilian Python Association</a> (APyB),
                 with the annual fee payed (R$ 40,00 for non-students per year).
                 If in doubt, check the <a href="http://associacao.python.org.br/associados/relacao">status of your membership</a>.
+                {% endblocktrans %}
             </p>
+
+            <div class="included">
+                <h2>{% trans "What's included?" %}</h2>
+
+                {% blocktrans %}
+                <p>Conference registration includes access to open spaces, coding dojos, talks and coffee breaks on the two conference days (Saturday & Sunday).</p>
+                <p>Tutorial attendees will be provided with coffee breaks. Tutorials are charged separately from registration and do not include admission to the main conference.</p>
+                <p>If you have questions or issues with registration, please send email to <a href="mailto:organizes@python.org.br">organizers@python.org.br</a>.</p>
+                {% endblocktrans %}
+            </div>
 
         </section>
 
     </div>
 {% endblock %}
-
-

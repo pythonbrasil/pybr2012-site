@@ -14,6 +14,14 @@ table th {
   width: 100px
 }
 
+table:last-child th:first-child {
+    width: 140px;
+}
+
+table:last-child th:last-child {
+    width: 60px;
+}
+
 table td {
   vertical-align: middle;
   border-bottom: 1px solid #999;
@@ -52,8 +60,17 @@ table td {
     background: url('../images/header/sprite.png') no-repeat right -116px;
 }
 
+.registration .inner-note p {
+    line-height: 15px;
+}
+
 .registration .table {float:left; margin-right:30px}
 
 .registration .button {text-align:center}
 
-.btn {width:120px}
+.btn {clear: both; width:120px}
+
+h2 {margin-bottom: 20px;}
+
+p {line-height:20px;}
+.included p {margin-bottom:10px;}
