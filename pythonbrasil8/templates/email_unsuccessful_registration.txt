@@ -1,15 +1,14 @@
-Dear {{ profile.name }},
+{% load i18n %}{% trans 'Dear' %} {{ profile.name }},
 
-PythonBrasil[8] Conference will be held during March 23 and 24, 2012 at SulAmérica Convention Center.
+{% trans 'PythonBrasil[8] Conference will be held from the 21 to 24 November 2012 at SulAmérica Convention Center.' %}
 
-Apparently you tried to pay the fee, related to a {{ profile.type }} registration at PythonBrasil[8], but the transaction did not succeed.
+{% blocktrans %}Apparently you tried to pay the fee, related to a {{ profile.type }} registration at PythonBrasil[8], but the transaction did not succeed.{% endblocktrans %}
 
-Please, try paying it again, from our website:
+{% trans 'Please, try paying it again, from our website:' %}
 http://2012.pythonbrasil.org.br
 
-If you need assistance, you can email us at organizacao@python.org.br.
+{% trans 'If you need assistance, you can email us at organizacao@python.org.br.' %}
 
-Thank you,
+{% trans 'Thank you' %},
 
-PythonBrasil Conference Registration
-
+{% trans 'PythonBrasil Conference Registration' %}

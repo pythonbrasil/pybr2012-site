@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 00:17-0300\n"
+"POT-Creation-Date: 2012-06-05 04:20-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -372,6 +372,14 @@ msgstr ""
 "Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
 "a organização."
 
+#: subscription/views.py:108
+msgid "PythonBrasil[8] - Registration Confirmation"
+msgstr "PythonBrasil[8] - Confirmação de inscrição"
+
+#: subscription/views.py:121
+msgid "PythonBrasil[8] - Registration Unsuccessful "
+msgstr "PythonBrasil[8] - Falha na inscrição"
+
 #: templates/about.html:4 templates/previous_editions.html:4
 msgid "About"
 msgstr "Sobre"
@@ -405,7 +413,7 @@ msgstr ""
 "A oitava edição da conferência acontecerá entre os dias 21 e 24 de novembro "
 "de 2012 no"
 
-#: templates/about.html:23
+#: templates/about.html:23 templates/email_successful_registration.txt:5
 msgid "SulAmérica Convention Center"
 msgstr "Centro de Convenções SulAmérica"
 
@@ -577,6 +585,87 @@ msgid ""
 msgstr ""
 "É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
 "Foundation (PSF)."
+
+#: templates/email_successful_registration.txt:1
+#: templates/email_unsuccessful_registration.txt:1
+msgid "Dear"
+msgstr "Caro(a)"
+
+#: templates/email_successful_registration.txt:3
+msgid ""
+"This is your official confirmation for PythonBrasil[8] Conference, to be "
+"held from the 21 to 24 November 2012 at:"
+msgstr ""
+"Essa é a confirmação oficial para a PythonBrasil[8], a ser realizada entre "
+"21 e 24 de Novembro de 2012, em:"
+
+#: templates/email_successful_registration.txt:7
+msgid "Cidade Nova, Downtown"
+msgstr "Cidade Nova, Centro"
+
+#: templates/email_successful_registration.txt:9
+msgid "Brazil"
+msgstr "Brasil"
+
+#: templates/email_successful_registration.txt:12
+#, python-format
+msgid ""
+"Your payment of a %(profile.type)s registration has been successfully "
+"processed."
+msgstr ""
+"Seu pagamento da inscrição do tipo %(profile.type)s foi processada com "
+"sucesso."
+
+#: templates/email_successful_registration.txt:14
+msgid ""
+"Please, note that the tutorials are charged separately from registration and "
+"are not included in this payment."
+msgstr ""
+"Por favor, note que os tutoriais são cobrados separadamente da inscrição e "
+"não estão inclusos nesse pagamento."
+
+#: templates/email_successful_registration.txt:16
+msgid "More information about the conference can be found at:"
+msgstr "Mais informações sobre a conferência podem ser encontradas em:"
+
+#: templates/email_successful_registration.txt:19
+#: templates/email_unsuccessful_registration.txt:10
+msgid "If you need assistance, you can email us at organizacao@python.org.br."
+msgstr ""
+"Se você precisar de ajuda, você pode mandar um email para organizacao@python."
+"org.br."
+
+#: templates/email_successful_registration.txt:21
+#: templates/email_unsuccessful_registration.txt:12
+msgid "Thank you"
+msgstr "Obrigado"
+
+#: templates/email_successful_registration.txt:23
+#: templates/email_unsuccessful_registration.txt:14
+msgid "PythonBrasil Conference Registration"
+msgstr "Inscrição PythonBrasil"
+
+#: templates/email_unsuccessful_registration.txt:3
+msgid ""
+"PythonBrasil[8] Conference will be held from the 21 to 24 November 2012 at "
+"SulAmérica Convention Center."
+msgstr ""
+"A PythonBrasil[8] acontecerá entre os dias 21 e 24 de novembro de 2012 no "
+"Centro de Convenções SulAmérica."
+
+#: templates/email_unsuccessful_registration.txt:5
+#, python-format
+msgid ""
+"Apparently you tried to pay the fee, related to a %(profile.type)s "
+"registration at PythonBrasil[8], but the transaction did not succeed."
+msgstr ""
+"Aparentemente você tentou pagar a taxa de inscrição, relativa a inscrição do "
+"tipo %(profile.type)s na PythonBrasil[8], mas a transação não foi concluída "
+"com sucesso."
+
+#: templates/email_unsuccessful_registration.txt:7
+msgid "Please, try paying it again, from our website:"
+msgstr "Por favor, tente pagar novamente pelo nosso site:"
 
 #: templates/news.html:4
 msgid "News"
