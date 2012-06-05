@@ -103,7 +103,7 @@ class NotificationView(View):
         transaction.status = "done"
         transaction.save()
         context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
-                   "subscription": transaction.subscription}
+  }
         body = render_to_string("email_successful_registration.txt", context)
         subject = "PythonBrasil[8] - Registration Confirmation"
         mail.send(settings.EMAIL_SENDER,
@@ -116,8 +116,7 @@ class NotificationView(View):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "canceled"
         transaction.save()
-        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
-                   "subscription": transaction.subscription}
+        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user)}
         body = render_to_string("email_unsuccessful_registration.txt", context)
         subject = "PythonBrasil[8] - Registration Unsuccessful "
         mail.send(settings.EMAIL_SENDER,
