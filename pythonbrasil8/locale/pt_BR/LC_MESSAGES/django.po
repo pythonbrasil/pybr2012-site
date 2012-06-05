@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 22:31-0300\n"
+"POT-Creation-Date: 2012-06-04 22:40-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -597,6 +597,11 @@ msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
 #: templates/news.html:37
 msgid "Published on May 10 2012, by Tati Al-Chueyr"
 msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
+
+#: templates/news.html:58
+#, fuzzy
+msgid "Published on April 13 2012, by Tati Al-Chueyr"
+msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
