@@ -17,8 +17,7 @@ def update_app(tag):
 
 def collect_static_files():
     with cd(env.project_root):
-        run("%(virtualenv)s/bin/python manage.py compress" % env)
-        run("%(virtualenv)s/bin/python manage.py collectstatic -v 0 --noinput" % env)
+        run("DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/python manage.py collectstatic -v 0 --noinput" % env)
 
 
 def pip_install():
@@ -27,7 +26,7 @@ def pip_install():
 
 def start():
     with cd(env.project_root):
-        run('DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/gunicorn --pid=gunicorn.pid --bind=127.0.0.1:8080 --daemon --workers=3 pythonbrasil8.wsgi:application' % env)
+        run('DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/gunicorn --access-logfile=gunicorn-access.log --error-logfile=gunicorn-error.log --pid=gunicorn.pid --bind=127.0.0.1:8080 --daemon --workers=3 pythonbrasil8.wsgi:application' % env)
 
 
 def reload():
@@ -40,8 +39,8 @@ def stop():
 
 def syncdb():
     with cd(env.project_root):
-        run("%(virtualenv)s/bin/python manage.py syncdb --noinput" % env)
-        run("%(virtualenv)s/bin/python manage.py migrate --noinput" % env)
+        run("DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/python manage.py syncdb --noinput" % env)
+        run("DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %(virtualenv)s/bin/python manage.py migrate --noinput" % env)
 
 
 def translate():
@@ -51,7 +50,7 @@ def translate():
 
 def loaddata():
     with cd(env.project_root):
-        run("%s/bin/python manage.py loaddata fixtures/initial_data.json" % env.virtualenv)
+        run("DJANGO_SETTINGS_MODULE=pythonbrasil8.settings_local %s/bin/python manage.py loaddata fixtures/initial_data.json" % env.virtualenv)
 
 
 def limpar_pycs():
