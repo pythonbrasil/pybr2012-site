@@ -4,32 +4,32 @@
 {% block title %}{% trans "About" %} | PythonBrasil[8] Conference{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/about.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/about.css" type="text/css" />
 {% endblock %}
 
 {% block content %}
-    <div class="row" id="about">
-        <div class="column grid_12">
+<div class="row" id="about">
+    <div class="column grid_12">
         <h1>{% trans "About PythonBrasil" %}</h1>
         <img src="{{ STATIC_URL }}/images/about/pythonbrasil_community.png" alt="PythonBrasil[5] in Caxias do Sul" width="310" height="195" />
         <p>
-        {% blocktrans %}
-        PythonBrasil is the largest Brazilian gathering for the community using and developing the open-source Python programming language. It is a annual vibrant meeting ground to inspire, debate, make deals, motivate and connect face to face.
-        {% endblocktrans %}
-        <br><br>
+            {% blocktrans %}
+            PythonBrasil is the largest Brazilian gathering for the community using and developing the open-source Python programming language. It is a annual vibrant meeting ground to inspire, debate, make deals, motivate and connect face to face.
+            {% endblocktrans %}
+            <br><br>
         </p>
         <p>
-        {% trans "The eighth edition of the conference will be held from the 21 to 24 November 2012 at the" %}
-        <a href="{% url venue %}">{% trans "SulAmérica Convention Center" %}</a>,
-        {% trans "located in Rio de Janeiro." %}
-        <br><br>
+            {% trans "The eighth edition of the conference will be held from the 21 to 24 November 2012 at the" %}
+            <a href="{% url venue %}">{% trans "SulAmérica Convention Center" %}</a>,
+            {% trans "located in Rio de Janeiro." %}
+            <br><br>
         </p>
 
 
         <p>
-        {% blocktrans %}
-        The conference is organized by the Python community for the community. We try to keep registration far cheaper than most comparable technology conferences, to keep PythonBrasil accessible to the widest group possible. {% endblocktrans %} <a href="{% url dashboard-index %}">{% trans "Join us!" %}</a>
-        <br><br><br>
+            {% blocktrans %}
+            The conference is organized by the Python community for the community. We try to keep registration far cheaper than most comparable technology conferences, to keep PythonBrasil accessible to the widest group possible. {% endblocktrans %} <a href="{% url dashboard-index %}">{% trans "Join us!" %}</a>
+            <br><br><br>
         </p>
         <div class="contact">
             <h2>{% trans "Contact" %}</h2>
@@ -79,5 +79,6 @@
         </div>
 
     </div>
+</div>
 {% endblock %}
 
