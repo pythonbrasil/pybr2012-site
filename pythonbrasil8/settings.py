@@ -72,6 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'pythonbrasil8.core.middleware.CacheMiddleware',
 )
 
 ROOT_URLCONF = 'pythonbrasil8.urls'

@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
 from django.core import mail as django_mail, management
 from django.template import Context, Template
 from django.test import TestCase, RequestFactory, Client
 from django.views.generic import TemplateView, list as lview
 from mittun.sponsors import models
 
-from pythonbrasil8.core import mail, views
+from pythonbrasil8.core import mail, middleware, views
+from pythonbrasil8.core.tests import mocks
 
 
 class MenuTemplateTagTestCase(TestCase):
@@ -164,3 +166,62 @@ class MailSenderTestCase(TestCase):
         self.assertEqual(u"hello", email.body)
         self.assertEqual([u"he@pythonbrasil.org.br"], email.to)
         self.assertEqual(u"me@pythonbrasil.org.br", email.from_email)
+
+
+class CacheMiddlewareTestCase(TestCase):
+
+    def test_should_add_max_age_directive_to_300(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("max-age=300", response["Cache-Control"])
+
+    def test_should_not_touch_the_value_of_Cache_control_if_it_is_defined(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m["Cache-Control"] = "no-cache"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("no-cache", response["Cache-Control"])
+
+    def test_should_include_Vary_Cookie(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertIn("Cookie", response["Vary"])
+
+    def test_should_include_Vary_Cookie_if_already_defined_the_header_with_other_value(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m["Vary"] = "Accept"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertIn("Cookie", response["Vary"])
+
+    def test_should_not_include_Vary_Cookie_if_it_is_already_defined(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m["Vary"] = "Cookie"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("Cookie, Accept", response["Vary"])
+
+    def test_should_include_Vary_Accept(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertIn("Accept", response["Vary"])
+
+    def test_should_include_Vary_Accept_if_the_header_is_already_defined_with_other_value(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m["Vary"] = "Cookie"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("Cookie, Accept", response["Vary"])
+
+    def test_should_not_include_Vary_Accept_if_it_is_already_defined(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m["Vary"] = "Accept"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("Accept, Cookie", response["Vary"])
+
+    def test_should_be_in_middleware_list(self):
+        self.assertIn("pythonbrasil8.core.middleware.CacheMiddleware", settings.MIDDLEWARE_CLASSES)
