@@ -14,12 +14,16 @@ table th {
   width: 100px
 }
 
-table:last-child th:first-child {
-    width: 140px;
+table.tutorial-table {
+    width: 460px;
 }
 
-table:last-child th:last-child {
-    width: 60px;
+table.tutorial-table th:first-child {
+    width: 70%;
+}
+
+table.tutorial-table th:last-child {
+    width: 30%;
 }
 
 table td {
