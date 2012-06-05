@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 22:40-0300\n"
+"POT-Creation-Date: 2012-06-05 00:17-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -601,7 +601,7 @@ msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
 #: templates/news.html:58
 #, fuzzy
 msgid "Published on April 13 2012, by Tati Al-Chueyr"
-msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
+msgstr "Publicada em 15 de Abril de 2012, por Tati Al-Chueyr"
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
@@ -880,6 +880,10 @@ msgstr ""
 "Em breve mais informações sobre os keynotes da PythonBrasil[8], sobre os "
 "palestrantes e sobre a programação."
 
+#: templates/social.html:5
+msgid "Brazilian #Python conference in November - Join us!"
+msgstr "Em novembro, conferência nacional de #Python - Participe!"
+
 #: templates/registration/activate.html:8
 #: templates/registration/registration_form.html:11
 msgid "pythonbrasil[8] registration"
@@ -983,3 +987,10 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid ""
+#~ "Brazilian #Python conference in November - Join us! http://2012."
+#~ "pythonbrasil.org.br via @PythonBrasil #dev #PythonBrasil"
+#~ msgstr ""
+#~ "Em novembro, conferência nacional de #python - Participe! http://2012."
+#~ "pythonbrasil.org.br via @PythonBrasil #dev #PythonBrasil"

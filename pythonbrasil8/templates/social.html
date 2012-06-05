@@ -1,7 +1,8 @@
+{% load i18n %}
 <div class="bar">
     <div style="float:left"><div class="g-plusone" data-size="medium"></div></div>
     <div style="float:left">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ twitter_data_text }}" data-count="horizontal" data-via="PythonBrasil">Tweet</a>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-text="{% trans "Brazilian #Python conference in November - Join us!" %}" data-count="horizontal" data-via="PythonBrasil" data-url="http://2012.pythonbrasil.org.br" data-hashtags="dev,PythonBrasil">Tweet</a>
     </div>
     <div class="fb-like" data-href="https://www.facebook.com/PythonBrasil8" data-send="false" data-layout="button_count" data-width="80"></div>
 </div>
