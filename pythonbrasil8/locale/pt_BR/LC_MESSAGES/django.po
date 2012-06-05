@@ -304,7 +304,7 @@ msgid ""
 "registration fee, using PagSeguro."
 msgstr ""
 "Para concluir a sua inscrição na PythonBrasil[8], você precisa pagar a "
-"taxade inscrição, utilizando PagSeguro"
+"taxa de inscrição, utilizando PagSeguro"
 
 #: dashboard/templates/dashboard/index.html:23
 msgid "Pay and confirm the registration for PythonBrasil[8]"
