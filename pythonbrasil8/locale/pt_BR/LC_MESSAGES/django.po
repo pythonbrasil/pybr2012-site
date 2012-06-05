@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 04:20-0300\n"
+"POT-Creation-Date: 2012-06-05 04:29-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -637,8 +637,8 @@ msgstr ""
 
 #: templates/email_successful_registration.txt:21
 #: templates/email_unsuccessful_registration.txt:12
-msgid "Thank you"
-msgstr "Obrigado"
+msgid "Thank you,"
+msgstr "Obrigado,"
 
 #: templates/email_successful_registration.txt:23
 #: templates/email_unsuccessful_registration.txt:14

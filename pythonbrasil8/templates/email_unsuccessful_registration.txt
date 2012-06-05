@@ -9,6 +9,6 @@ http://2012.pythonbrasil.org.br
 
 {% trans 'If you need assistance, you can email us at organizacao@python.org.br.' %}
 
-{% trans 'Thank you' %},
+{% trans 'Thank you,' %}
 
 {% trans 'PythonBrasil Conference Registration' %}
