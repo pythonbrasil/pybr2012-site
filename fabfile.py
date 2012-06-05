@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+import os
+
 from fabric.api import cd, env, run
 
 
 env.project_root = '/home/pythonbrasil/pythonbrasil8'
+env.app_root = os.path.join(env.project_root, 'pythonbrasil8')
 env.virtualenv = '/home/pythonbrasil/env'
 env.hosts = ['2012.pythonbrasil.org.br']
 
@@ -40,6 +44,11 @@ def syncdb():
         run("%(virtualenv)s/bin/python manage.py migrate --noinput" % env)
 
 
+def translate():
+    with cd(env.app_root):
+        run("%(virtualenv)s/bin/django-admin.py compilemessages" % env)
+
+
 def loaddata():
     with cd(env.project_root):
         run("%s/bin/python manage.py loaddata fixtures/initial_data.json" % env.virtualenv)
@@ -55,3 +64,4 @@ def deploy(tag="master"):
     pip_install()
     limpar_pycs()
     collect_static_files()
+    translate()
