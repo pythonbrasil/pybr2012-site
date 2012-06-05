@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 21:24-0300\n"
+"POT-Creation-Date: 2012-06-04 21:29-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -212,7 +212,7 @@ msgstr "Nome"
 
 #: dashboard/models.py:14
 msgid "Short Bio"
-msgstr ""
+msgstr "Sobre você"
 
 #: dashboard/models.py:15
 msgid "Registration type"
@@ -858,8 +858,7 @@ msgid ""
 msgstr ""
 "\n"
 "            <p>Obrigada por cadastrar-se no site! Agora você pode fazer <a "
-"href=\"%(login_url)s\">login</a> e pagar a taxa de inscrição do evento!</"
-"p>\n"
+"href=\"%(login_url)s\">login</a> e pagar a taxa de inscrição do evento!</p>\n"
 "        "
 
 #: templates/registration/activate.html:15
@@ -888,9 +887,9 @@ msgid ""
 "propose a talk, an account is required. Please, log in or sign up, if you "
 "don't have an account yet."
 msgstr ""
-"Para pagar sua inscrição para participar da PythonBrasil[8] ou propor uma"
-"palestra é necessário criar uma conta. Por favor, faça login ou crie uma conta,  "
-"caso você não tenha ainda."
+"Para pagar sua inscrição para participar da PythonBrasil[8] ou propor "
+"umapalestra é necessário criar uma conta. Por favor, faça login ou crie uma "
+"conta,  caso você não tenha ainda."
 
 #: templates/registration/login.html:15 templates/registration/login.html:19
 msgid "Log In"
@@ -918,8 +917,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"            <p>Senha alterada com sucesso, você já pode <a href=\"%(dash_url)s"
-"\" title=\"Dashboard\">voltar ao dashboard</a> agora.</p>\n"
+"            <p>Senha alterada com sucesso, você já pode <a href="
+"\"%(dash_url)s\" title=\"Dashboard\">voltar ao dashboard</a> agora.</p>\n"
 "        "
 
 #: templates/registration/password_change_form.html:13
@@ -947,4 +946,3 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
-
