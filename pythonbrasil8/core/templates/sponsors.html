@@ -23,10 +23,10 @@
         {% for sponsor in category.sponsor_set.all %}
         <div class="row sponsor">
             <div class="column grid_2 first logo">
-                <img src="{{ sponsor.logo.url }}" />
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" />
             </div>
             <div class="column grid_8 last">
-                <h2>{{ sponsor.name }}<a name="sponsor-{{ sponsor.id }}"></a></h2>
+                <h2 id="sponsor-{{ sponsor.id }}">{{ sponsor.name }}</h2>
                 <p class="url"><a href="{{ sponsor.url }}">{{ sponsor.url }}</a></p>
                 <p class="description">{{ sponsor.description }}</p>
             </div>
