@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
+from django.conf import settings
+from django.contrib.auth.models import User
 from django.core import mail as django_mail, management
 from django.template import Context, Template
 from django.test import TestCase, RequestFactory, Client
 from django.views.generic import TemplateView, list as lview
 from mittun.sponsors import models
 
-from pythonbrasil8.core import mail, views
+from pythonbrasil8.core import mail, middleware, views
+from pythonbrasil8.core.tests import mocks
 
 
 class MenuTemplateTagTestCase(TestCase):
@@ -164,3 +167,43 @@ class MailSenderTestCase(TestCase):
         self.assertEqual(u"hello", email.body)
         self.assertEqual([u"he@pythonbrasil.org.br"], email.to)
         self.assertEqual(u"me@pythonbrasil.org.br", email.from_email)
+
+
+class CacheMiddlewareTestCase(TestCase):
+
+    def test_should_add_max_age_directive_to_the_value_in_settings(self):
+        request = RequestFactory().get("/")
+        request.user = User()
+        request.user.is_authenticated = lambda: False
+        m = mocks.ResponseMock()
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("max-age=%s" % settings.PAGE_CACHE_MAXAGE, response["Cache-Control"])
+
+    def test_should_not_touch_the_value_of_Cache_control_if_it_is_defined(self):
+        request = RequestFactory().get("/")
+        request.user = User()
+        request.user.is_authenticated = lambda: False
+        m = mocks.ResponseMock()
+        m["Cache-Control"] = "no-cache"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("no-cache", response["Cache-Control"])
+
+    def test_should_define_Cache_control_as_no_cache_if_the_user_is_authenticated(self):
+        request = RequestFactory().get("/")
+        request.user = User()
+        request.user.is_authenticated = lambda: True
+        m = mocks.ResponseMock()
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("no-cache", response["Cache-Control"])
+
+    def test_should_remove_Vary_cookie_if_present(self):
+        request = RequestFactory().get("/")
+        request.user = User()
+        request.user.is_authenticated = lambda: False
+        m = mocks.ResponseMock()
+        m["Vary"] = "Accept-Language, Cookie"
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("Accept-Language", response["Vary"])
+
+    def test_should_be_the_first_in_middleware_list(self):
+        self.assertEqual("pythonbrasil8.core.middleware.CacheMiddleware", settings.MIDDLEWARE_CLASSES[0])

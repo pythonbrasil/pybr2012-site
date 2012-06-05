@@ -68,6 +68,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 PAGE_CACHE_MAXAGE = 120
 
 MIDDLEWARE_CLASSES = (
+    'pythonbrasil8.core.middleware.CacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
