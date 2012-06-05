@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 PRICES = {
-    'Student': 150,
+    'Student': 2,
     'APyB Associated': 150,
     'Speaker': 150,
     'Individual': 250,
