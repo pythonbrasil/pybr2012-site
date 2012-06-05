@@ -170,11 +170,11 @@ class MailSenderTestCase(TestCase):
 
 class CacheMiddlewareTestCase(TestCase):
 
-    def test_should_add_max_age_directive_to_300(self):
+    def test_should_add_max_age_directive_to_the_value_in_settings(self):
         request = RequestFactory().get("/")
         m = mocks.ResponseMock()
         response = middleware.CacheMiddleware().process_response(request, m)
-        self.assertEqual("max-age=300", response["Cache-Control"])
+        self.assertEqual("max-age=%s" % settings.PAGE_CACHE_MAXAGE, response["Cache-Control"])
 
     def test_should_not_touch_the_value_of_Cache_control_if_it_is_defined(self):
         request = RequestFactory().get("/")
