@@ -159,7 +159,12 @@ a:visited {color: #1E5D8B}
     position: absolute;
 }
 
-#logo a {
+#logo-pt {
+    background: url('/static/images/header/sprite_pt.png') #1b1f20 0px -959px no-repeat;
+    position: absolute;
+}
+
+#logo a, #logo-pt a {
     display: block;
     height: 270px;
     width: 400px;

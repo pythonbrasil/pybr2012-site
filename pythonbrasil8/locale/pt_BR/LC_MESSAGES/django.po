@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 22:12-0300\n"
+"POT-Creation-Date: 2012-06-04 22:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -41,8 +41,8 @@ msgid "Buy your tickets for PythonBrasil[8] - registration is now available!"
 msgstr "Compre seus ingressos para PythonBrasil[8] - inscrições abertas!"
 
 #: core/templates/home.html:41
-msgid "Published on June 3 2012"
-msgstr "Publicada em 3 de Junho de 2012"
+msgid "Published on June 4 2012"
+msgstr "Publicada em 4 de Junho de 2012"
 
 #: core/templates/home.html:44 templates/news.html:26
 msgid "Keynotes of PythonBrasil[8] - who would you like to see?"
@@ -493,6 +493,10 @@ msgstr "I_speak_aside_pt.png"
 msgid "I'm speaking at PythonBrasil[8]"
 msgstr "Eu vou palestrar na PythonBrasil[8]"
 
+#: templates/base.html:29
+msgid "logo"
+msgstr "logo-pt"
+
 #: templates/base.html:37
 msgid "about"
 msgstr "sobre"
@@ -581,6 +585,18 @@ msgstr "Notícias"
 #: templates/news.html:12
 msgid "PythonBrasil News"
 msgstr "Novidades da PythonBrasil"
+
+#: templates/news.html:16
+msgid "Published on June 4 2012, by Tati Al-Chueyr"
+msgstr "Publicada em 4 de Junho de 2012, por Tati Al-Chueyr"
+
+#: templates/news.html:27
+msgid "Published on May 15 2012, by Tati Al-Chueyr"
+msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
+
+#: templates/news.html:37
+msgid "Published on May 10 2012, by Tati Al-Chueyr"
+msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
