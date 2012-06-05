@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/social.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css" type="text/css" />
+        {% block css %}{% endblock %}
         {% endcompress %}
         <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
-        {% block css %}{% endblock %}
         {% block js_top %}{% endblock %}
     </head>
 
