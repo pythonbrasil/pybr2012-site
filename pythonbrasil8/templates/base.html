@@ -53,7 +53,7 @@
                                     <a href="{% url dashboard-index %}" title="dashboard">dashboard</a>
                                 </li>
                                 <li class="{% is_active request.path 'auth_logout' %}">
-                                    <a href="{% url auth_logout %}?next={{ request.path }}">{% trans "logout" %}</a>
+                                    <a href="{% url auth_logout %}">{% trans "logout" %}</a>
                                 </li>
                             {% else %}
                                 <li class="{% is_active request.path 'auth_login' %}">
