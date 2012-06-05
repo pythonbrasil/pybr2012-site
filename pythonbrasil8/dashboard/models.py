@@ -11,7 +11,7 @@ from registration.signals import user_activated
 class AccountProfile(models.Model):
     user = models.OneToOneField(User)
     name = models.CharField(max_length=20, verbose_name=ugettext_lazy(u"Name"))
-    description = models.CharField(max_length=300, verbose_name=ugettext_lazy(u"Description"))
+    description = models.CharField(max_length=300, verbose_name=ugettext_lazy(u"Short Bio"))
     type = models.CharField(max_length=50, choices=choices.ATTENDANT_CHOICES, verbose_name=ugettext_lazy(u"Registration type"))
     tshirt = models.CharField(max_length=50, choices=choices.T_SHIRT_CHOICES, verbose_name=ugettext_lazy(u"T-Shirt size"))
     locale = models.CharField(max_length=255, choices=choices.LOCALE_CHOICES, verbose_name=ugettext_lazy(u"State"))

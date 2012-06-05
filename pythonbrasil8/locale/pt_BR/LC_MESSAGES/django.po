@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 20:57-0300\n"
+"POT-Creation-Date: 2012-06-04 21:24-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -211,8 +211,8 @@ msgid "Name"
 msgstr "Nome"
 
 #: dashboard/models.py:14
-msgid "Description"
-msgstr "Descrição"
+msgid "Short Bio"
+msgstr ""
 
 #: dashboard/models.py:15
 msgid "Registration type"
@@ -722,9 +722,9 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                Se você está pagando a sua própria inscrição para PythonBrasil,\n"
-"                e você não é membro da APyB (Associação Python "
-"Brasil),\n"
+"                Se você está pagando a sua própria inscrição para "
+"PythonBrasil,\n"
+"                e você não é membro da APyB (Associação Python Brasil),\n"
 "                selecione essa taxa de inscrição.\n"
 "                "
 
@@ -737,9 +737,10 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                Esta é a taxa de inscrição para estudantes em tempo integral.\n"
-"                Você deverá apresentar um comprovante válido, no primeiro dia"
-" da conferência.\n"
+"                Esta é a taxa de inscrição para estudantes em tempo "
+"integral.\n"
+"                Você deverá apresentar um comprovante válido, no primeiro "
+"dia da conferência.\n"
 "                "
 
 #: templates/register.html:132
@@ -752,10 +753,11 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                Os palestrantes selecionados serão anunciados no dia <span class=\"strong"
-"\">25 de agosto de 2012</span>.\n"
-"                Portanto, se você não for membro APyB ou estudante e submeter palestra, "
-"sugerimos que aguarde até esta data para pagar a sua inscrição.\n"
+"                Os palestrantes selecionados serão anunciados no dia <span "
+"class=\"strong\">25 de agosto de 2012</span>.\n"
+"                Portanto, se você não for membro APyB ou estudante e "
+"submeter palestra, sugerimos que aguarde até esta data para pagar a sua "
+"inscrição.\n"
 "                "
 
 #: templates/register.html:140
@@ -772,12 +774,11 @@ msgstr ""
 "\n"
 "                Esta taxa é para membro sda  <a href=\"http://associacao."
 "python.org.br/\">Associação Python Brasil</a> (APyB),\n"
-"                que tiverem pago a taxa anual (R$ 40,00 para não-estudantes por "
-"ano).\n"
-"                Se estiver em dúvida, confira o <a href=\"http://associacao.python."
-"org.br/associados/relacao\">status da sua associação</a>.\n"
+"                que tiverem pago a taxa anual (R$ 40,00 para não-estudantes "
+"por ano).\n"
+"                Se estiver em dúvida, confira o <a href=\"http://associacao."
+"python.org.br/associados/relacao\">status da sua associação</a>.\n"
 "                "
-
 
 #: templates/register.html:148
 msgid "What's included?"
@@ -787,8 +788,8 @@ msgstr "O que está incluído?"
 msgid ""
 "\n"
 "                <p>Conference registration includes access to open spaces, "
-"coding dojos, talks and coffee breaks on the two conference days (Saturday & "
-"Sunday).</p>\n"
+"coding dojos and talks on the two conference days (Friday & Saturday). "
+"Coffee-breaks and the conference T-shirt are also included.</p>\n"
 "                <p>Tutorial attendees will be provided with coffee breaks. "
 "Tutorials are charged separately from registration and do not include "
 "admission to the main conference.</p>\n"
@@ -798,15 +799,16 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                <p>Conference registration includes access to open spaces, "
-"coding dojos, talks and coffee breaks on the two conference days (Saturday & "
-"Sunday).</p>\n"
-"                <p>Tutorial attendees will be provided with coffee breaks. "
-"Tutorials are charged separately from registration and do not include "
-"admission to the main conference.</p>\n"
-"                <p>If you have questions or issues with registration, please "
-"send email to <a href=\"mailto:organizes@python.org.br\">organizers@python."
-"org.br</a>.</p>\n"
+"                <p>A inscrição à conferência inclui acesso aos open spaces, "
+"palestras relâmpago e apresentações durante os dois dias de conferência "
+"(Sexta & Sábado). Coffee breaks e a camiseta da conferência também estão "
+"incluídos.</p>\n"
+"                <p>Participantes dos tutoriais terão coffee breaks nos dias "
+"correspondentes Tutoriais são cobrados a parte da inscrição e não permitem "
+"acesso  à conferência principal.</p>\n"
+"                <p>Se você tiver perguntas ou problemas com a inscrição, por "
+"favor envie email para <a href=\"mailto:organizes@python.org.br"
+"\">organizers@python.org.br</a>.</p>\n"
 "                "
 
 #: templates/schedule.html:4
@@ -822,27 +824,32 @@ msgid ""
 "Come and enjoy all the amazing talks we are gathering for you. listen to the "
 "wisdom of the experts and the darings of the initiated."
 msgstr ""
+"Participe e aproveite as excelentes palestras quer reunimos para você. "
+"Aprenda lições com os especialistas e a ousadia dos iniciantes."
 
 #: templates/schedule.html:36
 msgid ""
 "You will have the chance to learn from some of the hottest Python topics as "
 "well as some other surprises."
 msgstr ""
+"Você terá a oportunidade de aprender alguns dos assuntos mais quentes de "
+"Python e algumas outras surpresas."
 
 #: templates/schedule.html:42
 msgid ""
 "Soon more information about PythonBrasil[8] keynotes, speakers and the "
 "schedule!"
 msgstr ""
+"Em breve mais informações sobre os keynotes da PythonBrasil[8], sobre os "
+"palestrantes e sobre a programação."
 
 #: templates/registration/activate.html:8
 #: templates/registration/registration_form.html:11
 msgid "pythonbrasil[8] registration"
 msgstr "inscrição na pythonbrasil[8]"
 
-# TODO
 #: templates/registration/activate.html:11
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\n"
 "            <p>Thanks for signing up! Now you can <a href=\"%(login_url)s"
@@ -851,7 +858,7 @@ msgid ""
 msgstr ""
 "\n"
 "            <p>Obrigada por cadastrar-se no site! Agora você pode fazer <a "
-"href=\"%(login_url)s\">login</a> e pagar a taxa de inscrição para o evento!</"
+"href=\"%(login_url)s\">login</a> e pagar a taxa de inscrição do evento!</"
 "p>\n"
 "        "
 
@@ -865,33 +872,31 @@ msgstr ""
 
 #: templates/registration/activation_complete.html:7
 msgid "pythonbrasil account activated"
-msgstr ""
+msgstr "conta ativada pythonbrasil"
 
 #: templates/registration/activation_complete.html:9
 msgid "Thanks for signing up! Please,"
-msgstr ""
+msgstr "Obrigada por cadastrar-se no site! Por favor,"
 
 #: templates/registration/activation_complete.html:9
-#, fuzzy
 msgid " in order to buy your ticket!"
-msgstr "pague sua inscrição"
+msgstr "para pagar a sua inscrição"
 
 #: templates/registration/login.html:12
-#, fuzzy
 msgid ""
 "In order to pay your registration for attending to PythonBrasil[8] or to "
 "propose a talk, an account is required. Please, log in or sign up, if you "
 "don't have an account yet."
 msgstr ""
-"É necessário realizar login para pagar a taxa de inscrição do  evento e/ou "
-"para submeter palestras PythonBrasil[8]."
+"Para pagar sua inscrição para participar da PythonBrasil[8] ou propor uma"
+"palestra é necessário criar uma conta. Por favor, faça login ou crie uma conta,  "
+"caso você não tenha ainda."
 
 #: templates/registration/login.html:15 templates/registration/login.html:19
 msgid "Log In"
 msgstr ""
 
 #: templates/registration/login.html:23
-#, fuzzy
 msgid "Don't have an account yet? Sign Up now!"
 msgstr "Não tem cadastro? Cadastre-se no site agora!"
 
@@ -904,7 +909,6 @@ msgstr "Cadastre-se"
 msgid "Password change"
 msgstr "Alterar senha"
 
-# TODO
 #: templates/registration/password_change_done.html:10
 #, python-format
 msgid ""
@@ -913,6 +917,10 @@ msgid ""
 "\" title=\"Dashboard\">go back to the dashboard</a> now.</p>\n"
 "        "
 msgstr ""
+"\n"
+"            <p>Senha alterada com sucesso, você já pode <a href=\"%(dash_url)s"
+"\" title=\"Dashboard\">voltar ao dashboard</a> agora.</p>\n"
+"        "
 
 #: templates/registration/password_change_form.html:13
 msgid "Please fill the form below to change your password:"
@@ -923,9 +931,8 @@ msgid "Send"
 msgstr "Enviar"
 
 #: templates/registration/registration_complete.html:7
-#, fuzzy
 msgid "pythonbrasil account activation"
-msgstr "inscrição na pythonbrasil[8]"
+msgstr "ativação de conta pythonbrasil"
 
 #: templates/registration/registration_complete.html:8
 msgid ""
@@ -941,46 +948,3 @@ msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
 
-#~ msgid ""
-#~ "\n"
-#~ "                    You registration has been received, but in order to "
-#~ "confirm it, you need to pay the registration tax. Click the button below "
-#~ "to make the payment now:\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "                    Você está cadastrado(a) no site, mas para efetuar a "
-#~ "inscrição no evento, é necessário pagar a taxa de inscrição. Clique no "
-#~ "botão abaixo para pagar agora:\n"
-#~ "                "
-
-#~ msgid ""
-#~ "You are registered in the website, but you are not registered for the "
-#~ "conference yet. To register to the conference, please click in the button "
-#~ "below. After that, you will be able to pay the registration tax "
-#~ "corresponding to your registration type."
-#~ msgstr ""
-#~ "Você se cadastrou no site, mas não está inscrito na conferência ainda "
-#~ "Para se inscrever na conferência, por favor, clique no botão abaixo. "
-#~ "Clicando sobre ele, você poderá pagar a inscrição, de acordo com o tipoe "
-#~ "de inscrição escolhida."
-
-#~ msgid "Register to the conference"
-#~ msgstr "Inscreva-se na conferência"
-
-#~ msgid "buy your tickets now"
-#~ msgstr "pague sua inscrição"
-
-# TODO
-#, fuzzy
-#~ msgid ""
-#~ "\n"
-#~ "        <p>Thanks for signing up! You can now <a href=\"%(login_url)s"
-#~ "\">log in</a> and finish your registration to the event!</p>\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "        <p>Obrigada por se cadastrar no site! Você já pode <a href="
-#~ "\"%(login_url)s\">entrar no site</a> e pagar a taxa de inscrição para o "
-#~ "evento!</p>\n"
-#~ "        "

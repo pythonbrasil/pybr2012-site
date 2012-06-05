@@ -48,7 +48,7 @@
 		background: url('../images/header/sprite.png') no-repeat 0 -116px;
 		overflow: hidden;
 	}
-		.speakers .note p {font-size: 14px; margin-bottom: 8px}
+		.speakers .note p {font-size: 13px; margin-bottom: 8px}
 		.speakers .inner-note {
 			display: block;
 			margin-left: 25px;
