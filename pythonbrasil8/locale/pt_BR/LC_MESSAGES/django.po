@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 21:29-0300\n"
+"POT-Creation-Date: 2012-06-04 22:12-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -303,8 +303,8 @@ msgid ""
 "Now to finish your registration to PythonBrasil[8], you need to pay the "
 "registration fee, using PagSeguro."
 msgstr ""
-"Para concluir a sua inscrição na PythonBrasil[8], você precisa pagar a "
-"taxa de inscrição, utilizando PagSeguro"
+"Para concluir a sua inscrição na PythonBrasil[8], você precisa pagar a taxa "
+"de inscrição, utilizando PagSeguro"
 
 #: dashboard/templates/dashboard/index.html:23
 msgid "Pay and confirm the registration for PythonBrasil[8]"
@@ -476,6 +476,22 @@ msgstr "Banners"
 #: templates/badges.html:12
 msgid "Get a badge!"
 msgstr "Baixe o banner!"
+
+#: templates/badges.html:20 templates/badges.html.py:25
+msgid "im_attending_aside.png"
+msgstr "im_attending_aside_pt.png"
+
+#: templates/badges.html:20 templates/badges.html.py:26
+msgid "I'm Attending to PythonBrasil[8]"
+msgstr "Eu vou na PythonBrasil[8]"
+
+#: templates/badges.html:33 templates/badges.html.py:38
+msgid "I_speak_aside.png"
+msgstr "I_speak_aside_pt.png"
+
+#: templates/badges.html:33 templates/badges.html.py:39
+msgid "I'm speaking at PythonBrasil[8]"
+msgstr "Eu vou palestrar na PythonBrasil[8]"
 
 #: templates/base.html:37
 msgid "about"
