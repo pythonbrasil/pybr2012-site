@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 00:17-0300\n"
+"POT-Creation-Date: 2012-06-14 19:32-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
@@ -381,20 +381,20 @@ msgid "About PythonBrasil"
 msgstr "Sobre a PythonBrasil"
 
 #: templates/about.html:16
+#, fuzzy
 msgid ""
 "\n"
-"        PythonBrasil is the largest Brazilian gathering for the community "
-"using and developing the open-source Python programming language. It is a "
-"annual vibrant meeting ground to inspire, debate, make deals, motivate and "
-"connect face to face.\n"
-"        "
+"            PythonBrasil is the largest Brazilian gathering for the "
+"community using and developing the open-source Python programming language. "
+"It is a annual vibrant meeting ground to inspire, debate, make deals, "
+"motivate and connect face to face.\n"
+"            "
 msgstr ""
 "\n"
-"        PythonBrasil é o maior encontro da comunidade comunidade "
-"brasileira que utiliza e desenvolve a linguagem de programação Python. É um "
-"encontro anual que inspira os participantes, proporcionando debates, "
-"estimulando negócios, e estimula membros da comunidade a se reencontrarem "
-"pessoalmente.\n"
+"        PythonBrasil é o maior encontro da comunidade comunidade brasileira "
+"que utiliza e desenvolve a linguagem de programação Python. É um encontro "
+"anual que inspira os participantes, proporcionando debates, estimulando "
+"negócios, e estimula membros da comunidade a se reencontrarem pessoalmente.\n"
 "        "
 
 #: templates/about.html:22
@@ -414,9 +414,10 @@ msgid "located in Rio de Janeiro."
 msgstr "localizado no Rio de Janeiro."
 
 #: templates/about.html:30
+#, fuzzy
 msgid ""
 "\n"
-"        The conference is organized by the Python community for the "
+"            The conference is organized by the Python community for the "
 "community. We try to keep registration far cheaper than most comparable "
 "technology conferences, to keep PythonBrasil accessible to the widest group "
 "possible. "
@@ -493,75 +494,75 @@ msgstr "I_speak_aside_pt.png"
 msgid "I'm speaking at PythonBrasil[8]"
 msgstr "Eu vou palestrar na PythonBrasil[8]"
 
-#: templates/base.html:29
+#: templates/base.html:30
 msgid "logo"
 msgstr "logo-pt"
 
-#: templates/base.html:37
+#: templates/base.html:38
 msgid "about"
 msgstr "sobre"
 
-#: templates/base.html:40
+#: templates/base.html:41
 msgid "register"
 msgstr "inscreva-se"
 
-#: templates/base.html:43
+#: templates/base.html:44
 msgid "schedule"
 msgstr "programação"
 
-#: templates/base.html:46
+#: templates/base.html:47
 msgid "venue"
 msgstr "local"
 
-#: templates/base.html:49
+#: templates/base.html:50
 msgid "sponsor"
 msgstr "patrocínio"
 
-#: templates/base.html:56
+#: templates/base.html:57
 msgid "logout"
 msgstr "sair"
 
-#: templates/base.html:60 templates/registration/activation_complete.html:9
+#: templates/base.html:61 templates/registration/activation_complete.html:9
 msgid "log in"
 msgstr ""
 
-#: templates/base.html:85
+#: templates/base.html:86
 msgid "buy your ticket now"
 msgstr "pague sua inscrição"
 
-#: templates/base.html:100
+#: templates/base.html:101
 msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
-#: templates/base.html:101
+#: templates/base.html:102
 msgid "June 20th"
 msgstr "20 de junho"
 
-#: templates/base.html:104
+#: templates/base.html:105
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/base.html:105
+#: templates/base.html:106
 msgid "November 20th"
 msgstr "20 de novembro"
 
-#: templates/base.html:108
+#: templates/base.html:109
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:109
+#: templates/base.html:110
 msgid "November 21th - 22th"
 msgstr "21 e 22 de novembro"
 
-#: templates/base.html:112
+#: templates/base.html:113
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:113
+#: templates/base.html:114
 msgid "November 23th - 24th"
 msgstr "23 e 24 de novembro"
 
-#: templates/base.html:131
+#: templates/base.html:132
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -570,7 +571,7 @@ msgstr ""
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
 
-#: templates/base.html:132
+#: templates/base.html:133
 msgid ""
 "It is supported by the Brazilian Python Association (APyB) and by the Python "
 "Software Foundation (PSF)."
