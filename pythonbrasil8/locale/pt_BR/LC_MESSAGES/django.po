@@ -534,8 +534,8 @@ msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
 #: templates/base.html:101
-msgid "June 15th"
-msgstr "15 de junho"
+msgid "June 20th"
+msgstr "20 de junho"
 
 #: templates/base.html:104
 msgid "Sprints"
