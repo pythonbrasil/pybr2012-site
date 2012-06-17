@@ -1,6 +1,6 @@
 Dear {{ profile.name }},
 
-This is your official confirmation for PythonBrasil[8] Conference, to be held during March 23 and 24, 2012 at:
+This is your official confirmation for PythonBrasil[8] Conference, to be held during November 23 and 24, 2012 at:
 
 SulAmérica Convention Center
 Av, Paulo de Frontin, 1
