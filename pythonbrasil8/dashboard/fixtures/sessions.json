@@ -1,5 +1,13 @@
 [
     {
+        "model": "schedule.Track",
+        "pk": 1,
+        "fields": {
+            "name_en_us": "Newbies",
+            "description_en_us": "Python for newbies"
+        }
+    },
+    {
         "model": "auth.User",
         "pk": 1,
         "fields": {
@@ -39,7 +47,8 @@
             "description": "Learn how to learn Python",
             "type": "tutorial",
             "tags": "python, learning",
-            "speakers": [1]
+            "speakers": [1],
+            "track": 1
         }
     }
 ]

@@ -28,3 +28,4 @@ class Session(models.Model):
     type = models.CharField(max_length=20, choices=TYPE)
     tags = models.CharField(max_length=255)
     speakers = models.ManyToManyField(auth_models.User)
+    track = models.ForeignKey(Track)

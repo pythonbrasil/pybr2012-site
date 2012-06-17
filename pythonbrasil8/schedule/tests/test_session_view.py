@@ -27,12 +27,14 @@ class SessionViewTestCase(test.TestCase):
 
     def test_should_create_a_session_with_the_post_data(self):
         user = auth_models.User.objects.create(username="foo")
+        track = models.Track.objects.create(name="Session test", description="test")
         data = {
             "title": "some title",
             "description": "some description",
             "type": "talk",
             "tags": "some, tags",
             "speakers": user.id,
+            "track": track.pk,
         }
         request = client.RequestFactory().post("/", data)
         request.user = auth_models.User()

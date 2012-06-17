@@ -7,10 +7,10 @@ from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 
 from pythonbrasil8.core.views import LoginRequiredMixin
-from pythonbrasil8.dashboard.views import IndexView, ProfileView, SessionsView
 from pythonbrasil8.dashboard.forms import ProfileForm
 from pythonbrasil8.dashboard.models import AccountProfile
-from pythonbrasil8.schedule.models import Session
+from pythonbrasil8.dashboard.views import IndexView, ProfileView, SessionsView
+from pythonbrasil8.schedule.models import Session, Track
 
 
 class DashboardIndexTestCase(TestCase):
@@ -18,13 +18,22 @@ class DashboardIndexTestCase(TestCase):
     def setUp(self):
         self.request = RequestFactory().get("/")
         self.request.user = User.objects.create_user(username="user", password='test')
-        session = Session.objects.create(
+        self.track = Track.objects.create(
+            name=u"Beginners",
+            description=u"Python for noobies",
+        )
+        self.session = Session.objects.create(
             title="Python for dummies",
             description="about python, universe and everything",
             type="talk",
             tags="python, 42",
+            track=self.track,
         )
-        session.speakers.add(self.request.user)
+        self.session.speakers.add(self.request.user)
+
+    def tearDown(self):
+        self.session.delete()
+        self.track.delete()
 
     def test_should_be_a_template_view(self):
         self.assertTrue(issubclass(IndexView, TemplateView))
