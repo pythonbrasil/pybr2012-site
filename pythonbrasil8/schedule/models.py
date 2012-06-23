@@ -18,17 +18,23 @@ class Track(models.Model):
     def __unicode__(self):
         return self.name
 
+SESSION_TYPES = (
+    ("tutorial", "tutorial",),
+    ("talk", "talk"),
+)
+
+LANGUAGE_CHOICES = (
+    ("pt", _("Portuguese")),
+    ("en", _("English")),
+    ("es", _("Spanish")),
+)
+
 
 class Session(models.Model):
-
-    TYPE = (
-        ('tutorial', 'tutorial',),
-        ('talk', 'talk'),
-    )
-
     title = models.CharField(max_length=255)
     description = models.TextField()
-    type = models.CharField(max_length=20, choices=TYPE)
+    type = models.CharField(max_length=20, choices=SESSION_TYPES)
     tags = models.CharField(max_length=255)
     speakers = models.ManyToManyField(auth_models.User)
     track = models.ForeignKey(Track)
+    language = models.CharField(max_length=2, verbose_name=_("Language"), choices=LANGUAGE_CHOICES)

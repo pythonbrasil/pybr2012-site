@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase
-from django.db.models import ForeignKey, ManyToManyField
+from django.db.models import CharField, ForeignKey, ManyToManyField
 
 from pythonbrasil8.schedule.models import Session, Track
 from pythonbrasil8.schedule.forms import SessionForm
@@ -41,6 +41,30 @@ class SessionModelTestCase(TestCase):
     def test_track_fk_should_point_to_Track_model(self):
         field = Session._meta.get_field_by_name("track")[0]
         self.assertEqual(Track, field.related.parent_model)
+
+    def test_should_have_a_language_field(self):
+        self.assert_field_in("language", Session)
+
+    def test_language_should_be_a_CharField(self):
+        field = Session._meta.get_field_by_name("language")[0]
+        self.assertIsInstance(field, CharField)
+
+    def test_language_should_have_at_most_2_characters(self):
+        field = Session._meta.get_field_by_name("language")[0]
+        self.assertEqual(2, field.max_length)
+
+    def test_language_should_have_three_options_en_es_pt(self):
+        expected = (
+            ("pt", "Portuguese"),
+            ("en", "English"),
+            ("es", "Spanish"),
+        )
+        field = Session._meta.get_field_by_name("language")[0]
+        self.assertEqual(expected, field.choices)
+
+    def test_language_should_have_a_verbose_name(self):
+        field = Session._meta.get_field_by_name("language")[0]
+        self.assertEqual(u"Language", field.verbose_name)
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
