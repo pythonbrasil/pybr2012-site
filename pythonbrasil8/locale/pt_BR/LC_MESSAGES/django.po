@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-14 19:32-0300\n"
+"POT-Creation-Date: 2012-06-23 17:26-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
+"Language-Team: Francisco Souza <f@souza.cc>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -206,7 +207,7 @@ msgstr "Pesquisador"
 msgid "Other country"
 msgstr "Outro país"
 
-#: dashboard/models.py:13
+#: dashboard/models.py:13 schedule/models.py:12
 msgid "Name"
 msgstr "Nome"
 
@@ -255,22 +256,26 @@ msgid "Profile successfully updated."
 msgstr "Perfil atualizado com sucesso."
 
 #: dashboard/templates/dashboard/base.html:17
+msgid "Proposals"
+msgstr ""
+
+#: dashboard/templates/dashboard/base.html:20
 msgid "edit your profile"
 msgstr "edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:17
+#: dashboard/templates/dashboard/base.html:20
 msgid "Edit your profile"
 msgstr "Edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:20
+#: dashboard/templates/dashboard/base.html:23
 msgid "Change password"
 msgstr "Altere sua senha"
 
-#: dashboard/templates/dashboard/base.html:23
+#: dashboard/templates/dashboard/base.html:26
 msgid "Logout"
 msgstr "Sair"
 
-#: dashboard/templates/dashboard/base.html:37
+#: dashboard/templates/dashboard/base.html:40
 msgid ""
 "You are close to participate of PythonBrasil[8]! Pay your ticket and start "
 "planning your travel!"
@@ -282,14 +287,14 @@ msgstr ""
 msgid "your account"
 msgstr "sua conta"
 
-#: dashboard/templates/dashboard/index.html:16
+#: dashboard/templates/dashboard/index.html:15
 msgid ""
 "Your registration to PythonBrasil[8] is confirmed, we'll see you at the "
 "conference!"
 msgstr ""
 "Sua inscrição na PythonBrasil[8] está confirmada, nos vemos na conferência!"
 
-#: dashboard/templates/dashboard/index.html:20
+#: dashboard/templates/dashboard/index.html:19
 msgid ""
 "In order to register to PythonBrasil[8], you still need to fill the required "
 "fields in your profile and"
@@ -297,8 +302,8 @@ msgstr ""
 "Para se inscrever na conferência, você ainda precisa preencher os "
 "camposobrigatórios do seu perfil e"
 
-#: dashboard/templates/dashboard/index.html:22
-#: dashboard/templates/dashboard/index.html:31
+#: dashboard/templates/dashboard/index.html:21
+#: dashboard/templates/dashboard/index.html:30
 msgid ""
 "Now to finish your registration to PythonBrasil[8], you need to pay the "
 "registration fee, using PagSeguro."
@@ -306,15 +311,15 @@ msgstr ""
 "Para concluir a sua inscrição na PythonBrasil[8], você precisa pagar a taxa "
 "de inscrição, utilizando PagSeguro"
 
-#: dashboard/templates/dashboard/index.html:23
+#: dashboard/templates/dashboard/index.html:22
 msgid "Pay and confirm the registration for PythonBrasil[8]"
 msgstr "Pague e confirme sua inscrição na PythonBrasil[8]"
 
-#: dashboard/templates/dashboard/index.html:23
+#: dashboard/templates/dashboard/index.html:22
 msgid "Pay registration"
 msgstr "Pagar a inscrição"
 
-#: dashboard/templates/dashboard/index.html:29
+#: dashboard/templates/dashboard/index.html:28
 msgid ""
 "In order to register to PythonBrasil[8], you still need to fill the required "
 "fields in"
@@ -322,15 +327,15 @@ msgstr ""
 "Para se inscrever na conferência, você ainda precisa preencher os "
 "camposobrigatórios do seu perfil em"
 
-#: dashboard/templates/dashboard/index.html:29
+#: dashboard/templates/dashboard/index.html:28
 msgid " and "
 msgstr " e"
 
-#: dashboard/templates/dashboard/index.html:36
+#: dashboard/templates/dashboard/index.html:35
 msgid "Fill the required fields in your profile"
 msgstr "Preencher os campos obrigatórios no seu perfil"
 
-#: dashboard/templates/dashboard/index.html:40
+#: dashboard/templates/dashboard/index.html:39
 msgid "Pay your ticket"
 msgstr "Pague sua inscrição"
 
@@ -351,6 +356,63 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 #: dashboard/templates/dashboard/sessions.html:21
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
+
+#: schedule/models.py:13 schedule/models.py:37
+#, fuzzy
+msgid "Description"
+msgstr "Inscrição"
+
+#: schedule/models.py:27
+msgid "Portuguese"
+msgstr "Português"
+
+#: schedule/models.py:28
+msgid "English"
+msgstr "Inglês"
+
+#: schedule/models.py:29
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: schedule/models.py:34
+msgid "Track"
+msgstr "Trilha"
+
+#: schedule/models.py:35
+msgid "Language"
+msgstr "Idioma"
+
+#: schedule/models.py:36
+msgid "Title"
+msgstr "Título"
+
+#: schedule/models.py:38
+msgid "Type"
+msgstr "Tipo"
+
+#: schedule/models.py:39
+msgid "Tags"
+msgstr "Tags"
+
+#: schedule/models.py:40
+#, fuzzy
+msgid "Speakers"
+msgstr "Palestrantes"
+
+#: schedule/templates/schedule/subscribe.html:12
+#, fuzzy
+msgid "Send a proposal"
+msgstr "Submeta uma palestra"
+
+#: schedule/templates/schedule/subscribe.html:14
+#, fuzzy
+msgid "Please fill the form below to submit your proposal:"
+msgstr "Por favor, preencha o formuláiro abaixo para enviar sua proposta:"
+
+#: schedule/templates/schedule/subscribe.html:19
+#: templates/registration/password_change_form.html:17
+msgid "Send"
+msgstr "Enviar"
 
 #: subscription/views.py:29
 #, python-format
@@ -603,6 +665,22 @@ msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
 #, fuzzy
 msgid "Published on April 13 2012, by Tati Al-Chueyr"
 msgstr "Publicada em 15 de Abril de 2012, por Tati Al-Chueyr"
+
+#: templates/password_reset.html:4 templates/password_reset.html.py:12
+#, fuzzy
+msgid "Password reset"
+msgstr "Alterar senha"
+
+#: templates/password_reset.html:14
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+
+#: templates/password_reset.html:19
+#, fuzzy
+msgid "Reset my password"
+msgstr "Altere sua senha"
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
@@ -966,10 +1044,6 @@ msgstr ""
 #: templates/registration/password_change_form.html:13
 msgid "Please fill the form below to change your password:"
 msgstr "Por favor, preencha o formuláiro abaixo para alterar sua senha"
-
-#: templates/registration/password_change_form.html:17
-msgid "Send"
-msgstr "Enviar"
 
 #: templates/registration/registration_complete.html:7
 msgid "pythonbrasil account activation"
