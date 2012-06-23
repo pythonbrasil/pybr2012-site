@@ -11,17 +11,37 @@ class SessionModelTestCase(TestCase):
     def test_should_have_title(self):
         self.assert_field_in("title", Session)
 
+    def test_title_should_have_verbose_name(self):
+        field = Session._meta.get_field_by_name("title")[0]
+        self.assertEqual(u"Title", field.verbose_name)
+
     def test_should_have_description(self):
         self.assert_field_in("description", Session)
+
+    def test_description_should_have_verbose_name(self):
+        field = Session._meta.get_field_by_name("description")[0]
+        self.assertEqual(u"Description", field.verbose_name)
 
     def test_should_have_tags(self):
         self.assert_field_in("tags", Session)
 
+    def test_tags_should_have_verbose_name(self):
+        field = Session._meta.get_field_by_name("tags")[0]
+        self.assertEqual(u"Tags", field.verbose_name)
+
     def test_should_have_speakers(self):
         self.assert_field_in("speakers", Session)
 
+    def test_speakers_should_have_verbose_name(self):
+        field = Session._meta.get_field_by_name("speakers")[0]
+        self.assertEqual(u"Speakers", field.verbose_name)
+
     def test_should_have_type(self):
         self.assert_field_in("type", Session)
+
+    def test_type_should_have_verbose_name(self):
+        field = Session._meta.get_field_by_name("type")[0]
+        self.assertEqual(u"Type", field.verbose_name)
 
     def test_type_should_have_choices(self):
         type_field = Session._meta.get_field_by_name("type")[0]
@@ -41,6 +61,10 @@ class SessionModelTestCase(TestCase):
     def test_track_fk_should_point_to_Track_model(self):
         field = Session._meta.get_field_by_name("track")[0]
         self.assertEqual(Track, field.related.parent_model)
+
+    def test_track_should_have_a_verbose_name(self):
+        field = Session._meta.get_field_by_name("track")[0]
+        self.assertEqual(u"Track", field.verbose_name)
 
     def test_should_have_a_language_field(self):
         self.assert_field_in("language", Session)

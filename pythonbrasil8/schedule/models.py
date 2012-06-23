@@ -31,10 +31,10 @@ LANGUAGE_CHOICES = (
 
 
 class Session(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    type = models.CharField(max_length=20, choices=SESSION_TYPES)
-    tags = models.CharField(max_length=255)
-    speakers = models.ManyToManyField(auth_models.User)
-    track = models.ForeignKey(Track)
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
+    description = models.TextField(verbose_name=_("Description"))
+    type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
+    tags = models.CharField(max_length=255, verbose_name=_("Tags"))
+    speakers = models.ManyToManyField(auth_models.User, verbose_name=_("Speakers"))
+    track = models.ForeignKey(Track, verbose_name=_("Track"))
     language = models.CharField(max_length=2, verbose_name=_("Language"), choices=LANGUAGE_CHOICES)
