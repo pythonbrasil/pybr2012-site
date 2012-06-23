@@ -13,10 +13,10 @@
         <p>
             {% trans "Please fill the form below to submit your proposal:" %}
         </p>
-        <form action="" method="post">
+        <form action="{% url session-subscribe %}" method="post">
             {% csrf_token %}
             {{ form.as_p}}
-            <p><button type="submit" class="btn">Send</button></p>
+            <p><button type="submit" class="btn">{% trans "Send" %}</button></p>
         </form>
     </div>
 </div>
