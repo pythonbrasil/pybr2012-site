@@ -359,7 +359,7 @@ msgstr "Por que você não envia uma?"
 #: schedule/models.py:13 schedule/models.py:37
 #, fuzzy
 msgid "Description"
-msgstr "Inscrição"
+msgstr "Descrição"
 
 #: schedule/models.py:27
 msgid "Portuguese"
