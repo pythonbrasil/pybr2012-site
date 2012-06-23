@@ -1,10 +1,23 @@
 {% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/send-proposal.css" type="text/css" />
+{% endblock %}
 
 {% block content %}
-<h1>Send a proposal</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <p><input type="submit" value="send"/></p>
-</form>
+<div class="row" id="send-proposal">
+    <div class="column grid_12">
+        <h1>{% trans "Send a proposal" %}</h1>
+        <p>
+            {% trans "Please fill the form below to submit your proposal:" %}
+        </p>
+        <form action="{% url session-subscribe %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <p><button type="submit" class="btn">{% trans "Send" %}</button></p>
+        </form>
+    </div>
+</div>
 {% endblock %}

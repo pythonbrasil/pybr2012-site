@@ -1,0 +1,29 @@
+#send-proposal form {
+    margin-top: 20px;
+}
+
+#send-proposal form p {
+    margin-bottom: 3px;
+}
+
+#send-proposal form p input, #send-proposal form p textarea, #send-proposal form p select {
+    width: 250px;
+}
+
+#send-proposal form p label {
+    float: left;
+    width: 110px;
+}
+
+#send-proposal form button {
+    margin: 5px 0 0 110px;
+}
+
+#send-proposal form .errorlist {
+    margin: 3px 0 2px 110px;
+}
+
+#send-proposal form .errorlist li {
+    color: #F00;
+    font-size: 13px;
+}

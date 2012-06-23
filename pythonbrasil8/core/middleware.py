@@ -6,7 +6,7 @@ from django.conf import settings
 class CacheMiddleware(object):
 
     def process_response(self, request, response):
-        if request.user.is_authenticated():
+        if not hasattr(request, "user") or request.user.is_authenticated():
             response["Cache-Control"] = "no-cache"
             return response
 

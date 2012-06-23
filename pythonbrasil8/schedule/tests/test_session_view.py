@@ -35,6 +35,7 @@ class SessionViewTestCase(test.TestCase):
             "tags": "some, tags",
             "speakers": user.id,
             "track": track.pk,
+            "language": "pt",
         }
         request = client.RequestFactory().post("/", data)
         request.user = auth_models.User()
