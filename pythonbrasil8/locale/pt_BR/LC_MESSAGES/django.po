@@ -6,10 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-23 17:26-0300\n"
+"POT-Creation-Date: 2012-06-23 17:32-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
-"Language-Team: Fernando Rocha <fernandogrd@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -257,7 +256,7 @@ msgstr "Perfil atualizado com sucesso."
 
 #: dashboard/templates/dashboard/base.html:17
 msgid "Proposals"
-msgstr ""
+msgstr "Propostas"
 
 #: dashboard/templates/dashboard/base.html:20
 msgid "edit your profile"
