@@ -207,3 +207,10 @@ class CacheMiddlewareTestCase(TestCase):
 
     def test_should_be_the_first_in_middleware_list(self):
         self.assertEqual("pythonbrasil8.core.middleware.CacheMiddleware", settings.MIDDLEWARE_CLASSES[0])
+
+    def test_should_not_cache_if_the_response_is_a_redirect(self):
+        request = RequestFactory().get("/")
+        m = mocks.ResponseMock()
+        m.status_code = 301
+        response = middleware.CacheMiddleware().process_response(request, m)
+        self.assertEqual("no-cache", response["Cache-Control"])
