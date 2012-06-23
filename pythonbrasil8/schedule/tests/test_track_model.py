@@ -48,3 +48,8 @@ class TrackModelTestCase(unittest.TestCase):
 
     def test_should_translate_description(self):
         self.assertIn("description", models.Track._meta.translatable_fields)
+
+    def test_should_be_represented_by_its_name(self):
+        t = models.Track(name_en_us=u"Django")
+        self.assertEqual(u"Django", unicode(t))
+        self.assertEqual(u"Django", str(t))

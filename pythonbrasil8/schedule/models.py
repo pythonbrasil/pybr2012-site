@@ -15,6 +15,9 @@ class Track(models.Model):
     class Meta:
         translate = ("name", "description")
 
+    def __unicode__(self):
+        return self.name
+
 
 class Session(models.Model):
 
