@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from django import test
+from django import http, test
 from django.contrib.auth import models as auth_models
+from django.template.response import TemplateResponse
 from django.test import client
 
 from pythonbrasil8.schedule import forms, models, views
@@ -90,13 +91,27 @@ class SessionViewTestCase(test.TestCase):
         self.assertEqual(u"some title", t.title)
         self.assertEqual([user1, user2], list(t.speakers.all()))
 
+    def test_should_keep_extra_speakers_in_the_context_if_the_form_validation_fails(self):
+        user1, _ = auth_models.User.objects.get_or_create(username="foo", email="foo@bar.com")
+        user2, _ = auth_models.User.objects.get_or_create(username="foo2", email="foo2@bar.com")
+        data = {
+            "title": "some title",
+            "language": "pt",
+            "extra_speakers": "foo2@bar.com",
+        }
+        request = client.RequestFactory().post("/", data)
+        request.user = user1
+        response = views.SubscribeView.as_view()(request)
+        self.assertIsInstance(response, TemplateResponse)
+        self.assertEqual(["foo2@bar.com"], response.context_data["extra_speakers"])
+
     def test_get_speakers_return_speakers_from_extra_speakers_parameter(self):
         user1, _ = auth_models.User.objects.get_or_create(username="foo", email="foo@bar.com")
         user2, _ = auth_models.User.objects.get_or_create(username="foo2", email="foo2@bar.com")
         user3, _ = auth_models.User.objects.get_or_create(username="foo3", email="foo3@bar.com")
         v = views.SubscribeView()
         v.request = client.RequestFactory().post("/", {})
-        v.request.POST = {"extra_speakers": ["foo", "foo2", "foo3@bar.com"]}
+        v.request.POST = http.QueryDict("extra_speakers=foo&extra_speakers=foo2&extra_speakers=foo3@bar.com")
         speakers = v.get_extra_speakers()
         self.assertEqual([user1, user2, user3], list(speakers))
 
@@ -105,8 +120,7 @@ class SessionViewTestCase(test.TestCase):
         user2, _ = auth_models.User.objects.get_or_create(username="foo2", email="foo2@bar.com")
         user3, _ = auth_models.User.objects.get_or_create(username="foo3", email="foo3@bar.com")
         v = views.SubscribeView()
-        v.request = client.RequestFactory().post("/", {})
-        v.request.POST = {"extra_speakers": "foo2@bar.com"}
+        v.request = client.RequestFactory().post("/", {"extra_speakers": "foo2@bar.com"})
         speakers = v.get_extra_speakers()
         self.assertEqual([user2], list(speakers))
 

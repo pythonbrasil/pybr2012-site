@@ -28,6 +28,10 @@ var nameOrEmail = "{% trans "username or email (no spaces)" %}";
                 <label>Speakers:</label>
                 <span>
                     <span>{% firstof user.accountprofile.name user.username %} ({% trans "you" %})</span>
+                    {% for speaker in extra_speakers %}
+                        <span><input type="text" name="extra_speakers" value="{{ speaker }}" />
+                        <a href="#" title="Remove speaker" class="remove-speaker">Remove</a></span>
+                    {% endfor %}
                     <span id="add-speaker"><a href="#" title="{% trans "Add speaker" %}">{% trans "Add another speaker" %}</a></span>
                 </span>
             </p>

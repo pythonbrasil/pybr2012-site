@@ -19,9 +19,7 @@ class SubscribeView(LoginRequiredMixin, CreateView):
         return reverse('dashboard-index')
 
     def get_extra_speakers(self):
-        es = self.request.POST.get("extra_speakers", [])
-        if isinstance(es, basestring):
-            es = [es]
+        es = self.request.POST.getlist("extra_speakers")
         return User.objects.filter(Q(username__in=es) | Q(email__in=es))
 
     def form_valid(self, form):
@@ -36,4 +34,6 @@ class SubscribeView(LoginRequiredMixin, CreateView):
         r = super(SubscribeView, self).post(request, *args, **kwargs)
         if isinstance(r, http.HttpResponseRedirect):
             messages.success(request, _("Session successfully submitted!"), fail_silently=True)
+        else:
+            r.context_data["extra_speakers"] = self.request.POST.getlist("extra_speakers")
         return r
