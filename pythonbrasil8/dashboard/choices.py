@@ -16,7 +16,7 @@ T_SHIRT_CHOICES = (
             ('L', ugettext_lazy('L')),
         )
     ),
-    ('Male', (
+    (ugettext_lazy('Male'), (
             ('S', ugettext_lazy('S')),
             ('M', ugettext_lazy('M')),
             ('L', ugettext_lazy('L')),
