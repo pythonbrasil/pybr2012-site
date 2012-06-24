@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 12:31-0300\n"
+"POT-Creation-Date: 2012-06-24 12:33-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -407,7 +407,7 @@ msgstr "Submeter palestra"
 
 #: schedule/templates/schedule/subscribe.html:14
 msgid "Please fill the form below to submit your proposal:"
-msgstr "Por favor, preencha o formuláiro abaixo para enviar sua proposta:"
+msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
 
 #: schedule/templates/schedule/subscribe.html:19
 #: templates/registration/password_change_form.html:17
@@ -1081,7 +1081,7 @@ msgstr ""
 
 #: templates/registration/password_change_form.html:13
 msgid "Please fill the form below to change your password:"
-msgstr "Por favor, preencha o formuláiro abaixo para alterar sua senha"
+msgstr "Por favor, preencha o formulário abaixo para alterar sua senha"
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Password Reset Complete"
