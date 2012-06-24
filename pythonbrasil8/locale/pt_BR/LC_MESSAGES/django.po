@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 11:35-0300\n"
+"POT-Creation-Date: 2012-06-24 12:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -255,6 +255,7 @@ msgid "Profile successfully updated."
 msgstr "Perfil atualizado com sucesso."
 
 #: dashboard/templates/dashboard/base.html:17
+#: dashboard/templates/dashboard/sessions.html:12
 msgid "Proposals"
 msgstr "Propostas"
 
@@ -395,6 +396,10 @@ msgstr "Tags"
 #: schedule/models.py:40
 msgid "Speakers"
 msgstr "Palestrantes"
+
+#: schedule/views.py:22
+msgid "Session successfully submitted!"
+msgstr "Palestra submetida com sucesso!"
 
 #: schedule/templates/schedule/subscribe.html:12
 msgid "Send a proposal"
