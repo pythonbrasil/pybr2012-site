@@ -23,7 +23,6 @@ class Migration(SchemaMigration):
         ))
         db.create_unique('schedule_session_speakers', ['session_id', 'user_id'])
 
-
     def backwards(self, orm):
         db.delete_table('schedule_session')
 

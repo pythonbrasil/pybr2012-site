@@ -24,7 +24,7 @@ class SubscriptionView(LoginRequiredMixin, View):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         payload = settings.PAGSEGURO
         profile = AccountProfile.objects.get(user=subscription.user)
-        price =  PRICES[profile.type]
+        price = PRICES[profile.type]
         payload["itemAmount1"] = "%.2f" % price
         payload['itemDescription1'] = ugettext(u'Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition') % ugettext(profile.type)
         payload["reference"] = "%d" % subscription.pk
@@ -110,7 +110,6 @@ class NotificationView(View):
                   [transaction.subscription.user.email],
                   subject,
                   body)
-
 
     def transaction_canceled(self, subscription_id):
         transaction = Transaction.objects.get(subscription_id=subscription_id)

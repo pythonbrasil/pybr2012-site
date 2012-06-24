@@ -85,6 +85,7 @@ class CustomSponsorsViewTestCase(TestCase):
         self.assertEqual("Gold", sponsor_2_category)
         self.assertEqual("FOSS", sponsor_3_category)
 
+
 class HomeViewTestCase(TestCase):
 
     @classmethod
