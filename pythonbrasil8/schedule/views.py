@@ -16,6 +16,12 @@ class SubscribeView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse('dashboard-index')
 
+    def form_valid(self, form):
+        r = super(SubscribeView, self).form_valid(form)
+        self.object.speakers = [self.request.user]
+        self.object.save()
+        return r
+
     def post(self, request, *args, **kwargs):
         r = super(SubscribeView, self).post(request, *args, **kwargs)
         if isinstance(r, http.HttpResponseRedirect):
