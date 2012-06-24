@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 12:46-0300\n"
+"POT-Creation-Date: 2012-06-24 15:11-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -150,6 +150,10 @@ msgstr "M"
 msgid "L"
 msgstr "G"
 
+#: dashboard/choices.py:19 dashboard/choices.py:31
+msgid "Male"
+msgstr "Masculino"
+
 #: dashboard/choices.py:23
 msgid "XL"
 msgstr "GG"
@@ -157,10 +161,6 @@ msgstr "GG"
 #: dashboard/choices.py:24
 msgid "XXL"
 msgstr "XGG"
-
-#: dashboard/choices.py:31
-msgid "Male"
-msgstr "Masculino"
 
 #: dashboard/choices.py:32 dashboard/choices.py:56
 msgid "Other"
@@ -366,7 +366,6 @@ msgid "Talk"
 msgstr "Palestra"
 
 #: schedule/models.py:23
-#, fuzzy
 msgid "Tutorial"
 msgstr "Tutorial"
 
@@ -402,19 +401,39 @@ msgstr "Título"
 msgid "Speakers"
 msgstr "Palestrantes"
 
-#: schedule/views.py:22
+#: schedule/views.py:28
 msgid "Session successfully submitted!"
 msgstr "Palestra submetida com sucesso!"
 
 #: schedule/templates/schedule/subscribe.html:12
+msgid "username or email (no spaces)"
+msgstr "nome de usuário ou e-mail (sem espaços)"
+
+#: schedule/templates/schedule/subscribe.html:20
 msgid "Send a proposal"
 msgstr "Submeter palestra"
 
-#: schedule/templates/schedule/subscribe.html:14
+#: schedule/templates/schedule/subscribe.html:22
 msgid "Please fill the form below to submit your proposal:"
 msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
 
-#: schedule/templates/schedule/subscribe.html:19
+#: schedule/templates/schedule/subscribe.html:30
+msgid "you"
+msgstr "você"
+
+#: schedule/templates/schedule/subscribe.html:31
+msgid "Add speaker"
+msgstr "Adicionar palestrante"
+
+#: schedule/templates/schedule/subscribe.html:31
+msgid "Add another speaker"
+msgstr "Adicionar outro palestrante"
+
+#: schedule/templates/schedule/subscribe.html:34
+msgid "Send proposal"
+msgstr "Submeter palestra"
+
+#: schedule/templates/schedule/subscribe.html:34
 #: templates/registration/password_change_form.html:17
 msgid "Send"
 msgstr "Enviar"
