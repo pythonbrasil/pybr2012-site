@@ -4,6 +4,6 @@ from pythonbrasil8.schedule.models import Session
 
 
 class SessionForm(ModelForm):
-
     class Meta:
         model = Session
+        exclude = ("speakers",)

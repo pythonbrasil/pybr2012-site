@@ -3,7 +3,6 @@ from django.test import TestCase
 from django.db.models import CharField, ForeignKey, ManyToManyField
 
 from pythonbrasil8.schedule.models import Session, Track
-from pythonbrasil8.schedule.forms import SessionForm
 
 
 class SessionModelTestCase(TestCase):
@@ -85,9 +84,3 @@ class SessionModelTestCase(TestCase):
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
-
-
-class SessionFormTestCase(TestCase):
-
-    def test_model_should_be_Session(self):
-        self.assertEqual(Session, SessionForm._meta.model)
