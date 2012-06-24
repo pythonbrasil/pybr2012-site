@@ -29,6 +29,13 @@ LANGUAGE_CHOICES = (
     ("es", _("Spanish")),
 )
 
+SESSION_STATUSES = (
+    (u"proposed", u"Proposed"),
+    (u"accepcted", u"Accepted"),
+    (u"confirmed", u"Confirmed"),
+    (u"canceled", u"Canceled"),
+)
+
 
 class Session(models.Model):
     type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
@@ -37,3 +44,4 @@ class Session(models.Model):
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
     speakers = models.ManyToManyField(auth_models.User, verbose_name=_("Speakers"))
+    status = models.CharField(max_length=10, choices=SESSION_STATUSES, default="proposed")

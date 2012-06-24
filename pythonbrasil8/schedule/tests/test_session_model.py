@@ -82,5 +82,30 @@ class SessionModelTestCase(TestCase):
         field = Session._meta.get_field_by_name("language")[0]
         self.assertEqual(u"Language", field.verbose_name)
 
+    def test_should_have_status(self):
+        self.assert_field_in("status", Session)
+
+    def test_status_should_be_CharField(self):
+        field = Session._meta.get_field_by_name("status")[0]
+        self.assertIsInstance(field, CharField)
+
+    def test_status_should_have_at_most_10_characters(self):
+        field = Session._meta.get_field_by_name("status")[0]
+        self.assertEqual(10, field.max_length)
+
+    def test_status_should_have_choices(self):
+        expected = (
+            (u"proposed", u"Proposed"),
+            (u"accepcted", u"Accepted"),
+            (u"confirmed", u"Confirmed"),
+            (u"canceled", u"Canceled"),
+        )
+        field = Session._meta.get_field_by_name("status")[0]
+        self.assertEqual(expected, field.choices)
+
+    def test_status_should_be_proposed_by_default(self):
+        field = Session._meta.get_field_by_name("status")[0]
+        self.assertEqual("proposed", field.default)
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())

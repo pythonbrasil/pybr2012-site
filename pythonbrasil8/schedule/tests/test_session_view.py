@@ -39,6 +39,7 @@ class SessionViewTestCase(test.TestCase):
             "tags": "some, tags",
             "track": track.pk,
             "language": "pt",
+            "status": "proposed",
         }
         form = forms.SessionForm(data)
         request = client.RequestFactory().post("/", data)
@@ -58,6 +59,7 @@ class SessionViewTestCase(test.TestCase):
             "tags": "some, tags",
             "track": track.pk,
             "language": "pt",
+            "status": "proposed",
         }
         request = client.RequestFactory().post("/", data)
         request.user = user
@@ -79,6 +81,7 @@ class SessionViewTestCase(test.TestCase):
             "tags": "some, tags",
             "track": track.pk,
             "language": "pt",
+            "status": "proposed",
             "extra_speakers": "foo2@bar.com",
         }
         request = client.RequestFactory().post("/", data)

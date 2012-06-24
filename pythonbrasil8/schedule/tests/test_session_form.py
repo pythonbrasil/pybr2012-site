@@ -11,3 +11,6 @@ class SessionFormTestCase(test.TestCase):
 
     def test_should_exclude_speakers_field(self):
         self.assertIn("speakers", forms.SessionForm._meta.exclude)
+
+    def test_should_exclude_status_field(self):
+        self.assertIn("status", forms.SessionForm._meta.exclude)
