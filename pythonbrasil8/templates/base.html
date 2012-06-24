@@ -168,7 +168,7 @@
             </script>
             {% endcompress %}
         {% endblock %}
-        {% block js_bottom %}{% endblock %}
+        {% compress js %}{% block js_bottom %}{% endblock %}{% endcompress %}
 
         <script type="text/javascript">
          var _gaq = _gaq || [];
