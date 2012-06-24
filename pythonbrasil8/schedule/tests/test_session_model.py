@@ -22,13 +22,6 @@ class SessionModelTestCase(TestCase):
         field = Session._meta.get_field_by_name("description")[0]
         self.assertEqual(u"Description", field.verbose_name)
 
-    def test_should_have_tags(self):
-        self.assert_field_in("tags", Session)
-
-    def test_tags_should_have_verbose_name(self):
-        field = Session._meta.get_field_by_name("tags")[0]
-        self.assertEqual(u"Tags", field.verbose_name)
-
     def test_should_have_speakers(self):
         self.assert_field_in("speakers", Session)
 

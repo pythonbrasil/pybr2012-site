@@ -36,5 +36,4 @@ class Session(models.Model):
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
     type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
-    tags = models.CharField(max_length=255, verbose_name=_("Tags"))
     speakers = models.ManyToManyField(auth_models.User, verbose_name=_("Speakers"))

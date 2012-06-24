@@ -26,7 +26,6 @@ class DashboardIndexTestCase(TestCase):
             title="Python for dummies",
             description="about python, universe and everything",
             type="talk",
-            tags="python, 42",
             track=self.track,
         )
         self.session.speakers.add(self.request.user)

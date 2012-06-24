@@ -46,7 +46,6 @@
             "title": "How to learn Python",
             "description": "Learn how to learn Python",
             "type": "tutorial",
-            "tags": "python, learning",
             "speakers": [1],
             "track": 1
         }
