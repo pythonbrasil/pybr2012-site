@@ -19,8 +19,8 @@ class Track(models.Model):
         return self.name
 
 SESSION_TYPES = (
-    ("tutorial", "tutorial",),
-    ("talk", "talk"),
+    ("talk", _("Talk")),
+    ("tutorial", _("Tutorial"),),
 )
 
 LANGUAGE_CHOICES = (
@@ -31,9 +31,9 @@ LANGUAGE_CHOICES = (
 
 
 class Session(models.Model):
+    type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
     track = models.ForeignKey(Track, verbose_name=_("Track"))
     language = models.CharField(max_length=2, verbose_name=_("Language"), choices=LANGUAGE_CHOICES)
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
-    type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
     speakers = models.ManyToManyField(auth_models.User, verbose_name=_("Speakers"))

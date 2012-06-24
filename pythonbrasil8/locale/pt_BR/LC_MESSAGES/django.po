@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 12:33-0300\n"
+"POT-Creation-Date: 2012-06-24 12:46-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -357,9 +357,18 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: schedule/models.py:13 schedule/models.py:37
+#: schedule/models.py:13 schedule/models.py:38
 msgid "Description"
 msgstr "Descrição"
+
+#: schedule/models.py:22
+msgid "Talk"
+msgstr "Palestra"
+
+#: schedule/models.py:23
+#, fuzzy
+msgid "Tutorial"
+msgstr "Tutorial"
 
 #: schedule/models.py:27
 msgid "Portuguese"
@@ -374,26 +383,22 @@ msgid "Spanish"
 msgstr "Espanhol"
 
 #: schedule/models.py:34
-msgid "Track"
-msgstr "Trilha"
-
-#: schedule/models.py:35
-msgid "Language"
-msgstr "Idioma"
-
-#: schedule/models.py:36
-msgid "Title"
-msgstr "Título"
-
-#: schedule/models.py:38
 msgid "Type"
 msgstr "Tipo"
 
-#: schedule/models.py:39
-msgid "Tags"
-msgstr "Tags"
+#: schedule/models.py:35
+msgid "Track"
+msgstr "Trilha"
 
-#: schedule/models.py:40
+#: schedule/models.py:36
+msgid "Language"
+msgstr "Idioma"
+
+#: schedule/models.py:37
+msgid "Title"
+msgstr "Título"
+
+#: schedule/models.py:39
 msgid "Speakers"
 msgstr "Palestrantes"
 
@@ -1109,6 +1114,9 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
 
 #~ msgid "Change Password"
 #~ msgstr "Altere sua senha"
