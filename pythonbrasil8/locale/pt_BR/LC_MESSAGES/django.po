@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 11:32-0300\n"
+"POT-Creation-Date: 2012-06-24 11:35-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -398,7 +398,7 @@ msgstr "Palestrantes"
 
 #: schedule/templates/schedule/subscribe.html:12
 msgid "Send a proposal"
-msgstr "Submeta uma palestra"
+msgstr "Submeter palestra"
 
 #: schedule/templates/schedule/subscribe.html:14
 msgid "Please fill the form below to submit your proposal:"
