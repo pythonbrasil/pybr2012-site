@@ -228,7 +228,7 @@ msgstr "Estado"
 
 #: dashboard/models.py:18
 msgid "Gender"
-msgstr "Gênero"
+msgstr "Sexo"
 
 #: dashboard/models.py:19
 msgid "Age"
