@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-23 17:32-0300\n"
+"POT-Creation-Date: 2012-06-24 11:32-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -357,7 +357,6 @@ msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
 #: schedule/models.py:13 schedule/models.py:37
-#, fuzzy
 msgid "Description"
 msgstr "Descrição"
 
@@ -394,17 +393,14 @@ msgid "Tags"
 msgstr "Tags"
 
 #: schedule/models.py:40
-#, fuzzy
 msgid "Speakers"
 msgstr "Palestrantes"
 
 #: schedule/templates/schedule/subscribe.html:12
-#, fuzzy
 msgid "Send a proposal"
 msgstr "Submeta uma palestra"
 
 #: schedule/templates/schedule/subscribe.html:14
-#, fuzzy
 msgid "Please fill the form below to submit your proposal:"
 msgstr "Por favor, preencha o formuláiro abaixo para enviar sua proposta:"
 
@@ -442,7 +438,6 @@ msgid "About PythonBrasil"
 msgstr "Sobre a PythonBrasil"
 
 #: templates/about.html:16
-#, fuzzy
 msgid ""
 "\n"
 "            PythonBrasil is the largest Brazilian gathering for the "
@@ -475,7 +470,6 @@ msgid "located in Rio de Janeiro."
 msgstr "localizado no Rio de Janeiro."
 
 #: templates/about.html:30
-#, fuzzy
 msgid ""
 "\n"
 "            The conference is organized by the Python community for the "
@@ -661,25 +655,61 @@ msgid "Published on May 10 2012, by Tati Al-Chueyr"
 msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
 
 #: templates/news.html:58
-#, fuzzy
 msgid "Published on April 13 2012, by Tati Al-Chueyr"
 msgstr "Publicada em 15 de Abril de 2012, por Tati Al-Chueyr"
 
-#: templates/password_reset.html:4 templates/password_reset.html.py:12
-#, fuzzy
+#: templates/password_reset.html:4 templates/password_reset.html.py:13
 msgid "Password reset"
-msgstr "Alterar senha"
+msgstr "Redefinir senha"
 
-#: templates/password_reset.html:14
+#: templates/password_reset.html:15
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"Forgotten your password? Enter your email address below, and we'll e-mail "
 "instructions for setting a new one."
 msgstr ""
+"Esqueceu sua senha? Digite seu e-mail abaixo e lhe enviaremosinstruções para "
+"definir uma nova senha."
 
-#: templates/password_reset.html:19
-#, fuzzy
+#: templates/password_reset.html:20
 msgid "Reset my password"
-msgstr "Altere sua senha"
+msgstr "Redefinir senha"
+
+#: templates/password_reset_confirm.html:4
+#: templates/registration/password_reset_complete.html:4
+msgid "Password reset confirm"
+msgstr "Alterar senha"
+
+#: templates/password_reset_confirm.html:14
+#: templates/password_reset_confirm.html:21
+#: templates/password_reset_confirm.html:28
+msgid "Reset password"
+msgstr "Redefinir senha"
+
+#: templates/password_reset_confirm.html:15
+msgid ""
+"Please fill the form below to complete the process of resetting your "
+"password:"
+msgstr "Por favor, preencha o formulário abaixo para redefinir sua senha:"
+
+#: templates/password_reset_confirm.html:26
+msgid "Password reset unsuccessful."
+msgstr "Falha ao redefinir a senha"
+
+#: templates/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it already has been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: templates/password_reset_sent.html:4 templates/password_reset_sent.html:12
+msgid "Password reset successful"
+msgstr "Senha redefinida com sucesso"
+
+#: templates/password_reset_sent.html:14
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
@@ -1010,15 +1040,19 @@ msgstr ""
 "umapalestra é necessário criar uma conta. Por favor, faça login ou crie uma "
 "conta,  caso você não tenha ainda."
 
-#: templates/registration/login.html:15 templates/registration/login.html:19
+#: templates/registration/login.html:15 templates/registration/login.html:20
 msgid "Log In"
 msgstr ""
 
-#: templates/registration/login.html:23
+#: templates/registration/login.html:19
+msgid "Forgot your password?"
+msgstr "Esqueceu sua senha?"
+
+#: templates/registration/login.html:25
 msgid "Don't have an account yet? Sign Up now!"
 msgstr "Não tem cadastro? Cadastre-se no site agora!"
 
-#: templates/registration/login.html:27
+#: templates/registration/login.html:29
 msgid "Sign Up"
 msgstr "Cadastre-se"
 
@@ -1044,6 +1078,15 @@ msgstr ""
 msgid "Please fill the form below to change your password:"
 msgstr "Por favor, preencha o formuláiro abaixo para alterar sua senha"
 
+#: templates/registration/password_reset_complete.html:13
+msgid "Password Reset Complete"
+msgstr "Senha redefinida"
+
+#: templates/registration/password_reset_complete.html:14
+msgid "Your password has been set. You may go ahead and login now."
+msgstr ""
+"Sua senha foi redefinida com sucesso, você pode fazer log in novamente."
+
 #: templates/registration/registration_complete.html:7
 msgid "pythonbrasil account activation"
 msgstr "ativação de conta pythonbrasil"
@@ -1061,6 +1104,9 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Change Password"
+#~ msgstr "Altere sua senha"
 
 #~ msgid ""
 #~ "Brazilian #Python conference in November - Join us! http://2012."
