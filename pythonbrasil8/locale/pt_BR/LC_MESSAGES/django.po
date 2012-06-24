@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 15:11-0300\n"
+"POT-Creation-Date: 2012-06-24 16:33-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -401,7 +401,7 @@ msgstr "Título"
 msgid "Speakers"
 msgstr "Palestrantes"
 
-#: schedule/views.py:28
+#: schedule/views.py:36
 msgid "Session successfully submitted!"
 msgstr "Palestra submetida com sucesso!"
 
@@ -421,19 +421,19 @@ msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
 msgid "you"
 msgstr "você"
 
-#: schedule/templates/schedule/subscribe.html:31
+#: schedule/templates/schedule/subscribe.html:34
 msgid "Add speaker"
 msgstr "Adicionar palestrante"
 
-#: schedule/templates/schedule/subscribe.html:31
+#: schedule/templates/schedule/subscribe.html:34
 msgid "Add another speaker"
 msgstr "Adicionar outro palestrante"
 
-#: schedule/templates/schedule/subscribe.html:34
+#: schedule/templates/schedule/subscribe.html:37
 msgid "Send proposal"
 msgstr "Submeter palestra"
 
-#: schedule/templates/schedule/subscribe.html:34
+#: schedule/templates/schedule/subscribe.html:37
 #: templates/registration/password_change_form.html:17
 msgid "Send"
 msgstr "Enviar"
