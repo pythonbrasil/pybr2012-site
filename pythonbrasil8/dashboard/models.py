@@ -15,6 +15,7 @@ class AccountProfile(models.Model):
     type = models.CharField(max_length=50, choices=choices.ATTENDANT_CHOICES, verbose_name=ugettext_lazy(u"Registration type"))
     tshirt = models.CharField(max_length=50, choices=choices.T_SHIRT_CHOICES, verbose_name=ugettext_lazy(u"T-Shirt size"))
     locale = models.CharField(max_length=255, choices=choices.LOCALE_CHOICES, verbose_name=ugettext_lazy(u"State"))
+    country = models.CharField(max_length=50,  null=True, blank=True, verbose_name=ugettext_lazy(u"Country (if not Brazilian)"))
     gender = models.CharField(max_length=20, choices=choices.GENDER_CHOICES, verbose_name=ugettext_lazy(u"Gender"))
     age = models.CharField(max_length=20, null=True, blank=True, choices=choices.AGE_CHOICES, verbose_name=ugettext_lazy(u"Age"))
     profession = models.CharField(max_length=50, null=True, blank=True, choices=choices.PROFESSION_CHOICES, verbose_name=ugettext_lazy(u"Profession"))
@@ -22,6 +23,7 @@ class AccountProfile(models.Model):
     payement = models.BooleanField(default=False)
     twitter = models.CharField(max_length=15, blank=True, null=True, verbose_name=ugettext_lazy(u"Twitter profile"))
     public = models.BooleanField(default=True, verbose_name=ugettext_lazy(u"Public profile (visible to everyone)?"))
+
 
     def has_talk_subscription(self):
         return self.user.subscription_set.exists()
