@@ -36,6 +36,7 @@ class SessionViewTestCase(test.TestCase):
             "title": "some title",
             "description": "some description",
             "type": "talk",
+            "audience_level": "intermediate",
             "tags": "some, tags",
             "track": track.pk,
             "language": "pt",
@@ -60,6 +61,7 @@ class SessionViewTestCase(test.TestCase):
             "track": track.pk,
             "language": "pt",
             "status": "proposed",
+            "audience_level": "intermediate"
         }
         request = client.RequestFactory().post("/", data)
         request.user = user
@@ -83,6 +85,7 @@ class SessionViewTestCase(test.TestCase):
             "language": "pt",
             "status": "proposed",
             "extra_speakers": "foo2@bar.com",
+            "audience_level": "beginner"
         }
         request = client.RequestFactory().post("/", data)
         request.user = user1

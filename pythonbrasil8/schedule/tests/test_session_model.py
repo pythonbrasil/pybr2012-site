@@ -35,6 +35,16 @@ class SessionModelTestCase(TestCase):
         field = Session._meta.get_field_by_name("type")[0]
         self.assertEqual(u"Type", field.verbose_name)
 
+    def test_should_have_audience_level(self):
+        self.assert_field_in("audience_level", Session)
+
+    def test_audience_level_should_have_choices(self):
+        audience_level_field = Session._meta.get_field_by_name("audience_level")[0]
+        choices = [choice[0] for choice in audience_level_field._choices]
+        self.assertIn("beginner", choices)
+        self.assertIn("intermediate", choices)
+        self.assertIn("advanced", choices)
+
     def test_type_should_have_choices(self):
         type_field = Session._meta.get_field_by_name("type")[0]
         choices = [choice[0] for choice in type_field._choices]

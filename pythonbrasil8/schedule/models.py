@@ -36,10 +36,17 @@ SESSION_STATUSES = (
     (u"canceled", u"Canceled"),
 )
 
+SESSION_LEVELS = (
+    (u"beginner",  _(u"Beginner")),
+    (u"intermediate",  _(u"Intermediate")),
+    (u"advanced",  _(u"Advanced")),
+)
+
 
 class Session(models.Model):
     type = models.CharField(max_length=20, choices=SESSION_TYPES, verbose_name=_("Type"))
     track = models.ForeignKey(Track, verbose_name=_("Track"))
+    audience_level =  models.CharField(max_length=12, choices=SESSION_LEVELS, verbose_name=_("Audience level"))
     language = models.CharField(max_length=2, verbose_name=_("Language"), choices=LANGUAGE_CHOICES)
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
