@@ -128,7 +128,6 @@
         .up_to_date li {
             display: inline-block;
             width: 64px;
-            margin-left: 24px;
         }
 
         #footer .about p {
@@ -150,6 +149,10 @@
         .dates-wrapper .inner {
             width: 205px;
         }
+
+        .up_to_date li {
+            margin-left: 58px;
+        }
     }
 
     /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -160,6 +163,10 @@
         }
         .dates-wrapper .inner {
             width: 145px;
+        }
+
+        .up_to_date li {
+            margin-left: 30px;
         }
     }
 

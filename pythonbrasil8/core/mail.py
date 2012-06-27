@@ -35,4 +35,3 @@ def send(sender, receivers, subject, body):
     m = MailSender(sender, receivers, subject, body)
     m.send_mail()
     return m
-

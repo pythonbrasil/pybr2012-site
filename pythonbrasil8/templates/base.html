@@ -5,6 +5,7 @@
 {% load compress %}
 <html>
     <head>
+        <meta charset="utf-8">
         <title>{% block title %}PythonBrasil[8] Conference{% endblock %}</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -14,12 +15,11 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/skeleton.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/common.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/social.css" type="text/css" />
+        {% block css %}{% endblock %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive_common.css" type="text/css" />
         {% endcompress %}
         <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
-        {% block css %}{% endblock %}
         {% block js_top %}{% endblock %}
-
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive_common.css" type="text/css" />
     </head>
 
     <body>
@@ -91,7 +91,7 @@
 
                     {% block social %}
                         <div id="social" class="row">
-                           {% include "social.html" with twitter_data_text="Vai rolar a #PythonBrasil8 no Rio! Impossivel perder. #python #dev"%}
+                           {% include "social.html" %}
                         </div>
                     {% endblock %}
                 </div>
@@ -104,7 +104,7 @@
                     <div class="dates-container">
                         <div class="inner">
                             <p>{% trans "Call for proposals" %}</p>
-                            <h4>{% trans "June 15th" %}</h4>
+                            <h4>{% trans "June 20th" %}</h4>
                         </div>
                         <div class="inner">
                             <p>{% trans "Sprints" %}</p>
@@ -150,7 +150,7 @@
         </div>
 
         <a href="https://github.com/pythonbrasil8/pythonbrasil8" id="github-ribbon" title="Fork me on GitHub">
-            <img src="{{ STATIC_URL }}/images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
+            <img src="{{ STATIC_URL }}images/header/fork-me.png" alt="Fork me on GitHub" width="149" height="149" />
         </a>
 
         {% compress js %}
@@ -180,7 +180,7 @@
             </script>
             {% endcompress %}
         {% endblock %}
-        {% block js_bottom %}{% endblock %}
+        {% compress js %}{% block js_bottom %}{% endblock %}{% endcompress %}
 
         <script type="text/javascript">
          var _gaq = _gaq || [];

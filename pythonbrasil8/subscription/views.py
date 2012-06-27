@@ -24,7 +24,7 @@ class SubscriptionView(LoginRequiredMixin, View):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         payload = settings.PAGSEGURO
         profile = AccountProfile.objects.get(user=subscription.user)
-        price =  PRICES[profile.type]
+        price = PRICES[profile.type]
         payload["itemAmount1"] = "%.2f" % price
         payload['itemDescription1'] = ugettext(u'Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition') % ugettext(profile.type)
         payload["reference"] = "%d" % subscription.pk
@@ -103,7 +103,7 @@ class NotificationView(View):
         transaction.status = "done"
         transaction.save()
         context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
-                   "subscription": transaction.subscription}
+  }
         body = render_to_string("email_successful_registration.txt", context)
         subject = "PythonBrasil[8] - Registration Confirmation"
         mail.send(settings.EMAIL_SENDER,
@@ -111,13 +111,11 @@ class NotificationView(View):
                   subject,
                   body)
 
-
     def transaction_canceled(self, subscription_id):
         transaction = Transaction.objects.get(subscription_id=subscription_id)
         transaction.status = "canceled"
         transaction.save()
-        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
-                   "subscription": transaction.subscription}
+        context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user)}
         body = render_to_string("email_unsuccessful_registration.txt", context)
         subject = "PythonBrasil[8] - Registration Unsuccessful "
         mail.send(settings.EMAIL_SENDER,

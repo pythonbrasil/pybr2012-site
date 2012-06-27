@@ -1,10 +1,46 @@
 {% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/send-proposal.css" type="text/css" />
+{% endblock %}
+
+{% block js_top %}
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+var nameOrEmail = "{% trans "username or email (no spaces)" %}";
+//]]>
+</script>
+{% endblock %}
 
 {% block content %}
-<h1>Send a proposal</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <p><input type="submit" value="send"/></p>
-</form>
+<div class="row" id="send-proposal">
+    <div class="column grid_12">
+        <h1>{% trans "Send a proposal" %}</h1>
+        <p>
+            {% trans "Please fill the form below to submit your proposal:" %}
+        </p>
+        <form action="{% url session-subscribe %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <p>
+                <label>Speakers:</label>
+                <span>
+                    <span>{% firstof user.accountprofile.name user.username %} ({% trans "you" %})</span>
+                    {% for speaker in extra_speakers %}
+                        <span><input type="text" name="extra_speakers" value="{{ speaker }}" /><a href="#" title="Remove speaker" class="remove-speaker">Remove</a></span>
+                    {% endfor %}
+                    <span id="add-speaker"><a href="#" title="{% trans "Add speaker" %}">{% trans "Add another speaker" %}</a></span>
+                </span>
+            </p>
+            <p><button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button></p>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_bottom %}
+<script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/speakers.js" type="text/javascript" charset="utf-8"></script>
 {% endblock %}

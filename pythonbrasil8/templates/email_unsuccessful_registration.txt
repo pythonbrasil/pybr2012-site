@@ -1,10 +1,13 @@
 Dear {{ profile.name }},
 
-PythonBrasil[8] Conference will be held during March 23 and 24, 2012 at SulAmérica Convention Center.
+PythonBrasil[8] Conference will be held during November 23 and 24, 2012 at SulAmérica Convention Center.
 
-Apparently you tried to pay the fee, related to a {{ subscription.type }} registration at PythonBrasil[8], but the transaction did not succeed.
+Apparently you tried to pay the fee, related to a {{ profile.type }} registration at PythonBrasil[8], but the transaction did not succeed.
 
-Please, try paying it again, from our website:
+If you payed with billet ("boleto bancário") and are receiving this email, please, report the problem to PagSeguro using:
+https://pagseguro.uol.com.br/atendimento/atendimentos.jhtml
+
+And let us know. Otherwise, please, try paying it again from our website:
 http://2012.pythonbrasil.org.br
 
 If you need assistance, you can email us at organizacao@python.org.br.

@@ -1,0 +1,67 @@
+#add-speaker > a {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#send-proposal form {
+    margin-top: 20px;
+}
+
+#send-proposal form .errorlist {
+    margin: 3px 0 2px 110px;
+}
+
+#send-proposal form .errorlist li {
+    color: red;
+    font-size: 13px;
+}
+
+#send-proposal form button {
+    margin: 10px 0 0 110px;
+}
+
+#send-proposal form div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#send-proposal form p {
+    clear: left;
+    margin-bottom: 3px;
+}
+
+#send-proposal form p input {
+    width: 250px;
+}
+
+#send-proposal form p label {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: top;
+    width: 110px;
+}
+
+#send-proposal form p select {
+    width: 250px;
+}
+
+#send-proposal form p span {
+    display: inline-block;
+}
+
+#send-proposal form p span > span {
+    display: block;
+}
+
+#send-proposal form p span > span > a.remove-speaker {
+    background: url(../img/delete.png) no-repeat 5px 4px;
+    float: right;
+    height: 20px;
+    overflow: hidden;
+    text-indent: -100px;
+    width: 25px;
+}
+
+#send-proposal form p textarea {
+    width: 250px;
+}

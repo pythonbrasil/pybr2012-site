@@ -18,6 +18,7 @@ to fix the problem.
    * Francisco Souza
    * Henrique Bastos
    * Jayson Reis
+   * Mauricio de Souza Lima
    * Mayza de Oliveira
    * Rafael Carício
    * Rudá Porto

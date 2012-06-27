@@ -42,9 +42,9 @@ class AccountProfileTestCase(TestCase):
         field = AccountProfile._meta.get_field_by_name('description')[0]
         self.assertEqual(models.CharField, field.__class__)
 
-    def test_description_field_should_have_300_of_max_length(self):
+    def test_description_field_should_have_500_of_max_length(self):
         field = AccountProfile._meta.get_field_by_name('description')[0]
-        self.assertEqual(300, field.max_length)
+        self.assertEqual(500, field.max_length)
 
     def test_should_have_type_field(self):
         self.assertIn('type', self.field_names)
@@ -140,6 +140,13 @@ class AccountProfileTestCase(TestCase):
         )
         field = AccountProfile._meta.get_field_by_name('locale')[0]
         self.assertEqual(expected, field.choices)
+
+    def test_should_have_country_field(self):
+        self.assertIn('country', self.field_names)
+
+    def test_gender_field_should_be_char_field(self):
+        field = AccountProfile._meta.get_field_by_name('country')[0]
+        self.assertEqual(models.CharField, field.__class__)
 
     def test_should_have_gender_field(self):
         self.assertIn('gender', self.field_names)

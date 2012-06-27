@@ -1,39 +1,39 @@
 # -*- coding: utf-8 -*-
-from django.utils.translation import ugettext
+from django.utils.translation import ugettext_lazy
 
 
 ATTENDANT_CHOICES = (
-    ('Corporate', ugettext('Corporate')),
-    ('Individual', ugettext('Individual')),
-    ('Student', ugettext('Student')),
-    ('APyB Associated', ugettext('APyB Associated'))
+    ('Corporate', ugettext_lazy('Corporate')),
+    ('Individual', ugettext_lazy('Individual')),
+    ('Student', ugettext_lazy('Student')),
+    ('APyB Associated', ugettext_lazy('APyB Associated'))
 )
 
 T_SHIRT_CHOICES = (
-    (ugettext('Female'), (
-            ('S', ugettext('S')),
-            ('M', ugettext('M')),
-            ('L', ugettext('L')),
+    (ugettext_lazy('Female'), (
+            ('S', ugettext_lazy('S')),
+            ('M', ugettext_lazy('M')),
+            ('L', ugettext_lazy('L')),
         )
     ),
-    ('Male', (
-            ('S', ugettext('S')),
-            ('M', ugettext('M')),
-            ('L', ugettext('L')),
-            ('XL', ugettext('XL')),
-            ('XXL', ugettext('XXL')),
+    (ugettext_lazy('Male'), (
+            ('S', ugettext_lazy('S')),
+            ('M', ugettext_lazy('M')),
+            ('L', ugettext_lazy('L')),
+            ('XL', ugettext_lazy('XL')),
+            ('XXL', ugettext_lazy('XXL')),
         )
     )
 )
 
 GENDER_CHOICES = (
-    ('female', ugettext('Female')),
-    ('male', ugettext('Male')),
-    ('other', ugettext('Other'))
+    ('female', ugettext_lazy('Female')),
+    ('male', ugettext_lazy('Male')),
+    ('other', ugettext_lazy('Other'))
 )
 
 AGE_CHOICES = (
-    ('--9', ugettext('9 or less')),
+    ('--9', ugettext_lazy('9 or less')),
     ('10-19', '10-19'),
     ('20-29', '20-29'),
     ('30-39', '30-39'),
@@ -41,19 +41,19 @@ AGE_CHOICES = (
     ('50-59', '50-59'),
     ('60-69', '60-69'),
     ('70-79', '70-79'),
-    ('80-+', ugettext('80 or more')),
+    ('80-+', ugettext_lazy('80 or more')),
 )
 
 PROFESSION_CHOICES = (
-    ('student', ugettext('Student')),
-    ('trainee', ugettext('Trainee')),
-    ('developer', ugettext('Developer')),
-    ('software engineer', ugettext('Software engineer')),
-    ('manager', ugettext('Manager')),
-    ('sysadmin', ugettext('Sysadmin')),
-    ('teacher', ugettext('Teacher')),
-    ('researcher', ugettext('Researcher')),
-    ('other', ugettext('Other')),
+    ('student', ugettext_lazy('Student')),
+    ('trainee', ugettext_lazy('Trainee')),
+    ('developer', ugettext_lazy('Developer')),
+    ('software engineer', ugettext_lazy('Software engineer')),
+    ('manager', ugettext_lazy('Manager')),
+    ('sysadmin', ugettext_lazy('Sysadmin')),
+    ('teacher', ugettext_lazy('Teacher')),
+    ('researcher', ugettext_lazy('Researcher')),
+    ('other', ugettext_lazy('Other')),
 )
 
 LOCALE_CHOICES = (
@@ -84,5 +84,5 @@ LOCALE_CHOICES = (
     ('SE', 'Sergipe'),
     ('SP', 'São Paulo'),
     ('TO', 'Tocantins'),
-    ('00', ugettext('Other country'))
+    ('00', ugettext_lazy('Other country'))
 )

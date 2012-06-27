@@ -33,22 +33,6 @@
                     <img src="{{ STATIC_URL }}images/home/grab_badge.png" alt="Grab a badge">
                 </a>
             </div>
-            
-            <div class="two columns">
-                <h2>{% trans "STAY UP TO DATE" %}</h2>
-                <p class="subterm">{% trans "follow us" %}</p>
-                <ul class="up_to_date">
-                    <li>
-                        <a href="http://www.twitter.com/pythonbrasil" title="PythonBrasil Twitter"><img src="{{ STATIC_URL }}images/home/ico_twitter.png" alt="PythonBrasil Twitter"></a>
-                    </li>
-                    <li>
-                        <a href="http://www.facebook.com/pythonbrasil8" title="PythonBrasil[8] Facebook page"><img src="{{ STATIC_URL }}images/home/ico_facebook.png" alt="PythonBrasil Facebook">
-                    </li>
-                    <li>
-                        <a href="" title="PythonBrasil[8] calendar"><img src="{{ STATIC_URL }}images/home/ico_calendar.png" alt="PythonBrasil[8] Calendar">
-                    </li>
-                </ul>
-            </div>
 
 			<div class="nine columns">
                 <h2>{% trans "FROM THE BLOG" %}</h2>
@@ -72,6 +56,22 @@
 					</li>
 				</ul>
 			</div>
+            
+            <div class="two columns">
+                <h2>{% trans "STAY UP TO DATE" %}</h2>
+                <p class="subterm">{% trans "follow us" %}</p>
+                <ul class="up_to_date">
+                    <li>
+                        <a href="http://www.twitter.com/pythonbrasil" title="PythonBrasil Twitter"><img src="{{ STATIC_URL }}images/home/ico_twitter.png" alt="PythonBrasil Twitter"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.facebook.com/pythonbrasil8" title="PythonBrasil[8] Facebook page"><img src="{{ STATIC_URL }}images/home/ico_facebook.png" alt="PythonBrasil Facebook">
+                    </li>
+                    <li>
+                        <a href="" title="PythonBrasil[8] calendar"><img src="{{ STATIC_URL }}images/home/ico_calendar.png" alt="PythonBrasil[8] Calendar">
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </div>
@@ -79,7 +79,7 @@
 
 {% block js_bottom %}
 <script src="/static/js/slider.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" language="javascript" charset="utf-8">
+<script type="text/javascript">
 window.addEvent('domready', function(){
     var slider = new Slider({slides: $$('#sponsors .row')});
     slider.cycle();

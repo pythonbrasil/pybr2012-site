@@ -65,7 +65,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
+PAGE_CACHE_MAXAGE = 120
+
 MIDDLEWARE_CLASSES = (
+    'pythonbrasil8.core.middleware.CacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -160,5 +163,5 @@ PAGSEGURO_TRANSACTIONS = '%s/transactions' % PAGSEGURO_BASE
 PAGSEGURO_TRANSACTIONS_NOTIFICATIONS = '%s/notifications' % PAGSEGURO_TRANSACTIONS
 PAGSEGURO_WEBCHECKOUT = 'https://pagseguro.uol.com.br/v2/checkout/payment.html?code='
 
-COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE = False
 COMPRESS_ENABLED = False
