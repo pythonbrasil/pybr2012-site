@@ -1,13 +1,15 @@
 #pre-register a {
-    width: 254px;
-    height: 39px;
-    float: right;
-    text-align: center;
-    margin: 11% 8% 0 0;
-    padding-bottom: 15px;
     background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
+    clear: right;
     color: #FFF;
+    float: right;
     font-size: 1.375em;
+    height: 39px;
+    margin: 60px 10px 0 0;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 254px;
+    
 }
 
 #pre-register span {
@@ -69,17 +71,6 @@ a:visited {color: #1E5D8B}
     color: #2471A9;
 }
 
-.dates h4 {
-    color: #2471A9;
-    font-size: 1.25em;
-}
-
-.dates p {
-    color: #474747;
-    margin-top: 5px;
-    line-height: 26px;
-}
-
 #footer p {
     color: #ccc;
     font-size: 0.875em;
@@ -96,6 +87,7 @@ a:visited {color: #1E5D8B}
 
 .content {
     background-color: #FFF;
+    overflow: hidden;
     width: 100%;
 }
 
@@ -115,22 +107,39 @@ a:visited {color: #1E5D8B}
 
 .dates {
     background-color: #efefef;
-    height: 85px;
     border-bottom: 1px solid #ddd;
+    overflow: hidden;
 }
 
-.dates .dates-container {
-    margin: 0 auto;
-    width: 930px;
+.dates-wrapper {
+    float: left;
+    left: 50%;
+    position: relative;
 }
 
-.dates .inner {
+.dates-wrapper .dates-container {
+    float: left;
+    left: -50%;
+    position: relative;
+}
+
+.dates-wrapper .inner {
     margin: 15px 70px 15px 0px;
     float: left;
 }
 
-.dates .inner.last {
+.dates-wrapper .inner.last {
     margin-right: 0;
+}
+
+.dates-wrapper h4 {
+    color: #2471A9;
+    font-size: 1.25em;
+}
+
+.dates-wrapper p {
+    color: #474747;
+    line-height: 26px;
 }
 
 .inner-row {
@@ -144,31 +153,22 @@ a:visited {color: #1E5D8B}
 /*** HEADER ***/
 
 #header {
-    height: 280px;
-    background: #1b1f20;
+    background: #1a1e1f;
 }
 
-#header .inner {
-    margin: 0 8%;
-    position: relative;
-    height: 270px;
-}
-
-#logo {
-    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
-    position: absolute;
-}
-
-#logo-pt {
-    background: url('/static/images/header/sprite_pt.png') #1b1f20 0px -959px no-repeat;
-    position: absolute;
-}
-
-#logo a, #logo-pt a {
+.main-logo a {
     display: block;
     height: 270px;
-    width: 400px;
+    margin-left: -28px;
     text-indent: -9999px;
+}
+
+.logo a {
+    background: url('/static/images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+}
+
+.logo-pt a {
+    background: url('/static/images/header/sprite_pt.png') #1b1f20 0px -959px no-repeat;
 }
 
 .dashed-border {
@@ -183,14 +183,13 @@ a:visited {color: #1E5D8B}
 /*** MENU ***/
 
 #menu {
-    height: 45px;
+    overflow: hidden;
 }
 
 #menu ul {
     padding: 5px 0;
-    position: absolute;
-    right: 40px;
-    top: 5px;
+    margin-top: 5px;
+    float: right;
 }
 
 #menu li {
@@ -215,9 +214,8 @@ a:visited {color: #1E5D8B}
 }
 
 #language-select {
-    right: 50px;
-    position: absolute;
-    top: 60px;
+    float: right;
+    padding-right: 10px;
 }
 
 #language-select li {
@@ -264,11 +262,11 @@ a:visited {color: #1E5D8B}
 }
 
 #footer .logo {
-    display: inline;
+    display: block;
     background: url('/static/images/header/sprite.png') -15px -280px no-repeat;
     width: 44px;
     height: 44px;
-    margin: 41px 0 0 20px;
+    margin: 41px auto 0;
 }
 
 .btn {
