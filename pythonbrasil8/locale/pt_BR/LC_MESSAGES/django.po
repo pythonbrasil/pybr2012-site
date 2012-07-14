@@ -1077,7 +1077,7 @@ msgstr "Obrigada por cadastrar-se no site! Por favor,"
 
 #: templates/registration/activation_complete.html:9
 msgid " in order to buy your ticket!"
-msgstr "para pagar a sua inscrição"
+msgstr " para pagar a sua inscrição"
 
 #: templates/registration/login.html:12
 msgid ""
