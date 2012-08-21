@@ -1086,7 +1086,7 @@ msgid ""
 "don't have an account yet."
 msgstr ""
 "Para pagar sua inscrição para participar da PythonBrasil[8] ou propor "
-"umapalestra é necessário criar uma conta. Por favor, faça login ou crie uma "
+"uma palestra é necessário criar uma conta. Por favor, faça login ou crie uma "
 "conta,  caso você não tenha ainda."
 
 #: templates/registration/login.html:15 templates/registration/login.html:20
