@@ -7,6 +7,14 @@
 {% endblock %}
 
 {% block js_top %}
+<style type="text/css">
+  dl dt, dl dd {
+    line-height: 18px;
+  }
+  dl dt { font-weight: bold; }
+  dl dd { margin-left: 9px; }
+</style>
+<script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" language="javascript" charset="utf-8">
 //<![CDATA[
 var nameOrEmail = "{% trans "username or email (no spaces)" %}";
@@ -16,7 +24,7 @@ var nameOrEmail = "{% trans "username or email (no spaces)" %}";
 
 {% block content %}
 <div class="row" id="send-proposal">
-    <div class="column grid_12">
+    <div class="column grid_6">
         <h1>{% trans "Send a proposal" %}</h1>
         <p>
             {% trans "Please fill the form below to submit your proposal:" %}
@@ -37,10 +45,25 @@ var nameOrEmail = "{% trans "username or email (no spaces)" %}";
             <p><button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button></p>
         </form>
     </div>
+    <div class="column grid_6">
+      <h2>{% trans "Tracks' description" %}</h2>
+      <dl>
+        {% if request.LANGUAGE_CODE == "pt-br" %}
+          {% for track in tracks %}
+          <dt>{{ track.name_pt_br }} </dt>
+          <dd>{{ track.description_pt_br }}</dd>
+          {% endfor %}
+        {% else %}
+          {% for track in tracks %}
+          <dt>{{ track.name_en_us }} </dt>
+          <dd>{{ track.description_en_us }}</dd>
+          {% endfor %}
+        {% endif %}
+    </dl>
+    </div>
 </div>
 {% endblock %}
 
 {% block js_bottom %}
-<script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="{{ STATIC_URL }}js/speakers.js" type="text/javascript" charset="utf-8"></script>
 {% endblock %}

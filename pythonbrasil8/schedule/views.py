@@ -9,6 +9,7 @@ from django.views.generic import CreateView
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
+from pythonbrasil8.schedule.models import Track
 
 
 class SubscribeView(LoginRequiredMixin, CreateView):
@@ -28,6 +29,11 @@ class SubscribeView(LoginRequiredMixin, CreateView):
         spkrs.extend(self.get_extra_speakers())
         self.object.speakers = spkrs
         self.object.save()
+        return r
+
+    def get(self, request, *args, **kwargs):
+        r = super(SubscribeView, self).get(request, *args, **kwargs)
+        r.context_data["tracks"] = Track.objects.all()
         return r
 
     def post(self, request, *args, **kwargs):
