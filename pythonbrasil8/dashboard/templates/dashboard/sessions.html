@@ -10,10 +10,11 @@
 <div class="row">
     <div class="column grid_12">
         <h1>{% trans "Proposals" %}</h1>
+        <p>{% trans "Below you can see a list of your talk proposals. Click in any of them to edit it." %}</p>
         {% if sessions %}
             <ul id="proposals">
                 {% for session in sessions %}
-                    <li>- {{ session.title }}</li>
+                <li>- <a href="{% url session-edit id=session.pk %}" title="{% trans "Edit proposal" %}">{{ session.title }}</li>
                 {% endfor %}
             </ul>
             <p><a href="{% url session-subscribe %}" title="{% trans "Submit a proposal" %}" class="btn">{% trans "Submit a proposal" %}</a></p>
