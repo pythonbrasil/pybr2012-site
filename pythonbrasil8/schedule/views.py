@@ -51,7 +51,7 @@ class EditSessionView(LoginRequiredMixin, View):
     template_name = "schedule/edit-session.html"
 
     def get(self, request, id):
-        session = shortcuts.get_object_or_404(Session, pk=id)
+        session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
         form = self.form_class(instance=session)
         tracks = Track.objects.all()
         return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})

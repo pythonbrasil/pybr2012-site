@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import unittest
 
+from django import http
+from django.contrib.auth import models as auth_models
 from django.core import management
 from django.template import response
 from django.test import client
@@ -25,7 +27,9 @@ class EditSessionTestCase(unittest.TestCase):
         self.assertEqual("schedule/edit-session.html", views.EditSessionView.template_name)
 
     def test_get_render_the_template_with_the_session_in_context(self):
+        instance = models.Session.objects.get(pk=1)
         request = client.RequestFactory().get("/dashboard/proposals/1/")
+        request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         self.assertIsInstance(resp, response.TemplateResponse)
         self.assertEqual(views.EditSessionView.template_name, resp.template_name)
@@ -35,13 +39,22 @@ class EditSessionTestCase(unittest.TestCase):
     def test_get_render_the_form_with_data_populated(self):
         instance = models.Session.objects.get(pk=1)
         request = client.RequestFactory().get("/dashboard/proposals/1/")
+        request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         form = resp.context_data["form"]
         self.assertIsInstance(form, views.EditSessionView.form_class)
         self.assertEqual(instance, form.instance)
 
+    def test_get_return_404_if_the_user_is_not_speaker_in_the_talk(self):
+        user, _ = auth_models.User.objects.get_or_create(username="aidimim")
+        request = client.RequestFactory().get("/dashboard/proposals/1/")
+        request.user = user
+        with self.assertRaises(http.Http404):
+            views.EditSessionView().get(request, 1)
+
     def test_get_include_list_of_tracks_in_the_context(self):
         track = models.Track.objects.get(pk=1)
         request = client.RequestFactory().get("/dashboard/proposals/1/")
+        request.user = models.Session.objects.get(pk=1).speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         self.assertEqual([track], list(resp.context_data["tracks"]))
