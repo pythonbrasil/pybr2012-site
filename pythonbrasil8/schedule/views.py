@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
-from django import http
+from django import http, shortcuts
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.db.models import Q
+from django.template import response
 from django.utils.translation import ugettext as _
-from django.views.generic import CreateView
+from django.views.generic import CreateView, View
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
-from pythonbrasil8.schedule.models import Track
+from pythonbrasil8.schedule.models import Session, Track
 
 
 class SubscribeView(LoginRequiredMixin, CreateView):
     form_class = SessionForm
-    template_name = 'schedule/subscribe.html'
+    template_name = "schedule/subscribe.html"
 
     def get_success_url(self):
-        return reverse('dashboard-index')
+        return reverse("dashboard-index")
 
     def get_extra_speakers(self):
         es = self.request.POST.getlist("extra_speakers")
@@ -43,3 +44,14 @@ class SubscribeView(LoginRequiredMixin, CreateView):
         else:
             r.context_data["extra_speakers"] = self.request.POST.getlist("extra_speakers")
         return r
+
+
+class EditSessionView(LoginRequiredMixin, View):
+    form_class = SessionForm
+    template_name = "schedule/edit-session.html"
+
+    def get(self, request, id):
+        session = shortcuts.get_object_or_404(Session, pk=id)
+        form = self.form_class(instance=session)
+        tracks = Track.objects.all()
+        return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})
