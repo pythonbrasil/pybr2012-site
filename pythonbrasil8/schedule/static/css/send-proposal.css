@@ -65,3 +65,8 @@
 #send-proposal form p textarea {
     width: 250px;
 }
+dl dt, dl dd {
+line-height: 18px;
+}
+dl dt { font-weight: bold; }
+dl dd { margin-left: 9px; }
