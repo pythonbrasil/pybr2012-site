@@ -17,6 +17,7 @@ var nameOrEmail = "{% trans "username or email (no spaces)" %}";
 
 {% block content %}
 <div class="row" id="send-proposal">
+    {% block form %}
     <div class="column grid_6">
         <h1>{% trans "Send a proposal" %}</h1>
         <p>
@@ -38,22 +39,18 @@ var nameOrEmail = "{% trans "username or email (no spaces)" %}";
             <p><button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button></p>
         </form>
     </div>
+    {% endblock %}
+    {% block tracks %}
     <div class="column grid_6">
-      <h2>{% trans "Tracks' description" %}</h2>
-      <dl>
-        {% if request.LANGUAGE_CODE == "pt-br" %}
-          {% for track in tracks %}
-          <dt>{{ track.name_pt_br }} </dt>
-          <dd>{{ track.description_pt_br }}</dd>
-          {% endfor %}
-        {% else %}
-          {% for track in tracks %}
-          <dt>{{ track.name_en_us }} </dt>
-          <dd>{{ track.description_en_us }}</dd>
-          {% endfor %}
-        {% endif %}
-    </dl>
+        <h2>{% trans "Tracks' description" %}</h2>
+        <dl>
+            {% for track in tracks %}
+            <dt>{{ track.name }} </dt>
+            <dd>{{ track.description }}</dd>
+            {% endfor %}
+        </dl>
     </div>
+    {% endblock %}
 </div>
 {% endblock %}
 
