@@ -13,5 +13,5 @@ before_script:
   - sudo chmod 777 /usr/local/bin/chromedriver
 script: make test && make jasmine
 branches:
-  only:
-    - master
+  except:
+    - responsive
