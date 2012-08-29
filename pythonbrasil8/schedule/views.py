@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-from django import http
+from django import http, shortcuts
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.db.models import Q
 from django.utils.translation import ugettext as _
-from django.views.generic import CreateView
+from django.views.generic import CreateView, View
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
-from pythonbrasil8.schedule.models import Track
+from pythonbrasil8.schedule.models import Session, Track
 
 
 class SubscribeView(LoginRequiredMixin, CreateView):
@@ -43,3 +43,12 @@ class SubscribeView(LoginRequiredMixin, CreateView):
         else:
             r.context_data["extra_speakers"] = self.request.POST.getlist("extra_speakers")
         return r
+
+
+class DeleteSessionView(LoginRequiredMixin, View):
+
+    def get(self, request, id):
+        session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
+        session.delete()
+        messages.success(request, _("Session successfully deleted!"), fail_silently=True)
+        return http.HttpResponseRedirect(reverse("dashboard-sessions"))
