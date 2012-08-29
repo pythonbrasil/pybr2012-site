@@ -55,3 +55,13 @@ class EditSessionView(LoginRequiredMixin, View):
         form = self.form_class(instance=session)
         tracks = Track.objects.all()
         return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})
+
+    def post(self, request, id):
+        session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
+        form = self.form_class(request.POST, instance=session)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _("Session successfully updated!"), fail_silently=True)
+            return http.HttpResponseRedirect(reverse("dashboard-sessions"))
+        tracks = Track.objects.all()
+        return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})
