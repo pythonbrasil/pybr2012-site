@@ -1,0 +1,24 @@
+{% extends "schedule/subscribe.html" %}
+{% load i18n %}
+
+{% block form %}
+<div class="column grid_6">
+    <h1>{% trans "Edit proposal " %} {{ session.title }}</h1>
+    <p>{% trans "Please fill the form below to edit your proposal:" %}</p>
+    <form action="{% url session-edit id=session.pk %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <p>
+            <label>Speakers:</label>
+            <span>
+                <span>{% firstof user.accountprofile.name user.username %} ({% trans "you" %})</span>
+                {% for speaker in extra_speakers %}
+                    <span><input type="text" name="extra_speakers" value="{{ speaker }}" /><a href="#" title="Remove speaker" class="remove-speaker">Remove</a></span>
+                {% endfor %}
+                <span id="add-speaker"><a href="#" title="{% trans "Add speaker" %}">{% trans "Add another speaker" %}</a></span>
+            </span>
+        </p>
+        <p><button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button></p>
+    </form>
+</div>
+{% endblock %}
