@@ -1,6 +1,11 @@
 {% extends "schedule/subscribe.html" %}
 {% load i18n %}
 
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/edit-proposal.css" type="text/css" media="screen" charset="utf-8">
+{% endblock %}
+
 {% block form %}
 <div class="column grid_6">
     <h1>{% trans "Edit proposal " %} {{ session.title }}</h1>
@@ -18,7 +23,10 @@
                 <span id="add-speaker"><a href="#" title="{% trans "Add speaker" %}">{% trans "Add another speaker" %}</a></span>
             </span>
         </p>
-        <p><button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button></p>
+        <p>
+        <button type="submit" class="btn" title="{% trans "Send proposal" %}">{% trans "Send" %}</button>
+        <button type="button" class="btn red" title="{% trans "Delete proposal" %}" onclick="confirmDelete('{% trans "Are you sure?" %}', '{% url session-delete session.pk %}');">{% trans "Delete" %}</button>
+        </p>
     </form>
 </div>
 {% endblock %}

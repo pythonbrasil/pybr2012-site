@@ -1,0 +1,19 @@
+#send-proposal .btn {
+    display: inline-block;
+}
+
+#send-proposal .btn.red {
+    border-color: #600;
+    background-color: #600;
+    background-image: linear-gradient(top, #D63, #600);
+    background-image: -moz-linear-gradient(top, #D63, #600);
+    background-image: -ms-linear-gradient(top, #D63, #600);
+    background-image: -o-linear-gradient(top, #D63, #600);
+    background-image: -webkit-linear-gradient(top, #D63, #600);
+    margin-left: 0;
+}
+
+#send-proposal .btn:hover {
+    background-image: none;
+    text-decoration: none;
+}

@@ -1,4 +1,4 @@
-(function($){
+(function($, global){
     $(document).ready(function(){
         $("#add-speaker > a").click(function(e) {
             e.stopPropagation();
@@ -22,4 +22,10 @@
             $(this).parent().remove();
         });
     });
-})(window.jQuery);
+
+    global.confirmDelete = function(msg, url, id) {
+        if (confirm(msg)) {
+            global.location.href = url;
+        }
+    };
+})(window.jQuery, window);
