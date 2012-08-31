@@ -65,3 +65,12 @@ class EditSessionView(LoginRequiredMixin, View):
             return http.HttpResponseRedirect(reverse("dashboard-sessions"))
         tracks = Track.objects.all()
         return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})
+
+
+class DeleteSessionView(LoginRequiredMixin, View):
+
+    def get(self, request, id):
+        session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
+        session.delete()
+        messages.success(request, _("Session successfully deleted!"), fail_silently=True)
+        return http.HttpResponseRedirect(reverse("dashboard-sessions"))
