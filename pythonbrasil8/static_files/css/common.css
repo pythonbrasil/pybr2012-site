@@ -7,7 +7,7 @@
     padding-bottom: 15px;
     background: url('/static/images/header/sprite.png') #004592 right -52px no-repeat;
     color: #FFF;
-    font-size: 1.22em;
+    font-size: 1.2em;
 }
 
 #pre-register span {
@@ -71,7 +71,7 @@ a:visited {color: #1E5D8B}
 
 .dates h4 {
     color: #2471A9;
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 .dates p {
