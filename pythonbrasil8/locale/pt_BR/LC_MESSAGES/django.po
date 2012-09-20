@@ -1,12 +1,11 @@
 # Traduções para Português do Brasil.
 # This file is distributed under the same license as the pythonbrasil8 package.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-24 21:57-0300\n"
+"POT-Creation-Date: 2012-09-19 22:42-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -37,42 +36,50 @@ msgid "latest news"
 msgstr "últimas notícias"
 
 #: core/templates/home.html:40 templates/news.html:15
+msgid "Be a speaker at PythonBrasil[8]!"
+msgstr "Seja palestrante da PythonBrasil[8]!"
+
+#: core/templates/home.html:41
+msgid "Published on September 19 2012"
+msgstr "Publicada em 19 de Setembro de 2012"
+
+#: core/templates/home.html:44 templates/news.html:81
 msgid "Buy your tickets for PythonBrasil[8] - registration is now available!"
 msgstr "Compre seus ingressos para PythonBrasil[8] - inscrições abertas!"
 
-#: core/templates/home.html:41
+#: core/templates/home.html:45
 msgid "Published on June 4 2012"
 msgstr "Publicada em 4 de Junho de 2012"
 
-#: core/templates/home.html:44 templates/news.html:26
+#: core/templates/home.html:48 templates/news.html:94
 msgid "Keynotes of PythonBrasil[8] - who would you like to see?"
 msgstr "Keynotes da PythonBrasil[8] - quem você gostaria de ver?"
 
-#: core/templates/home.html:45
+#: core/templates/home.html:49
 msgid "Published on May 15 2012"
 msgstr "Publicada em 15 de Maio de 2012"
 
-#: core/templates/home.html:48 templates/news.html:36
+#: core/templates/home.html:52 templates/news.html:106
 msgid "Choose the books that will be raffled during PythonBrasil[8]"
 msgstr "Escolha os livros que serão sorteados durante a PythonBrasil[8]"
 
-#: core/templates/home.html:49
+#: core/templates/home.html:53
 msgid "Published on May 10 2012"
 msgstr "Publicada em 10 de Maio de 2012"
 
-#: core/templates/home.html:52 templates/news.html:56
+#: core/templates/home.html:56 templates/news.html:128
 msgid "PythonBrasil[8] venue is set: SulAmérica Convention Center"
 msgstr "Local da PythonBrasil[8] definido: Centro de Convenções SulAmérica"
 
-#: core/templates/home.html:53
+#: core/templates/home.html:57
 msgid "Published on April 23 2012"
 msgstr "Publicada em 23 de Abril de 2012"
 
-#: core/templates/home.html:58
+#: core/templates/home.html:62
 msgid "STAY UP TO DATE"
 msgstr "REDES SOCIAIS"
 
-#: core/templates/home.html:59
+#: core/templates/home.html:63
 msgid "follow us"
 msgstr "acompanhe"
 
@@ -123,7 +130,7 @@ msgstr "Corporativo"
 
 #: dashboard/choices.py:7 templates/register.html:113
 msgid "Individual"
-msgstr ""
+msgstr "Individual"
 
 #: dashboard/choices.py:8 dashboard/choices.py:48 templates/register.html:40
 #: templates/register.html.py:89 templates/register.html:122
@@ -348,16 +355,28 @@ msgstr "Pague sua inscrição"
 msgid "Save"
 msgstr "Salvar"
 
-#: dashboard/templates/dashboard/sessions.html:19
-#: dashboard/templates/dashboard/sessions.html:21
+#: dashboard/templates/dashboard/sessions.html:14
+msgid ""
+"Below you can see a list of your talk proposals. Click in any of them to "
+"edit it."
+msgstr ""
+"Abaixo você pode ver a lista de suas propostas de palestras. Selecione uma "
+"para editá-la."
+
+#: dashboard/templates/dashboard/sessions.html:17
+msgid "Edit proposal"
+msgstr "Editar palestra"
+
+#: dashboard/templates/dashboard/sessions.html:20
+#: dashboard/templates/dashboard/sessions.html:22
 msgid "Submit a proposal"
 msgstr "Submeta uma palestra"
 
-#: dashboard/templates/dashboard/sessions.html:21
+#: dashboard/templates/dashboard/sessions.html:22
 msgid "You did not submit any proposal yet."
 msgstr "Você não enviou nenhuma proposta de palestra ainda."
 
-#: dashboard/templates/dashboard/sessions.html:21
+#: dashboard/templates/dashboard/sessions.html:22
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
@@ -421,42 +440,79 @@ msgstr "Idioma"
 msgid "Title"
 msgstr "Título"
 
-#: schedule/views.py:36
+#: schedule/views.py:43
 msgid "Session successfully submitted!"
 msgstr "Palestra submetida com sucesso!"
 
-#: schedule/templates/schedule/subscribe.html:12
-msgid "username or email (no spaces)"
-msgstr "nome de usuário ou e-mail (sem espaços)"
+#: schedule/views.py:64
+msgid "Session successfully updated!"
+msgstr "Palestra submetida com sucesso!"
 
-#: schedule/templates/schedule/subscribe.html:20
-msgid "Send a proposal"
-msgstr "Submeter palestra"
+#: schedule/views.py:75
+msgid "Session successfully deleted!"
+msgstr "Palestra submetida com sucesso!"
 
-#: schedule/templates/schedule/subscribe.html:22
-msgid "Please fill the form below to submit your proposal:"
+#: schedule/templates/schedule/edit-session.html:11
+msgid "Edit proposal "
+msgstr "Editar atividade "
+
+#: schedule/templates/schedule/edit-session.html:12
+msgid "Please fill the form below to edit your proposal:"
 msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
 
-#: schedule/templates/schedule/subscribe.html:30
+#: schedule/templates/schedule/edit-session.html:19
+#: schedule/templates/schedule/subscribe.html:32
 msgid "you"
 msgstr "você"
 
-#: schedule/templates/schedule/subscribe.html:34
+#: schedule/templates/schedule/edit-session.html:23
+#: schedule/templates/schedule/subscribe.html:36
 msgid "Add speaker"
 msgstr "Adicionar palestrante"
 
-#: schedule/templates/schedule/subscribe.html:34
+#: schedule/templates/schedule/edit-session.html:23
+#: schedule/templates/schedule/subscribe.html:36
 msgid "Add another speaker"
 msgstr "Adicionar outro palestrante"
 
-#: schedule/templates/schedule/subscribe.html:37
+#: schedule/templates/schedule/edit-session.html:27
+#: schedule/templates/schedule/subscribe.html:39
 msgid "Send proposal"
 msgstr "Submeter palestra"
 
-#: schedule/templates/schedule/subscribe.html:37
+#: schedule/templates/schedule/edit-session.html:27
+#: schedule/templates/schedule/subscribe.html:39
 #: templates/registration/password_change_form.html:17
 msgid "Send"
 msgstr "Enviar"
+
+#: schedule/templates/schedule/edit-session.html:28
+msgid "Delete proposal"
+msgstr "Apagar palestra"
+
+#: schedule/templates/schedule/edit-session.html:28
+msgid "Are you sure?"
+msgstr "Você tem certeza?"
+
+#: schedule/templates/schedule/edit-session.html:28
+msgid "Delete"
+msgstr "Apagar"
+
+#: schedule/templates/schedule/subscribe.html:13
+msgid "username or email (no spaces)"
+msgstr "nome de usuário ou e-mail (sem espaços)"
+
+#: schedule/templates/schedule/subscribe.html:22
+msgid "Send a proposal"
+msgstr "Submeter palestra"
+
+#: schedule/templates/schedule/subscribe.html:24
+msgid "Please fill the form below to submit your proposal:"
+msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
+
+#: schedule/templates/schedule/subscribe.html:45
+msgid "Tracks' description"
+msgstr "Descrição das trilhas"
 
 #: subscription/views.py:29
 #, python-format
@@ -628,7 +684,7 @@ msgstr "sair"
 
 #: templates/base.html:61 templates/registration/activation_complete.html:9
 msgid "log in"
-msgstr ""
+msgstr "log in"
 
 #: templates/base.html:86
 msgid "buy your ticket now"
@@ -639,8 +695,8 @@ msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
 #: templates/base.html:102
-msgid "June 20th"
-msgstr "20 de junho"
+msgid "Until September 30th"
+msgstr "Até 30 de Setembro"
 
 #: templates/base.html:105
 msgid "Sprints"
@@ -692,20 +748,202 @@ msgid "PythonBrasil News"
 msgstr "Novidades da PythonBrasil"
 
 #: templates/news.html:16
-msgid "Published on June 4 2012, by Tati Al-Chueyr"
-msgstr "Publicada em 4 de Junho de 2012, por Tati Al-Chueyr"
+msgid ""
+"\n"
+"              Published on September 19 2012, by <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+msgstr ""
+"\n"
+"              Publicada em 19 de Setembro de 2012, por <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+
+#: templates/news.html:19
+msgid ""
+"\n"
+"                The call for papers of the 8th edition of the Brazilian "
+"Python\n"
+"                conference will be open until the 30th September. As with "
+"years\n"
+"                past, we're looking forward to receiving your best "
+"proposals\n"
+"                for tutorials and talks!"
+msgstr ""
+"\n"
+"                A chamada de trabalhos da 8a edição da conferência "
+"Brasileira de Python\n"
+"                acontecerá até o dia 30 de setembro. Assim como nas anos "
+"anteriores, estamos\n"
+"                aguardando as suas melhores propostas de palestras e\n"
+"                tutoriais!"
+
+#: templates/news.html:25
+msgid "Submit your proposal now!"
+msgstr "Proponha uma palestra agora!"
 
 #: templates/news.html:27
-msgid "Published on May 15 2012, by Tati Al-Chueyr"
-msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
+msgid ""
+"\n"
+"                Selected talks and tutorials will be announced until the 9th "
+"November.<br><br>\n"
+"\n"
+"                PythonBrasil[8] will run from 21th to the 24th November, "
+"2012,\n"
+"                at the SulAmérica Convention Center in Rio de Janeiro."
+"<br><br>\n"
+"\n"
+"                Talk sessions will happen from Friday to Saturday (23 and "
+"24th\n"
+"                November). They're mostly 30 minutes long, targeting from\n"
+"                beginners to advanced audiences.  Among the tracks there "
+"are\n"
+"                web development, cloud computing, scientific computing, "
+"DevOps\n"
+"                and games.<br><br>\n"
+"\n"
+"                The conference attendees can also propose hands'on "
+"tutorials, 4\n"
+"                hours long, that will happen from Wednesday to Thursday (21 "
+"to\n"
+"                22th November).<br><br>\n"
+"                "
+msgstr ""
+"\n"
+"                As palestras e tutoriais selecionados serão divulgados no "
+"dia 9 de novembro.<br><br>\n"
+"\n"
+"                A PythonBrasil[8] acontecerá entre os dias 21 e 24 de "
+"novembro de 2012,\n"
+"                no Centro de Convenções SulAmérica do Rio de Janeiro."
+"<br><br>\n"
+"\n"
+"                As palestras e keynotes acontecerão entre sexta e sábado (23 "
+"e 24\n"
+"                de novembro). Elas terão duração de 30 min, visando públicos "
+"que vão\n"
+"                do intermediário ao avançado. Dentre as trilhasconstam\n"
+"                desenvolvimento web, cloud computing, computação científica, "
+"DevOps\n"
+"                e jogos.<br><br>\n"
+"\n"
+"                Os participantes da conferência também podem propor "
+"tutoriais hands'on de n                4 horas de duração, que acontecerão "
+"de quarta até quinta-feira (21 a\n"
+"                22 de novembro).<br><br>\n"
+"                "
 
-#: templates/news.html:37
-msgid "Published on May 10 2012, by Tati Al-Chueyr"
-msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
+#: templates/news.html:44
+msgid "How to propose a talk?"
+msgstr "Como propor uma palestra?"
 
-#: templates/news.html:58
-msgid "Published on April 13 2012, by Tati Al-Chueyr"
-msgstr "Publicada em 15 de Abril de 2012, por Tati Al-Chueyr"
+#: templates/news.html:48
+msgid "(1) Register to the conference website, accessing the link:"
+msgstr "(1) Inscreva-se no site da conferência, acessando o link:"
+
+#: templates/news.html:50
+msgid ""
+"Obs: don't forget to confirm your registration, clicking on a link\n"
+"                        sent to your email"
+msgstr ""
+"Obs: não esqueça de confirmar seu cadastro, clicando no link enviado\n"
+"                        para o seu email"
+
+#: templates/news.html:54
+msgid "(2) Log in the website to propose a talk or tutorial, through:<br>"
+msgstr ""
+"(2) Faça login no site para propor uma palestra ou tutorial, através:<br>"
+
+#: templates/news.html:56
+msgid ""
+"Obs: click on Proposals and add the information. You can propose\n"
+"                    multiple activities!"
+msgstr ""
+"Obs: selecione Propostas e adicione os dados de sua palestra. Você pode "
+"propor\n"
+"                    múltiplas atividades!"
+
+#: templates/news.html:62
+msgid "Do speakers pay?"
+msgstr "Palestrantes pagam?"
+
+#: templates/news.html:63
+msgid ""
+"\n"
+"                Yes. However, attendees that had activities approved have\n"
+"                discount until the 15th October (R$ 150,00):"
+msgstr ""
+"\n"
+"                Sim. Entretanto, pessoas que tiveram palestras aprovadas\n"
+"                terão desconto até dia 15 de outubro (R$ 150,00):"
+
+#: templates/news.html:68
+msgid "More information?"
+msgstr "Mais informações?"
+
+#: templates/news.html:73
+msgid "Questions?"
+msgstr "Perguntas?"
+
+#: templates/news.html:74
+msgid ""
+"\n"
+"                Contact the organizers: <a href=\"organizers@pythonbrasil."
+"org.br\">organizers@pythonbrasil.org.br</a>\n"
+"                "
+msgstr ""
+"\n"
+"                Entre em contato com os organizadores: <a href="
+"\"organizers@pythonbrasil.org.br\">organizers@pythonbrasil.org.br</a>\n"
+"                "
+
+#: templates/news.html:82
+msgid ""
+"\n"
+"              Published on June 4 2012, by <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+msgstr ""
+"\n"
+"              Publicado no dia 4 de junho de 2012, por <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+
+#: templates/news.html:95
+msgid ""
+"\n"
+"              Published on May 15 2012, by <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+msgstr ""
+"\n"
+"              Publicado no dia 15 de maio de 2012, por <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+
+#: templates/news.html:107
+msgid ""
+"\n"
+"              Published on May 10 2012, by <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+msgstr ""
+"\n"
+"              Publicado no dia 10 de maio de 2012, por <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+
+#: templates/news.html:130
+msgid ""
+"\n"
+"              Published on April 13 2012, by <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
+msgstr ""
+"\n"
+"              Publicado no dia 13 de Abril de 2012, por <a href=\"mailto:"
+"tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
+"            "
 
 #: templates/password_reset.html:4 templates/password_reset.html.py:13
 msgid "Password reset"
@@ -759,6 +997,8 @@ msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
+"Nós enviamos um email com as instruções para configurar sua senha. Você deev "
+"recebê-lo em breve."
 
 #: templates/previous_editions.html:13
 msgid "PythonBrasil[1:8]"
@@ -839,15 +1079,17 @@ msgid "Early Bird Rate:"
 msgstr "Valor antecipado:"
 
 #: templates/register.html:56
-msgid "until August 31, 2012"
-msgstr "até 31 de agosto de 2012"
+#, fuzzy
+msgid "until October 15, 2012"
+msgstr "até 15 de novembro de 2012"
 
 #: templates/register.html:59
 msgid "Regular Rate:"
 msgstr "Valor normal:"
 
 #: templates/register.html:60
-msgid "from September 1, 2012"
+#, fuzzy
+msgid "from October 16, 2012"
 msgstr "de 1º de setembro de 2012"
 
 #: templates/register.html:61
@@ -1085,13 +1327,13 @@ msgid ""
 "propose a talk, an account is required. Please, log in or sign up, if you "
 "don't have an account yet."
 msgstr ""
-"Para pagar sua inscrição para participar da PythonBrasil[8] ou propor "
-"uma palestra é necessário criar uma conta. Por favor, faça login ou crie uma "
+"Para pagar sua inscrição para participar da PythonBrasil[8] ou propor uma "
+"palestra é necessário criar uma conta. Por favor, faça login ou crie uma "
 "conta,  caso você não tenha ainda."
 
 #: templates/registration/login.html:15 templates/registration/login.html:20
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
 #: templates/registration/login.html:19
 msgid "Forgot your password?"
@@ -1153,3 +1395,21 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "until August 31, 2012"
+#~ msgstr "até 31 de agosto de 2012"
+
+#~ msgid "June 20th"
+#~ msgstr "20 de junho"
+
+#~ msgid "Published on June 4 2012, by Tati Al-Chueyr"
+#~ msgstr "Publicada em 4 de Junho de 2012, por Tati Al-Chueyr"
+
+#~ msgid "Published on May 15 2012, by Tati Al-Chueyr"
+#~ msgstr "Publicada em 15 de Maio de 2012, por Tati Al-Chueyr"
+
+#~ msgid "Published on May 10 2012, by Tati Al-Chueyr"
+#~ msgstr "Publicada em 10 de Maio de 2012, por Tati Al-Chueyr"
+
+#~ msgid "Published on April 13 2012, by Tati Al-Chueyr"
+#~ msgstr "Publicada em 15 de Abril de 2012, por Tati Al-Chueyr"

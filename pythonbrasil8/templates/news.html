@@ -12,19 +12,69 @@
         <h1>{% trans "PythonBrasil News" %}</h1>
 
         <div class="news-item" id="5">
-            <h2>{% trans "Submit your talk or tutorial proposal!" %}</h2>
+            <h2>{% trans "Be a speaker at PythonBrasil[8]!" %}</h2>
             <p class="date">{% blocktrans %}
-              Published on August 22 2012, by <a href="mailto:alvaro@python.org.br">Álvaro Justen</a>
+              Published on September 19 2012, by <a href="mailto:tati_alchueyr@python.org.br">Tati Al-Chueyr</a>
             {% endblocktrans %}</p>
-            <p class="body">
-                PythonBrasil[8] will be a perfect opportunity to share your
-                knowledge, software or success case through talks or tutorials.
-                The deadline is September 30th.
-                <a href="{% url session-subscribe %}">Submit your proposal now!</a>
-                <br>
-                All proposals will be evaluated by Brazilian Python Community,
-                starting on October 1st and ending on October 14th. The
-                final results will be available on October 15th.
+            <p class="body">{% blocktrans %}
+                The call for papers of the 8th edition of the Brazilian Python
+                conference will be open until the 30th September. As with years
+                past, we're looking forward to receiving your best proposals
+                for tutorials and talks!{% endblocktrans %}<br><br>
+
+                <a href="{% url session-subscribe %}">{% blocktrans %}Submit your proposal now!{% endblocktrans %}
+</a><br><br>
+                {% blocktrans %}
+                Selected talks and tutorials will be announced until the 9th November.<br><br>
+
+                PythonBrasil[8] will run from 21th to the 24th November, 2012,
+                at the SulAmérica Convention Center in Rio de Janeiro.<br><br>
+
+                Talk sessions will happen from Friday to Saturday (23 and 24th
+                November). They're mostly 30 minutes long, targeting from
+                beginners to advanced audiences.  Among the tracks there are
+                web development, cloud computing, scientific computing, DevOps
+                and games.<br><br>
+
+                The conference attendees can also propose hands'on tutorials, 4
+                hours long, that will happen from Wednesday to Thursday (21 to
+                22th November).<br><br>
+                {% endblocktrans %}
+
+                <h3> {% trans "How to propose a talk?" %}</h3>
+
+                <ul>
+                    <li>
+                    {% blocktrans %}(1) Register to the conference website, accessing the link:{% endblocktrans %}<br>
+                    <a href="http://2012.pythonbrasil.org.br/accounts/login/">http://2012.pythonbrasil.org.br/accounts/login/</a><br>
+                    {% blocktrans %}Obs: don't forget to confirm your registration, clicking on a link
+                        sent to your email{% endblocktrans %}<br><br>
+                    </li>
+                    <li>
+                    {% blocktrans %}(2) Log in the website to propose a talk or tutorial, through:<br>{% endblocktrans %}
+                    <a href="http://2012.pythonbrasil.org.br/dashboard/">http://2012.pythonbrasil.org.br/dashboard/</a><br>
+                    {% blocktrans %}Obs: click on Proposals and add the information. You can propose
+                    multiple activities!{% endblocktrans %}
+                    </li>
+
+                </ul>
+
+                <h3> {% trans "Do speakers pay?" %}</h3>
+                {% blocktrans %}
+                Yes. However, attendees that had activities approved have
+                discount until the 15th October (R$ 150,00):{% endblocktrans %}<br>
+                <a href="http://2012.pythonbrasil.org.br/register/">http://2012.pythonbrasil.org.br/register/</a>
+
+                <h3> {% trans "More information?" %}</h3>
+
+                Facebook: <a href="http://facebook.com/pythonbrasil8" target="_blank">PythonBrasil</a><br>
+                Twitter:  <a href="http://www.twitter.com/pythonbrasil" target="_blank">@PythonBrasil</a>
+
+                <h3> {% trans "Questions?" %} </h3>
+                {% blocktrans %}
+                Contact the organizers: <a href="organizers@pythonbrasil.org.br">organizers@pythonbrasil.org.br</a>
+                {% endblocktrans %}
+
             </p>
         </div>
         <div class="news-item" id="4">
