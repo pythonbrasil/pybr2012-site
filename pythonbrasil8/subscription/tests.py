@@ -390,9 +390,12 @@ class SubscriptionAdminTestCase(TestCase):
         request = self.factory.get("/admin")
         try:
             filter = admin.StatusFilter(request, {"status": u"confirmed"}, None, None)
-            self.assertEqual([], filter.queryset(request, models.Subscription.objects.all()))
+            self.assertEqual([], list(filter.queryset(request, models.Subscription.objects.all())))
             Transaction.objects.create(code="123", price=100, status="done", subscription=subscription)
-            self.assertEqual([subscription], filter.queryset(request, models.Subscription.objects.all()))
+            self.assertEqual([subscription], list(filter.queryset(request, models.Subscription.objects.all())))
+            empty_filter = admin.StatusFilter(request, {}, None, None)
+            qs = models.Subscription.objects.all()
+            self.assertEqual(qs, empty_filter.queryset(request, qs))
         finally:
             subscription.delete()
 

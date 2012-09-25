@@ -16,7 +16,9 @@ class StatusFilter(admin.SimpleListFilter):
 
     def queryset(self, request, queryset):
         v = self.value()
-        return filter(lambda sub: status(sub) == v, queryset)
+        if v:
+            return queryset.filter(pk__in=[sub.pk for sub in queryset if status(sub) == v])
+        return queryset
 
 
 def name(subscription):
