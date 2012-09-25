@@ -365,3 +365,36 @@ class SubscriptionAdminTestCase(TestCase):
     def test_subscription_model_is_registered_with_subscription_admin(self):
         self.assertIn(models.Subscription, django_admin.site._registry)
         self.assertIsInstance(django_admin.site._registry[models.Subscription], admin.SubscriptionAdmin)
+
+    def test_status_filter_title(self):
+        self.assertEqual(u"Status", admin.StatusFilter.title)
+
+    def test_status_filter_parameter_name(self):
+        self.assertEqual(u"status", admin.StatusFilter.parameter_name)
+
+    def test_status_filter_is_SimpleListFilter(self):
+        assert issubclass(admin.StatusFilter, django_admin.SimpleListFilter)
+
+    def test_status_filter_lookups(self):
+        request = self.factory.get("/admin")
+        filter = admin.StatusFilter(request, {}, None, None)
+        expected = (
+            (u"pending", u"Pending"),
+            (u"confirmed", u"Confirmed"),
+            (u"canceled", u"Canceled"),
+        )
+        self.assertEqual(expected, filter.lookups(request, None))
+
+    def test_status_filter_queryset(self):
+        subscription = models.Subscription.objects.create(user=User.objects.get(pk=3), type="talk")
+        request = self.factory.get("/admin")
+        try:
+            filter = admin.StatusFilter(request, {"status": u"confirmed"}, None, None)
+            self.assertEqual([], filter.queryset(request, models.Subscription.objects.all()))
+            Transaction.objects.create(code="123", price=100, status="done", subscription=subscription)
+            self.assertEqual([subscription], filter.queryset(request, models.Subscription.objects.all()))
+        finally:
+            subscription.delete()
+
+    def test_status_filter_is_registered(self):
+        self.assertIn(admin.StatusFilter, admin.SubscriptionAdmin.list_filter)
