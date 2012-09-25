@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
+from django.contrib import admin as django_admin
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.urlresolvers import reverse, NoReverseMatch
 from django.http import HttpResponseRedirect
-from django.db import models
+from django.db import models as django_models
 from django.test import TestCase
 from django.test.client import RequestFactory
 
-from pythonbrasil8.subscription import views
+from pythonbrasil8.dashboard import models as dash_models
+from pythonbrasil8.subscription import admin, models, views
 from pythonbrasil8.subscription.models import Subscription, Transaction, PRICES
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
 
@@ -29,7 +31,7 @@ class SubscriptionModelTestCase(TestCase):
 
     def test_type_should_be_CharField(self):
         type_field = Subscription._meta.get_field_by_name('type')[0]
-        self.assertIsInstance(type_field, models.CharField)
+        self.assertIsInstance(type_field, django_models.CharField)
 
     def test_type_should_have_choices(self):
         type_field = Subscription._meta.get_field_by_name('type')[0]
@@ -42,7 +44,7 @@ class SubscriptionModelTestCase(TestCase):
 
     def test_user_should_be_a_foreign_key(self):
         user_field = Subscription._meta.get_field_by_name('user')[0]
-        self.assertIsInstance(user_field, models.ForeignKey)
+        self.assertIsInstance(user_field, django_models.ForeignKey)
         self.assertEqual(User, user_field.related.parent_model)
 
     def test_should_have_date(self):
@@ -50,7 +52,7 @@ class SubscriptionModelTestCase(TestCase):
 
     def test_date_should_be_datetime_field(self):
         date_field = Subscription._meta.get_field_by_name('date')[0]
-        self.assertIsInstance(date_field, models.DateTimeField)
+        self.assertIsInstance(date_field, django_models.DateTimeField)
         self.assertTrue(date_field.auto_now_add)
 
     def test_subscription_done_should_be_false_if_has_not_a_transaction(self):
@@ -98,7 +100,7 @@ class TransacitonModelTestCase(TestCase):
         self.assert_field_in('subscription', Transaction)
 
         subscription_field = Transaction._meta.get_field_by_name('subscription')[0]
-        self.assertIsInstance(subscription_field, models.ForeignKey)
+        self.assertIsInstance(subscription_field, django_models.ForeignKey)
         self.assertEqual(Subscription, subscription_field.related.parent_model)
 
     def test_get_checkout_url(self):
@@ -317,3 +319,49 @@ class PricesTestCase(TestCase):
             'Corporate': 350
         }
         self.assertEqual(expected, PRICES)
+
+
+class SubscriptionAdminTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "profiles.json", verbosity=0)
+        cls.factory = RequestFactory()
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
+    def test_name(self):
+        profile = dash_models.AccountProfile.objects.get(user=1)
+        sub = models.Subscription(user=User.objects.get(pk=1))
+        self.assertEqual(profile.name, admin.name(sub))
+
+    def test_name_short_description(self):
+        self.assertEqual(u"Name", admin.name.short_description)
+
+    def test_name_function_is_in_list_display(self):
+        self.assertIn(admin.name, admin.SubscriptionAdmin.list_display)
+
+    def test_status(self):
+        subscription = models.Subscription.objects.create(user=User.objects.get(pk=1), type="talk")
+        try:
+            self.assertEqual(u"pending", admin.status(subscription))
+            Transaction.objects.create(code="1234", price=100, status="canceled", subscription=subscription)
+            self.assertEqual(u"canceled", admin.status(subscription))
+            Transaction.objects.create(code="4321", price=100, status="pending", subscription=subscription)
+            self.assertEqual(u"pending", admin.status(subscription))
+            Transaction.objects.create(code="123", price=100, status="done", subscription=subscription)
+            self.assertEqual(u"confirmed", admin.status(subscription))
+        finally:
+            subscription.delete()
+
+    def test_status_short_description(self):
+        self.assertEqual(u"Status", admin.status.short_description)
+
+    def test_status_is_in_list_display(self):
+        self.assertIn(admin.status, admin.SubscriptionAdmin.list_display)
+
+    def test_subscription_model_is_registered_with_subscription_admin(self):
+        self.assertIn(models.Subscription, django_admin.site._registry)
+        self.assertIsInstance(django_admin.site._registry[models.Subscription], admin.SubscriptionAdmin)
