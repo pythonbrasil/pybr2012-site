@@ -3,8 +3,10 @@ from django import http, shortcuts
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
-from django.template import response
+from django.template import response, RequestContext
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.views.generic import CreateView, View
 
@@ -74,3 +76,31 @@ class DeleteSessionView(LoginRequiredMixin, View):
         session.delete()
         messages.success(request, _("Session successfully deleted!"), fail_silently=True)
         return http.HttpResponseRedirect(reverse("dashboard-sessions"))
+
+def proposal_page(request, proposal_id, proposal_slug=''):
+    proposal = shortcuts.get_object_or_404(Session, id=proposal_id)
+    slug = slugify(proposal.title)
+    if not proposal_slug or not proposal_slug == slug:
+        return http.HttpResponseRedirect(reverse('proposal-page',
+                kwargs={'proposal_id': proposal_id, 'proposal_slug': slug}))
+
+    speakers = []
+    for speaker in proposal.speakers.all():
+        try:
+            profile = speaker.get_profile()
+            name = profile.name
+            bio = profile.description
+            twitter = profile.twitter
+            institution = profile.institution
+            profession = profile.profession
+        except ObjectDoesNotExist:
+            name = speaker.username
+            twitter = ''
+            bio = ''
+            institution = ''
+            profession = ''
+        speakers.append({'name': name, 'twitter': twitter, 'bio': bio,
+                         'institution': institution, 'profession': profession})
+    data = {'proposal': proposal, 'speakers': speakers}
+    return shortcuts.render_to_response('proposal.html', data,
+            context_instance=RequestContext(request))
