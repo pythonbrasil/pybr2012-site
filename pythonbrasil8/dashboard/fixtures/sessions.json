@@ -36,6 +36,9 @@
             "tshirt": "L",
             "locale": "RJ",
             "gender": "male",
+            "profession": "PMP",
+            "institution": "globo.com",
+            "twitter": "franciscosouza",
             "public": 1
         }
     },
@@ -47,6 +50,17 @@
             "description": "Learn how to learn Python",
             "type": "tutorial",
             "speakers": [1],
+            "track": 1
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 2,
+        "fields": {
+            "title": "How to learn Django",
+            "description": "Learn how to learn Django",
+            "type": "talk",
+            "speakers": [1, 2],
             "track": 1
         }
     }
