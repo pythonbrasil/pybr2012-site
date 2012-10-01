@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-19 22:42-0300\n"
+"POT-Creation-Date: 2012-10-01 07:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -695,8 +695,9 @@ msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
 #: templates/base.html:102
-msgid "Until September 30th"
-msgstr "Até 30 de Setembro"
+#, fuzzy
+msgid "Until October 1st"
+msgstr "até 1 de Outubro de 2012"
 
 #: templates/base.html:105
 msgid "Sprints"
@@ -760,11 +761,12 @@ msgstr ""
 "            "
 
 #: templates/news.html:19
+#, fuzzy
 msgid ""
 "\n"
 "                The call for papers of the 8th edition of the Brazilian "
 "Python\n"
-"                conference will be open until the 30th September. As with "
+"                conference will be open until the 1st October. As with "
 "years\n"
 "                past, we're looking forward to receiving your best "
 "proposals\n"
@@ -773,7 +775,7 @@ msgstr ""
 "\n"
 "                A chamada de trabalhos da 8a edição da conferência "
 "Brasileira de Python\n"
-"                acontecerá até o dia 30 de setembro. Assim como nas anos "
+"                acontecerá até o dia 01 de outubro. Assim como nas anos "
 "anteriores, estamos\n"
 "                aguardando as suas melhores propostas de palestras e\n"
 "                tutoriais!"
@@ -1395,6 +1397,9 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Until September 30th"
+#~ msgstr "Até 30 de Setembro"
 
 #~ msgid "until August 31, 2012"
 #~ msgstr "até 31 de agosto de 2012"
