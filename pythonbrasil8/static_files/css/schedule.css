@@ -1,4 +1,3 @@
-
 .speakers {
 	width: 103%;
 	margin-top: 35px;
@@ -28,9 +27,9 @@
 			vertical-align: top;
 			letter-spacing: 0;
 			background: #DDD;
-			-moz-box-shadow: 0px 0px 2px #DDD; 
-			-webkit-box-shadow: 0px 0px 2px #DDD; 
-			box-shadow: 0px 0px 2px #DDD; 
+			-moz-box-shadow: 0px 0px 2px #DDD;
+			-webkit-box-shadow: 0px 0px 2px #DDD;
+			box-shadow: 0px 0px 2px #DDD;
 			overflow: hidden;
 			background: url('../images/header/sprite.png') no-repeat -768px -302px;
 		}
@@ -57,3 +56,32 @@
 			background: url('../images/header/sprite.png') no-repeat right -116px;
 		}
 
+h1, h2, h3 {
+  text-transform: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h2.indent {
+  margin-left: 10px;
+  margin-top: 0;
+}
+.label {
+  margin: 5px;
+  font-weight: bold;
+  width: 50%;
+  display: inline-block;
+}
+.label-info {
+}
+div.twocolumn > div {
+  display: block;
+  float: left;
+  width: 40%;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.twocolumn {
+  display: block;
+  width: 100%;
+  clear: both;
+}
