@@ -1,0 +1,14 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/finished-proposal.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="column grid_12">
+		<h1>{% trans "Send a proposal" %}</h1>
+		<p>{% trans "The period for session proposals has ended." %}</p>
+	</div>
+{% endblock %}

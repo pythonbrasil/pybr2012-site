@@ -74,3 +74,10 @@ class DeleteSessionView(LoginRequiredMixin, View):
         session.delete()
         messages.success(request, _("Session successfully deleted!"), fail_silently=True)
         return http.HttpResponseRedirect(reverse("dashboard-sessions"))
+
+
+class FinishedProposalsView(LoginRequiredMixin, View):
+    template_name = u"schedule/finished_proposals.html"
+
+    def get(self, request):
+        return response.TemplateResponse(request, self.template_name)

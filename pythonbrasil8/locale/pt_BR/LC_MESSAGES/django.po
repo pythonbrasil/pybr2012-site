@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-01 07:06-0300\n"
+"POT-Creation-Date: 2012-10-02 19:50-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -498,13 +498,18 @@ msgstr "Você tem certeza?"
 msgid "Delete"
 msgstr "Apagar"
 
-#: schedule/templates/schedule/subscribe.html:13
-msgid "username or email (no spaces)"
-msgstr "nome de usuário ou e-mail (sem espaços)"
-
+#: schedule/templates/schedule/finished_proposals.html:11
 #: schedule/templates/schedule/subscribe.html:22
 msgid "Send a proposal"
 msgstr "Submeter palestra"
+
+#: schedule/templates/schedule/finished_proposals.html:12
+msgid "The period for session proposals has ended."
+msgstr "O prazo para submissão de palestras já está encerrado."
+
+#: schedule/templates/schedule/subscribe.html:13
+msgid "username or email (no spaces)"
+msgstr "nome de usuário ou e-mail (sem espaços)"
 
 #: schedule/templates/schedule/subscribe.html:24
 msgid "Please fill the form below to submit your proposal:"
