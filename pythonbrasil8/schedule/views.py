@@ -53,8 +53,10 @@ class EditSessionView(LoginRequiredMixin, View):
     def get(self, request, id):
         session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
         form = self.form_class(instance=session)
+        extra_speakers = session.speakers.exclude(username=request.user.username)
         tracks = Track.objects.all()
-        return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks})
+        return response.TemplateResponse(request, self.template_name, {"session": session, "form": form, "tracks": tracks,
+            "extra_speakers": extra_speakers})
 
     def post(self, request, id):
         session = shortcuts.get_object_or_404(Session, pk=id, speakers=request.user)
