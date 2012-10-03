@@ -11,6 +11,7 @@ to fix the problem.
 
 .. acks::
 
+   * Álvaro Justen
    * Andrews Medina
    * Bruno Carvalho
    * Fernando Rocha
