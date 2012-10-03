@@ -9,8 +9,7 @@ from registration.forms import RegistrationForm
 from pythonbrasil8.subscription.views import NotificationView
 
 from core.views import (Home, AboutView, ScheduleView, SponsorsInfoView,
-                        VenueView, CustomSponsorsView, SponsorsJobsView,
-                        ProposalView)
+                        VenueView, CustomSponsorsView, SponsorsJobsView)
 
 admin.autodiscover()
 
