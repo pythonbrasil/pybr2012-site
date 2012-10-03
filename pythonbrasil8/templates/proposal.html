@@ -4,7 +4,7 @@
 {% block title %}{% trans "Proposal" %} | PythonBrasil[8]{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="/static/css/schedule.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
     {% else %}
     {{ speaker.name }}
     {% endif %}
-    {% if not forloop.last %},{% endif %}
+    {% if forloop.last %}.{% else %},{% endif %}
     {% endfor %}</h2>
 
   <div class="twocolumn">
