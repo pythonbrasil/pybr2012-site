@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Track" %} {{ track.name }} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="column grid_12">
+    <h1>{% trans "PythonBrasil[8] Track" %} - {{ track.name }}</h1>
+    <section id="tracks">
+      <ul>
+        {% for session in sessions %}
+        <li>
+          <a href="{% url proposal-page track.slug session.slug %}">{{ session.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
+{% endblock %}

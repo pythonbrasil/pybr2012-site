@@ -4,7 +4,17 @@
         "pk": 1,
         "fields": {
             "name_en_us": "Newbies",
+            "slug": "newbies",
             "description_en_us": "Python for newbies"
+        }
+    },
+    {
+        "model": "schedule.Track",
+        "pk": 2,
+        "fields": {
+            "name_en_us": "Just another track",
+            "slug": "just-another-track",
+            "description_en_us": "Spam eggs ham"
         }
     },
     {
@@ -47,6 +57,7 @@
         "pk": 1,
         "fields": {
             "title": "How to learn Python",
+            "slug": "how-to-learn-python",
             "description": "Learn how to learn Python",
             "type": "tutorial",
             "speakers": [1],
@@ -58,6 +69,7 @@
         "pk": 2,
         "fields": {
             "title": "How to learn Django",
+            "slug": "how-to-learn-django",
             "description": "Learn how to learn Django",
             "type": "talk",
             "speakers": [1, 2],

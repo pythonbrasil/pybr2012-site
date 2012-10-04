@@ -85,6 +85,20 @@ class FinishedProposalsView(LoginRequiredMixin, View):
         return response.TemplateResponse(request, self.template_name)
 
 
+def tracks(request):
+    tracks = Track.objects.all()
+    return shortcuts.render_to_response('tracks.html', {'tracks': tracks},
+            context_instance=RequestContext(request))
+
+
+def track_page(request, track_slug):
+    track = shortcuts.get_object_or_404(Track, slug=track_slug)
+    sessions = Session.objects.filter(track=track)
+    data = {'track': track, 'sessions': sessions}
+    return shortcuts.render_to_response('track.html', data,
+            context_instance=RequestContext(request))
+
+
 def proposal_page(request, proposal_id, proposal_slug=''):
     proposal = shortcuts.get_object_or_404(Session, id=proposal_id)
     slug = slugify(proposal.title)
