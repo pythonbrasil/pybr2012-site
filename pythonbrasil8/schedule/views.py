@@ -99,12 +99,9 @@ def track_page(request, track_slug):
             context_instance=RequestContext(request))
 
 
-def proposal_page(request, proposal_id, proposal_slug=''):
-    proposal = shortcuts.get_object_or_404(Session, id=proposal_id)
-    slug = slugify(proposal.title)
-    if not proposal_slug or not proposal_slug == slug:
-        return http.HttpResponseRedirect(reverse('proposal-page',
-                kwargs={'proposal_id': proposal_id, 'proposal_slug': slug}))
+def proposal_page(request, track_slug, proposal_slug):
+    shortcuts.get_object_or_404(Track, slug=track_slug)
+    proposal = shortcuts.get_object_or_404(Session, slug=proposal_slug)
 
     speakers = []
     for speaker in proposal.speakers.all():
