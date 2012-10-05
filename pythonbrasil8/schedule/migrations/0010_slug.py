@@ -1,15 +1,15 @@
-# encoding: utf-8
-import datetime
-from south.db import db
+# -*- coding: utf-8 -*-
+from django.template.defaultfilters import slugify
 from south.v2 import DataMigration
-from django.db import models
 
 class Migration(DataMigration):
 
     def forwards(self, orm):
         for track in orm.Track.objects.all():
+            track.slug = slugify(track.name_en_us)
             track.save() # method save will automatically put slug
         for session in orm.Session.objects.all():
+            session.slug = slugify(session.title)
             session.save() # method save will automatically put slug
 
     def backwards(self, orm):
