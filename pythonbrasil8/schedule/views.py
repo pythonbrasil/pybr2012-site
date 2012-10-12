@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import json
 from random import shuffle
 from django import http, shortcuts
 from django.contrib.auth.decorators import login_required
@@ -15,8 +16,10 @@ from django.views.generic import CreateView, View
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
-from pythonbrasil8.schedule.models import Session, Track
+from pythonbrasil8.schedule.models import Session, Track, ProposalVote
 
+
+VOTE = {'up': 1, 'down': -1, 'neutral': 0}
 
 class SubscribeView(LoginRequiredMixin, CreateView):
     form_class = SessionForm
@@ -137,6 +140,28 @@ def vote_page(request):
         tracks_and_sessions[track] = temp
     tracks_and_sessions = tracks_and_sessions.items()
     shuffle(tracks_and_sessions)
-    data = {'tracks_and_sessions': tracks_and_sessions}
+    vote_dict = {}
+    votes = ProposalVote.objects.filter(user=request.user.id)
+    votes_up = [v.session.id for v in votes if v.vote == 1]
+    votes_down = [v.session.id for v in votes if v.vote == -1]
+    votes_neutral = votes_up + votes_down
+    data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
+            'votes_down': votes_down, 'votes_neutral': votes_neutral}
     return shortcuts.render_to_response('vote.html', data,
             context_instance=RequestContext(request))
+
+@login_required
+def proposal_vote(request, proposal_id, type_of_vote):
+    if request.method != 'POST':
+        return http.HttpResponse(status=405)
+    if type_of_vote not in ('up', 'down', 'neutral'):
+        raise http.Http404()
+    session = shortcuts.get_object_or_404(Session, pk=proposal_id, type='talk')
+    ProposalVote.objects.filter(user=request.user, session=proposal_id).delete()
+    vote_number = VOTE[type_of_vote]
+    if vote_number != 0:
+        vote = ProposalVote(user=request.user, session=session,
+                            vote=vote_number)
+        vote.save()
+    result = json.dumps({'proposal_id': int(proposal_id), 'vote': type_of_vote})
+    return http.HttpResponse(result, content_type='application/json')

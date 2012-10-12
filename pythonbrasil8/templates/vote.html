@@ -16,8 +16,12 @@
   neutral votes. The best ones will be presented at the 8th Brazilian Python
   Conference!
   {% endblock %}
-  </div>
 
+  <noscript>
+    {% trans "You should enable JavaScript to have a better experience when voting!" %}
+  </noscript>
+
+  </div>
   <table>
     {% for track, sessions in tracks_and_sessions %}
     <tr>
@@ -26,17 +30,25 @@
     {% for session in sessions %}
     <tr class="{% cycle 'odd' 'even' %}">
       <td>
-        <img src="{{ STATIC_URL }}images/schedule/up_inactive.png"
-             alt="up vote" />
+       <form method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='up' %}">{% csrf_token %}
+       <input type="image"
+               src="{{ STATIC_URL }}images/schedule/up_{% if session.id not in votes_up %}in{% endif %}active.png" />
+       </form>
       </td>
       <td>
-        <img src="{{ STATIC_URL }}images/schedule/neutral_active.png"
-             alt="neutral vote" />
+        <form method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='neutral' %}">{% csrf_token %}
+        <input type="image"
+               src="{{ STATIC_URL }}images/schedule/neutral_{% if session.id in votes_neutral %}in{% endif %}active.png" />
+        </form>
       </td>
       <td>
-        <img src="{{ STATIC_URL }}images/schedule/down_inactive.png"
-             alt="down vote" />
+        <form method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='down' %}">{% csrf_token %}
+        <input type="image"
+               src="{{ STATIC_URL }}images/schedule/down_{% if session.id not in votes_down %}in{% endif %}active.png" />
+        </form>
       </td>
+      </form>
+
       <td>
         <a class="proposal" href="{% url proposal-page track.slug session.slug %}"
           title="{% spaceless %}{{ session.description }}{% endspaceless %}"

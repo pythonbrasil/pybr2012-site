@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from pythonbrasil8.schedule.models import Session, Track
+from pythonbrasil8.schedule.models import Session, Track, ProposalVote
 
 
 def coalesce(*args):
@@ -23,8 +23,11 @@ class SessionAdmin(admin.ModelAdmin):
 
 admin.site.register(Session, SessionAdmin)
 
-
 class TrackAdmin(admin.ModelAdmin):
     list_display = ("name",)
 
+class ProposalVoteAdmin(admin.ModelAdmin):
+    list_display = ("user", "session", "vote")
+
 admin.site.register(Track, TrackAdmin)
+admin.site.register(ProposalVote, ProposalVoteAdmin)
