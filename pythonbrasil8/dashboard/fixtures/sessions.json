@@ -123,5 +123,29 @@
             "speakers": [1, 2],
             "track": 2
         }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 7,
+        "fields": {
+            "title": "I dont know [5]",
+            "slug": "i-dont-know-5",
+            "description": "Bla Bla Bla 5",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 8,
+        "fields": {
+            "title": "I dont know [6]",
+            "slug": "i-dont-know-6",
+            "description": "Bla Bla Bla 6",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
     }
 ]

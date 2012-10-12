@@ -254,3 +254,33 @@ class ProposalVoteTest(unittest.TestCase):
         response = self.client.post(url)
         result = json.loads(response.content)
         self.assertEqual(result, {'proposal_id': 3, 'vote': 'down'})
+
+    def test_should_load_past_votes(self):
+        self._login()
+        url = reverse('proposal_vote', kwargs={'proposal_id': 2,
+                                               'type_of_vote': 'up'})
+        self.client.post(url)
+
+        url = reverse('proposal_vote', kwargs={'proposal_id': 3,
+                                               'type_of_vote': 'neutral'})
+        self.client.post(url)
+        url = reverse('proposal_vote', kwargs={'proposal_id': 4,
+                                               'type_of_vote': 'neutral'})
+        self.client.post(url)
+
+
+        url = reverse('proposal_vote', kwargs={'proposal_id': 6,
+                                               'type_of_vote': 'down'})
+        self.client.post(url)
+        url = reverse('proposal_vote', kwargs={'proposal_id': 7,
+                                               'type_of_vote': 'down'})
+        self.client.post(url)
+        url = reverse('proposal_vote', kwargs={'proposal_id': 8,
+                                               'type_of_vote': 'down'})
+        self.client.post(url)
+
+        response = self.client.get(reverse('vote_page'))
+        content = response.content.decode('utf-8')
+        self.assertEqual(content.count('up_active.png'), 1)
+        self.assertEqual(content.count('neutral_active.png'), 2)
+        self.assertEqual(content.count('down_active.png'), 3)
