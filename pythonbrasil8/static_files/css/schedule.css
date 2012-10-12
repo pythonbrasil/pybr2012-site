@@ -85,3 +85,17 @@ div.twocolumn > div {
   width: 100%;
   clear: both;
 }
+td {
+  padding: 5px;
+}
+.odd {
+  background-color: #DEDEDE !important;
+}
+.even {
+  background-color: #F1F1F1 !important;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.25em;
+  padding-top: 15px !important;
+}

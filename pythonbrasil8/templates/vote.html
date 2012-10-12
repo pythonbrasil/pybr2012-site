@@ -7,35 +7,50 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
 {% endblock %}
 
-<style type="text/css">
-  td { padding: 10px; }
-</style>
-
 {% block content %}
+<section id="vote">
+  <h1>Vote for PythonBrasil[8] talks!</h1>
+  <div>
+  {% block trans %}
+  Please, give us your opinion: prioritize the proposals with up, down or
+  neutral votes. The best ones will be presented at the 8th Brazilian Python
+  Conference!
+  {% endblock %}
+  </div>
+
   <table>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Title</th>
-      <th>Author</th>
-    </tr>
     {% for track, sessions in tracks_and_sessions %}
     <tr>
-      <td colspan="4">{{ track }}</td>
+      <td class="title" colspan="5">{{ track }}</td>
     </tr>
     {% for session in sessions %}
-    <tr>
-      <td>up</td>
-      <td>down</td>
-      <td>{{ session.title }}</td>
+    <tr class="{% cycle 'odd' 'even' %}">
+      <td>
+        <img src="{{ STATIC_URL }}images/schedule/up_inactive.png"
+             alt="up vote" />
+      </td>
+      <td>
+        <img src="{{ STATIC_URL }}images/schedule/neutral_active.png"
+             alt="neutral vote" />
+      </td>
+      <td>
+        <img src="{{ STATIC_URL }}images/schedule/down_inactive.png"
+             alt="down vote" />
+      </td>
+      <td>
+        <a class="proposal" href="{% url proposal-page track.slug session.slug %}"
+          title="{% spaceless %}{{ session.description }}{% endspaceless %}"
+           target="_blank">{{ session.title }}</a>
+      </td>
       <td>
         {% for speaker in session.speakers.all %}
-        {{ speaker.get_profile.name }}
-        {% if not forloop.last %},{% endif %}
+          {% if speaker.get_profile.name %}{{ speaker.get_profile.name }}{% else %}{{ speaker.username }}{% endif %}{% if not forloop.last %},{% endif %}
         {% endfor %}
       </td>
     </tr>
     {% endfor %}
   {% endfor %}
   </table>
+</section>
+<br />
 {% endblock %}
