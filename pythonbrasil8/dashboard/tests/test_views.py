@@ -150,10 +150,11 @@ class SessionsTestCase(TestCase):
         self.assertEqual(u"sessions", SessionsView.context_object_name)
 
     def test_queryset_should_return_sessions_of_the_request_user(self):
-        expected = [Session.objects.get(pk=1), Session.objects.get(pk=2)]
+        expected = Session.objects.all()
         request = self.factory.get("/dashboard/sessions")
         request.user = User.objects.get(username="chico")
         v = SessionsView()
         v.request = request
         sessions = v.get_queryset()
-        self.assertEqual(expected, list(sessions))
+        self.assertEqual([x.id for x in expected],
+                         [x.id for x in sessions])

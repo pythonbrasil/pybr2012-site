@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+
+from random import shuffle
 from django import http, shortcuts
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
@@ -122,4 +125,18 @@ def proposal_page(request, track_slug, proposal_slug):
                          'institution': institution, 'profession': profession})
     data = {'proposal': proposal, 'speakers': speakers}
     return shortcuts.render_to_response('proposal.html', data,
+            context_instance=RequestContext(request))
+
+@login_required
+def vote_page(request):
+    tracks = Track.objects.all()
+    tracks_and_sessions = {}
+    for track in tracks:
+        temp = list(Session.objects.filter(track=track, type='talk'))
+        shuffle(temp)
+        tracks_and_sessions[track] = temp
+    tracks_and_sessions = tracks_and_sessions.items()
+    shuffle(tracks_and_sessions)
+    data = {'tracks_and_sessions': tracks_and_sessions}
+    return shortcuts.render_to_response('vote.html', data,
             context_instance=RequestContext(request))

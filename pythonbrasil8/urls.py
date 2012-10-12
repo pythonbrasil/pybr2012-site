@@ -24,6 +24,8 @@ urlpatterns = patterns('',
     url(r'^sponsors/jobs/$', SponsorsJobsView.as_view(), name='sponsors-jobs'),
 
     url(r'^schedule/$', 'pythonbrasil8.schedule.views.tracks', name='schedule'),
+    url(r'^schedule/vote/?$', 'pythonbrasil8.schedule.views.vote_page',
+        name='vote_page'),
     url(r'^schedule/(?P<track_slug>[^/]+)/?$',
         'pythonbrasil8.schedule.views.track_page', name='track-page'),
     url(r'^schedule/(?P<track_slug>[^/]+)/(?P<proposal_slug>.*)/?$',
