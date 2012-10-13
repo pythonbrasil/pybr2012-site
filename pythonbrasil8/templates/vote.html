@@ -57,7 +57,7 @@ $(document).ready(function() {
       <td>
        <form class="vote-form" method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='up' %}">{% csrf_token %}
        <input id="{{ session.id }}-up" type="image"
-               src="{{ STATIC_URL }}images/schedule/up_{% if session.id not in votes_up %}in{% endif %}active.png" />
+              src="{{ STATIC_URL }}images/schedule/up_{% if session.id not in votes_up %}in{% endif %}active.png" />
        </form>
       </td>
       <td>

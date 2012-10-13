@@ -1,22 +1,16 @@
 # coding: utf-8
 
-import unittest
 import json
 from django.core import management
 from django.core.urlresolvers import reverse
-from django.test.client import Client
 from django.contrib.auth.models import User
+from django.test import TestCase
 from pythonbrasil8.schedule.models import Track, Session, ProposalVote
 from pythonbrasil8.dashboard.models import AccountProfile
 
 
-class VotePageTestCase(unittest.TestCase):
-    def setUp(self):
-        self.client = Client()
-        management.call_command("loaddata", "sessions.json", verbosity=0)
-
-    def tearDown(self):
-        management.call_command("flush", verbosity=0, interactive=False)
+class VotePageTestCase(TestCase):
+    fixtures = ['sessions.json']
 
     def test_vote_page_should_redirect_user_that_is_not_logged_in(self):
         url = reverse('vote_page')
@@ -108,13 +102,8 @@ class VotePageTestCase(unittest.TestCase):
                     diff_counter += 1
             self.assertTrue(diff_counter > 0)
 
-class ProposalVoteTest(unittest.TestCase):
-    def setUp(self):
-        self.client = Client()
-        management.call_command("loaddata", "sessions.json", verbosity=0)
-
-    def tearDown(self):
-        management.call_command("flush", verbosity=0, interactive=False)
+class ProposalVoteTest(TestCase):
+    fixtures = ['sessions.json']
 
     def _login(self):
         self.client.user = User.objects.create_user(username='user',

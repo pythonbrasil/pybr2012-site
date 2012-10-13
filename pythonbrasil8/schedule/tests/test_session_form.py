@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from django import test
+from django.test import TestCase
 
 from pythonbrasil8.schedule import forms, models
 
 
-class SessionFormTestCase(test.TestCase):
+class SessionFormTestCase(TestCase):
 
     def test_model_should_be_Session(self):
         self.assertEqual(models.Session, forms.SessionForm._meta.model)
