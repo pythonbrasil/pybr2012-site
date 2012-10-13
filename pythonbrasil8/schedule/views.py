@@ -3,8 +3,10 @@ from django import http, shortcuts
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
-from django.template import response
+from django.template import response, RequestContext
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.views.generic import CreateView, View
 
@@ -83,3 +85,43 @@ class FinishedProposalsView(LoginRequiredMixin, View):
 
     def get(self, request):
         return response.TemplateResponse(request, self.template_name)
+
+
+def tracks(request):
+    tracks = Track.objects.all()
+    return shortcuts.render_to_response('tracks.html', {'tracks': tracks},
+            context_instance=RequestContext(request))
+
+
+def track_page(request, track_slug):
+    track = shortcuts.get_object_or_404(Track, slug=track_slug)
+    sessions = Session.objects.filter(track=track)
+    data = {'track': track, 'sessions': sessions}
+    return shortcuts.render_to_response('track.html', data,
+            context_instance=RequestContext(request))
+
+
+def proposal_page(request, track_slug, proposal_slug):
+    shortcuts.get_object_or_404(Track, slug=track_slug)
+    proposal = shortcuts.get_object_or_404(Session, slug=proposal_slug)
+
+    speakers = []
+    for speaker in proposal.speakers.all():
+        try:
+            profile = speaker.get_profile()
+            name = profile.name
+            bio = profile.description
+            twitter = profile.twitter
+            institution = profile.institution
+            profession = profile.profession
+        except ObjectDoesNotExist:
+            name = speaker.username
+            twitter = ''
+            bio = ''
+            institution = ''
+            profession = ''
+        speakers.append({'name': name, 'twitter': twitter, 'bio': bio,
+                         'institution': institution, 'profession': profession})
+    data = {'proposal': proposal, 'speakers': speakers}
+    return shortcuts.render_to_response('proposal.html', data,
+            context_instance=RequestContext(request))

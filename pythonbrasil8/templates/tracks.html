@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Tracks" %} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="column grid_12">
+    <h1>{% trans "PythonBrasil[8] Tracks" %}</h1>
+    <section id="tracks">
+      <ul>
+        {% for track in tracks %}
+        <li><a href="{% url track-page track.slug %}">{{ track.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
+{% endblock %}

@@ -57,7 +57,7 @@ class EditSessionTestCase(unittest.TestCase):
         request = client.RequestFactory().get("/dashboard/proposals/1/")
         request.user = models.Session.objects.get(pk=1).speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
-        self.assertEqual([track], list(resp.context_data["tracks"]))
+        self.assertEqual(track, list(resp.context_data["tracks"])[0])
 
     def test_post_updates_the_session(self):
         instance = models.Session.objects.get(pk=1)
@@ -92,7 +92,7 @@ class EditSessionTestCase(unittest.TestCase):
         resp = views.EditSessionView().post(request, 1)
         self.assertIsInstance(resp, response.TemplateResponse)
         self.assertEqual(views.EditSessionView.template_name, resp.template_name)
-        self.assertEqual([instance.track], list(resp.context_data["tracks"]))
+        self.assertEqual(instance.track, list(resp.context_data["tracks"])[0])
         form = resp.context_data["form"]
         self.assertIsInstance(form, views.EditSessionView.form_class)
         self.assertEqual(data["audience_level"], form.data["audience_level"])

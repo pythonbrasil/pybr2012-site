@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Proposal" %} | PythonBrasil[8]{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div id="proposal">
+  <h1>{{ proposal.type|capfirst }} "{{ proposal.title }}"</h1>
+
+  <h2 class="indent">by {% for speaker in speakers %}
+    {% if speaker.twitter %}
+    <a href="https://twitter.com/{{ speaker.twitter }}">{{ speaker.name }}</a>
+    {% else %}
+    {{ speaker.name }}
+    {% endif %}
+    {% if forloop.last %}.{% else %},{% endif %}
+    {% endfor %}</h2>
+
+  <div class="twocolumn">
+    <div>
+      <h2>Meta</h2>
+      <div>
+        <span class="label">{% trans "Track" %}:</span>
+        <span class="label-info">{{ proposal.track }}</span>
+        <span class="label">{% trans "Audience level" %}:</span>
+        <span class="label-info">{{ proposal.get_audience_level_display }}</span>
+        <span class="label">{% trans "Language" %}:</span>
+        <span class="label-info">{{ proposal.get_language_display }}</span>
+      </div>
+      <div>
+        <h2>{% trans "Speakers" %}</h2>
+          {% for speaker in speakers %}
+          <h3>
+            {{ speaker.name }}
+            {% if speaker.profession and speaker.institution %}
+            ({{ speaker.profession|capfirst }}, {{ speaker.institution }})
+            {% endif %}
+          </h3>
+          {% if not speaker.bio %}
+          <i>({% trans "Not supplied" %})</i>
+          {% else %}
+          {{ speaker.bio }}
+          {% endif %}
+          {% if speaker.twitter %}
+          <br />
+          Twitter: <a href="https://twitter.com/{{ speaker.twitter }}">@{{ speaker.twitter }}</a>
+          {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <h2>{% trans "Description" %}</h2>
+      {{ proposal.description }}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

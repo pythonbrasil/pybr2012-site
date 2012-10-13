@@ -8,7 +8,8 @@ from registration.forms import RegistrationForm
 
 from pythonbrasil8.subscription.views import NotificationView
 
-from core.views import Home, AboutView, ScheduleView, SponsorsInfoView, VenueView, CustomSponsorsView, SponsorsJobsView
+from core.views import (Home, AboutView, ScheduleView, SponsorsInfoView,
+                        VenueView, CustomSponsorsView, SponsorsJobsView)
 
 admin.autodiscover()
 
@@ -20,8 +21,14 @@ urlpatterns = patterns('',
     url(r'^badges/$', TemplateView.as_view(template_name="badges.html"), name='badges'),
     url(r'^register/$', TemplateView.as_view(template_name="register.html"), name='register'),
     url(r'^sponsors/$', CustomSponsorsView.as_view(), name='custom-sponsors'),
-    url(r'^schedule/$', ScheduleView.as_view(), name='schedule'),
     url(r'^sponsors/jobs/$', SponsorsJobsView.as_view(), name='sponsors-jobs'),
+
+    url(r'^schedule/$', 'pythonbrasil8.schedule.views.tracks', name='schedule'),
+    url(r'^schedule/(?P<track_slug>[^/]+)/?$',
+        'pythonbrasil8.schedule.views.track_page', name='track-page'),
+    url(r'^schedule/(?P<track_slug>[^/]+)/(?P<proposal_slug>.*)/?$',
+        'pythonbrasil8.schedule.views.proposal_page', name='proposal-page'),
+
     url(r'about/$', AboutView.as_view(), name='about'),
     url(r'^venue/$', VenueView.as_view(), name='venue'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
