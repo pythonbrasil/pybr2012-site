@@ -3,9 +3,8 @@
 from unittest import skip
 from django import http
 from django.contrib.auth import models as auth_models
-from django.core import management
 from django.template import response
-from django.test import TestCase
+from django.test import client, TestCase
 
 from pythonbrasil8.schedule import forms, models, views
 
@@ -94,3 +93,11 @@ class EditSessionTestCase(TestCase):
         form = resp.context_data["form"]
         self.assertIsInstance(form, views.EditSessionView.form_class)
         self.assertEqual(data["audience_level"], form.data["audience_level"])
+
+    def test_get_render_the_template_with_extra_speakers_in_context(self):
+        instance = models.Session.objects.get(pk=1)
+        request = client.RequestFactory().get("/dashboard/proposals/2/")
+        request.user = instance.speakers.get(username="chico")
+        result = views.EditSessionView().get(request, 2)
+        self.assertIn('extra_speakers', result.context_data)
+        self.assertEqual(result.context_data["extra_speakers"][0].pk, 2)
