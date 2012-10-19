@@ -13,6 +13,7 @@ from django.template import response, RequestContext
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.views.generic import CreateView, View
+from django.views.decorators.http import require_POST
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
@@ -144,16 +145,15 @@ def vote_page(request):
     votes = ProposalVote.objects.filter(user=request.user.id)
     votes_up = [v.session.id for v in votes if v.vote == 1]
     votes_down = [v.session.id for v in votes if v.vote == -1]
-    votes_neutral = votes_up + votes_down
+    votes_not_neutral = votes_up + votes_down
     data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
-            'votes_down': votes_down, 'votes_neutral': votes_neutral}
+            'votes_down': votes_down, 'votes_not_neutral': votes_not_neutral}
     return shortcuts.render_to_response('vote.html', data,
             context_instance=RequestContext(request))
 
+@require_POST
 @login_required
 def proposal_vote(request, proposal_id, type_of_vote):
-    if request.method != 'POST':
-        return http.HttpResponse(status=405)
     if type_of_vote not in ('up', 'down', 'neutral'):
         raise http.Http404()
     session = shortcuts.get_object_or_404(Session, pk=proposal_id, type='talk')

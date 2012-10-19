@@ -114,7 +114,7 @@ class ProposalVoteTest(TestCase):
         url = reverse('proposal_vote', kwargs={'proposal_id': 1,
                                                'type_of_vote': 'up'})
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 405)
 
     def test_should_only_allow_post_method(self):
         self._login()

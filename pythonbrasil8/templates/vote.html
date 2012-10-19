@@ -4,28 +4,11 @@
 {% block title %}{% trans "Vote" %} | PythonBrasil[8]{% endblock %}
 
 {% block js_top %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    var imageUrl = "{{ STATIC_URL }}images/schedule/";
-    $('.vote-form').submit(function() {
-    $.ajax({
-              data: $(this).serialize(),
-              type: $(this).attr('method'),
-              url: $(this).attr('action'),
-              success: function(response) {
-                  $('#' + response.proposal_id + '-up').attr('src', imageUrl + 'up_inactive.png');
-                  $('#' + response.proposal_id + '-neutral').attr('src', imageUrl + 'neutral_inactive.png');
-                  $('#' + response.proposal_id + '-down').attr('src', imageUrl + 'down_inactive.png');
-                  imageId = response.proposal_id + '-' + response.vote;
-                  var newImageUrl = imageUrl + response.vote + '_active.png';
-                  $('#' + imageId).attr('src', newImageUrl)
-              }
-          });
-            return false;
-  });
-});
+var imageUrl = "{{ STATIC_URL }}images/schedule/";
 </script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/vote.js"></script>
 {% endblock %}
 
 {% block css %}
@@ -63,7 +46,7 @@ $(document).ready(function() {
       <td>
         <form class="vote-form" method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='neutral' %}">{% csrf_token %}
         <input id="{{ session.id }}-neutral" type="image"
-               src="{{ STATIC_URL }}images/schedule/neutral_{% if session.id in votes_neutral %}in{% endif %}active.png" />
+               src="{{ STATIC_URL }}images/schedule/neutral_{% if session.id in votes_not_neutral %}in{% endif %}active.png" />
         </form>
       </td>
       <td>
