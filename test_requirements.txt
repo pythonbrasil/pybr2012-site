@@ -1,2 +1,2 @@
-django==1.4
+-r requirements.txt
 jasmine-splinter-runner==0.6.5
