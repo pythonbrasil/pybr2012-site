@@ -1,4 +1,4 @@
-django==1.4
+django==1.4.2
 git+git://github.com/vbmendes/django-transmeta.git#egg=django-transmeta
 mittun==0.1.2.7
 django-nose==0.1.3
