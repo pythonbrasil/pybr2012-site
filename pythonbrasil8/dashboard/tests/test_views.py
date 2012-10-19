@@ -156,5 +156,4 @@ class SessionsTestCase(TestCase):
         v = SessionsView()
         v.request = request
         sessions = v.get_queryset()
-        self.assertEqual([x.id for x in expected],
-                         [x.id for x in sessions])
+        self.assertEqual(set(expected), set(sessions))

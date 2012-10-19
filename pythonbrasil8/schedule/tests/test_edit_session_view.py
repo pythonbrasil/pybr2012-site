@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from unittest import skip
+
 from django import http
 from django.contrib.auth import models as auth_models
 from django.core import management
 from django.template import response
-from django.test import TestCase
+from django.test import client, TestCase
 
 from pythonbrasil8.schedule import forms, models, views
 
@@ -22,7 +23,7 @@ class EditSessionTestCase(TestCase):
 
     def test_get_render_the_template_with_the_session_in_context(self):
         instance = models.Session.objects.get(pk=1)
-        request = self.client.get("/dashboard/proposals/1/")
+        request = client.RequestFactory().get("/dashboard/proposals/1/")
         request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         self.assertIsInstance(resp, response.TemplateResponse)
@@ -33,7 +34,7 @@ class EditSessionTestCase(TestCase):
 
     def test_get_render_the_form_with_data_populated(self):
         instance = models.Session.objects.get(pk=1)
-        request = self.client.get("/dashboard/proposals/1/")
+        request = client.RequestFactory().get("/dashboard/proposals/1/")
         request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         form = resp.context_data["form"]
@@ -42,14 +43,14 @@ class EditSessionTestCase(TestCase):
 
     def test_get_return_404_if_the_user_is_not_speaker_in_the_talk(self):
         user, _ = auth_models.User.objects.get_or_create(username="aidimim")
-        request = self.client.get("/dashboard/proposals/1/")
+        request = client.RequestFactory().get("/dashboard/proposals/1/")
         request.user = user
         with self.assertRaises(http.Http404):
             views.EditSessionView().get(request, 1)
 
     def test_get_include_list_of_tracks_in_the_context(self):
         track = models.Track.objects.get(pk=1)
-        request = self.client.get("/dashboard/proposals/1/")
+        request = client.RequestFactory().get("/dashboard/proposals/1/")
         request.user = models.Session.objects.get(pk=1).speakers.get(username="chico")
         resp = views.EditSessionView().get(request, 1)
         self.assertEqual(track, list(resp.context_data["tracks"])[0])
@@ -66,7 +67,7 @@ class EditSessionTestCase(TestCase):
             "track": instance.track.pk,
             "language": "en",
         }
-        request = self.client.post("/dashboard/proposals/1/", data)
+        request = client.RequestFactory().post("/dashboard/proposals/1/", data)
         request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().post(request, 1)
         self.assertIsInstance(resp, http.HttpResponseRedirect)
@@ -84,7 +85,7 @@ class EditSessionTestCase(TestCase):
             "track": instance.track.pk,
             "language": "en",
         }
-        request = self.client.post("/dashboard/proposals/1/", data)
+        request = client.RequestFactory().post("/dashboard/proposals/1/", data)
         request.user = instance.speakers.get(username="chico")
         resp = views.EditSessionView().post(request, 1)
         self.assertIsInstance(resp, response.TemplateResponse)

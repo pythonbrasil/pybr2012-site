@@ -13,6 +13,7 @@ from django.template import response, RequestContext
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.views.generic import CreateView, View
+from django.views.decorators.http import require_POST
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
@@ -150,10 +151,9 @@ def vote_page(request):
     return shortcuts.render_to_response('vote.html', data,
             context_instance=RequestContext(request))
 
+@require_POST
 @login_required
 def proposal_vote(request, proposal_id, type_of_vote):
-    if request.method != 'POST':
-        return http.HttpResponse(status=405)
     if type_of_vote not in ('up', 'down', 'neutral'):
         raise http.Http404()
     session = shortcuts.get_object_or_404(Session, pk=proposal_id, type='talk')
