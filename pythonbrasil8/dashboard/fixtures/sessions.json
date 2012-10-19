@@ -75,5 +75,77 @@
             "speakers": [1, 2],
             "track": 1
         }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 3,
+        "fields": {
+            "title": "I dont know",
+            "slug": "i-dont-know",
+            "description": "Bla Bla Bla",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 1
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 4,
+        "fields": {
+            "title": "I dont know [2]",
+            "slug": "i-dont-know-2",
+            "description": "Bla Bla Bla 2",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 5,
+        "fields": {
+            "title": "I dont know [3]",
+            "slug": "i-dont-know-3",
+            "description": "Bla Bla Bla 3",
+            "type": "tutorial",
+            "speakers": [1, 2],
+            "track": 2
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 6,
+        "fields": {
+            "title": "I dont know [4]",
+            "slug": "i-dont-know-4",
+            "description": "Bla Bla Bla 4",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 7,
+        "fields": {
+            "title": "I dont know [5]",
+            "slug": "i-dont-know-5",
+            "description": "Bla Bla Bla 5",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 8,
+        "fields": {
+            "title": "I dont know [6]",
+            "slug": "i-dont-know-6",
+            "description": "Bla Bla Bla 6",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 2
+        }
     }
 ]

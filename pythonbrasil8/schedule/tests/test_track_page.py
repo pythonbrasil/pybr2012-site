@@ -1,19 +1,13 @@
 # coding: utf-8
 
-import unittest
 from django.core import management
 from django.core.urlresolvers import reverse
-from django.test.client import Client
+from django.test import TestCase
 from pythonbrasil8.schedule.models import Session
 
 
-class TrackPageTestCase(unittest.TestCase):
-    def setUp(self):
-        self.client = Client()
-        management.call_command("loaddata", "sessions.json", verbosity=0)
-
-    def tearDown(self):
-        management.call_command("flush", verbosity=0, interactive=False)
+class TrackPageTestCase(TestCase):
+    fixtures = ['sessions.json']
 
     def test_inexistent_track_should_return_404(self):
         url = reverse('track-page', kwargs={'track_slug': 'do-not-exist'})
