@@ -10,7 +10,6 @@ from django.core.urlresolvers import reverse
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 from django.template import response, RequestContext
-from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from django.views.generic import CreateView, View
 
