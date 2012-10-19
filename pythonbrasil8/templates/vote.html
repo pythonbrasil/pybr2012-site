@@ -46,7 +46,7 @@ var imageUrl = "{{ STATIC_URL }}images/schedule/";
       <td>
         <form class="vote-form" method="post" action="{% url proposal_vote proposal_id=session.id type_of_vote='neutral' %}">{% csrf_token %}
         <input id="{{ session.id }}-neutral" type="image"
-               src="{{ STATIC_URL }}images/schedule/neutral_{% if session.id in votes_neutral %}in{% endif %}active.png" />
+               src="{{ STATIC_URL }}images/schedule/neutral_{% if session.id in votes_not_neutral %}in{% endif %}active.png" />
         </form>
       </td>
       <td>

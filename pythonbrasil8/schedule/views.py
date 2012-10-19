@@ -145,9 +145,9 @@ def vote_page(request):
     votes = ProposalVote.objects.filter(user=request.user.id)
     votes_up = [v.session.id for v in votes if v.vote == 1]
     votes_down = [v.session.id for v in votes if v.vote == -1]
-    votes_neutral = votes_up + votes_down
+    votes_not_neutral = votes_up + votes_down
     data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
-            'votes_down': votes_down, 'votes_neutral': votes_neutral}
+            'votes_down': votes_down, 'votes_not_neutral': votes_not_neutral}
     return shortcuts.render_to_response('vote.html', data,
             context_instance=RequestContext(request))
 
