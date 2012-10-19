@@ -136,12 +136,11 @@ def vote_page(request):
     tracks = Track.objects.all()
     tracks_and_sessions = {}
     for track in tracks:
-        temp = list(Session.objects.filter(track=track, type='talk'))
+        temp = list(Session.objects.filter(track=track, type='talk', status='proposed'))
         shuffle(temp)
         tracks_and_sessions[track] = temp
     tracks_and_sessions = tracks_and_sessions.items()
     shuffle(tracks_and_sessions)
-    vote_dict = {}
     votes = ProposalVote.objects.filter(user=request.user.id)
     votes_up = [v.session.id for v in votes if v.vote == 1]
     votes_down = [v.session.id for v in votes if v.vote == -1]

@@ -1,12 +1,10 @@
 # coding: utf-8
 
 import json
-from django.core import management
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.test import TestCase
 from pythonbrasil8.schedule.models import Track, Session, ProposalVote
-from pythonbrasil8.dashboard.models import AccountProfile
 
 
 class VotePageTestCase(TestCase):
@@ -36,16 +34,17 @@ class VotePageTestCase(TestCase):
         for track in tracks:
             self.assertIn(track.name, content)
 
-    def test_all_sessions_should_appear_on_each_track(self):
+    def test_only_proposed_sessions_should_appear_on_each_track(self):
         url = reverse('vote_page')
         self.client.user = User.objects.create_user(username='user',
                                                     password='test')
         self.client.login(username='user', password='test')
         response = self.client.get(url)
         content = response.content.decode('utf8')
-        sessions = Session.objects.filter(type='talk')
-        for session in sessions:
+        for session in Session.objects.filter(type='talk', status='proposed'):
             self.assertIn(session.title, content)
+        for session in Session.objects.filter(type='talk').exclude(status='proposed'):
+            self.assertNotIn(session.title, content)
 
     def test_tracks_should_appear_in_random_order(self):
         url = reverse('vote_page')
@@ -78,7 +77,7 @@ class VotePageTestCase(TestCase):
         proposals = set()
         for tracks, sessions in tracks_and_sessions.items():
             proposals.update(sessions)
-        talk_proposals = set(list(Session.objects.filter(type='talk')))
+        talk_proposals = set(list(Session.objects.filter(type='talk', status='proposed')))
         self.assertEqual(talk_proposals, proposals)
 
     def test_sessions_should_appear_in_random_order_inside_a_track(self):
@@ -101,6 +100,7 @@ class VotePageTestCase(TestCase):
                 if ts[track] != first_request:
                     diff_counter += 1
             self.assertTrue(diff_counter > 0)
+
 
 class ProposalVoteTest(TestCase):
     fixtures = ['sessions.json']
@@ -257,7 +257,6 @@ class ProposalVoteTest(TestCase):
                                                'type_of_vote': 'neutral'})
         self.client.post(url)
 
-
         url = reverse('proposal_vote', kwargs={'proposal_id': 6,
                                                'type_of_vote': 'down'})
         self.client.post(url)
@@ -272,4 +271,4 @@ class ProposalVoteTest(TestCase):
         content = response.content.decode('utf-8')
         self.assertEqual(content.count('up_active.png'), 1)
         self.assertEqual(content.count('neutral_active.png'), 2)
-        self.assertEqual(content.count('down_active.png'), 3)
+        self.assertEqual(content.count('down_active.png'), 2)

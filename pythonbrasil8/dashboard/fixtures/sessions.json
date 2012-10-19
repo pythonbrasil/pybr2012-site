@@ -145,7 +145,8 @@
             "description": "Bla Bla Bla 6",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 2
+            "track": 2,
+			"status": "confirmed"
         }
     }
 ]
