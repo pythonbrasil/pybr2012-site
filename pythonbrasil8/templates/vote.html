@@ -34,13 +34,13 @@ $(document).ready(function() {
 
 {% block content %}
 <section id="vote">
-  <h1>Vote for PythonBrasil[8] talks!</h1>
+  <h1>{% trans "Vote for PythonBrasil[8] talks" %}!</h1>
   <div>
-  {% block trans %}
+  {% blocktrans %}
   Please, give us your opinion: prioritize the proposals with up, down or
   neutral votes. The best ones will be presented at the 8th Brazilian Python
   Conference!
-  {% endblock %}
+  {% endblocktrans %}
 
   <noscript>
     {% trans "You should enable JavaScript to have a better experience when voting!" %}

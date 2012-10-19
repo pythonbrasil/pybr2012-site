@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-02 19:50-0300\n"
+"POT-Creation-Date: 2012-10-19 10:18-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -213,7 +213,7 @@ msgstr "Pesquisador"
 msgid "Other country"
 msgstr "Outro país"
 
-#: dashboard/models.py:13 schedule/models.py:12
+#: dashboard/models.py:13 schedule/models.py:37
 msgid "Name"
 msgstr "Nome"
 
@@ -380,75 +380,75 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: schedule/admin.py:22 schedule/models.py:53
+#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:35
 msgid "Speakers"
 msgstr "Palestrantes"
 
-#: schedule/models.py:13 schedule/models.py:52
-msgid "Description"
-msgstr "Descrição"
-
-#: schedule/models.py:22
+#: schedule/models.py:11
 msgid "Talk"
 msgstr "Palestra"
 
-#: schedule/models.py:23
+#: schedule/models.py:12
 msgid "Tutorial"
 msgstr "Tutorial"
 
-#: schedule/models.py:27
+#: schedule/models.py:16
 msgid "Portuguese"
 msgstr "Português"
 
-#: schedule/models.py:28
+#: schedule/models.py:17
 msgid "English"
 msgstr "Inglês"
 
-#: schedule/models.py:29
+#: schedule/models.py:18
 msgid "Spanish"
 msgstr "Espanhol"
 
-#: schedule/models.py:40
+#: schedule/models.py:29
 msgid "Beginner"
 msgstr "Iniciante"
 
-#: schedule/models.py:41
+#: schedule/models.py:30
 msgid "Intermediate"
 msgstr "Intermediário"
 
-#: schedule/models.py:42
+#: schedule/models.py:31
 msgid "Advanced"
 msgstr "Avançado"
 
-#: schedule/models.py:47
+#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:57
+msgid "Description"
+msgstr "Descrição"
+
+#: schedule/models.py:55
 msgid "Type"
 msgstr "Tipo"
 
-#: schedule/models.py:48
+#: schedule/models.py:56 templates/proposal.html:27 templates/track.html:4
 msgid "Track"
 msgstr "Trilha"
 
-#: schedule/models.py:49
+#: schedule/models.py:58 templates/proposal.html:29
 msgid "Audience level"
 msgstr "Nível da audiência"
 
-#: schedule/models.py:50
+#: schedule/models.py:59 templates/proposal.html:31
 msgid "Language"
 msgstr "Idioma"
 
-#: schedule/models.py:51
+#: schedule/models.py:61
 msgid "Title"
 msgstr "Título"
 
-#: schedule/views.py:43
+#: schedule/views.py:50
 msgid "Session successfully submitted!"
 msgstr "Palestra submetida com sucesso!"
 
-#: schedule/views.py:64
+#: schedule/views.py:73
 msgid "Session successfully updated!"
 msgstr "Palestra submetida com sucesso!"
 
-#: schedule/views.py:75
+#: schedule/views.py:84
 msgid "Session successfully deleted!"
 msgstr "Palestra submetida com sucesso!"
 
@@ -1039,6 +1039,15 @@ msgstr "21 a 23 de outubro de 2010"
 msgid "28th September - 1st October 2011"
 msgstr "28 de setembro a 1º de outubro de 2011"
 
+#: templates/proposal.html:4
+#, fuzzy
+msgid "Proposal"
+msgstr "Propostas"
+
+#: templates/proposal.html:44
+msgid "Not supplied"
+msgstr ""
+
 #: templates/register.html:4
 msgid "Registration"
 msgstr "Inscrição"
@@ -1289,6 +1298,50 @@ msgstr ""
 #: templates/social.html:5
 msgid "Brazilian #Python conference in November - Join us!"
 msgstr "Em novembro, conferência nacional de #Python - Participe!"
+
+#: templates/track.html:13
+#, fuzzy
+msgid "PythonBrasil[8] Track"
+msgstr "PythonBrasil[1:8]"
+
+#: templates/tracks.html:4
+#, fuzzy
+msgid "Tracks"
+msgstr "Trilha"
+
+#: templates/tracks.html:13
+#, fuzzy
+msgid "PythonBrasil[8] Tracks"
+msgstr "PythonBrasil[1:8]"
+
+#: templates/vote.html:4
+msgid "Vote"
+msgstr "Voto"
+
+#: templates/vote.html:37
+#, fuzzy
+msgid "Vote for PythonBrasil[8] talks"
+msgstr "Escolha as palestras da PythonBrasil[8]"
+
+#: templates/vote.html:39
+msgid ""
+"\n"
+"  Please, give us your opinion: prioritize the proposals with up, down or\n"
+"  neutral votes. The best ones will be presented at the 8th Brazilian "
+"Python\n"
+"  Conference!\n"
+"  "
+msgstr ""
+"\n"
+"  Por favor, diga-nos a sua opinião: utilize as setas (ou voto neutro) para\n"
+"  priorizar as palestras. As melhores serão apresentadas na oitava edição "
+"da\n"
+"PythonBrasil!\n"
+"  "
+
+#: templates/vote.html:46
+msgid "You should enable JavaScript to have a better experience when voting!"
+msgstr ""
 
 #: templates/registration/activate.html:8
 #: templates/registration/registration_form.html:11
