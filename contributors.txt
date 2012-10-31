@@ -12,8 +12,11 @@ to fix the problem.
 .. acks::
 
    * Álvaro Justen
+   * André Fonseca
    * Andrews Medina
+   * Bruno Barbosa
    * Bruno Carvalho
+   * Craig Blaszczyk
    * Fernando Rocha
    * Flávia Missi
    * Francisco Souza
@@ -23,6 +26,7 @@ to fix the problem.
    * Mayza de Oliveira
    * Rael Max
    * Rafael Carício
+   * Renato Oliveira
    * Rudá Porto
    * Tarsis Azevedo
    * Victor Areas (Siminino)
