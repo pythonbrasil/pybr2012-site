@@ -9,7 +9,10 @@
         <title>{% block title %}PythonBrasil[8] Conference{% endblock %}</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
+        <meta property="og:title" content="{% block og_title %}PythonBrasil[8] Conference{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}PythonBrasil é o maior encontro da comunidade comunidade brasileira que utiliza e desenvolve a linguagem de programação Python{% endblock %}">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="http://2012.pythonbrasil.org.br/static/images/badges/im_attending_aside_pt.png" />
         {% compress css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/grid.css" type="text/css" />
