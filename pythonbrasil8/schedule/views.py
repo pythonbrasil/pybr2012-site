@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import json
-from random import shuffle
 from django import http, shortcuts
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
@@ -15,10 +12,11 @@ from django.views.generic import CreateView, View
 
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.schedule.forms import SessionForm
-from pythonbrasil8.schedule.models import Session, Track, ProposalVote
+from pythonbrasil8.schedule.models import Session, Track
 
 
 VOTE = {'up': 1, 'down': -1, 'neutral': 0}
+
 
 class SubscribeView(LoginRequiredMixin, CreateView):
     form_class = SessionForm
@@ -92,12 +90,6 @@ class FinishedProposalsView(LoginRequiredMixin, View):
         return response.TemplateResponse(request, self.template_name)
 
 
-
-#def tracks(request):
-#    tracks = Track.objects.all()
-#    return shortcuts.render_to_response('tracks.html', {'tracks': tracks},
-#            context_instance=RequestContext(request))
-
 def schedule(request):
     '''Show accepted talk proposals'''
     tracks = Track.objects.all().order_by('name_en_us')
@@ -110,15 +102,10 @@ def schedule(request):
     return shortcuts.render_to_response('schedule.html', data,
             context_instance=RequestContext(request))
 
-#def track_page(request, track_slug):
-#    track = shortcuts.get_object_or_404(Track, slug=track_slug)
-#    sessions = Session.objects.filter(track=track)
-#    data = {'track': track, 'sessions': sessions}
-#    return shortcuts.render_to_response('track.html', data,
-#            context_instance=RequestContext(request))
 
 def track_page(request, track_slug):
     return http.HttpResponseRedirect(reverse("schedule"))
+
 
 def proposal_page(request, track_slug, proposal_slug):
     shortcuts.get_object_or_404(Track, slug=track_slug)
@@ -145,40 +132,6 @@ def proposal_page(request, track_slug, proposal_slug):
     return shortcuts.render_to_response('proposal.html', data,
             context_instance=RequestContext(request))
 
+
 def vote_page(request):
     return http.HttpResponseRedirect(reverse("schedule"))
-
-#@login_required
-#def vote_page(request):
-#    tracks = Track.objects.all()
-#    tracks_and_sessions = {}
-#    for track in tracks:
-#        temp = list(Session.objects.filter(track=track, type='talk', status='proposed'))
-#        shuffle(temp)
-#        tracks_and_sessions[track] = temp
-#    tracks_and_sessions = tracks_and_sessions.items()
-#    shuffle(tracks_and_sessions)
-#    votes = ProposalVote.objects.filter(user=request.user.id)
-#    votes_up = [v.session.id for v in votes if v.vote == 1]
-#    votes_down = [v.session.id for v in votes if v.vote == -1]
-#    votes_neutral = votes_up + votes_down
-#    data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
-#            'votes_down': votes_down, 'votes_neutral': votes_neutral}
-#    return shortcuts.render_to_response('vote.html', data,
-#            context_instance=RequestContext(request))
-
-@login_required
-def proposal_vote(request, proposal_id, type_of_vote):
-    if request.method != 'POST':
-        return http.HttpResponse(status=405)
-    if type_of_vote not in ('up', 'down', 'neutral'):
-        raise http.Http404()
-    session = shortcuts.get_object_or_404(Session, pk=proposal_id, type='talk')
-    ProposalVote.objects.filter(user=request.user, session=proposal_id).delete()
-    vote_number = VOTE[type_of_vote]
-    if vote_number != 0:
-        vote = ProposalVote(user=request.user, session=session,
-                            vote=vote_number)
-        vote.save()
-    result = json.dumps({'proposal_id': int(proposal_id), 'vote': type_of_vote})
-    return http.HttpResponse(result, content_type='application/json')
