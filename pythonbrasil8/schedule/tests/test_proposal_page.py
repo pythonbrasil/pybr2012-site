@@ -30,6 +30,23 @@ class ProposalPageTestCase(TestCase):
         self.assertEqual(response.context['proposal'],
                           Session.objects.get(pk=1))
 
+    def test_proposal_page_should_have_status_of_proposal(self):
+        url = reverse('proposal-page', kwargs={'track_slug': 'newbies',
+                'proposal_slug': 'how-to-learn-python'})
+        response = self.client.get(url)
+        self.assertIn(u'Accepted', response.content.decode('utf-8'))
+
+        url = reverse('proposal-page', kwargs={'track_slug': 'newbies',
+                'proposal_slug': 'how-to-learn-django'})
+        response = self.client.get(url)
+        self.assertIn(u'Not accepted', response.content.decode('utf-8'))
+
+        url = reverse('proposal-page', kwargs={'track_slug':
+            'just-another-track',
+                'proposal_slug': 'i-dont-know-6'})
+        response = self.client.get(url)
+        self.assertIn(u'Confirmed', response.content.decode('utf-8'))
+
     def test_proposal_page_should_have_speaker_info(self):
         url = reverse('proposal-page', kwargs={'track_slug': 'newbies',
                 'proposal_slug': 'how-to-learn-python'})

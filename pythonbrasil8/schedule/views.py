@@ -92,19 +92,33 @@ class FinishedProposalsView(LoginRequiredMixin, View):
         return response.TemplateResponse(request, self.template_name)
 
 
-def tracks(request):
-    tracks = Track.objects.all()
-    return shortcuts.render_to_response('tracks.html', {'tracks': tracks},
+
+#def tracks(request):
+#    tracks = Track.objects.all()
+#    return shortcuts.render_to_response('tracks.html', {'tracks': tracks},
+#            context_instance=RequestContext(request))
+
+def schedule(request):
+    '''Show accepted talk proposals'''
+    tracks = Track.objects.all().order_by('name_en_us')
+    tracks_and_sessions = {}
+    for track in tracks:
+        sessions = Session.objects.filter(track=track, type='talk',
+                                          status__in=['accepcted', 'confirmed'])
+        tracks_and_sessions[track] = sessions
+    data = {'tracks_and_sessions': tracks_and_sessions.items()}
+    return shortcuts.render_to_response('schedule.html', data,
             context_instance=RequestContext(request))
 
+#def track_page(request, track_slug):
+#    track = shortcuts.get_object_or_404(Track, slug=track_slug)
+#    sessions = Session.objects.filter(track=track)
+#    data = {'track': track, 'sessions': sessions}
+#    return shortcuts.render_to_response('track.html', data,
+#            context_instance=RequestContext(request))
 
 def track_page(request, track_slug):
-    track = shortcuts.get_object_or_404(Track, slug=track_slug)
-    sessions = Session.objects.filter(track=track)
-    data = {'track': track, 'sessions': sessions}
-    return shortcuts.render_to_response('track.html', data,
-            context_instance=RequestContext(request))
-
+    return http.HttpResponseRedirect(reverse("schedule"))
 
 def proposal_page(request, track_slug, proposal_slug):
     shortcuts.get_object_or_404(Track, slug=track_slug)
@@ -131,24 +145,27 @@ def proposal_page(request, track_slug, proposal_slug):
     return shortcuts.render_to_response('proposal.html', data,
             context_instance=RequestContext(request))
 
-@login_required
 def vote_page(request):
-    tracks = Track.objects.all()
-    tracks_and_sessions = {}
-    for track in tracks:
-        temp = list(Session.objects.filter(track=track, type='talk', status='proposed'))
-        shuffle(temp)
-        tracks_and_sessions[track] = temp
-    tracks_and_sessions = tracks_and_sessions.items()
-    shuffle(tracks_and_sessions)
-    votes = ProposalVote.objects.filter(user=request.user.id)
-    votes_up = [v.session.id for v in votes if v.vote == 1]
-    votes_down = [v.session.id for v in votes if v.vote == -1]
-    votes_neutral = votes_up + votes_down
-    data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
-            'votes_down': votes_down, 'votes_neutral': votes_neutral}
-    return shortcuts.render_to_response('vote.html', data,
-            context_instance=RequestContext(request))
+    return http.HttpResponseRedirect(reverse("schedule"))
+
+#@login_required
+#def vote_page(request):
+#    tracks = Track.objects.all()
+#    tracks_and_sessions = {}
+#    for track in tracks:
+#        temp = list(Session.objects.filter(track=track, type='talk', status='proposed'))
+#        shuffle(temp)
+#        tracks_and_sessions[track] = temp
+#    tracks_and_sessions = tracks_and_sessions.items()
+#    shuffle(tracks_and_sessions)
+#    votes = ProposalVote.objects.filter(user=request.user.id)
+#    votes_up = [v.session.id for v in votes if v.vote == 1]
+#    votes_down = [v.session.id for v in votes if v.vote == -1]
+#    votes_neutral = votes_up + votes_down
+#    data = {'tracks_and_sessions': tracks_and_sessions, 'votes_up': votes_up,
+#            'votes_down': votes_down, 'votes_neutral': votes_neutral}
+#    return shortcuts.render_to_response('vote.html', data,
+#            context_instance=RequestContext(request))
 
 @login_required
 def proposal_vote(request, proposal_id, type_of_vote):

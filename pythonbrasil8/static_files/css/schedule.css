@@ -56,6 +56,9 @@
 			background: url('../images/header/sprite.png') no-repeat right -116px;
 		}
 
+table { width: 100%; }
+th { font-size: 150%; font-weight: bold; }
+
 h1, h2, h3 {
   text-transform: none;
   margin-bottom: 10px;
@@ -68,10 +71,11 @@ h2.indent {
 .label {
   margin: 5px;
   font-weight: bold;
-  width: 50%;
+  width: 40%;
   display: inline-block;
 }
 .label-info {
+  width: 60%;
 }
 div.twocolumn > div {
   display: block;

@@ -61,7 +61,8 @@
             "description": "Learn how to learn Python",
             "type": "tutorial",
             "speakers": [1],
-            "track": 1
+            "track": 1,
+            "status": "accepcted"
         }
     },
     {
@@ -73,7 +74,8 @@
             "description": "Learn how to learn Django",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 1
+            "track": 1,
+            "status": "proposed"
         }
     },
     {
@@ -85,7 +87,8 @@
             "description": "Bla Bla Bla",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 1
+            "track": 1,
+            "status": "confirmed"
         }
     },
     {
@@ -97,7 +100,8 @@
             "description": "Bla Bla Bla 2",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 2
+            "track": 2,
+            "status": "proposed"
         }
     },
     {
@@ -109,7 +113,8 @@
             "description": "Bla Bla Bla 3",
             "type": "tutorial",
             "speakers": [1, 2],
-            "track": 2
+            "track": 2,
+            "status": "proposed"
         }
     },
     {
@@ -121,7 +126,8 @@
             "description": "Bla Bla Bla 4",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 2
+            "track": 2,
+            "status": "proposed"
         }
     },
     {
@@ -133,7 +139,8 @@
             "description": "Bla Bla Bla 5",
             "type": "talk",
             "speakers": [1, 2],
-            "track": 2
+            "track": 2,
+            "status": "proposed"
         }
     },
     {
@@ -146,7 +153,7 @@
             "type": "talk",
             "speakers": [1, 2],
             "track": 2,
-			"status": "confirmed"
+            "status": "confirmed"
         }
     }
 ]
