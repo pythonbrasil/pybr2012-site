@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-31 14:49-0200\n"
+"POT-Creation-Date: 2012-10-31 15:21-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -440,15 +440,15 @@ msgstr "Idioma"
 msgid "Title"
 msgstr "Título"
 
-#: schedule/views.py:50
+#: schedule/views.py:48
 msgid "Session successfully submitted!"
 msgstr "Palestra submetida com sucesso!"
 
-#: schedule/views.py:73
+#: schedule/views.py:71
 msgid "Session successfully updated!"
 msgstr "Palestra submetida com sucesso!"
 
-#: schedule/views.py:84
+#: schedule/views.py:82
 msgid "Session successfully deleted!"
 msgstr "Palestra submetida com sucesso!"
 
@@ -1292,10 +1292,16 @@ msgstr "PythonBrasil[8] - Palestras Aceitas"
 #: templates/schedule.html:15
 msgid ""
 "\n"
-"  We listed below the talks were accepted for the conference. In next days\n"
+"  We listed below the talks that were accepted for the conference. In next "
+"days\n"
 "  we'll release the the complete schedule, with days/hours and tutorials.\n"
 "  "
 msgstr ""
+"\n"
+"  Você encontrará abaixo a lista de palestras aceitas para a PythonBrasil"
+"[8].\n"
+"  A programação completa do evento será divulgada em breve.\n"
+"  "
 
 #: templates/schedule.html:25
 #, fuzzy
