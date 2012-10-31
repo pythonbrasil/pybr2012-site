@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-19 10:18-0300\n"
+"POT-Creation-Date: 2012-10-31 14:49-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -380,7 +380,7 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:35
+#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:45
 msgid "Speakers"
 msgstr "Palestrantes"
 
@@ -416,7 +416,7 @@ msgstr "Intermediário"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:57
+#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:67
 msgid "Description"
 msgstr "Descrição"
 
@@ -1044,9 +1044,26 @@ msgstr "28 de setembro a 1º de outubro de 2011"
 msgid "Proposal"
 msgstr "Propostas"
 
-#: templates/proposal.html:44
+#: templates/proposal.html:33 templates/schedule.html:27
+#, fuzzy
+msgid "Status"
+msgstr "Estado"
+
+#: templates/proposal.html:36
+msgid "Accepted"
+msgstr "Aceita"
+
+#: templates/proposal.html:38
+msgid "Confirmed"
+msgstr "Confirmada"
+
+#: templates/proposal.html:40
+msgid "Not accepted"
+msgstr "Não aceita"
+
+#: templates/proposal.html:54
 msgid "Not supplied"
-msgstr ""
+msgstr "Não informada"
 
 #: templates/register.html:4
 msgid "Registration"
@@ -1264,36 +1281,31 @@ msgstr ""
 "                "
 
 #: templates/schedule.html:4
-msgid "Schedule"
-msgstr "Programação"
+msgid "Accepted talks"
+msgstr "Palestras aceitas"
 
 #: templates/schedule.html:13
-msgid "PythonBrasil Schedule"
-msgstr "Programação da PythonBrasil"
+#, fuzzy
+msgid "PythonBrasil[8] Accepted Talks"
+msgstr "PythonBrasil[8] - Palestras Aceitas"
 
-#: templates/schedule.html:36
+#: templates/schedule.html:15
 msgid ""
-"Come and enjoy all the amazing talks we are gathering for you. listen to the "
-"wisdom of the experts and the darings of the initiated."
+"\n"
+"  We listed below the talks were accepted for the conference. In next days\n"
+"  we'll release the the complete schedule, with days/hours and tutorials.\n"
+"  "
 msgstr ""
-"Participe e aproveite as excelentes palestras quer reunimos para você. "
-"Aprenda lições com os especialistas e a ousadia dos iniciantes."
 
-#: templates/schedule.html:36
-msgid ""
-"You will have the chance to learn from some of the hottest Python topics as "
-"well as some other surprises."
-msgstr ""
-"Você terá a oportunidade de aprender alguns dos assuntos mais quentes de "
-"Python e algumas outras surpresas."
+#: templates/schedule.html:25
+#, fuzzy
+msgid "Talk title"
+msgstr "Título"
 
-#: templates/schedule.html:42
-msgid ""
-"Soon more information about PythonBrasil[8] keynotes, speakers and the "
-"schedule!"
-msgstr ""
-"Em breve mais informações sobre os keynotes da PythonBrasil[8], sobre os "
-"palestrantes e sobre a programação."
+#: templates/schedule.html:26
+#, fuzzy
+msgid "Speaker(s)"
+msgstr "Palestrante(s)"
 
 #: templates/social.html:5
 msgid "Brazilian #Python conference in November - Join us!"
@@ -1455,6 +1467,33 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Schedule"
+#~ msgstr "Programação"
+
+#~ msgid "PythonBrasil Schedule"
+#~ msgstr "Programação da PythonBrasil"
+
+#~ msgid ""
+#~ "Come and enjoy all the amazing talks we are gathering for you. listen to "
+#~ "the wisdom of the experts and the darings of the initiated."
+#~ msgstr ""
+#~ "Participe e aproveite as excelentes palestras quer reunimos para você. "
+#~ "Aprenda lições com os especialistas e a ousadia dos iniciantes."
+
+#~ msgid ""
+#~ "You will have the chance to learn from some of the hottest Python topics "
+#~ "as well as some other surprises."
+#~ msgstr ""
+#~ "Você terá a oportunidade de aprender alguns dos assuntos mais quentes de "
+#~ "Python e algumas outras surpresas."
+
+#~ msgid ""
+#~ "Soon more information about PythonBrasil[8] keynotes, speakers and the "
+#~ "schedule!"
+#~ msgstr ""
+#~ "Em breve mais informações sobre os keynotes da PythonBrasil[8], sobre os "
+#~ "palestrantes e sobre a programação."
 
 #~ msgid "Until September 30th"
 #~ msgstr "Até 30 de Setembro"
