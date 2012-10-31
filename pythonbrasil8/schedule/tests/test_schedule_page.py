@@ -1,6 +1,5 @@
 # coding: utf-8
 
-from django.core import management
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 from pythonbrasil8.schedule.models import Track, Session
@@ -24,7 +23,7 @@ class ScheduleTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         content = response.content.decode('utf-8')
         for session in Session.objects.filter(type='talk'):
-            if session.status in ['accepcted', 'confirmed']:
+            if session.status in ['accepted', 'confirmed']:
                 self.assertIn(session.title, content)
             else:
                 self.assertNotIn(session.title, content)

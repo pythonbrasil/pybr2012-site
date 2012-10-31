@@ -106,7 +106,7 @@ class SessionModelTestCase(TestCase):
     def test_status_should_have_choices(self):
         expected = (
             (u"proposed", u"Proposed"),
-            (u"accepcted", u"Accepted"),
+            (u"accepted", u"Accepted"),
             (u"confirmed", u"Confirmed"),
             (u"canceled", u"Canceled"),
         )

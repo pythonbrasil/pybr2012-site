@@ -96,7 +96,7 @@ def schedule(request):
     tracks_and_sessions = {}
     for track in tracks:
         sessions = Session.objects.filter(track=track, type='talk',
-                                          status__in=['accepcted', 'confirmed'])
+                                          status__in=['accepted', 'confirmed'])
         tracks_and_sessions[track] = sessions
     data = {'tracks_and_sessions': tracks_and_sessions.items()}
     return shortcuts.render_to_response('schedule.html', data,

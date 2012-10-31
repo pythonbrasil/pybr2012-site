@@ -20,7 +20,7 @@ LANGUAGE_CHOICES = (
 
 SESSION_STATUSES = (
     (u"proposed", u"Proposed"),
-    (u"accepcted", u"Accepted"),
+    (u"accepted", u"Accepted"),
     (u"confirmed", u"Confirmed"),
     (u"canceled", u"Canceled"),
 )

@@ -13,7 +13,7 @@ approved_tutorials = [78, 93, 59, 6, 86, 32, 105, 89, 60, 131, 132, 133]
 
 for session in Session.objects.all():
     if session.id in approved_talks or session.id in approved_tutorials:
-        session.status = u'accepcted' # WTF?
+        session.status = u'accepted' # WTF?
     else:
         session.status = u'proposed'
     session.save()
