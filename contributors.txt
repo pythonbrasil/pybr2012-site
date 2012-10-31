@@ -21,6 +21,7 @@ to fix the problem.
    * Jayson Reis
    * Mauricio de Souza Lima
    * Mayza de Oliveira
+   * Rael Max
    * Rafael Carício
    * Rudá Porto
    * Tarsis Azevedo
