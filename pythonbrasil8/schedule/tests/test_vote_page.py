@@ -4,10 +4,30 @@ import json
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.test import TestCase
+from unittest import skip
 from pythonbrasil8.schedule.models import Track, Session, ProposalVote
 
 
-class VotePageTestCase(TestCase):
+class DisabledVotePage(TestCase):
+
+    def test_vote_page_should_always_redirect_to_schedule_page(self):
+        url = reverse('vote_page')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        next_url = response.get('location', None)
+        self.assertEqual(next_url, 'http://testserver' + reverse('schedule'))
+
+        self.client.user = User.objects.create_user(username='user',
+                                                    password='test')
+        self.client.login(username='user', password='test')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 302)
+        next_url = response.get('location', None)
+        self.assertEqual(next_url, 'http://testserver' + reverse('schedule'))
+
+
+@skip('Voting is disabled')
+class VotePage(TestCase):
     fixtures = ['sessions.json']
 
     def test_vote_page_should_redirect_user_that_is_not_logged_in(self):
@@ -102,6 +122,7 @@ class VotePageTestCase(TestCase):
             self.assertTrue(diff_counter > 0)
 
 
+@skip('Voting is disabled')
 class ProposalVoteTest(TestCase):
     fixtures = ['sessions.json']
 

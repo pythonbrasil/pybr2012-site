@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     url(r'^sponsors/$', CustomSponsorsView.as_view(), name='custom-sponsors'),
     url(r'^sponsors/jobs/$', SponsorsJobsView.as_view(), name='sponsors-jobs'),
 
-    url(r'^schedule/$', 'pythonbrasil8.schedule.views.tracks', name='schedule'),
+    url(r'^schedule/$', 'pythonbrasil8.schedule.views.schedule', name='schedule'),
     url(r'^schedule/vote/?$', 'pythonbrasil8.schedule.views.vote_page',
         name='vote_page'),
     url(r'^schedule/vote/(?P<proposal_id>[0-9]+)/(?P<type_of_vote>\w+)?$',

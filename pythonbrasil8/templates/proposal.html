@@ -30,6 +30,16 @@
         <span class="label-info">{{ proposal.get_audience_level_display }}</span>
         <span class="label">{% trans "Language" %}:</span>
         <span class="label-info">{{ proposal.get_language_display }}</span>
+        <span class="label">{% trans "Status" %}:</span>
+        <span class="label-info">
+          {% if proposal.status == 'accepcted' %}
+            {% trans "Accepted" %}
+          {% elif proposal.status == 'confirmed' %}
+            {% trans "Confirmed" %}
+          {% else %}
+            {% trans "Not accepted" %}
+          {% endif %}
+        </span>
       </div>
       <div>
         <h2>{% trans "Speakers" %}</h2>
