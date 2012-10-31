@@ -1,48 +1,52 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Schedule" %} | PythonBrasil[8]{% endblock %}
+{% block title %}{% trans "Accepted talks" %} | PythonBrasil[8]{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
 {% endblock %}
 
+
 {% block content %}
-<div class="row" id="schedule">
-    <div class="column grid_12">
-        <h1>{% trans "PythonBrasil Schedule" %}</h1>
-        <p></p>
-        <section id="speakers" class="speakers">
-            <ul>
-                <li><a href="" title="Andrea Gavana"><img src="{{ STATIC_URL }}images/speakers/andrea_gavana.png" alt="Andrea Gavana"></a></li>
-                <li><a href="" title="Brett Cannon"><img src="{{ STATIC_URL }}images/speakers/brett_cannon.png" alt="Brett Cannon"></a></li>
-                <li><a href="" title="Massimo DiPierro"><img src="{{ STATIC_URL }}images/speakers/massimo_dipierro.png" alt="Massimo DiPierro"></a></li>
-                <li><a href="" title="Robert Hancock"><img src="{{ STATIC_URL }}images/speakers/robert_hancock.png" alt="Robert Hancock"></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-                <li><a href="" title=""><img src="{{ STATIC_URL }}images/speakers/blank.png" alt=""></a></li>
-            </ul>
-            <div class="note">
-                <div class="inner-note">
-                    <p>{% trans "Come and enjoy all the amazing talks we are gathering for you. listen to the wisdom of the experts and the darings of the initiated." %} <span class="extra">{% trans "You will have the chance to learn from some of the hottest Python topics as well as some other surprises." %}</span>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <p>
-                    {% trans "Soon more information about PythonBrasil[8] keynotes, speakers and the schedule!" %}
-                </p>
-            </div>
-        </section>
-    </div>
-</div>
+<section id="vote">
+  <h1>{% trans "PythonBrasil[8] Accepted Talks" %}</h1>
+  <div>
+  {% blocktrans %}
+  We listed below the talks were accepted for the conference. In next days
+  we'll release the the complete schedule, with days/hours and tutorials.
+  {% endblocktrans %}
+  </div>
+
+  <br />
+
+  <table>
+    <tr>
+      <th>{% trans "Talk title" %}</th>
+      <th>{% trans "Speaker(s)" %}</th>
+      <th>{% trans "Status" %}</th>
+    </tr>
+    {% for track, sessions in tracks_and_sessions %}
+    <tr>
+      <td class="title" colspan="3">{{ track }}</td>
+    </tr>
+    {% for session in sessions %}
+    <tr class="{% cycle 'odd' 'even' %}">
+      <td>
+        <a class="proposal" href="{% url proposal-page track.slug session.slug %}"
+          title="{% spaceless %}{{ session.description }}{% endspaceless %}"
+           target="_blank">{{ session.title }}</a>
+      </td>
+      <td>
+        {% for speaker in session.speakers.all %}
+          {% if speaker.get_profile.name %}{{ speaker.get_profile.name }}{% else %}{{ speaker.username }}{% endif %}{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      </td>
+      <td>{{ session.get_status_display }}</td>
+    </tr>
+    {% endfor %}
+  {% endfor %}
+  </table>
+</section>
+<br />
 {% endblock %}
