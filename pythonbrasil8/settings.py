@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'pythonbrasil8.dashboard',
     'pythonbrasil8.schedule',
     'pythonbrasil8.subscription',
+    'pythonbrasil8.news',
 )
 
 LOGGING = {
