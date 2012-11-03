@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import date
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core import mail as django_mail, management
@@ -9,6 +10,7 @@ from mittun.sponsors import models
 
 from pythonbrasil8.core import mail, middleware, views
 from pythonbrasil8.core.tests import mocks
+from pythonbrasil8.news.models import Post
 
 
 class MenuTemplateTagTestCase(TestCase):
@@ -115,6 +117,18 @@ class HomeViewTestCase(TestCase):
         context = view.get_context_data(object_list=[])
         sponsors = list(context["sponsor_groups"])
         self.assertEqual(view.sponsor_groups(), sponsors)
+
+    def test_get_context_data_should_include_posts(self):
+        user = User.objects.create_user(username='r3do', password='123')
+        Post.objects.create(
+            title = 'Test Title',
+            content = 'test content',
+            author = user,
+            published_at = date.today()
+        )
+        view = views.Home()
+        context = view.get_context_data(object_list=[])
+        self.assertIn('posts', context)
 
 
 class InternationalizationWorkingFormAcceptLanguageTestCase(TestCase):
