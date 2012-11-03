@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from mittun.sponsors.models import Sponsor, Category, Job
 from mittun.events.models import Event
 
+from pythonbrasil8.news.models import Post
+
 
 class CustomSponsorsView(ListView):
 
@@ -38,6 +40,7 @@ class Home(ListView):
         context = super(Home, self).get_context_data(**kwargs)
         context['sponsor_groups'] = self.sponsor_groups()
         context['event'] = Event.objects.all()[0]
+        context['posts'] = Post.objects.all().order_by('-published_at')
         return context
 
 
