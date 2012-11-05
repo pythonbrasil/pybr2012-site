@@ -33,12 +33,12 @@
                     </a>
                 </li>
                 <li class="fat">
-                <h2>{% trans "FROM THE BLOG" %}</h2>
+                <a href={% url news:main %}><h2>{% trans "FROM THE BLOG" %}</h2></a>
                     <p class="subterm">{% trans "latest news" %}</p>
                     <ul class="news">
                         {% for post in posts %}
                         <li class="fat">
-                            <a href="{% url news:main %}#{{ post.slug }}" class="title">{{ post.title }}</a>
+                            <a href="{% url news:post post.slug %}" class="title">{{ post.title }}</a>
                             <p class="date">{% trans "Published on" %} {{ post.published_at }}</p>
                         </li>
                         {% endfor %}
