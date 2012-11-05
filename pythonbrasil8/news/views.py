@@ -14,3 +14,7 @@ class NewsView(ListView):
         return Post.objects.filter(published_at__lte=date.today()).order_by('-published_at')
 
 news_view = NewsView.as_view()
+
+def post_view(request, post_slug):
+    post = get_object_or_404(Post, slug=post_slug)
+    return direct_to_template(request, 'post.html', {'post': post})
