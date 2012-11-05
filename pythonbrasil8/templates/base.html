@@ -23,6 +23,7 @@
         {% endcompress %}
         <link rel="shortcut icon" href="{{ STATIC_URL }}/images/header/favicon.ico" type="image/vnd.microsoft.icon" />
         {% block js_top %}{% endblock %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url news:feed %}" />
     </head>
 
     <body>
