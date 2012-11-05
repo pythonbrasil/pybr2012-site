@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import date
 from django.views.generic import ListView
 from django.views.generic import TemplateView
 from django.utils.decorators import method_decorator
@@ -40,7 +41,7 @@ class Home(ListView):
         context = super(Home, self).get_context_data(**kwargs)
         context['sponsor_groups'] = self.sponsor_groups()
         context['event'] = Event.objects.all()[0]
-        context['posts'] = Post.objects.all().order_by('-published_at')
+        context['posts'] = Post.objects.filter(published_at__lte=date.today()).order_by('-published_at')[:5]
         return context
 
 
