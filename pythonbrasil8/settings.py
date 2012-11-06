@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.markup',
     'pythonbrasil8.core',
     'mittun.events',
     'mittun.sponsors',
@@ -110,6 +111,7 @@ INSTALLED_APPS = (
     'pythonbrasil8.dashboard',
     'pythonbrasil8.schedule',
     'pythonbrasil8.subscription',
+    'pythonbrasil8.news',
 )
 
 LOGGING = {

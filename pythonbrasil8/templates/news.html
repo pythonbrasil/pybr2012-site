@@ -11,7 +11,15 @@
 {% block content %}
     <div class="row" id="news">
         <h1>{% trans "PythonBrasil News" %}</h1>
-
+        {% load markup %}
+        {% for post in posts %}
+        <div class="news-item" id="{{ post.slug }}">
+            <a href="{% url news:post post.slug %}"><h2>{{ post.title }}<h2></a>
+            <p class="date">{% blocktrans %}Published on{% endblocktrans %} {{ post.published_at}}, {% blocktrans %}by{% endblocktrans %} {% if user.author.email %}<a href="mailto:{{ post.author.email }}">{% endif %}{{ post.author.get_full_name }}{% if user.author.email %}</a>{% endif %}
+            </p>
+            <p class="body">{{ post.content|markdown }}</p>
+        </div>
+        {% endfor %}
         <div class="news-item" id="5">
             <h2>{% trans "Be a speaker at PythonBrasil[8]!" %}</h2>
             <p class="date">{% blocktrans %}
