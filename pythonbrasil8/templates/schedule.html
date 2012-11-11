@@ -14,9 +14,13 @@
   <h1>{% trans "PythonBrasil[8] Accepted Talks" %}</h1>
   <div>
   {% blocktrans %}
-  We listed below the talks that were accepted for the conference. In next days
-  we'll release the the complete schedule, with days/hours and tutorials.
+  We listed below the talks that were accepted for the conference.
+  We are working in the final schedule (with days/hours) and tutorials and will
+  release it as soon as possible.
   {% endblocktrans %}
+  <br />
+  <img src="{{ STATIC_URL }}/images/schedule/icon_success.gif"
+       alt="Success icon" /> {% trans "= confirmed by speaker(s)" %}
   </div>
 
   <br />
@@ -25,7 +29,6 @@
     <tr>
       <th>{% trans "Talk title" %}</th>
       <th>{% trans "Speaker(s)" %}</th>
-      <th>{% trans "Status" %}</th>
     </tr>
     {% for track, sessions in tracks_and_sessions %}
     <tr>
@@ -34,6 +37,10 @@
     {% for session in sessions %}
     <tr class="{% cycle 'odd' 'even' %}">
       <td>
+        {% if session.status == 'confirmed' %}
+        <img src="{{ STATIC_URL }}/images/schedule/icon_success.gif"
+        alt="Success icon" />
+        {% endif %}
         <a class="proposal" href="{% url proposal-page track.slug session.slug %}"
           title="{% spaceless %}{{ session.description }}{% endspaceless %}"
            target="_blank">{{ session.title }}</a>
@@ -43,7 +50,6 @@
           {% if speaker.get_profile.name %}{{ speaker.get_profile.name }}{% else %}{{ speaker.username }}{% endif %}{% if not forloop.last %},{% endif %}
         {% endfor %}
       </td>
-      <td>{{ session.get_status_display }}</td>
     </tr>
     {% endfor %}
   {% endfor %}

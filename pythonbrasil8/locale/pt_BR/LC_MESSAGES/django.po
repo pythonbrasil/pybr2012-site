@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-31 15:21-0200\n"
+"POT-Creation-Date: 2012-11-11 16:48-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -35,7 +35,7 @@ msgstr "NOVIDADES"
 msgid "latest news"
 msgstr "últimas notícias"
 
-#: core/templates/home.html:40 templates/news.html:15
+#: core/templates/home.html:40 templates/news.html:16
 msgid "Be a speaker at PythonBrasil[8]!"
 msgstr "Seja palestrante da PythonBrasil[8]!"
 
@@ -43,7 +43,7 @@ msgstr "Seja palestrante da PythonBrasil[8]!"
 msgid "Published on September 19 2012"
 msgstr "Publicada em 19 de Setembro de 2012"
 
-#: core/templates/home.html:44 templates/news.html:81
+#: core/templates/home.html:44 templates/news.html:82
 msgid "Buy your tickets for PythonBrasil[8] - registration is now available!"
 msgstr "Compre seus ingressos para PythonBrasil[8] - inscrições abertas!"
 
@@ -51,7 +51,7 @@ msgstr "Compre seus ingressos para PythonBrasil[8] - inscrições abertas!"
 msgid "Published on June 4 2012"
 msgstr "Publicada em 4 de Junho de 2012"
 
-#: core/templates/home.html:48 templates/news.html:94
+#: core/templates/home.html:48 templates/news.html:95
 msgid "Keynotes of PythonBrasil[8] - who would you like to see?"
 msgstr "Keynotes da PythonBrasil[8] - quem você gostaria de ver?"
 
@@ -59,7 +59,7 @@ msgstr "Keynotes da PythonBrasil[8] - quem você gostaria de ver?"
 msgid "Published on May 15 2012"
 msgstr "Publicada em 15 de Maio de 2012"
 
-#: core/templates/home.html:52 templates/news.html:106
+#: core/templates/home.html:52 templates/news.html:107
 msgid "Choose the books that will be raffled during PythonBrasil[8]"
 msgstr "Escolha os livros que serão sorteados durante a PythonBrasil[8]"
 
@@ -67,7 +67,7 @@ msgstr "Escolha os livros que serão sorteados durante a PythonBrasil[8]"
 msgid "Published on May 10 2012"
 msgstr "Publicada em 10 de Maio de 2012"
 
-#: core/templates/home.html:56 templates/news.html:128
+#: core/templates/home.html:56 templates/news.html:129
 msgid "PythonBrasil[8] venue is set: SulAmérica Convention Center"
 msgstr "Local da PythonBrasil[8] definido: Centro de Convenções SulAmérica"
 
@@ -123,17 +123,17 @@ msgstr "Local"
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
 
-#: dashboard/choices.py:6 templates/register.html:27
-#: templates/register.html.py:82 templates/register.html:104
+#: dashboard/choices.py:6 templates/register.html:28
+#: templates/register.html.py:83 templates/register.html:105
 msgid "Corporate"
 msgstr "Corporativo"
 
-#: dashboard/choices.py:7 templates/register.html:113
+#: dashboard/choices.py:7 templates/register.html:114
 msgid "Individual"
 msgstr "Individual"
 
-#: dashboard/choices.py:8 dashboard/choices.py:48 templates/register.html:40
-#: templates/register.html.py:89 templates/register.html:122
+#: dashboard/choices.py:8 dashboard/choices.py:48 templates/register.html:41
+#: templates/register.html.py:90 templates/register.html:123
 msgid "Student"
 msgstr "Estudante"
 
@@ -380,7 +380,7 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:45
+#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:46
 msgid "Speakers"
 msgstr "Palestrantes"
 
@@ -416,7 +416,7 @@ msgstr "Intermediário"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:67
+#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:68
 msgid "Description"
 msgstr "Descrição"
 
@@ -424,15 +424,16 @@ msgstr "Descrição"
 msgid "Type"
 msgstr "Tipo"
 
-#: schedule/models.py:56 templates/proposal.html:27 templates/track.html:4
+#: schedule/models.py:56 templates/proposal.html:28 templates/track.html:4
+#: templates/track.html.py:5
 msgid "Track"
 msgstr "Trilha"
 
-#: schedule/models.py:58 templates/proposal.html:29
+#: schedule/models.py:58 templates/proposal.html:30
 msgid "Audience level"
 msgstr "Nível da audiência"
 
-#: schedule/models.py:59 templates/proposal.html:31
+#: schedule/models.py:59 templates/proposal.html:32
 msgid "Language"
 msgstr "Idioma"
 
@@ -539,15 +540,16 @@ msgstr ""
 "Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
 "a organização."
 
-#: templates/about.html:4 templates/previous_editions.html:4
+#: templates/about.html:4 templates/about.html.py:5
+#: templates/previous_editions.html:4
 msgid "About"
 msgstr "Sobre"
 
-#: templates/about.html:13
+#: templates/about.html:14
 msgid "About PythonBrasil"
 msgstr "Sobre a PythonBrasil"
 
-#: templates/about.html:16
+#: templates/about.html:17
 msgid ""
 "\n"
 "            PythonBrasil is the largest Brazilian gathering for the "
@@ -563,7 +565,7 @@ msgstr ""
 "negócios, e estimula membros da comunidade a se reencontrarem pessoalmente.\n"
 "        "
 
-#: templates/about.html:22
+#: templates/about.html:23
 msgid ""
 "The eighth edition of the conference will be held from the 21 to 24 November "
 "2012 at the"
@@ -571,15 +573,15 @@ msgstr ""
 "A oitava edição da conferência acontecerá entre os dias 21 e 24 de novembro "
 "de 2012 no"
 
-#: templates/about.html:23
+#: templates/about.html:24
 msgid "SulAmérica Convention Center"
 msgstr "Centro de Convenções SulAmérica"
 
-#: templates/about.html:24
+#: templates/about.html:25
 msgid "located in Rio de Janeiro."
 msgstr "localizado no Rio de Janeiro."
 
-#: templates/about.html:30
+#: templates/about.html:31
 msgid ""
 "\n"
 "            The conference is organized by the Python community for the "
@@ -593,19 +595,19 @@ msgstr ""
 "comparada a outras conferências de tecnologia, para manter a PythonBrasil "
 "acessível aomaior grupo possível."
 
-#: templates/about.html:31
+#: templates/about.html:32
 msgid "Join us!"
 msgstr "Junte-se a nós!"
 
-#: templates/about.html:35
+#: templates/about.html:36
 msgid "Contact"
 msgstr "Contato"
 
-#: templates/about.html:56
+#: templates/about.html:57
 msgid "Previous editions"
 msgstr "Versões anteriores"
 
-#: templates/about.html:59
+#: templates/about.html:60
 msgid ""
 "\n"
 "                This is the eighth edition of PythonBrasil.\n"
@@ -619,7 +621,7 @@ msgstr ""
 "clicando sobre o número da edição abaixo:\n"
 "                "
 
-#: templates/about.html:74
+#: templates/about.html:75
 msgid ""
 "\n"
 "                You can also see a complete list containing the dates and "
@@ -631,104 +633,104 @@ msgstr ""
 "edições anteriores da PythonBrasil\n"
 "                "
 
-#: templates/about.html:77
+#: templates/about.html:78
 msgid "clicking here"
 msgstr "clicando aqui"
 
-#: templates/badges.html:4
+#: templates/badges.html:4 templates/badges.html.py:5
 msgid "Badges"
 msgstr "Banners"
 
-#: templates/badges.html:12
+#: templates/badges.html:13
 msgid "Get a badge!"
 msgstr "Baixe o banner!"
 
-#: templates/badges.html:20 templates/badges.html.py:25
+#: templates/badges.html:21 templates/badges.html.py:26
 msgid "im_attending_aside.png"
 msgstr "im_attending_aside_pt.png"
 
-#: templates/badges.html:20 templates/badges.html.py:26
+#: templates/badges.html:21 templates/badges.html.py:27
 msgid "I'm Attending to PythonBrasil[8]"
 msgstr "Eu vou na PythonBrasil[8]"
 
-#: templates/badges.html:33 templates/badges.html.py:38
+#: templates/badges.html:34 templates/badges.html.py:39
 msgid "I_speak_aside.png"
 msgstr "I_speak_aside_pt.png"
 
-#: templates/badges.html:33 templates/badges.html.py:39
+#: templates/badges.html:34 templates/badges.html.py:40
 msgid "I'm speaking at PythonBrasil[8]"
 msgstr "Eu vou palestrar na PythonBrasil[8]"
 
-#: templates/base.html:30
+#: templates/base.html:33
 msgid "logo"
 msgstr "logo-pt"
 
-#: templates/base.html:38
+#: templates/base.html:41
 msgid "about"
 msgstr "sobre"
 
-#: templates/base.html:41
+#: templates/base.html:44
 msgid "register"
 msgstr "inscreva-se"
 
-#: templates/base.html:44
+#: templates/base.html:47
 msgid "schedule"
 msgstr "programação"
 
-#: templates/base.html:47
+#: templates/base.html:50
 msgid "venue"
 msgstr "local"
 
-#: templates/base.html:50
+#: templates/base.html:53
 msgid "sponsor"
 msgstr "patrocínio"
 
-#: templates/base.html:57
+#: templates/base.html:60
 msgid "logout"
 msgstr "sair"
 
-#: templates/base.html:61 templates/registration/activation_complete.html:9
+#: templates/base.html:64 templates/registration/activation_complete.html:9
 msgid "log in"
 msgstr "log in"
 
-#: templates/base.html:86
+#: templates/base.html:89
 msgid "buy your ticket now"
 msgstr "pague sua inscrição"
 
-#: templates/base.html:101
+#: templates/base.html:104
 msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
-#: templates/base.html:102
+#: templates/base.html:105
 #, fuzzy
 msgid "Until October 1st"
 msgstr "até 1 de Outubro de 2012"
 
-#: templates/base.html:105
+#: templates/base.html:108
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/base.html:106
+#: templates/base.html:109
 msgid "November 20th"
 msgstr "20 de novembro"
 
-#: templates/base.html:109
+#: templates/base.html:112
 msgid "Tutorials"
 msgstr "Tutoriais"
 
-#: templates/base.html:110
+#: templates/base.html:113
 msgid "November 21th - 22th"
 msgstr "21 e 22 de novembro"
 
-#: templates/base.html:113
+#: templates/base.html:116
 msgid "Talks & Exposition Hall"
 msgstr "Palestras & Exposições"
 
-#: templates/base.html:114
+#: templates/base.html:117
 msgid "November 23th - 24th"
 msgstr "23 e 24 de novembro"
 
-#: templates/base.html:132
+#: templates/base.html:135
 msgid ""
 "PythonBrasil is a non-proﬁt volunteer-driven conference for promoting the "
 "open-source Python programming language."
@@ -737,7 +739,7 @@ msgstr ""
 "voluntários para promoção da linguagem de programação de código aberto "
 "Python."
 
-#: templates/base.html:133
+#: templates/base.html:136
 msgid ""
 "It is supported by the Brazilian Python Association (APyB) and by the Python "
 "Software Foundation (PSF)."
@@ -745,15 +747,15 @@ msgstr ""
 "É apoiado pela Associação Python Brasil (APyB) e pela Python Software "
 "Foundation (PSF)."
 
-#: templates/news.html:4
+#: templates/news.html:4 templates/news.html.py:5
 msgid "News"
 msgstr "Notícias"
 
-#: templates/news.html:12
+#: templates/news.html:13
 msgid "PythonBrasil News"
 msgstr "Novidades da PythonBrasil"
 
-#: templates/news.html:16
+#: templates/news.html:17
 msgid ""
 "\n"
 "              Published on September 19 2012, by <a href=\"mailto:"
@@ -765,7 +767,7 @@ msgstr ""
 "tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
 "            "
 
-#: templates/news.html:19
+#: templates/news.html:20
 #, fuzzy
 msgid ""
 "\n"
@@ -785,11 +787,11 @@ msgstr ""
 "                aguardando as suas melhores propostas de palestras e\n"
 "                tutoriais!"
 
-#: templates/news.html:25
+#: templates/news.html:26
 msgid "Submit your proposal now!"
 msgstr "Proponha uma palestra agora!"
 
-#: templates/news.html:27
+#: templates/news.html:28
 msgid ""
 "\n"
 "                Selected talks and tutorials will be announced until the 9th "
@@ -840,15 +842,15 @@ msgstr ""
 "                22 de novembro).<br><br>\n"
 "                "
 
-#: templates/news.html:44
+#: templates/news.html:45
 msgid "How to propose a talk?"
 msgstr "Como propor uma palestra?"
 
-#: templates/news.html:48
+#: templates/news.html:49
 msgid "(1) Register to the conference website, accessing the link:"
 msgstr "(1) Inscreva-se no site da conferência, acessando o link:"
 
-#: templates/news.html:50
+#: templates/news.html:51
 msgid ""
 "Obs: don't forget to confirm your registration, clicking on a link\n"
 "                        sent to your email"
@@ -856,12 +858,12 @@ msgstr ""
 "Obs: não esqueça de confirmar seu cadastro, clicando no link enviado\n"
 "                        para o seu email"
 
-#: templates/news.html:54
+#: templates/news.html:55
 msgid "(2) Log in the website to propose a talk or tutorial, through:<br>"
 msgstr ""
 "(2) Faça login no site para propor uma palestra ou tutorial, através:<br>"
 
-#: templates/news.html:56
+#: templates/news.html:57
 msgid ""
 "Obs: click on Proposals and add the information. You can propose\n"
 "                    multiple activities!"
@@ -870,11 +872,11 @@ msgstr ""
 "propor\n"
 "                    múltiplas atividades!"
 
-#: templates/news.html:62
+#: templates/news.html:63
 msgid "Do speakers pay?"
 msgstr "Palestrantes pagam?"
 
-#: templates/news.html:63
+#: templates/news.html:64
 msgid ""
 "\n"
 "                Yes. However, attendees that had activities approved have\n"
@@ -884,15 +886,15 @@ msgstr ""
 "                Sim. Entretanto, pessoas que tiveram palestras aprovadas\n"
 "                terão desconto até dia 15 de outubro (R$ 150,00):"
 
-#: templates/news.html:68
+#: templates/news.html:69
 msgid "More information?"
 msgstr "Mais informações?"
 
-#: templates/news.html:73
+#: templates/news.html:74
 msgid "Questions?"
 msgstr "Perguntas?"
 
-#: templates/news.html:74
+#: templates/news.html:75
 msgid ""
 "\n"
 "                Contact the organizers: <a href=\"organizers@pythonbrasil."
@@ -904,7 +906,7 @@ msgstr ""
 "\"organizers@pythonbrasil.org.br\">organizers@pythonbrasil.org.br</a>\n"
 "                "
 
-#: templates/news.html:82
+#: templates/news.html:83
 msgid ""
 "\n"
 "              Published on June 4 2012, by <a href=\"mailto:"
@@ -916,7 +918,7 @@ msgstr ""
 "tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
 "            "
 
-#: templates/news.html:95
+#: templates/news.html:96
 msgid ""
 "\n"
 "              Published on May 15 2012, by <a href=\"mailto:"
@@ -928,7 +930,7 @@ msgstr ""
 "tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
 "            "
 
-#: templates/news.html:107
+#: templates/news.html:108
 msgid ""
 "\n"
 "              Published on May 10 2012, by <a href=\"mailto:"
@@ -940,7 +942,7 @@ msgstr ""
 "tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
 "            "
 
-#: templates/news.html:130
+#: templates/news.html:131
 msgid ""
 "\n"
 "              Published on April 13 2012, by <a href=\"mailto:"
@@ -952,11 +954,12 @@ msgstr ""
 "tati_alchueyr@python.org.br\">Tati Al-Chueyr</a>\n"
 "            "
 
-#: templates/password_reset.html:4 templates/password_reset.html.py:13
+#: templates/password_reset.html:4 templates/password_reset.html.py:5
+#: templates/password_reset.html:14
 msgid "Password reset"
 msgstr "Redefinir senha"
 
-#: templates/password_reset.html:15
+#: templates/password_reset.html:16
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll e-mail "
 "instructions for setting a new one."
@@ -964,42 +967,44 @@ msgstr ""
 "Esqueceu sua senha? Digite seu e-mail abaixo e lhe enviaremosinstruções para "
 "definir uma nova senha."
 
-#: templates/password_reset.html:20
+#: templates/password_reset.html:21
 msgid "Reset my password"
 msgstr "Redefinir senha"
 
 #: templates/password_reset_confirm.html:4
+#: templates/password_reset_confirm.html:5
 #: templates/registration/password_reset_complete.html:4
 msgid "Password reset confirm"
 msgstr "Alterar senha"
 
-#: templates/password_reset_confirm.html:14
-#: templates/password_reset_confirm.html:21
-#: templates/password_reset_confirm.html:28
+#: templates/password_reset_confirm.html:15
+#: templates/password_reset_confirm.html:22
+#: templates/password_reset_confirm.html:29
 msgid "Reset password"
 msgstr "Redefinir senha"
 
-#: templates/password_reset_confirm.html:15
+#: templates/password_reset_confirm.html:16
 msgid ""
 "Please fill the form below to complete the process of resetting your "
 "password:"
 msgstr "Por favor, preencha o formulário abaixo para redefinir sua senha:"
 
-#: templates/password_reset_confirm.html:26
+#: templates/password_reset_confirm.html:27
 msgid "Password reset unsuccessful."
 msgstr "Falha ao redefinir a senha"
 
-#: templates/password_reset_confirm.html:27
+#: templates/password_reset_confirm.html:28
 msgid ""
 "The password reset link was invalid, possibly because it already has been "
 "used. Please request a new password reset."
 msgstr ""
 
-#: templates/password_reset_sent.html:4 templates/password_reset_sent.html:12
+#: templates/password_reset_sent.html:4 templates/password_reset_sent.html:5
+#: templates/password_reset_sent.html:13
 msgid "Password reset successful"
 msgstr "Senha redefinida com sucesso"
 
-#: templates/password_reset_sent.html:14
+#: templates/password_reset_sent.html:15
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
@@ -1039,129 +1044,129 @@ msgstr "21 a 23 de outubro de 2010"
 msgid "28th September - 1st October 2011"
 msgstr "28 de setembro a 1º de outubro de 2011"
 
-#: templates/proposal.html:4
+#: templates/proposal.html:4 templates/proposal.html.py:5
 #, fuzzy
 msgid "Proposal"
 msgstr "Propostas"
 
-#: templates/proposal.html:33 templates/schedule.html:27
+#: templates/proposal.html:34
 #, fuzzy
 msgid "Status"
 msgstr "Estado"
 
-#: templates/proposal.html:36
+#: templates/proposal.html:37
 msgid "Accepted"
 msgstr "Aceita"
 
-#: templates/proposal.html:38
+#: templates/proposal.html:39
 msgid "Confirmed"
 msgstr "Confirmada"
 
-#: templates/proposal.html:40
+#: templates/proposal.html:41
 msgid "Not accepted"
 msgstr "Não aceita"
 
-#: templates/proposal.html:54
+#: templates/proposal.html:55
 msgid "Not supplied"
 msgstr "Não informada"
 
-#: templates/register.html:4
+#: templates/register.html:4 templates/register.html.py:5
 msgid "Registration"
 msgstr "Inscrição"
 
-#: templates/register.html:12
+#: templates/register.html:13
 msgid "PythonBrasil Registration Rates"
 msgstr "Taxas de Inscrição da PythonBrasil"
 
-#: templates/register.html:19
+#: templates/register.html:20
 msgid "Conference Registration"
 msgstr "Inscrição na Conferência"
 
-#: templates/register.html:20
+#: templates/register.html:21
 msgid "Early Bird Rate"
 msgstr "Antecipada"
 
-#: templates/register.html:21
+#: templates/register.html:22
 msgid "Regular Rate"
 msgstr "Normal"
 
-#: templates/register.html:22
+#: templates/register.html:23
 msgid "Last Week Rate"
 msgstr "Última semana"
 
-#: templates/register.html:27 templates/register.html.py:33
-#: templates/register.html:40 templates/register.html.py:41
-#: templates/register.html:42 templates/register.html.py:82
-#: templates/register.html:83 templates/register.html.py:89
-#: templates/register.html:90 templates/register.html.py:91
+#: templates/register.html:28 templates/register.html.py:34
+#: templates/register.html:41 templates/register.html.py:42
+#: templates/register.html:43 templates/register.html.py:83
+#: templates/register.html:84 templates/register.html.py:90
+#: templates/register.html:91 templates/register.html.py:92
 msgid "Registration Information"
 msgstr "Informações sobre a inscrição"
 
-#: templates/register.html:41 templates/register.html.py:90
-#: templates/register.html:130
+#: templates/register.html:42 templates/register.html.py:91
+#: templates/register.html:131
 msgid "Speaker"
 msgstr "Palestrante"
 
-#: templates/register.html:42 templates/register.html.py:91
-#: templates/register.html:138
+#: templates/register.html:43 templates/register.html.py:92
+#: templates/register.html:139
 msgid "APyB member"
 msgstr "Membro APyB"
 
-#: templates/register.html:55
+#: templates/register.html:56
 msgid "Early Bird Rate:"
 msgstr "Valor antecipado:"
 
-#: templates/register.html:56
+#: templates/register.html:57
 #, fuzzy
 msgid "until October 15, 2012"
 msgstr "até 15 de novembro de 2012"
 
-#: templates/register.html:59
+#: templates/register.html:60
 msgid "Regular Rate:"
 msgstr "Valor normal:"
 
-#: templates/register.html:60
+#: templates/register.html:61
 #, fuzzy
 msgid "from October 16, 2012"
 msgstr "de 1º de setembro de 2012"
 
-#: templates/register.html:61
+#: templates/register.html:62
 msgid "until November 15, 2012"
 msgstr "até 15 de novembro de 2012"
 
-#: templates/register.html:64
+#: templates/register.html:65
 msgid "Last week Rate:"
 msgstr "Última semana"
 
-#: templates/register.html:65
+#: templates/register.html:66
 msgid "since November 16, 2012"
 msgstr "a partir de 16 de novembro"
 
-#: templates/register.html:70
+#: templates/register.html:71
 msgid "Buy your ticket!"
 msgstr "Pague sua inscrição!"
 
-#: templates/register.html:75
+#: templates/register.html:76
 msgid "Tutorial Registration"
 msgstr "Inscrição em Tutoriais"
 
-#: templates/register.html:76
+#: templates/register.html:77
 msgid "Rate"
 msgstr "Valor"
 
-#: templates/register.html:85 templates/register.html.py:93
+#: templates/register.html:86 templates/register.html.py:94
 msgid "each"
 msgstr "cada"
 
-#: templates/register.html:98
+#: templates/register.html:99
 msgid "Soon the tickets for the tutorials will be available!"
 msgstr "Logo as inscrições para os tutoriais estarão disponíveis!"
 
-#: templates/register.html:102
+#: templates/register.html:103
 msgid "Registration Types"
 msgstr "Tipos de inscrição"
 
-#: templates/register.html:106
+#: templates/register.html:107
 msgid ""
 "\n"
 "                If your company is paying for you to attend PythonBrasil, "
@@ -1181,7 +1186,7 @@ msgstr ""
 "                Servidores públicos também devem se inscrever utilizando a "
 "taxa coorporativa.                 "
 
-#: templates/register.html:115
+#: templates/register.html:116
 msgid ""
 "\n"
 "                If you are paying for yourself to attend PythonBrasil,\n"
@@ -1197,7 +1202,7 @@ msgstr ""
 "                selecione essa taxa de inscrição.\n"
 "                "
 
-#: templates/register.html:124
+#: templates/register.html:125
 msgid ""
 "\n"
 "                This rate is for full-time students.\n"
@@ -1212,7 +1217,7 @@ msgstr ""
 "dia da conferência.\n"
 "                "
 
-#: templates/register.html:132
+#: templates/register.html:133
 msgid ""
 "\n"
 "                The selected speakers will be announced <span class=\"strong"
@@ -1229,7 +1234,7 @@ msgstr ""
 "inscrição.\n"
 "                "
 
-#: templates/register.html:140
+#: templates/register.html:141
 msgid ""
 "\n"
 "                This rate is for members of the <a href=\"http://associacao."
@@ -1249,11 +1254,11 @@ msgstr ""
 "python.org.br/associados/relacao\">status da sua associação</a>.\n"
 "                "
 
-#: templates/register.html:148
+#: templates/register.html:149
 msgid "What's included?"
 msgstr "O que está incluído?"
 
-#: templates/register.html:150
+#: templates/register.html:151
 msgid ""
 "\n"
 "                <p>Conference registration includes access to open spaces, "
@@ -1280,35 +1285,42 @@ msgstr ""
 "\">organizers@python.org.br</a>.</p>\n"
 "                "
 
-#: templates/schedule.html:4
+#: templates/schedule.html:4 templates/schedule.html.py:5
 msgid "Accepted talks"
 msgstr "Palestras aceitas"
 
-#: templates/schedule.html:13
+#: templates/schedule.html:14
 #, fuzzy
 msgid "PythonBrasil[8] Accepted Talks"
 msgstr "PythonBrasil[8] - Palestras Aceitas"
 
-#: templates/schedule.html:15
+#: templates/schedule.html:16
+#, fuzzy
 msgid ""
 "\n"
-"  We listed below the talks that were accepted for the conference. In next "
-"days\n"
-"  we'll release the the complete schedule, with days/hours and tutorials.\n"
+"  We listed below the talks that were accepted for the conference.\n"
+"  We are working in the final schedule (with days/hours) and tutorials and "
+"will\n"
+"  release it as soon as possible.\n"
 "  "
 msgstr ""
 "\n"
-"  Você encontrará abaixo a lista de palestras aceitas para a PythonBrasil"
-"[8].\n"
-"  A programação completa do evento será divulgada em breve.\n"
+"  Você encontrará abaixo as palestras que foram aceitas na PythonBrasil[8].\n"
+"  Estamos finalizando a grade final de palestras e tutoriais (com dias e "
+"horários) e vamos divulgá-la assim que finalizarmos.\n "
+"  release it as soon as possible.\n"
 "  "
 
-#: templates/schedule.html:25
+#: templates/schedule.html:23
+msgid "= confirmed by speaker(s)"
+msgstr "= palestrante(s) que confirmou(aram)"
+
+#: templates/schedule.html:30
 #, fuzzy
 msgid "Talk title"
 msgstr "Título"
 
-#: templates/schedule.html:26
+#: templates/schedule.html:31
 #, fuzzy
 msgid "Speaker(s)"
 msgstr "Palestrante(s)"
@@ -1317,31 +1329,31 @@ msgstr "Palestrante(s)"
 msgid "Brazilian #Python conference in November - Join us!"
 msgstr "Em novembro, conferência nacional de #Python - Participe!"
 
-#: templates/track.html:13
+#: templates/track.html:14
 #, fuzzy
 msgid "PythonBrasil[8] Track"
 msgstr "PythonBrasil[1:8]"
 
-#: templates/tracks.html:4
+#: templates/tracks.html:4 templates/tracks.html.py:5
 #, fuzzy
 msgid "Tracks"
 msgstr "Trilha"
 
-#: templates/tracks.html:13
+#: templates/tracks.html:14
 #, fuzzy
 msgid "PythonBrasil[8] Tracks"
 msgstr "PythonBrasil[1:8]"
 
-#: templates/vote.html:4
+#: templates/vote.html:4 templates/vote.html.py:5
 msgid "Vote"
 msgstr "Voto"
 
-#: templates/vote.html:37
+#: templates/vote.html:38
 #, fuzzy
 msgid "Vote for PythonBrasil[8] talks"
 msgstr "Escolha as palestras da PythonBrasil[8]"
 
-#: templates/vote.html:39
+#: templates/vote.html:40
 msgid ""
 "\n"
 "  Please, give us your opinion: prioritize the proposals with up, down or\n"
@@ -1357,7 +1369,7 @@ msgstr ""
 "PythonBrasil!\n"
 "  "
 
-#: templates/vote.html:46
+#: templates/vote.html:47
 msgid "You should enable JavaScript to have a better experience when voting!"
 msgstr ""
 
