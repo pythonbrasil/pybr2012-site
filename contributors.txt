@@ -17,6 +17,7 @@ to fix the problem.
    * Bruno Barbosa
    * Bruno Carvalho
    * Craig Blaszczyk
+   * Eduardo Stalinho
    * Fernando Rocha
    * Flávia Missi
    * Francisco Souza
