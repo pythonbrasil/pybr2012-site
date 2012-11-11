@@ -55,34 +55,24 @@ class SubscriptionModelTestCase(TestCase):
         self.assertIsInstance(date_field, django_models.DateTimeField)
         self.assertTrue(date_field.auto_now_add)
 
-    def test_subscription_done_should_be_false_if_has_not_a_transaction(self):
-        self.assertFalse(Subscription().done())
+    def test_should_have_status(self):
+        self.assert_field_in('status', Subscription)
 
-    def test_subscription_done_should_be_false_if_transactions_isnt_done(self):
-        subscription = Subscription.objects.create(
-            user=self.user,
-            type="talk",
-        )
-        Transaction.objects.create(
-            subscription=subscription,
-            status="pending",
-            code="xpto",
-            price="897.02"
-        )
-        self.assertFalse(subscription.done())
+    def test_status_should_be_CharField(self):
+        status_field = Subscription._meta.get_field_by_name('status')[0]
+        self.assertIsInstance(status_field, django_models.CharField)
 
-    def test_subscription_done_should_be_truth_if_transactions_is_done(self):
-        subscription = Subscription.objects.create(
-            user=self.user,
-            type="talk",
-        )
-        Transaction.objects.create(
-            subscription=subscription,
-            status="done",
-            code="xpto",
-            price="543.21"
-        )
-        self.assertTrue(subscription.done())
+    def test_status_should_have_at_most_20_characters(self):
+        status_field = Subscription._meta.get_field_by_name('status')[0]
+        self.assertEqual(20, status_field.max_length)
+
+    def test_status_should_have_choices(self):
+        status_field = Subscription._meta.get_field_by_name('status')[0]
+        self.assertEqual(Subscription.STATUSES, status_field.choices)
+
+    def test_status_should_be_pending_by_default(self):
+        status_field = Subscription._meta.get_field_by_name('status')[0]
+        self.assertEqual('pending', status_field.default)
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())

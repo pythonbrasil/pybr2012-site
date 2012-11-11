@@ -19,16 +19,24 @@ class Subscription(models.Model):
         ('talk', 'talk'),
     )
 
+    STATUSES = (
+        ('confirmed', 'Confirmed'),
+        ('canceled', 'Canceled'),
+        ('pending', 'Pending'),
+        ('sponsor', 'Sponsor'),
+    )
+
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User)
     type = models.CharField(max_length=25, choices=TYPE)
+    status = models.CharField(max_length=20, choices=STATUSES, default='pending')
 
     def done(self):
-        return self.transaction_set.filter(status="done").exists()
+        return self.status == 'confirmed' or self.status == 'sponsor'
 
 
 class Transaction(models.Model):
-    subscription = models.ForeignKey("Subscription")
+    subscription = models.ForeignKey('Subscription')
     code = models.CharField(max_length=50)
     status = models.CharField(max_length=25)
     price = models.DecimalField(max_digits=5, decimal_places=2)
