@@ -13,7 +13,7 @@
         <h1>{% trans "PythonBrasil News" %}</h1>
         {% load markup %}
         <div class="news-item" id="{{ post.slug }}">
-            <h2>{{ post.title }}<h2>
+            <h2>{{ post.title }}</h2>
             <p class="date">{% blocktrans %}Published on{% endblocktrans %} {{ post.published_at}}, {% blocktrans %}by{% endblocktrans %} {% if user.author.email %}<a href="mailto:{{ post.author.email }}">{% endif %}{{ post.author.get_full_name }}{% if user.author.email %}</a>{% endif %}
             </p>
             <p class="body">{{ post.content|markdown }}</p>
