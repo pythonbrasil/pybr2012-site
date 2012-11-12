@@ -15,33 +15,10 @@ from lxml import etree
 from pythonbrasil8.core import mail
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.dashboard.models import AccountProfile
-from pythonbrasil8.subscription.models import PRICES, Subscription, Transaction
+from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
 class SubscriptionView(LoginRequiredMixin, View):
-
-    def generate_transaction(self, subscription):
-        headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
-        payload = settings.PAGSEGURO
-        profile = AccountProfile.objects.get(user=subscription.user)
-        price = PRICES[profile.type]
-        payload["itemAmount1"] = "%.2f" % price
-        payload['itemDescription1'] = ugettext(u'Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition') % ugettext(profile.type)
-        payload["reference"] = "%d" % subscription.pk
-        response = requests.post(settings.PAGSEGURO_CHECKOUT, data=payload, headers=headers)
-
-        if response.ok:
-            dom = etree.fromstring(response.content)
-            transaction_code = dom.xpath("//code")[0].text
-
-            transaction = Transaction.objects.create(
-                subscription=subscription,
-                code=transaction_code,
-                status='pending',
-                price=price
-            )
-            return transaction
-        return Transaction.objects.none()
 
     def get(self, request, *args, **kwargs):
         profile = AccountProfile.objects.filter(user=request.user)
@@ -54,7 +31,7 @@ class SubscriptionView(LoginRequiredMixin, View):
             type='talk',
             user=request.user,
         )
-        t = self.generate_transaction(subscription)
+        t = Transaction.generate(subscription)
 
         if not t:
             self._notify_staff(request.user)

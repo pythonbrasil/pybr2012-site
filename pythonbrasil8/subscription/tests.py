@@ -78,7 +78,37 @@ class SubscriptionModelTestCase(TestCase):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
 
-class TransacitonModelTestCase(TestCase):
+class TransactionModelTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "profiles.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
+    def setUp(self):
+        self.user = User.objects.get(pk=1)
+        self.request = RequestFactory().get("/", {})
+        self.request.user = self.user
+
+        self.requests_original = models.requests
+
+        class ResponseMock(object):
+            content = "<code>xpto123</code>"
+
+            def ok(self):
+                return True
+
+        def post(self, *args, **kwargs):
+            return ResponseMock()
+
+        models.requests.post = post
+
+    def tearDown(self):
+        views.requests = self.requests_original
+        Subscription.objects.all().delete()
 
     def test_should_have_code(self):
         self.assert_field_in('code', Transaction)
@@ -100,6 +130,15 @@ class TransacitonModelTestCase(TestCase):
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
+
+    def test_generate_transaction(self):
+        subscription = Subscription.objects.create(
+            type='talk',
+            user=self.user,
+        )
+        transaction = Transaction.generate(subscription)
+        self.assertEqual(subscription, transaction.subscription)
+        self.assertEqual("xpto123", transaction.code)
 
 
 class SubscriptionViewTestCase(TestCase):
@@ -173,15 +212,6 @@ class SubscriptionViewTestCase(TestCase):
         response = SubscriptionView.as_view()(self.request)
         self.assertEqual(302, response.status_code)
         self.assertIn('/accounts/login/', response.items()[1][1])
-
-    def test_generate_transaction(self):
-        subscription = Subscription.objects.create(
-            type='talk',
-            user=self.user,
-        )
-        transaction = SubscriptionView().generate_transaction(subscription)
-        self.assertEqual(subscription, transaction.subscription)
-        self.assertEqual("xpto123", transaction.code)
 
     def test_should_redirect_to_the_profile_url_if_the_user_does_not_have_a_profile(self):
         request = RequestFactory().get("/dashboard/subscription/talk/")
