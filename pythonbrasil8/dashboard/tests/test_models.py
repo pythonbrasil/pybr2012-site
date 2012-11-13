@@ -390,6 +390,7 @@ class AccountProfileTransactionTestCase(TestCase):
         try:
             got_transaction = profile.transaction
             self.assertNotEqual(transaction.pk, got_transaction.pk)
+            self.assertEqual(transaction.subscription, got_transaction.subscription)
             self.assertEqual(models.PRICES[profile.type], got_transaction.price)
             self.assertEqual("transaction321", got_transaction.code)
         finally:
@@ -412,6 +413,7 @@ class AccountProfileTransactionTestCase(TestCase):
         try:
             got_transaction = profile.transaction
             self.assertNotEqual(transaction.pk, got_transaction.pk)
+            self.assertEqual(transaction.subscription, got_transaction.subscription)
             self.assertEqual(models.PRICES[profile.type], got_transaction.price)
             self.assertEqual("transaction123", got_transaction.code)
         finally:

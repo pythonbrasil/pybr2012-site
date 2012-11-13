@@ -37,6 +37,7 @@ class AccountProfile(django_models.Model):
 
     @property
     def transaction(self):
+        subscription = None
         if self.has_talk_subscription():
             subscription = self.talk_subscription()
             if subscription.done():
@@ -47,10 +48,11 @@ class AccountProfile(django_models.Model):
             )
             if qs:
                 return qs[0]
-        subscription = models.Subscription.objects.create(
-            user=self.user,
-            type="talk",
-        )
+        if not subscription:
+            subscription = models.Subscription.objects.create(
+                user=self.user,
+                type="talk",
+            )
         return models.Transaction.generate(subscription)
 
 
