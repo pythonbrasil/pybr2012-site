@@ -19,7 +19,7 @@
                     {% trans "In order to register to PythonBrasil[8], you still need to fill the required fields in your profile and" %}
                 {% endif %}
                     {% trans "Now to finish your registration to PythonBrasil[8], you need to pay the registration fee, using PagSeguro." %}
-                    <a href="{{ request.user.get_profile.talk_subscription.transaction_set.all.0.get_checkout_url }}" title="{% trans "Pay and confirm the registration for PythonBrasil[8]" %}" class="btn">{% trans "Pay registration" %}</a>
+                    <a href="{{ request.user.get_profile.transaction.get_checkout_url }}" title="{% trans "Pay and confirm the registration for PythonBrasil[8]" %}" class="btn">{% trans "Pay registration" %}</a>
                 </p>
             {% endif %}
         {% else %}
