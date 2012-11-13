@@ -53,6 +53,7 @@ class AccountProfile(django_models.Model):
                 user=self.user,
                 type="talk",
             )
+        subscription.transaction_set.update(status="canceled")
         return models.Transaction.generate(subscription)
 
 

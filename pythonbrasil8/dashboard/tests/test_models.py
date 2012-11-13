@@ -386,6 +386,7 @@ class AccountProfileTransactionTestCase(TestCase):
             subscription=subscription,
             price=models.PRICES[profile.type] * 2,
             code="abcd123",
+            status="pending",
         )
         try:
             got_transaction = profile.transaction
@@ -393,6 +394,8 @@ class AccountProfileTransactionTestCase(TestCase):
             self.assertEqual(transaction.subscription, got_transaction.subscription)
             self.assertEqual(models.PRICES[profile.type], got_transaction.price)
             self.assertEqual("transaction321", got_transaction.code)
+            transaction = models.Transaction.objects.get(pk=transaction.pk)
+            self.assertEqual("canceled", transaction.status)
         finally:
             transaction.delete()
             subscription.delete()
