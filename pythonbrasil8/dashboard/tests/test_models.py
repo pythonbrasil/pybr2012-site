@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.test import TestCase
-from django.db import models
 from django.contrib.auth.models import User
+from django.core import management
+from django.db import models as django_models
+from django.test import TestCase
 
-from pythonbrasil8.dashboard.models import AccountProfile
-from pythonbrasil8.subscription.models import Subscription
+from pythonbrasil8.dashboard.models import AccountProfile, CompleteSubscriptionException
+from pythonbrasil8.subscription import models
 
 
 class AccountProfileTestCase(TestCase):
@@ -18,14 +19,14 @@ class AccountProfileTestCase(TestCase):
 
     def test_user_field_should_be_one_to_one_field(self):
         field = AccountProfile._meta.get_field_by_name('user')[0]
-        self.assertEqual(models.OneToOneField, field.__class__)
+        self.assertEqual(django_models.OneToOneField, field.__class__)
 
     def test_should_have_name(self):
         self.assertIn('name', self.field_names)
 
     def test_name_should_be_CharField(self):
         field = AccountProfile._meta.get_field_by_name('name')[0]
-        self.assertIsInstance(field, models.CharField)
+        self.assertIsInstance(field, django_models.CharField)
 
     def test_name_should_have_at_most_20_characters(self):
         field = AccountProfile._meta.get_field_by_name('name')[0]
@@ -40,7 +41,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_description_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('description')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_description_field_should_have_500_of_max_length(self):
         field = AccountProfile._meta.get_field_by_name('description')[0]
@@ -51,7 +52,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_type_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_type_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('type')[0]
@@ -68,7 +69,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_tshirt_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_tshirt_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('tshirt')[0]
@@ -101,7 +102,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_locale_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('locale')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_locale_field_should_have_verbose_name(self):
         field = AccountProfile._meta.get_field_by_name('locale')[0]
@@ -146,14 +147,14 @@ class AccountProfileTestCase(TestCase):
 
     def test_gender_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('country')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_should_have_gender_field(self):
         self.assertIn('gender', self.field_names)
 
     def test_gender_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_gender_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('gender')[0]
@@ -170,7 +171,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_age_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_age_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('age')[0]
@@ -198,7 +199,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_profession_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_profession_field_should_have_expected_choices(self):
         field = AccountProfile._meta.get_field_by_name('profession')[0]
@@ -225,7 +226,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_institution_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('institution')[0]
-        self.assertEqual(models.CharField, field.__class__)
+        self.assertEqual(django_models.CharField, field.__class__)
 
     def test_institution_field_should_be_optional(self):
         field = AccountProfile._meta.get_field_by_name('institution')[0]
@@ -241,7 +242,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_payement_field_should_be_char_field(self):
         field = AccountProfile._meta.get_field_by_name('payement')[0]
-        self.assertEqual(models.BooleanField, field.__class__)
+        self.assertEqual(django_models.BooleanField, field.__class__)
 
     def test_payement_field_should_have_default_False(self):
         field = AccountProfile._meta.get_field_by_name('payement')[0]
@@ -255,13 +256,13 @@ class AccountProfileTestCase(TestCase):
     def test_have_talk_subscription_shoud_be_true_when_user_has_a_subscription(self):
         user = User.objects.create(username="tony")
         profile = AccountProfile.objects.create(user=user)
-        Subscription.objects.create(user=user, type="talk")
+        models.Subscription.objects.create(user=user, type="talk")
         self.assertTrue(profile.has_talk_subscription())
 
     def test_talk_subscription_shoud_be_returns_the_talk_subscription(self):
         user = User.objects.create(username="tony")
         profile = AccountProfile.objects.create(user=user)
-        subscription = Subscription.objects.create(user=user, type="talk")
+        subscription = models.Subscription.objects.create(user=user, type="talk")
         self.assertEqual(subscription, profile.talk_subscription())
 
     def test_should_have_twitter_field(self):
@@ -269,7 +270,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_twitter_should_be_a_CharField(self):
         f = AccountProfile._meta.get_field_by_name('twitter')[0]
-        self.assertIsInstance(f, models.CharField)
+        self.assertIsInstance(f, django_models.CharField)
 
     def test_twitter_should_have_at_most_15_characters(self):
         f = AccountProfile._meta.get_field_by_name('twitter')[0]
@@ -292,7 +293,7 @@ class AccountProfileTestCase(TestCase):
 
     def test_public_should_be_a_BooleanField(self):
         f = AccountProfile._meta.get_field_by_name('public')[0]
-        self.assertIsInstance(f, models.BooleanField)
+        self.assertIsInstance(f, django_models.BooleanField)
 
     def test_public_should_be_true_by_default(self):
         f = AccountProfile._meta.get_field_by_name('public')[0]
@@ -301,3 +302,118 @@ class AccountProfileTestCase(TestCase):
     def test_public_should_have_verbose_name(self):
         f = AccountProfile._meta.get_field_by_name('public')[0]
         self.assertEqual(u"Public profile (visible to everyone)?", f.verbose_name)
+
+
+class AccountProfileTransactionTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        management.call_command("loaddata", "profiles.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        management.call_command("flush", interactive=False, verbosity=0)
+
+    def setUp(self):
+        self.user = User.objects.get(pk=1)
+
+    def tearDown(self):
+        if hasattr(self, "requests_original"):
+            models.request = self.requests_original
+
+    def _mock_requests(self, body, ok):
+        self.requests_original = models.requests
+
+        class ResponseMock(object):
+            content = body
+
+            def ok(self):
+                return False
+
+        def post(self, *args, **kwargs):
+            return ResponseMock()
+
+        models.requests.post = post
+
+    def test_transaction_returns_a_new_transaction_if_the_profile_does_not_have_one(self):
+        profile = self.user.get_profile()
+        self._mock_requests("<code>xpto1234</code>", True)
+        transaction = profile.transaction
+        self.assertEqual(models.PRICES[profile.type], transaction.price)
+        self.assertEqual("xpto1234", transaction.code)
+
+    def test_transaction_raises_exception_if_the_user_has_a_done_subscription(self):
+        subscription = models.Subscription.objects.create(
+            user=self.user,
+            type="talk",
+            status="sponsor",
+        )
+        try:
+            with self.assertRaises(CompleteSubscriptionException) as cm:
+                self.user.get_profile().transaction
+            exc = cm.exception
+            self.assertEqual("This subscription is complete.", exc.args[0])
+        finally:
+            subscription.delete()
+
+    def test_transaction_returns_the_already_created_transaction_if_it_matches_the_price(self):
+        subscription = models.Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        profile = self.user.get_profile()
+        transaction = models.Transaction.objects.create(
+            subscription=subscription,
+            price=models.PRICES[profile.type],
+            code="abcd123",
+            status="pending",
+        )
+        try:
+            got_transaction = profile.transaction
+            self.assertEqual(transaction.pk, got_transaction.pk)
+        finally:
+            transaction.delete()
+            subscription.delete()
+
+    def test_transaction_generates_a_new_transaction_if_the_existing_transaction_does_not_match_price(self):
+        self._mock_requests("<code>transaction321</code>", True)
+        subscription = models.Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        profile = self.user.get_profile()
+        transaction = models.Transaction.objects.create(
+            subscription=subscription,
+            price=models.PRICES[profile.type] * 2,
+            code="abcd123",
+        )
+        try:
+            got_transaction = profile.transaction
+            self.assertNotEqual(transaction.pk, got_transaction.pk)
+            self.assertEqual(models.PRICES[profile.type], got_transaction.price)
+            self.assertEqual("transaction321", got_transaction.code)
+        finally:
+            transaction.delete()
+            subscription.delete()
+
+    def test_transaction_generates_a_new_transaction_if_the_existing_transaction_is_canceled(self):
+        self._mock_requests("<code>transaction123</code>", True)
+        subscription = models.Subscription.objects.create(
+            user=self.user,
+            type="talk",
+        )
+        profile = self.user.get_profile()
+        transaction = models.Transaction.objects.create(
+            subscription=subscription,
+            price=models.PRICES[profile.type],
+            code="abcd123",
+            status="canceled",
+        )
+        try:
+            got_transaction = profile.transaction
+            self.assertNotEqual(transaction.pk, got_transaction.pk)
+            self.assertEqual(models.PRICES[profile.type], got_transaction.price)
+            self.assertEqual("transaction123", got_transaction.code)
+        finally:
+            transaction.delete()
+            subscription.delete()

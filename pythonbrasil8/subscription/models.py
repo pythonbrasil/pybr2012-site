@@ -7,8 +7,6 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext
 from lxml import etree
 
-from pythonbrasil8.dashboard.models import AccountProfile
-
 PRICES = {
     'Student': 150,
     'APyB Associated': 150,
@@ -54,7 +52,7 @@ class Transaction(models.Model):
     def generate(subscription):
         headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
         payload = settings.PAGSEGURO
-        profile = AccountProfile.objects.get(user=subscription.user)
+        profile = subscription.user.get_profile()
         price = PRICES[profile.type]
         payload["itemAmount1"] = "%.2f" % price
         payload['itemDescription1'] = ugettext(u'Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition') % ugettext(profile.type)
