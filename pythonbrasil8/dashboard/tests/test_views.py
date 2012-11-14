@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 
 from pythonbrasil8.core.views import LoginRequiredMixin
-from pythonbrasil8.dashboard.forms import ProfileForm
+from pythonbrasil8.dashboard.forms import ProfileForm, SpeakerProfileForm
 from pythonbrasil8.dashboard.models import AccountProfile
 from pythonbrasil8.dashboard.views import IndexView, ProfileView, SessionsView
 from pythonbrasil8.schedule.models import Session, Track
@@ -83,8 +83,15 @@ class ProfileViewTestCase(TestCase):
     def test_model_should_be_AccountProfile(self):
         self.assertEqual(AccountProfile, ProfileView.model)
 
-    def test_form_should_be_ProfileForm(self):
-        self.assertEqual(ProfileForm, ProfileView.form_class)
+    def test_form_should_be_ProfileForm_when_type_is_not_speaker(self):
+        v = ProfileView()
+        v.object = AccountProfile(type="Student")
+        self.assertEqual(ProfileForm, v.get_form_class())
+
+    def test_form_should_be_SpeakerProfileForm_when_type_is_speaker(self):
+        v = ProfileView()
+        v.object = AccountProfile(type="Speaker")
+        self.assertEqual(SpeakerProfileForm, v.get_form_class())
 
     def test_should_redirects_if_user_is_not_logged_in(self):
         self.request.user.is_authenticated = lambda: False

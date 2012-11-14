@@ -12,3 +12,9 @@ class ProfileForm(ModelForm):
         widgets = {
             'description': Textarea,
         }
+
+
+class SpeakerProfileForm(ProfileForm):
+
+    class Meta(ProfileForm.Meta):
+        exclude = ('user', 'payement', 'type')
