@@ -18,7 +18,6 @@
                     <thead>
                         <tr>
                             <th align="left">{% trans "Conference Registration" %}</th>
-                            <th align="center">{% trans "Early Bird Rate" %}</th>
                             <th align="center">{% trans "Regular Rate" %}</th>
                             <th align="center">{% trans "Last Week Rate" %}</th>
                         </tr>
@@ -28,13 +27,11 @@
                             <td align="left"><a href="#corporate" title="{% trans "Registration Information" %}">{% trans "Corporate" %}</a></td>
                             <td align="center">R$ 350,00</td>
                             <td align="center">R$ 450,00</td>
-                            <td align="center">R$ 550,00</td>
                         </tr>
                         <tr>
                             <td align="left"><a href="#individual" title="{% trans "Registration Information" %}">Individual</a></td>
+                            <td align="center">R$ 150,00</td>
                             <td align="center">R$ 250,00</td>
-                            <td align="center">R$ 350,00</td>
-                            <td align="center">R$ 450,00</td>
                         </tr>
                         <tr>
                             <td align="left">
@@ -42,7 +39,6 @@
                                 <a href="#speaker" title="{% trans "Registration Information" %}">{% trans "Speaker" %}</a> or
                                 <a href="#apyb" title="{% trans "Registration Information" %}">{% trans "APyB member" %}</a>
                             </td>
-                            <td align="center">R$ 150,00</td>
                             <td align="center">R$ 250,00</td>
                             <td align="center">R$ 350,00</td>
                         </tr>
@@ -53,12 +49,8 @@
                 <div class="inner-note">
                     <ul>
                         <li>
-                            <p class="subtitle">{% trans "Early Bird Rate:" %}</p>
-                            <p>{% trans "until October 15, 2012" %}</p>
-                        </li>
                         <li>
                             <p class="subtitle">{% trans "Regular Rate:" %}</p>
-                            <p>{% trans "from October 16, 2012" %}</p>
                             <p>{% trans "until November 15, 2012" %}</p>
                         </li>
                         <li>
@@ -69,6 +61,13 @@
                 </div>
             </div>
             <a class="btn" href="{% url dashboard-index %}">{% trans "Buy your ticket!" %}</a>
+            <p>
+                If you have already payed the conference registration, you can attend to the tutorials by:<br>
+                - subscribing to the tutorial, from your dashboard<br>
+                - bringing a kg of non-perishable food<br>
+                The food will be donated to <a href="http://www.apaerio.org.br/" target="_blank">APAE</a>, Association of Parents and Friends of Exceptional Children of Rio de Janeiro.
+            </p><br><br>
+
             <div class="table">
                 <table class="tutorial-table">
                     <thead>
@@ -80,23 +79,32 @@
                     <tbody>
                         <tr>
                             <td align="left">
-                                <a href="#corporate" title="{% trans "Registration Information" %}">{% trans "Corporate" %}</a> or
-                                <a href="#individual" title="{% trans "Registration Information" %}">Individual</a>
+                                1 tutorial
                             </td>
-                            <td align="center">R$ 200,00 {% trans "each" %}</td>
+                            <td align="center">R$ 35,00</td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <a href="#student" title="{% trans "Registration Information" %}">{% trans "Student" %}</a>,
-                                <a href="#speaker" title="{% trans "Registration Information" %}">{% trans "Speaker" %}</a> or
-                                <a href="#apyb" title="{% trans "Registration Information" %}">{% trans "APyB member" %}</a>
+                                2 tutorials
                             </td>
-                            <td align="center">R$ 150,00 {% trans "each" %}</td>
+                            <td align="center">R$ 65,00</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                3 tutorials
+                            </td>
+                            <td align="center">R$ 90,00</td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                4 tutorials
+                            </td>
+                            <td align="center">R$ 100,00</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <a class="btn soon" href="">{% trans "Soon the tickets for the tutorials will be available!" %}</a>
+            <a class="btn" href="{% url dashboard-index %}">{% trans "Buy your ticket!" %}</a>
         </div>
         <div clas="row">
 
