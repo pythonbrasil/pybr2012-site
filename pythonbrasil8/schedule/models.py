@@ -26,10 +26,11 @@ SESSION_STATUSES = (
 )
 
 SESSION_LEVELS = (
-    (u"beginner",  _(u"Beginner")),
-    (u"intermediate",  _(u"Intermediate")),
-    (u"advanced",  _(u"Advanced")),
+    (u"beginner", _(u"Beginner")),
+    (u"intermediate", _(u"Intermediate")),
+    (u"advanced", _(u"Advanced")),
 )
+
 
 class Track(models.Model):
     __metaclass__ = transmeta.TransMeta
@@ -50,11 +51,12 @@ class Track(models.Model):
         self.slug = slugify(self.name)
         super(Track, self).save(*args, **kwargs)
 
+
 class Session(models.Model):
     type = models.CharField(max_length=20, choices=SESSION_TYPES,
             verbose_name=_("Type"))
     track = models.ForeignKey(Track, verbose_name=_("Track"))
-    audience_level =  models.CharField(max_length=12, choices=SESSION_LEVELS,
+    audience_level = models.CharField(max_length=12, choices=SESSION_LEVELS,
             verbose_name=_("Audience level"))
     language = models.CharField(max_length=2, verbose_name=_("Language"),
             choices=LANGUAGE_CHOICES)
@@ -73,6 +75,7 @@ class Session(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Session, self).save(*args, **kwargs)
+
 
 class ProposalVote(models.Model):
     user = models.ForeignKey(auth_models.User)
