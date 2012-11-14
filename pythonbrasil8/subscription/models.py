@@ -91,6 +91,5 @@ def _generate_tutorial_transaction(subscription):
         raise ValueError("No tutorials selected.")
     _prices = [35, 65, 90, 100]
     price = _prices[len(tutorials)-1]
-    description = u"Payment of tutorial ticket in PythonBrasil[8] conference: %s." %\
-        ", ".join([t.title for t in tutorials])
+    description = u"Payment of tutorials ticket in PythonBrasil[8] conference."
     return _generate_transaction(subscription, price, description)

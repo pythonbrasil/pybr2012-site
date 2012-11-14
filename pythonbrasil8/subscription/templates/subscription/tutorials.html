@@ -28,7 +28,7 @@
             <h2>{{ slot.date }}</h2>
             {% for tutorial in slot.tutorials%}
             <div>
-                <input type="radio" name="tutorial-{{ slot.date|date:"YmdHi" }}" value="{{ tutorial.pk }}" id="tutorial-{{ tutorial.pk}}">
+                <input type="radio" name="tutorial-{{ slot.date|date:"YmdHis" }}" value="{{ tutorial.pk }}" id="tutorial-{{ tutorial.pk}}">
                 <a href="{% url proposal-page tutorial.track.slug tutorial.slug %}" title="{{ tutorial.description }}">
                     {{ tutorial.title }}
                 </a>

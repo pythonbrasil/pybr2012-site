@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import datetime
+import re
+
 import requests
 
 from django.conf import settings
@@ -54,7 +57,7 @@ class SubscriptionView(LoginRequiredMixin, View):
 class TutorialSubscriptionView(LoginRequiredMixin, View):
 
     def get(self, request):
-        tutorials = Session.objects.filter(type="tutorial", status="accepted").order_by("date")
+        tutorials = Session.objects.filter(type="tutorial", status__in=["accepted", "confirmed"]).order_by("date")
         slots = []
         current_slot = None
         for tutorial in tutorials:
@@ -71,6 +74,34 @@ class TutorialSubscriptionView(LoginRequiredMixin, View):
             request,
             "subscription/tutorials.html",
             context={"tutorials": slots},
+        )
+
+    def post(self, request):
+        tutorials = []
+        regexp = re.compile(r"tutorial-(\d{14})")
+        for k, v in request.POST.iteritems():
+            m = regexp.match(k)
+            if m:
+                tutorial = Session.objects.get(
+                    pk=v,
+                    date=datetime.datetime.strptime(m.groups()[0], "%Y%m%d%H%M%S"),
+                    type="tutorial",
+                )
+                tutorials.append(tutorial)
+        subscription = Subscription.objects.create(
+            user=request.user,
+            type="tutorial",
+        )
+        subscription.tutorials = tutorials
+        subscription.save()
+        transaction = Transaction.generate(subscription)
+        return response.TemplateResponse(
+            request,
+            "subscription/tutorials_success.html",
+            context={
+                "transaction": transaction,
+                "subscription": subscription,
+            },
         )
 
 
