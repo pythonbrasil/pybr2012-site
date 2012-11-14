@@ -1,59 +1,20 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Accepted talks" %} | PythonBrasil[8]{% endblock %}
-{% block og_title %}{% trans "Accepted talks" %} | PythonBrasil[8]{% endblock %}
+{% block title %}{% trans "Schedule" %} | PythonBrasil[8]{% endblock %}
+{% block og_title %}{% trans "Schedule" %} | PythonBrasil[8]{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/schedule.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/schedule_google_drive.css" type="text/css" />
 {% endblock %}
 
 
 {% block content %}
-<section id="vote">
-  <h1>{% trans "PythonBrasil[8] Accepted Talks" %}</h1>
-  <div>
-  {% blocktrans %}
-  We listed below the talks that were accepted for the conference.
-  We are working in the final schedule (with days/hours) and tutorials and will
-  release it as soon as possible.
-  {% endblocktrans %}
-  <br />
-  <img src="{{ STATIC_URL }}/images/schedule/icon_success.gif"
-       alt="Success icon" /> {% trans "= confirmed by speaker(s)" %}
-  </div>
+<section>
+  <h1>{% trans "PythonBrasil[8] Schedule" %}</h1>
+  {% include "schedule_from_google_drive.html" %}
 
-  <br />
-
-  <table>
-    <tr>
-      <th>{% trans "Talk title" %}</th>
-      <th>{% trans "Speaker(s)" %}</th>
-    </tr>
-    {% for track, sessions in tracks_and_sessions %}
-    <tr>
-      <td class="title" colspan="3">{{ track }}</td>
-    </tr>
-    {% for session in sessions %}
-    <tr class="{% cycle 'odd' 'even' %}">
-      <td>
-        {% if session.status == 'confirmed' %}
-        <img src="{{ STATIC_URL }}/images/schedule/icon_success.gif"
-        alt="Success icon" />
-        {% endif %}
-        <a class="proposal" href="{% url proposal-page track.slug session.slug %}"
-          title="{% spaceless %}{{ session.description }}{% endspaceless %}"
-           target="_blank">{{ session.title }}</a>
-      </td>
-      <td>
-        {% for speaker in session.speakers.all %}
-          {% if speaker.get_profile.name %}{{ speaker.get_profile.name }}{% else %}{{ speaker.username }}{% endif %}{% if not forloop.last %},{% endif %}
-        {% endfor %}
-      </td>
-    </tr>
-    {% endfor %}
-  {% endfor %}
-  </table>
 </section>
 <br />
 {% endblock %}
