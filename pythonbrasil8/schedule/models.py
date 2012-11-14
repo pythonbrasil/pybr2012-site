@@ -10,6 +10,7 @@ from django.template.defaultfilters import slugify
 SESSION_TYPES = (
     ("talk", _("Talk")),
     ("tutorial", _("Tutorial"),),
+    ("keynote", "Keynote"),
 )
 
 LANGUAGE_CHOICES = (
@@ -68,6 +69,7 @@ class Session(models.Model):
             verbose_name=_("Speakers"))
     status = models.CharField(max_length=10, choices=SESSION_STATUSES,
             default="proposed")
+    date = models.DateTimeField(blank=True, null=True)
 
     def __unicode__(self):
         return self.title

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-11 18:54-0200\n"
+"POT-Creation-Date: 2012-11-14 01:32-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -218,55 +218,55 @@ msgstr "Pesquisador"
 msgid "Other country"
 msgstr "Outro país"
 
-#: dashboard/models.py:13 schedule/models.py:37
+#: dashboard/models.py:18 schedule/models.py:38
 msgid "Name"
 msgstr "Nome"
 
-#: dashboard/models.py:14
+#: dashboard/models.py:19
 msgid "Short Bio"
 msgstr "Sobre você"
 
-#: dashboard/models.py:15
+#: dashboard/models.py:20
 msgid "Registration type"
 msgstr "Tipo de inscrição"
 
-#: dashboard/models.py:16
+#: dashboard/models.py:21
 msgid "T-Shirt size"
 msgstr "Tamanho de camiseta"
 
-#: dashboard/models.py:17
+#: dashboard/models.py:22
 msgid "State"
 msgstr "Estado"
 
-#: dashboard/models.py:18
+#: dashboard/models.py:23
 msgid "Country (if not Brazilian)"
 msgstr "País (se não for Brasileiro)"
 
-#: dashboard/models.py:19
+#: dashboard/models.py:24
 msgid "Gender"
 msgstr "Sexo"
 
-#: dashboard/models.py:20
+#: dashboard/models.py:25
 msgid "Age"
 msgstr "Idade"
 
-#: dashboard/models.py:21
+#: dashboard/models.py:26
 msgid "Profession"
 msgstr "Profissão"
 
-#: dashboard/models.py:22
+#: dashboard/models.py:27
 msgid "Company / University / Institution"
 msgstr "Empresa / Unversidade / Instituição"
 
-#: dashboard/models.py:24
+#: dashboard/models.py:29
 msgid "Twitter profile"
 msgstr "Twitter"
 
-#: dashboard/models.py:25
+#: dashboard/models.py:30
 msgid "Public profile (visible to everyone)?"
 msgstr "Perfil público (visivel para todos)?"
 
-#: dashboard/views.py:30
+#: dashboard/views.py:29
 msgid "Profile successfully updated."
 msgstr "Perfil atualizado com sucesso."
 
@@ -276,22 +276,28 @@ msgid "Proposals"
 msgstr "Propostas"
 
 #: dashboard/templates/dashboard/base.html:20
+#: subscription/templates/subscription/tutorials.html:12
+#: templates/base.html:113
+msgid "Tutorials"
+msgstr "Tutoriais"
+
+#: dashboard/templates/dashboard/base.html:23
 msgid "edit your profile"
 msgstr "edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:20
+#: dashboard/templates/dashboard/base.html:23
 msgid "Edit your profile"
 msgstr "Edite seu perfil"
 
-#: dashboard/templates/dashboard/base.html:23
+#: dashboard/templates/dashboard/base.html:26
 msgid "Change password"
 msgstr "Altere sua senha"
 
-#: dashboard/templates/dashboard/base.html:26
+#: dashboard/templates/dashboard/base.html:29
 msgid "Logout"
 msgstr "Sair"
 
-#: dashboard/templates/dashboard/base.html:40
+#: dashboard/templates/dashboard/base.html:43
 msgid ""
 "You are close to participate of PythonBrasil[8]! Pay your ticket and start "
 "planning your travel!"
@@ -385,7 +391,7 @@ msgstr "Você não enviou nenhuma proposta de palestra ainda."
 msgid "Why don't you send one?"
 msgstr "Por que você não envia uma?"
 
-#: news/models.py:12 schedule/models.py:61
+#: news/models.py:12 schedule/models.py:63
 msgid "Title"
 msgstr "Título"
 
@@ -411,7 +417,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: schedule/admin.py:22 schedule/models.py:66 templates/proposal.html:46
+#: schedule/admin.py:22 schedule/models.py:68 templates/proposal.html:46
 msgid "Speakers"
 msgstr "Palestrantes"
 
@@ -447,24 +453,24 @@ msgstr "Intermediário"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: schedule/models.py:41 schedule/models.py:64 templates/proposal.html:68
+#: schedule/models.py:42 schedule/models.py:66 templates/proposal.html:68
 msgid "Description"
 msgstr "Descrição"
 
-#: schedule/models.py:55
+#: schedule/models.py:57
 msgid "Type"
 msgstr "Tipo"
 
-#: schedule/models.py:56 templates/proposal.html:28 templates/track.html:4
+#: schedule/models.py:58 templates/proposal.html:28 templates/track.html:4
 #: templates/track.html.py:5
 msgid "Track"
 msgstr "Trilha"
 
-#: schedule/models.py:58 templates/proposal.html:30
+#: schedule/models.py:60 templates/proposal.html:30
 msgid "Audience level"
 msgstr "Nível da audiência"
 
-#: schedule/models.py:59 templates/proposal.html:32
+#: schedule/models.py:61 templates/proposal.html:32
 msgid "Language"
 msgstr "Idioma"
 
@@ -510,6 +516,7 @@ msgstr "Submeter palestra"
 
 #: schedule/templates/schedule/edit-session.html:27
 #: schedule/templates/schedule/subscribe.html:39
+#: subscription/templates/subscription/tutorials.html:38
 #: templates/registration/password_change_form.html:17
 msgid "Send"
 msgstr "Enviar"
@@ -547,25 +554,47 @@ msgstr "Por favor, preencha o formulário abaixo para enviar sua proposta:"
 msgid "Tracks' description"
 msgstr "Descrição das trilhas"
 
-#: subscription/views.py:29
+#: subscription/models.py:61
 #, python-format
 msgid "Payment of a %s Ticket in PythonBrasil[8] conference, 2012 edition"
 msgstr ""
 "Pagamento de uma Inscrição %s na conferência PythonBrasil[8], edição de 2012"
 
-#: subscription/views.py:49
+#: subscription/views.py:28
 msgid ""
 "In order to issue your registration to the conference, you need to complete "
 "your profile."
 msgstr "Para se inscrever na conferência, você precisa preencher o seu perfil."
 
-#: subscription/views.py:63
+#: subscription/views.py:42
 msgid ""
 "Failed to generate a transaction within the payment gateway. Please contact "
 "the event staff to complete your registration."
 msgstr ""
 "Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
 "a organização."
+
+#: subscription/templates/subscription/tutorials.html:13
+msgid ""
+"Please select below one or more tutorials that you want to attend. The "
+"prices are described in the table below."
+msgstr ""
+"Por favor selecione na lista abaixo um ou mais tutoriais. Os preços estão "
+"descritos na tabela abaixo. Se sua inscrição para a conferência já está "
+"confirmada, basta trazer um quilo de alimento não perecível por tutorial "
+"inscrito."
+
+#: subscription/templates/subscription/tutorials.html:16
+msgid "of tutorials"
+msgstr "de tutoriais"
+
+#: subscription/templates/subscription/tutorials.html:16
+msgid "Price"
+msgstr "Preço"
+
+#: subscription/templates/subscription/tutorials.html:39
+msgid "Reset"
+msgstr "Limpar"
 
 #: templates/about.html:4 templates/about.html.py:5
 #: templates/previous_editions.html:4
@@ -740,10 +769,6 @@ msgstr "Sprints"
 #: templates/base.html:110
 msgid "November 20th"
 msgstr "20 de novembro"
-
-#: templates/base.html:113
-msgid "Tutorials"
-msgstr "Tutoriais"
 
 #: templates/base.html:114
 msgid "November 21th - 22th"
