@@ -57,7 +57,7 @@ class SubscriptionView(LoginRequiredMixin, View):
 class TutorialSubscriptionView(LoginRequiredMixin, View):
 
     def get(self, request):
-        tutorials = Session.objects.filter(type="tutorial", status="accepted").order_by("date")
+        tutorials = Session.objects.filter(type="tutorial", status__in=["accepted", "confirmed"]).order_by("date")
         slots = []
         current_slot = None
         for tutorial in tutorials:
