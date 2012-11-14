@@ -10,6 +10,7 @@ from django.template.defaultfilters import slugify
 SESSION_TYPES = (
     ("talk", _("Talk")),
     ("tutorial", _("Tutorial"),),
+    ("keynote", "Keynote"),
 )
 
 LANGUAGE_CHOICES = (
