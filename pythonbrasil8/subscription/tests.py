@@ -437,13 +437,13 @@ class TutorialSubscriptionViewTestCase(TestCase):
         views.requests = self.requests_original
         Subscription.objects.all().delete()
 
-    def test_tutorial_subscription_get_renders_template(self):
+    def test_get_renders_template(self):
         v = views.TutorialSubscriptionView()
         resp = v.get(self.request)
         self.assertIsInstance(resp, response.TemplateResponse)
         self.assertEqual("subscription/tutorials.html", resp.template_name)
 
-    def test_should_include_accepted_tutorials_in_context(self):
+    def test_get_should_include_accepted_tutorials_in_context(self):
         v = views.TutorialSubscriptionView()
         resp = v.get(self.request)
         tutorials = resp.context_data["tutorials"]
@@ -457,3 +457,36 @@ class TutorialSubscriptionViewTestCase(TestCase):
         ]
         for i, slot in enumerate(tutorials):
             self.assertEqual(list(expected[i].tutorials), list(slot.tutorials))
+
+    def _prepare_post(self):
+        data = {}
+        tutorials = sched_models.Session.objects.filter(pk__in=[5, 7])
+        for tutorial in tutorials:
+            data[tutorial.date.strftime("tutorial-%Y%m%d%H%M%S")] = tutorial.pk
+        request = RequestFactory().post("/", data)
+        request.user = User.objects.get(pk=3)
+        return tutorials, request
+
+    def test_post_renders_template_with_information_about_the_transaction_and_the_subscription(self):
+        tutorials, request = self._prepare_post()
+        v = views.TutorialSubscriptionView()
+        resp = v.post(request)
+        subscription = Subscription.objects.get(user_id=3)
+        transaction = subscription.transaction_set.get(price=65)
+        self.assertIsInstance(resp, response.TemplateResponse)
+        self.assertEqual("subscription/tutorials_success.html", resp.template_name)
+        self.assertEqual(transaction, resp.context_data["transaction"])
+        self.assertEqual(subscription, resp.context_data["subscription"])
+
+    def test_post_creates_subscription_and_transaction(self):
+        tutorials, request = self._prepare_post()
+        v = views.TutorialSubscriptionView()
+        v.post(request)
+        subscription = Subscription.objects.get(user_id=3)
+        self.assertEqual("tutorial", subscription.type)
+        self.assertEqual("pending", subscription.status)
+        self.assertEqual(list(tutorials), list(subscription.tutorials.all()))
+        transaction = subscription.transaction_set.all()[0]
+        self.assertEqual(65, transaction.price)
+        self.assertEqual("xpto123", transaction.code)
+        self.assertEqual("pending", transaction.status)
