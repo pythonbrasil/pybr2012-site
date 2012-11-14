@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
+import datetime
+
 from django.conf import settings
 from django.contrib import admin as django_admin
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.core.urlresolvers import reverse, NoReverseMatch
-from django.http import HttpResponseRedirect
 from django.db import models as django_models
+from django.http import HttpResponseRedirect
+from django.template import response
 from django.test import TestCase
 from django.test.client import RequestFactory
 
@@ -381,3 +384,57 @@ class SubscriptionAdminTestCase(TestCase):
     def test_subscription_model_is_registered_with_subscription_admin(self):
         self.assertIn(models.Subscription, django_admin.site._registry)
         self.assertIsInstance(django_admin.site._registry[models.Subscription], admin.SubscriptionAdmin)
+
+
+class TutorialSubscriptionViewTestCase(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        call_command("loaddata", "tutorials.json", verbosity=0)
+
+    @classmethod
+    def tearDownClass(cls):
+        call_command("flush", interactive=False, verbosity=0)
+
+    def setUp(self):
+        self.user = User.objects.get(pk=1)
+        self.request = RequestFactory().get("/", {})
+        self.request.user = self.user
+
+        self.requests_original = views.requests
+
+        class ResponseMock(object):
+            content = "<code>xpto123</code>"
+
+            def ok(self):
+                return True
+
+        def post(self, *args, **kwargs):
+            return ResponseMock()
+
+        views.requests.post = post
+
+    def tearDown(self):
+        views.requests = self.requests_original
+        Subscription.objects.all().delete()
+
+    def test_tutorial_subscription_get_renders_template(self):
+        v = views.TutorialSubscriptionView()
+        resp = v.get(self.request)
+        self.assertIsInstance(resp, response.TemplateResponse)
+        self.assertEqual("subscription/tutorials.html", resp.template_name)
+
+    def test_should_include_accepted_tutorials_in_context(self):
+        v = views.TutorialSubscriptionView()
+        resp = v.get(self.request)
+        tutorials = resp.context_data["tutorials"]
+        expected = [
+            views.TutorialSlot(
+                tutorials=sched_models.Session.objects.filter(pk__in=[1, 5])
+            ),
+            views.TutorialSlot(
+                tutorials=sched_models.Session.objects.filter(pk__gte=6)
+            ),
+        ]
+        for i, slot in enumerate(tutorials):
+            self.assertEqual(list(expected[i].tutorials), list(slot.tutorials))

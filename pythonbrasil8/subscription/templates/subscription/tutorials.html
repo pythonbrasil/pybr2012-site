@@ -1,0 +1,43 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/tutorials-subscription.css" type="text/css" media="screen" charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="column grid_12">
+        <h1>{% trans "Tutorials" %}</h1>
+        <p>{% trans "Please select below one or more tutorials that you want to attend. The prices are described in the table below." %}</p>
+        <table>
+            <thead>
+                <tr><td># {% trans "of tutorials" %}</td><td>{% trans "Price" %}</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>R$ 35,00</td></tr>
+                <tr><td>2</td><td>R$ 65,00</td></tr>
+                <tr><td>3</td><td>R$ 90,00</td></tr>
+                <tr><td>4</td><td>R$ 100,00</td></tr>
+            </tbody>
+        </table>
+        <form action="{% url tutorials-subscription %}" method="post" accept-charset="utf-8">
+            {% csrf_token %}
+            {% for slot in tutorials %}
+            <h2>{{ slot.date }}</h2>
+            {% for tutorial in slot.tutorials%}
+            <div>
+                <input type="radio" name="tutorial-{{ slot.date|date:"YmdHi" }}" value="{{ tutorial.pk }}" id="tutorial-{{ tutorial.pk}}">
+                <a href="{% url proposal-page tutorial.track.slug tutorial.slug %}" title="{{ tutorial.description }}">
+                    {{ tutorial.title }}
+                </a>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            <button type="submit" class="btn">{% trans "Send" %}</button>
+            <button type="reset" class="btn">{% trans "Reset" %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

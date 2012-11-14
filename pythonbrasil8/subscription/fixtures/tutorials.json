@@ -1,0 +1,160 @@
+[
+    {
+        "model": "auth.User",
+        "pk": 1,
+        "fields": {
+            "username": "chico",
+            "password": "123",
+            "email": "chico@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "auth.User",
+        "pk": 2,
+        "fields": {
+            "username": "chica",
+            "password": "1234",
+            "email": "chica@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "auth.User",
+        "pk": 3,
+        "fields": {
+            "username": "xico",
+            "password": "1234",
+            "email": "xico@pythonbrasil.org.br"
+        }
+    },
+    {
+        "model": "dashboard.AccountProfile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "name": "Chico",
+            "description": "no description left for you",
+            "type": "Student",
+            "tshirt": "L",
+            "locale": "RJ",
+            "gender": "male",
+            "public": 1
+        }
+    },
+    {
+        "model": "dashboard.AccountProfile",
+        "pk": 2,
+        "fields": {
+            "user": 3,
+            "name": "",
+            "description": "",
+            "type": "",
+            "tshirt": "",
+            "locale": "",
+            "gender": ""
+        }
+    },
+    {
+        "model": "schedule.Track",
+        "pk": 1,
+        "fields": {
+            "name_en_us": "Newbies",
+            "slug": "newbies",
+            "description_en_us": "Python for newbies"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 1,
+        "fields": {
+            "title": "How to learn Python",
+            "slug": "how-to-learn-python",
+            "description": "Learn how to learn Python",
+            "type": "tutorial",
+            "speakers": [1],
+            "track": 1,
+            "date": "2012-11-21 09:00:00",
+            "status": "accepted"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 2,
+        "fields": {
+            "title": "How to learn Django",
+            "slug": "how-to-learn-django",
+            "description": "Learn how to learn Django",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 1,
+            "status": "proposed"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 3,
+        "fields": {
+            "title": "I dont know",
+            "slug": "i-dont-know",
+            "description": "Bla Bla Bla",
+            "type": "talk",
+            "speakers": [1, 2],
+            "track": 1,
+            "status": "confirmed"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 4,
+        "fields": {
+            "title": "I dont know [2]",
+            "slug": "i-dont-know-2",
+            "description": "Bla Bla Bla 2",
+            "type": "tutorial",
+            "speakers": [1, 2],
+            "track": 1,
+            "status": "proposed"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 5,
+        "fields": {
+            "title": "Optimizing ruby (switch to Python)",
+            "slug": "opt-ruby",
+            "description": "Bla Bla Bla 2",
+            "type": "tutorial",
+            "speakers": [1, 2],
+            "track": 1,
+            "date": "2012-11-21 09:00:00",
+            "status": "accepted"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 6,
+        "fields": {
+            "title": "Scaling",
+            "slug": "scaling",
+            "description": "Bla Bla Bla 2",
+            "type": "tutorial",
+            "speakers": [1, 2],
+            "track": 1,
+            "date": "2012-11-21 14:00:00",
+            "status": "accepted"
+        }
+    },
+    {
+        "model": "schedule.Session",
+        "pk": 7,
+        "fields": {
+            "title": "Scaling 2",
+            "slug": "scaling-2",
+            "description": "Bla Bla Bla 2",
+            "type": "tutorial",
+            "speakers": [1, 2],
+            "track": 1,
+            "date": "2012-11-21 14:00:00",
+            "status": "accepted"
+        }
+    }
+]

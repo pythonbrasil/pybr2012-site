@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
+from django.template import response
 from django.template.loader import render_to_string
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext
@@ -15,6 +16,7 @@ from lxml import etree
 from pythonbrasil8.core import mail
 from pythonbrasil8.core.views import LoginRequiredMixin
 from pythonbrasil8.dashboard.models import AccountProfile
+from pythonbrasil8.schedule.models import Session
 from pythonbrasil8.subscription.models import Subscription, Transaction
 
 
@@ -47,6 +49,36 @@ class SubscriptionView(LoginRequiredMixin, View):
         kw = {"email": user.email}
         body = msg % kw
         mail.send(settings.EMAIL_HOST_USER, ["organizers@python.org.br"], "PagSeguro Communication Failure", body)
+
+
+class TutorialSubscriptionView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        tutorials = Session.objects.filter(type="tutorial", status="accepted").order_by("date")
+        slots = []
+        current_slot = None
+        for tutorial in tutorials:
+            if current_slot is None:
+                current_slot = TutorialSlot([tutorial])
+            elif tutorial.date == current_slot.date:
+                current_slot.tutorials.append(tutorial)
+            else:
+                slots.append(current_slot)
+                current_slot = TutorialSlot([tutorial])
+        if current_slot:
+            slots.append(current_slot)
+        return response.TemplateResponse(
+            request,
+            "subscription/tutorials.html",
+            context={"tutorials": slots},
+        )
+
+
+class TutorialSlot(object):
+
+    def __init__(self, tutorials):
+        self.date = tutorials[0].date
+        self.tutorials = tutorials
 
 
 class NotificationView(View):

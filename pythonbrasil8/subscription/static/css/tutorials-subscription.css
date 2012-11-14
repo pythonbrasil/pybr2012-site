@@ -1,0 +1,44 @@
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+button[type=reset].btn {
+    border-color: #600;
+    background-color: #600;
+    background-image: linear-gradient(top, #D63, #600);
+    background-image: -moz-linear-gradient(top, #D63, #600);
+    background-image: -ms-linear-gradient(top, #D63, #600);
+    background-image: -o-linear-gradient(top, #D63, #600);
+    background-image: -webkit-linear-gradient(top, #D63, #600);
+}
+
+button[type=reset].btn:hover {
+    background-image: none;
+    text-decoration: none;
+}
+
+h2:not(:first-child) {
+    margin-top: 40px;
+}
+
+form div {
+    margin-bottom: 5px;
+}
+
+table {
+    margin: 20px auto 0;
+}
+
+table > thead > tr > td {
+    background-color: #000;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+    width: 120px;
+}
+
+table td {
+    border-bottom: 1px rgba(0, 0, 0, .6) solid;
+    padding: 3px 5px;
+}
