@@ -16,9 +16,9 @@
             <li>
                 <a href="{% url dashboard-sessions %}" title="{% trans "Proposals" %}" class="{% is_active request.path 'dashboard-sessions' %}{% is_active request.path 'session-subscribe' %}">{% trans "Proposals" %}</a>
             </li>
-            {# <li> #}
-            {#     <a href="{% url tutorials-subscription %}" title="{% trans "Tutorials" %}" class="{% is_active request.path 'tutorials-subscription' %}">{% trans "Tutorials" %}</a> #}
-            {# </li> #}
+            <li>
+                <a href="{% url tutorials-subscription %}" title="{% trans "Tutorials" %}" class="{% is_active request.path 'tutorials-subscription' %}">{% trans "Tutorials" %}</a>
+            </li>
             <li>
                 <a href="{% url edit-profile %}" title="{% trans "edit your profile" %}" class="{% is_active request.path 'edit-profile' %}">{{ request.user }} ({% trans "Edit your profile" %})</a>
             </li>
