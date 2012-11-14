@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext
 from lxml import etree
 
+from pythonbrasil8.schedule.models import Session
+
 PRICES = {
     'Student': 150,
     'APyB Associated': 150,
@@ -34,6 +36,7 @@ class Subscription(models.Model):
     user = models.ForeignKey(User)
     type = models.CharField(max_length=25, choices=TYPE)
     status = models.CharField(max_length=20, choices=STATUSES, default='pending')
+    tutorials = models.ManyToManyField(Session)
 
     def done(self):
         return self.status == 'confirmed' or self.status == 'sponsor'

@@ -10,6 +10,7 @@ from django.test import TestCase
 from django.test.client import RequestFactory
 
 from pythonbrasil8.dashboard import models as dash_models
+from pythonbrasil8.schedule import models as sched_models
 from pythonbrasil8.subscription import admin, models, views
 from pythonbrasil8.subscription.models import Subscription, Transaction, PRICES
 from pythonbrasil8.subscription.views import SubscriptionView, NotificationView
@@ -73,6 +74,17 @@ class SubscriptionModelTestCase(TestCase):
     def test_status_should_be_pending_by_default(self):
         status_field = Subscription._meta.get_field_by_name('status')[0]
         self.assertEqual('pending', status_field.default)
+
+    def test_should_have_tutorials(self):
+        self.assert_field_in('tutorials', Subscription)
+
+    def test_tutorials_should_be_ManyToManyField(self):
+        tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
+        self.assertIsInstance(tutorials_field, django_models.ManyToManyField)
+
+    def test_tutorials_should_point_to_subscription(self):
+        tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
+        self.assertEqual(sched_models.Session, tutorials_field.related.parent_model)
 
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
