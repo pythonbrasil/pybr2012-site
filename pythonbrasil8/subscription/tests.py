@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import datetime
-
 from django.conf import settings
 from django.contrib import admin as django_admin
 from django.contrib.auth.models import User
@@ -97,7 +95,7 @@ class TransactionModelTestCase(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        call_command("loaddata", "profiles.json", verbosity=0)
+        call_command("loaddata", "tutorials.json", verbosity=0)
 
     @classmethod
     def tearDownClass(cls):
@@ -146,7 +144,7 @@ class TransactionModelTestCase(TestCase):
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
-    def test_generate_transaction(self):
+    def test_generate_talk_transaction(self):
         subscription = Subscription.objects.create(
             type='talk',
             user=self.user,
@@ -154,6 +152,27 @@ class TransactionModelTestCase(TestCase):
         transaction = Transaction.generate(subscription)
         self.assertEqual(subscription, transaction.subscription)
         self.assertEqual("xpto123", transaction.code)
+
+    def test_generate_tutorial_transaction(self):
+        subscription = Subscription.objects.create(
+            type="tutorial",
+            user=self.user,
+        )
+        subscription.tutorials.add(sched_models.Session.objects.get(pk=1))
+        transaction = Transaction.generate(subscription)
+        self.assertEqual(subscription, transaction.subscription)
+        self.assertEqual("xpto123", transaction.code)
+        self.assertEqual(35, transaction.price)
+
+    def test_generate_tutorial_transaction_raises_ValueError_when_no_tutorial_is_selected(self):
+        subscription = Subscription.objects.create(
+            type='tutorial',
+            user=self.user,
+        )
+        with self.assertRaises(ValueError) as cm:
+            Transaction.generate(subscription)
+        exc = cm.exception
+        self.assertEqual("No tutorials selected.", exc.args[0])
 
 
 class SubscriptionViewTestCase(TestCase):
