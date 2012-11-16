@@ -408,6 +408,12 @@ class SubscriptionAdminTestCase(TestCase):
         self.assertIn(models.Subscription, django_admin.site._registry)
         self.assertIsInstance(django_admin.site._registry[models.Subscription], admin.SubscriptionAdmin)
 
+    def test_user__username_should_be_in_search_fields(self):
+        self.assertIn("user__username", admin.SubscriptionAdmin.search_fields)
+
+    def test_user__email_should_be_in_search_fields(self):
+        self.assertIn("user__email", admin.SubscriptionAdmin.search_fields)
+
 
 class TutorialSubscriptionViewTestCase(TestCase):
 

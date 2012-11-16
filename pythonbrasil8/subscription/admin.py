@@ -9,6 +9,7 @@ name.short_description = u"Name"
 
 
 class SubscriptionAdmin(admin.ModelAdmin):
+    search_fields = ("user__email", "user__username")
     list_display = (name, "status",)
     list_filter = ("status",)
 
