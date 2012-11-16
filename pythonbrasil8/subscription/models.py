@@ -36,7 +36,7 @@ class Subscription(models.Model):
     user = models.ForeignKey(User)
     type = models.CharField(max_length=25, choices=TYPE)
     status = models.CharField(max_length=20, choices=STATUSES, default="pending")
-    tutorials = models.ManyToManyField(Session)
+    tutorials = models.ManyToManyField(Session, blank=True)
 
     def done(self):
         return self.status == "confirmed" or self.status == "sponsor"

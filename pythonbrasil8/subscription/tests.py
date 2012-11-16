@@ -87,6 +87,10 @@ class SubscriptionModelTestCase(TestCase):
         tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
         self.assertEqual(sched_models.Session, tutorials_field.related.parent_model)
 
+    def test_tutorial_should_accept_blank(self):
+        tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
+        self.assertTrue(tutorials_field.blank)
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
