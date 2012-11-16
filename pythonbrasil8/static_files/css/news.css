@@ -33,5 +33,18 @@
 
 #news ul {
     font-size: 14px;
+	margin: 10px;
     margin-bottom: 10px;
+}
+
+#news ul > li {
+	list-style: disc inside none;
+}
+
+#news strong {
+	font-weight: bold;
+}
+
+#news em {
+	font-style: italic;
 }
