@@ -87,6 +87,10 @@ class SubscriptionModelTestCase(TestCase):
         tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
         self.assertEqual(sched_models.Session, tutorials_field.related.parent_model)
 
+    def test_tutorial_should_accept_blank(self):
+        tutorials_field = Subscription._meta.get_field_by_name('tutorials')[0]
+        self.assertTrue(tutorials_field.blank)
+
     def assert_field_in(self, field_name, model):
         self.assertIn(field_name, model._meta.get_all_field_names())
 
@@ -403,6 +407,12 @@ class SubscriptionAdminTestCase(TestCase):
     def test_subscription_model_is_registered_with_subscription_admin(self):
         self.assertIn(models.Subscription, django_admin.site._registry)
         self.assertIsInstance(django_admin.site._registry[models.Subscription], admin.SubscriptionAdmin)
+
+    def test_user__username_should_be_in_search_fields(self):
+        self.assertIn("user__username", admin.SubscriptionAdmin.search_fields)
+
+    def test_user__email_should_be_in_search_fields(self):
+        self.assertIn("user__email", admin.SubscriptionAdmin.search_fields)
 
 
 class TutorialSubscriptionViewTestCase(TestCase):
