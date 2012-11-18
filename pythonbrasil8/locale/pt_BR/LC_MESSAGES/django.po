@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-15 15:12-0200\n"
+"POT-Creation-Date: 2012-11-18 18:47-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -88,17 +88,17 @@ msgstr "Local"
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
 
-#: dashboard/choices.py:6 templates/register.html:28
-#: templates/register.html.py:83 templates/register.html:105
+#: dashboard/choices.py:6 templates/register.html:27
+#: templates/register.html.py:113
 msgid "Corporate"
 msgstr "Corporativo"
 
-#: dashboard/choices.py:7 templates/register.html:114
+#: dashboard/choices.py:7 templates/register.html:122
 msgid "Individual"
 msgstr "Individual"
 
-#: dashboard/choices.py:8 dashboard/choices.py:48 templates/register.html:41
-#: templates/register.html.py:90 templates/register.html:123
+#: dashboard/choices.py:8 dashboard/choices.py:48 templates/register.html:38
+#: templates/register.html.py:131
 msgid "Student"
 msgstr "Estudante"
 
@@ -478,7 +478,7 @@ msgstr "Submeter palestra"
 
 #: schedule/templates/schedule/edit-session.html:27
 #: schedule/templates/schedule/subscribe.html:39
-#: subscription/templates/subscription/tutorials.html:38
+#: subscription/templates/subscription/tutorials.html:54
 #: templates/registration/password_change_form.html:17
 msgid "Send"
 msgstr "Enviar"
@@ -536,7 +536,7 @@ msgstr ""
 "Falha ao gerar a transação para o gateway de pagamento. Por favor, contacte "
 "a organização."
 
-#: subscription/templates/subscription/tutorials.html:13
+#: subscription/templates/subscription/tutorials.html:14
 msgid ""
 "Please select below one or more tutorials that you want to attend. The "
 "prices are described in the table below."
@@ -546,29 +546,43 @@ msgstr ""
 "confirmada, basta trazer um quilo de alimento não perecível por tutorial "
 "inscrito."
 
-#: subscription/templates/subscription/tutorials.html:16
+#: subscription/templates/subscription/tutorials.html:17
 msgid "of tutorials"
 msgstr "de tutoriais"
 
-#: subscription/templates/subscription/tutorials.html:16
+#: subscription/templates/subscription/tutorials.html:17
 msgid "Price"
 msgstr "Preço"
 
-#: subscription/templates/subscription/tutorials.html:39
+#: subscription/templates/subscription/tutorials.html:27
+msgid ""
+"Please select below one or more tutorials that you want to attend. Since "
+"you're already confirmed for the conference, all you need to do is choose "
+"your tutorials and bring a kg of non-perishable food per tutorial."
+msgstr ""
+"Por favor selecione na lista abaixo um ou mais tutoriais. Já que sua inscrição "
+"para o evento já está confirmada, tudo que você tem que fazer é selecionar "
+"os tutoriais que deseja assistir e trazer 1kg de alimento não perecível."
+
+#: subscription/templates/subscription/tutorials.html:30
+msgid "You have already subscribed for the following tutorials:"
+msgstr "Você já está inscrito nos seguintes tutoriais:"
+
+#: subscription/templates/subscription/tutorials.html:55
 msgid "Reset"
 msgstr "Limpar"
 
 #: subscription/templates/subscription/tutorials_success.html:13
 msgid "You're successfully subscribed to the following tutorials:"
-msgstr ""
+msgstr "Você se inscreveu com sucesso para os seguintes tutoriais:"
 
 #: subscription/templates/subscription/tutorials_success.html:20
 msgid "To confirm your subscription, please pay the registration fee (R$ "
-msgstr ""
+msgstr "Para confirmar sua inscrição, por favor pague a taxa de inscrição (R$ "
 
 #: subscription/templates/subscription/tutorials_success.html:22
 msgid " using the button below:"
-msgstr ""
+msgstr " usando o botão abaixo:"
 
 #: templates/about.html:4 templates/about.html.py:5
 #: templates/previous_editions.html:4
@@ -915,90 +929,60 @@ msgid "Conference Registration"
 msgstr "Inscrição na Conferência"
 
 #: templates/register.html:21
-msgid "Early Bird Rate"
-msgstr "Antecipada"
-
-#: templates/register.html:22
 msgid "Regular Rate"
 msgstr "Normal"
 
-#: templates/register.html:23
+#: templates/register.html:22
 msgid "Last Week Rate"
 msgstr "Última semana"
 
-#: templates/register.html:28 templates/register.html.py:34
-#: templates/register.html:41 templates/register.html.py:42
-#: templates/register.html:43 templates/register.html.py:83
-#: templates/register.html:84 templates/register.html.py:90
-#: templates/register.html:91 templates/register.html.py:92
+#: templates/register.html:27 templates/register.html.py:32
+#: templates/register.html:38 templates/register.html.py:39
+#: templates/register.html:40
 msgid "Registration Information"
 msgstr "Informações sobre a inscrição"
 
-#: templates/register.html:42 templates/register.html.py:91
-#: templates/register.html:131
+#: templates/register.html:39 templates/register.html.py:139
 msgid "Speaker"
 msgstr "Palestrante"
 
-#: templates/register.html:43 templates/register.html.py:92
-#: templates/register.html:139
+#: templates/register.html:40 templates/register.html.py:147
 msgid "APyB member"
 msgstr "Membro APyB"
 
-#: templates/register.html:56
-msgid "Early Bird Rate:"
-msgstr "Valor antecipado:"
-
-#: templates/register.html:57
-#, fuzzy
-msgid "until October 15, 2012"
-msgstr "até 15 de novembro de 2012"
-
-#: templates/register.html:60
+#: templates/register.html:53
 msgid "Regular Rate:"
 msgstr "Valor normal:"
 
-#: templates/register.html:61
-#, fuzzy
-msgid "from October 16, 2012"
-msgstr "de 1º de setembro de 2012"
-
-#: templates/register.html:62
+#: templates/register.html:54
 msgid "until November 15, 2012"
 msgstr "até 15 de novembro de 2012"
 
-#: templates/register.html:65
+#: templates/register.html:57
 msgid "Last week Rate:"
 msgstr "Última semana"
 
-#: templates/register.html:66
+#: templates/register.html:58
 msgid "since November 16, 2012"
 msgstr "a partir de 16 de novembro"
 
-#: templates/register.html:71
+#: templates/register.html:63 templates/register.html.py:107
 msgid "Buy your ticket!"
 msgstr "Pague sua inscrição!"
 
-#: templates/register.html:76
+#: templates/register.html:75
 msgid "Tutorial Registration"
 msgstr "Inscrição em Tutoriais"
 
-#: templates/register.html:77
+#: templates/register.html:76
 msgid "Rate"
 msgstr "Valor"
 
-#: templates/register.html:86 templates/register.html.py:94
-msgid "each"
-msgstr "cada"
-
-#: templates/register.html:99
-msgid "Soon the tickets for the tutorials will be available!"
-msgstr "Logo as inscrições para os tutoriais estarão disponíveis!"
-
-#: templates/register.html:103
+#: templates/register.html:111
 msgid "Registration Types"
 msgstr "Tipos de inscrição"
 
-#: templates/register.html:107
+#: templates/register.html:115
 msgid ""
 "\n"
 "                If your company is paying for you to attend PythonBrasil, "
@@ -1018,7 +1002,7 @@ msgstr ""
 "                Servidores públicos também devem se inscrever utilizando a "
 "taxa coorporativa.                 "
 
-#: templates/register.html:116
+#: templates/register.html:124
 msgid ""
 "\n"
 "                If you are paying for yourself to attend PythonBrasil,\n"
@@ -1034,7 +1018,7 @@ msgstr ""
 "                selecione essa taxa de inscrição.\n"
 "                "
 
-#: templates/register.html:125
+#: templates/register.html:133
 msgid ""
 "\n"
 "                This rate is for full-time students.\n"
@@ -1049,7 +1033,7 @@ msgstr ""
 "dia da conferência.\n"
 "                "
 
-#: templates/register.html:133
+#: templates/register.html:141
 msgid ""
 "\n"
 "                The selected speakers will be announced <span class=\"strong"
@@ -1066,7 +1050,7 @@ msgstr ""
 "inscrição.\n"
 "                "
 
-#: templates/register.html:141
+#: templates/register.html:149
 msgid ""
 "\n"
 "                This rate is for members of the <a href=\"http://associacao."
@@ -1086,11 +1070,11 @@ msgstr ""
 "python.org.br/associados/relacao\">status da sua associação</a>.\n"
 "                "
 
-#: templates/register.html:149
+#: templates/register.html:157
 msgid "What's included?"
 msgstr "O que está incluído?"
 
-#: templates/register.html:151
+#: templates/register.html:159
 msgid ""
 "\n"
 "                <p>Conference registration includes access to open spaces, "
@@ -1286,6 +1270,26 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#~ msgid "Early Bird Rate"
+#~ msgstr "Antecipada"
+
+#~ msgid "Early Bird Rate:"
+#~ msgstr "Valor antecipado:"
+
+#, fuzzy
+#~ msgid "until October 15, 2012"
+#~ msgstr "até 15 de novembro de 2012"
+
+#, fuzzy
+#~ msgid "from October 16, 2012"
+#~ msgstr "de 1º de setembro de 2012"
+
+#~ msgid "each"
+#~ msgstr "cada"
+
+#~ msgid "Soon the tickets for the tutorials will be available!"
+#~ msgstr "Logo as inscrições para os tutoriais estarão disponíveis!"
 
 #~ msgid "Be a speaker at PythonBrasil[8]!"
 #~ msgstr "Seja palestrante da PythonBrasil[8]!"
