@@ -11,3 +11,4 @@ django-compressor==1.1.2
 BeautifulSoup==3.2.1
 gunicorn==0.14.3
 Markdown==2.2.0
+xmltodict
