@@ -313,6 +313,7 @@ class NotificationViewTestCase(TestCase):
         subscription = Subscription.objects.create(
             user=self.user,
             type="talk",
+            status="pending",
         )
         transaction = Transaction.objects.create(
             subscription=subscription,
@@ -321,8 +322,9 @@ class NotificationViewTestCase(TestCase):
             price="123.54"
         )
         NotificationView().transaction_done(subscription.id)
-        transaction = Transaction.objects.get(id=transaction.id)
+        transaction = Transaction.objects.select_related("subscription").get(id=transaction.id)
         self.assertEqual("done", transaction.status)
+        self.assertEqual("confirmed", transaction.subscription.status)
 
     def test_transaction_canceled(self):
         subscription = Subscription.objects.create(

@@ -139,9 +139,11 @@ class NotificationView(View):
         return None, None
 
     def transaction_done(self, subscription_id):
-        transaction = Transaction.objects.get(subscription_id=subscription_id)
+        transaction = Transaction.objects.select_related('subscription').get(subscription_id=subscription_id)
         transaction.status = "done"
         transaction.save()
+        transaction.subscription.status = 'confirmed'
+        transaction.subscription.save()
         context = {"profile": AccountProfile.objects.get(user=transaction.subscription.user),
   }
         body = render_to_string("email_successful_registration.txt", context)
