@@ -1,11 +1,12 @@
-#!/usr/bin/env python
 # coding: utf-8
-
-import csv
 import datetime
 
 import requests
 import xmltodict
+
+from django.conf import settings
+
+from pythonbrasil8.subscription import models
 
 
 class PagSeguro(object):
@@ -40,7 +41,7 @@ class PagSeguro(object):
             result = data['transactionSearchResult']
             if int(result['resultsInThisPage']) > 0:
                 new_transactions = result['transactions']['transaction']
-                if type(new_transactions) is not list: # only one returned
+                if type(new_transactions) is not list:  # only one returned
                     new_transactions = [new_transactions]
                 transactions.extend(new_transactions)
             total_pages = int(result['totalPages'])
@@ -58,8 +59,8 @@ class PagSeguro(object):
         return xmltodict.parse(response.text.encode('iso-8859-1'))['transaction']
 
 if __name__ == '__main__':
-    email = "" #TODO: put your PagSeguro email
-    token = "" #TODO: put your PagSeguro token here
+    email = settings.PAGSEGURO["email"]
+    token = settings.PAGSEGURO["token"]
     ps = PagSeguro(email, token)
 
     def get_all_transactions():
@@ -72,29 +73,35 @@ if __name__ == '__main__':
         now = datetime.datetime.now().strftime('%Y-%m-%d')
         dates = ['2012-06-01', '2012-07-01', '2012-08-01', '2012-09-01',
                  '2012-10-01', '2012-11-01', now]
-        pairs = zip(dates, dates[1:]) # put in (start, end) form
+        pairs = zip(dates, dates[1:])
         whole_transactions = []
         for start, end in pairs:
             start += 'T00:00:00-02:00'
             end += 'T00:00:00-02:00'
-            print start, end,
             transactions = ps.get_transactions(start, end)
             print len(transactions)
             whole_transactions.extend(transactions)
 
-        # Now save it!
-        my_csv_fp = open('transactions.csv', 'w')
-        my_csv = csv.writer(my_csv_fp)
-        keys = ['code', 'status', 'paymentMethod', 'grossAmount', 'feeAmount',
-                'netAmount', 'lastEventDate', 'reference']
-        for transaction in whole_transactions:
-            transaction['paymentMethod'] = transaction['paymentMethod']['type']
-            row = []
-            for key in keys:
-                try: # some rows just don't have 'reference' :-/
-                    value = transaction[key].encode('utf-8')
-                except KeyError:
-                    value = ''
-                row.append(value)
-            my_csv.writerow(row)
-        my_csv_fp.close()
+        paid = [t for t in whole_transactions
+                if 'reference' in t
+                and t['status'] in ('3', '4')
+                and t['grossAmount'] in ('150.00', '250.00', '350.00')]
+        for transaction in paid:
+            subscription_id = transaction['reference']
+            transactions = models.Transaction.objects.select_related('subscription').filter(
+                subscription_id=subscription_id,
+                price=float(transaction['grossAmount']),
+            )
+            update = None
+            for transaction in transactions:
+                if transaction.status == 'pending':
+                    update = transaction
+                elif transaction.status == 'done':
+                    update = None
+                    break
+            if update:
+                update.status = 'done'
+                update.save()
+                update.subscription.status = 'confirmed'
+                update.subscription.save()
+    get_all_transactions()
