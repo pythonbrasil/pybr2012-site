@@ -117,6 +117,7 @@ class NotificationView(View):
     def __init__(self, *args, **kwargs):
         self.methods_by_status = {
             3: self.transaction_done,
+            4: self.transaction_done,
             7: self.transaction_canceled,
         }
         return super(NotificationView, self).__init__(*args, **kwargs)
