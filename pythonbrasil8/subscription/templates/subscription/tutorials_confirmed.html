@@ -1,0 +1,22 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+
+{% block css %}
+{{ block.super }}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/tutorials-subscription.css" type="text/css" media="screen" charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="column grid_12">
+		<h1>{% trans "Tutorials" %}</h1>
+		<p>{% trans "You're successfully subscribed to the following tutorials:" %}</p>
+		<ul>
+			{% for tutorial in subscription.tutorials.all %}
+				<li>- {{ tutorial.title }}</li>
+			{% endfor %}
+		</ul>
+        <p>{% trans "Don't forget to bring " %}{{ subscription.tutorials.count }}{% trans " kg of non-perishable food." %}</p>
+	</div>
+</div>
+{% endblock %}

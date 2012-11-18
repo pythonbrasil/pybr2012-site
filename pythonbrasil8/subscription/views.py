@@ -101,12 +101,22 @@ class TutorialSubscriptionView(LoginRequiredMixin, View):
                     type="tutorial",
                 )
                 tutorials.append(tutorial)
+        status = "pending"
+        if request.user.subscription_set.filter(type="talk", status__in=("confirmed", "sponsor")).exists():
+            status = "confirmed"
         subscription = Subscription.objects.create(
             user=request.user,
             type="tutorial",
+            status=status,
         )
         subscription.tutorials = tutorials
         subscription.save()
+        if status == "confirmed":
+            return response.TemplateResponse(
+                request,
+                "subscription/tutorials_confirmed.html",
+                context={"subscription": subscription},
+            )
         transaction = Transaction.generate(subscription)
         return response.TemplateResponse(
             request,

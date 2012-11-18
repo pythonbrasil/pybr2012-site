@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-18 18:47-0200\n"
+"POT-Creation-Date: 2012-11-18 19:04-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -237,6 +237,7 @@ msgstr "Propostas"
 
 #: dashboard/templates/dashboard/base.html:20
 #: subscription/templates/subscription/tutorials.html:12
+#: subscription/templates/subscription/tutorials_confirmed.html:12
 #: subscription/templates/subscription/tutorials_success.html:12
 #: templates/base.html:113
 msgid "Tutorials"
@@ -560,9 +561,10 @@ msgid ""
 "you're already confirmed for the conference, all you need to do is choose "
 "your tutorials and bring a kg of non-perishable food per tutorial."
 msgstr ""
-"Por favor selecione na lista abaixo um ou mais tutoriais. Já que sua inscrição "
-"para o evento já está confirmada, tudo que você tem que fazer é selecionar "
-"os tutoriais que deseja assistir e trazer 1kg de alimento não perecível."
+"Por favor selecione na lista abaixo um ou mais tutoriais. Já que sua "
+"inscrição para o evento já está confirmada, tudo que você tem que fazer é "
+"selecionar os tutoriais que deseja assistir e trazer 1kg de alimento não "
+"perecível."
 
 #: subscription/templates/subscription/tutorials.html:30
 msgid "You have already subscribed for the following tutorials:"
@@ -572,9 +574,18 @@ msgstr "Você já está inscrito nos seguintes tutoriais:"
 msgid "Reset"
 msgstr "Limpar"
 
+#: subscription/templates/subscription/tutorials_confirmed.html:13
 #: subscription/templates/subscription/tutorials_success.html:13
 msgid "You're successfully subscribed to the following tutorials:"
 msgstr "Você se inscreveu com sucesso para os seguintes tutoriais:"
+
+#: subscription/templates/subscription/tutorials_confirmed.html:19
+msgid "Don't forget to bring "
+msgstr "Não se esqueça de trazer "
+
+#: subscription/templates/subscription/tutorials_confirmed.html:19
+msgid " kg of non-perishable food."
+msgstr " kg de alimento não perecível."
 
 #: subscription/templates/subscription/tutorials_success.html:20
 msgid "To confirm your subscription, please pay the registration fee (R$ "

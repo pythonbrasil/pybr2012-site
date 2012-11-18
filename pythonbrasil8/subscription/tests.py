@@ -482,13 +482,13 @@ class TutorialSubscriptionViewTestCase(TestCase):
         resp = v.get(request)
         self.assertTrue(resp.context_data["confirmed"])
 
-    def _prepare_post(self):
+    def _prepare_post(self, user=3):
         data = {}
         tutorials = sched_models.Session.objects.filter(pk__in=[5, 7])
         for tutorial in tutorials:
             data[tutorial.date.strftime("tutorial-%Y%m%d%H%M%S")] = tutorial.pk
         request = RequestFactory().post("/", data)
-        request.user = User.objects.get(pk=3)
+        request.user = User.objects.get(pk=user)
         return tutorials, request
 
     def test_post_renders_template_with_information_about_the_transaction_and_the_subscription(self):
@@ -514,3 +514,13 @@ class TutorialSubscriptionViewTestCase(TestCase):
         self.assertEqual(65, transaction.price)
         self.assertEqual("xpto123", transaction.code)
         self.assertEqual("pending", transaction.status)
+
+    def test_post_with_user_confirmed_for_the_conference(self):
+        tutorials, request = self._prepare_post(user=2)
+        v = views.TutorialSubscriptionView()
+        resp = v.post(request)
+        subscription = Subscription.objects.get(user_id=2, type="tutorial")
+        self.assertEqual("subscription/tutorials_confirmed.html", resp.template_name)
+        self.assertEqual(subscription, resp.context_data["subscription"])
+        self.assertEqual("confirmed", subscription.status)
+        self.assertFalse(subscription.transaction_set.exists())
