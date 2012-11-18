@@ -44,5 +44,5 @@ Please, if we don't do it, add or remind us of adding your name to the contribut
 
 Build status
 ------------
-.. image:: https://secure.travis-ci.org/PythonBrasil8/pythonbrasil8.png?branch=master
-   :target: http://travis-ci.org/PythonBrasil8/pythonbrasil8/
+.. image:: https://secure.travis-ci.org/pythonbrasil/pythonbrasil8.png?branch=master
+   :target: http://travis-ci.org/pythonbrasil/pythonbrasil8/
