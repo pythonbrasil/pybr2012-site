@@ -22,6 +22,10 @@ h2:not(:first-child) {
     margin-top: 40px;
 }
 
+strong {
+    font-weight: bold;
+}
+
 form div {
     margin-bottom: 5px;
 }
@@ -41,4 +45,17 @@ table > thead > tr > td {
 table td {
     border-bottom: 1px rgba(0, 0, 0, .6) solid;
     padding: 3px 5px;
+}
+
+.content ul {
+    margin: 15px 0 12px 5px;
+}
+
+.content ul > li {
+    margin-bottom: 3px;
+    list-style: disc inside none;
+}
+
+.content p {
+    margin-bottom: 5px;
 }
