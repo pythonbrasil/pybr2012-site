@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-18 19:04-0200\n"
+"POT-Creation-Date: 2012-11-18 19:09-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -539,6 +539,17 @@ msgstr ""
 
 #: subscription/templates/subscription/tutorials.html:14
 msgid ""
+"Please select below one or more tutorials that you want to attend. Since "
+"you're already confirmed for the conference, all you need to do is choose "
+"your tutorials and bring a kg of non-perishable food per tutorial."
+msgstr ""
+"Por favor selecione na lista abaixo um ou mais tutoriais. Já que sua "
+"inscrição para o evento já está confirmada, tudo que você tem que fazer é "
+"selecionar os tutoriais que deseja assistir e trazer 1kg de alimento não "
+"perecível por tutorial."
+
+#: subscription/templates/subscription/tutorials.html:16
+msgid ""
 "Please select below one or more tutorials that you want to attend. The "
 "prices are described in the table below."
 msgstr ""
@@ -547,24 +558,13 @@ msgstr ""
 "confirmada, basta trazer um quilo de alimento não perecível por tutorial "
 "inscrito."
 
-#: subscription/templates/subscription/tutorials.html:17
+#: subscription/templates/subscription/tutorials.html:19
 msgid "of tutorials"
 msgstr "de tutoriais"
 
-#: subscription/templates/subscription/tutorials.html:17
+#: subscription/templates/subscription/tutorials.html:19
 msgid "Price"
 msgstr "Preço"
-
-#: subscription/templates/subscription/tutorials.html:27
-msgid ""
-"Please select below one or more tutorials that you want to attend. Since "
-"you're already confirmed for the conference, all you need to do is choose "
-"your tutorials and bring a kg of non-perishable food per tutorial."
-msgstr ""
-"Por favor selecione na lista abaixo um ou mais tutoriais. Já que sua "
-"inscrição para o evento já está confirmada, tudo que você tem que fazer é "
-"selecionar os tutoriais que deseja assistir e trazer 1kg de alimento não "
-"perecível."
 
 #: subscription/templates/subscription/tutorials.html:30
 msgid "You have already subscribed for the following tutorials:"
