@@ -82,7 +82,11 @@ class TutorialSubscriptionView(LoginRequiredMixin, View):
         return response.TemplateResponse(
             request,
             "subscription/tutorials.html",
-            context={"tutorials": slots, "subscribed": subscribed},
+            context={
+                "tutorials": slots,
+                "subscribed": subscribed,
+                "confirmed": request.user.subscription_set.filter(type="talk", status__in=("confirmed", "sponsor")).exists(),
+            },
         )
 
     def post(self, request):

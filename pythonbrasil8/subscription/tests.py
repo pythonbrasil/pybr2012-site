@@ -467,12 +467,20 @@ class TutorialSubscriptionViewTestCase(TestCase):
         self.assertEqual(len(expected), len(tutorials))
         for i, slot in enumerate(tutorials):
             self.assertEqual(list(expected[i].tutorials), list(slot.tutorials))
+        self.assertFalse(resp.context_data["confirmed"])
 
     def test_get_should_include_subscripted_tutorials_in_context(self):
         v = views.TutorialSubscriptionView()
         resp = v.get(self.request)
         tutorials = resp.context_data["subscribed"]
         self.assertEqual(list(tutorials), [sched_models.Session.objects.get(pk=6)])
+
+    def test_get_should_detect_if_the_user_already_have_talk_subscription(self):
+        v = views.TutorialSubscriptionView()
+        request = RequestFactory().get("/")
+        request.user = User.objects.get(pk=2)
+        resp = v.get(request)
+        self.assertTrue(resp.context_data["confirmed"])
 
     def _prepare_post(self):
         data = {}

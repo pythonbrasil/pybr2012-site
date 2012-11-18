@@ -167,5 +167,15 @@
             "status": "confirmed",
             "tutorials": [6]
         }
+    },
+    {
+        "model": "subscription.Subscription",
+        "pk": 2,
+        "fields": {
+            "date": "2012-11-18 18:39:00",
+            "user": 2,
+            "type": "talk",
+            "status": "sponsor"
+        }
     }
 ]
