@@ -70,17 +70,11 @@ if __name__ == '__main__':
         '''
 
         # Get all desired transactions
-        now = datetime.datetime.now().strftime('%Y-%m-%d')
-        dates = ['2012-06-01', '2012-07-01', '2012-08-01', '2012-09-01',
-                 '2012-10-01', '2012-11-01', now]
-        pairs = zip(dates, dates[1:])
-        whole_transactions = []
-        for start, end in pairs:
-            start += 'T00:00:00-02:00'
-            end += 'T00:00:00-02:00'
-            transactions = ps.get_transactions(start, end)
-            print len(transactions)
-            whole_transactions.extend(transactions)
+        now = datetime.datetime.now()
+        yesterday = now - datetime.timedelta(days=1)
+        start = yesterday.strftime('%Y-%m-%dT%H:%M:%S-02:00')
+        end = now.strftime('%Y-%m-%dT%H:%M:%S-02:00')
+        whole_transactions = ps.get_transactions(start, end)
 
         paid = [t for t in whole_transactions
                 if 'reference' in t
