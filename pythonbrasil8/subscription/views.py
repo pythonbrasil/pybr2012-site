@@ -57,7 +57,16 @@ class SubscriptionView(LoginRequiredMixin, View):
 class TutorialSubscriptionView(LoginRequiredMixin, View):
 
     def get(self, request):
-        tutorials = Session.objects.filter(type="tutorial", status__in=["accepted", "confirmed"]).order_by("date")
+        subscriptions = Subscription.objects.\
+                filter(user=request.user, status="confirmed", type="tutorial").\
+                prefetch_related("tutorials")
+        subscribed = []
+        if subscriptions:
+            subscribed = subscriptions[0].tutorials.all()
+        tutorials = Session.objects.\
+                filter(type="tutorial", status__in=["accepted", "confirmed"]).\
+                exclude(date__in=[t.date for t in subscribed]).\
+                order_by("date")
         slots = []
         current_slot = None
         for tutorial in tutorials:
@@ -73,7 +82,7 @@ class TutorialSubscriptionView(LoginRequiredMixin, View):
         return response.TemplateResponse(
             request,
             "subscription/tutorials.html",
-            context={"tutorials": slots},
+            context={"tutorials": slots, "subscribed": subscribed},
         )
 
     def post(self, request):

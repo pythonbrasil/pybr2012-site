@@ -455,7 +455,7 @@ class TutorialSubscriptionViewTestCase(TestCase):
         self.assertIsInstance(resp, response.TemplateResponse)
         self.assertEqual("subscription/tutorials.html", resp.template_name)
 
-    def test_get_should_include_accepted_tutorials_in_context(self):
+    def test_get_should_include_accepted_tutorials_in_context_excluding_subscribed_tutorials(self):
         v = views.TutorialSubscriptionView()
         resp = v.get(self.request)
         tutorials = resp.context_data["tutorials"]
@@ -463,12 +463,16 @@ class TutorialSubscriptionViewTestCase(TestCase):
             views.TutorialSlot(
                 tutorials=sched_models.Session.objects.filter(pk__in=[1, 5])
             ),
-            views.TutorialSlot(
-                tutorials=sched_models.Session.objects.filter(pk__gte=6)
-            ),
         ]
+        self.assertEqual(len(expected), len(tutorials))
         for i, slot in enumerate(tutorials):
             self.assertEqual(list(expected[i].tutorials), list(slot.tutorials))
+
+    def test_get_should_include_subscripted_tutorials_in_context(self):
+        v = views.TutorialSubscriptionView()
+        resp = v.get(self.request)
+        tutorials = resp.context_data["subscribed"]
+        self.assertEqual(list(tutorials), [sched_models.Session.objects.get(pk=6)])
 
     def _prepare_post(self):
         data = {}

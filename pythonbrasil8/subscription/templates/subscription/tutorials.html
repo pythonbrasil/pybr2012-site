@@ -22,6 +22,18 @@
                 <tr><td>4</td><td>R$ 100,00</td></tr>
             </tbody>
         </table>
+        {% if subscribed %}
+            <p>{% trans "You have already subscribed for the following tutorials:" %}</p>
+            <ul>
+                {% for tutorial in subscribed %}
+                <li>
+                    <a href="{% url proposal-page tutorial.track.slug tutorial.slug %}" title="{{ tutorial.title}}">
+                        {{ tutorial.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <form action="{% url tutorials-subscription %}" method="post" accept-charset="utf-8">
             {% csrf_token %}
             {% for slot in tutorials %}

@@ -156,5 +156,16 @@
             "date": "2012-11-21 14:00:00",
             "status": "accepted"
         }
+    },
+    {
+        "model": "subscription.Subscription",
+        "pk": 1,
+        "fields": {
+            "date": "2012-11-18 17:13:00",
+            "user": 1,
+            "type": "tutorial",
+            "status": "confirmed",
+            "tutorials": [6]
+        }
     }
 ]
