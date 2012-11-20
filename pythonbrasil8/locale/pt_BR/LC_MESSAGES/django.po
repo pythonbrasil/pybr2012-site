@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-18 19:09-0200\n"
+"POT-Creation-Date: 2012-11-20 18:08-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -757,7 +757,6 @@ msgid "Call for proposals"
 msgstr "Chamada de trabalhos"
 
 #: templates/base.html:106
-#, fuzzy
 msgid "Until October 1st"
 msgstr "até 1 de Outubro de 2012"
 
@@ -900,11 +899,6 @@ msgstr "21 a 23 de outubro de 2010"
 #: templates/previous_editions.html:48
 msgid "28th September - 1st October 2011"
 msgstr "28 de setembro a 1º de outubro de 2011"
-
-#: templates/proposal.html:4 templates/proposal.html.py:5
-#, fuzzy
-msgid "Proposal"
-msgstr "Propostas"
 
 #: templates/proposal.html:34
 #, fuzzy
@@ -1281,6 +1275,10 @@ msgid "Please fill the form below to registrate yourself for PythonBrasil[8]:"
 msgstr ""
 "Favor preencher o formulário para pré-inscrição na PythonBrasil[8]. Todos "
 "campos são obrigatórios."
+
+#, fuzzy
+#~ msgid "Proposal"
+#~ msgstr "Propostas"
 
 #~ msgid "Early Bird Rate"
 #~ msgstr "Antecipada"
