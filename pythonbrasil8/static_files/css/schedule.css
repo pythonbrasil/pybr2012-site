@@ -103,3 +103,8 @@ td {
   font-size: 1.25em;
   padding-top: 15px !important;
 }
+
+p.alert {
+    background-color:yellow;
+    text-align: center
+}
