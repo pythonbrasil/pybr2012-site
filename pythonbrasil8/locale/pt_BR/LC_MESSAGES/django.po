@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PythonBrasil8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-20 18:08-0200\n"
+"POT-Creation-Date: 2012-11-21 15:46-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tatiana Al-Chueyr <tatiana.alchueyr@gmail.com>\n"
 "Language-Team: Francisco Souza <f@souza.cc>\n"
@@ -87,6 +87,15 @@ msgstr "Local"
 #: core/templates/venue.html:13
 msgid "PythonBrasil Venue"
 msgstr "Local da PythonBrasil"
+
+#: core/templates/venue.html:18
+msgid ""
+"Don't forget to bring your notebook for the tutorials! Also, you should be "
+"wearing trousers, shorts and skirts are not allowed in FGV, where the "
+"tutorials are taking place!'"
+msgstr ""
+"Para os tutoriais, traga seu notebook e venha de calça - bermudas e saias "
+"não são permitidos na FGV, onde estão ocorrendo os tutoriais!"
 
 #: dashboard/choices.py:6 templates/register.html:27
 #: templates/register.html.py:113
