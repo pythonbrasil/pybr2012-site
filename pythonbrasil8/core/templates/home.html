@@ -39,7 +39,11 @@
                         {% for post in posts %}
                         <li class="fat">
                             <a href="{% url news:post post.slug %}" class="title">{{ post.title }}</a>
-                            <p class="date">{% trans "Published on" %} {{ post.published_at }}</p>
+                            <p class="date">
+                              {% trans "Published on" %} {{ post.published_at }}
+                              by
+                              <a href="mailto:{{ post.author.email }}">{{ post.author.get_profile.name }}</a>
+                            </p>
                         </li>
                         {% endfor %}
                     </ul>
