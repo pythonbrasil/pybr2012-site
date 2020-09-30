@@ -1,4 +1,4 @@
-PythonBrasil[8] website
+PythonBrasil[8] website - An Amazing Project
 =======================
 
 This is the source-code of PythonBrasil[8]'s website. The 8th edition of the conference will happen during November 2012, in Rio de Janeiro, Brazil.
@@ -27,7 +27,7 @@ From the command line: ::
 
 Running tests
 -------------
-
+This is an amazing project which helps you lot
 This project has both server side and client side tests. To run the test suites do: ::
 
     make test
