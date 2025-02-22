@@ -1,0 +1,46 @@
+#login-dashboard p {
+    margin-bottom: 10px;
+}
+
+#login-dashboard h2 {
+    margin-bottom: 20px;
+}
+
+#login-dashboard .errorlist {
+    margin: 10px 0 2px 100px;
+}
+
+#login-dashboard .errorlist li {
+    color: #F00;
+    font-size: 80%;
+}
+
+#login-dashboard .login {
+    float: left;
+    margin: 0 100px 0 10px;
+    width: 300px;
+}
+
+#login-dashboard form input {
+    width: 180px;
+}
+
+#login-dashboard form label {
+    float: left;
+    width: 100px;
+}
+
+#login-dashboard form p {
+    margin-bottom: 5px;
+}
+
+#login-dashboard .btn {
+    font-size: 13px;
+    margin-left: 101px;
+    margin-top: 10px;
+}
+
+#login-dashboard .register {
+    float: left;
+    width: 300px;
+}

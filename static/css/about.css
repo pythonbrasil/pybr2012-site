@@ -1,0 +1,18 @@
+#about img {float:right; margin-left: 20px}
+
+#about div.previous, div.contact {float:left; width:400px}
+#about div.contact {margin-right:40px}
+#about div.previous div {margin: 10px 0 20px}
+
+#about ul {margin-bottom: 20px}
+#about ul img {float:left; margin: 0 10px 0 0}
+#about ul li {height:60px; margin: 10px 0 0 5px}
+
+
+#about div ul li a {display:block}
+#about div.previous div.list {color:#666666; font-size: 50px; float:left}
+#about div.previous div.list a {color:#666666}
+#about div.previous div.list a:hover {color:#1E5D8B; text-decoration:none}
+
+#about ul li span {display:block}
+#about ul li span.contact {padding-top: 5px;}

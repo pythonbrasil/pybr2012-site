@@ -1,0 +1,50 @@
+#news div.news-item {
+    border-bottom: 1px solid #999;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+	width: 960px;
+}
+
+#news h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: none;
+}
+
+#news img {
+    float: right;
+    margin-left: 30px;
+}
+
+#news p {
+    margin-bottom: 3px;
+}
+
+#news p.body {
+    font-size: 14px;
+}
+
+#news p.date {
+    color: #2471A9;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#news ul {
+    font-size: 14px;
+	margin: 10px;
+    margin-bottom: 10px;
+}
+
+#news ul > li {
+	list-style: disc inside none;
+}
+
+#news strong {
+	font-weight: bold;
+}
+
+#news em {
+	font-style: italic;
+}

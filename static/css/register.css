@@ -1,0 +1,81 @@
+/*** tables ***/
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: separate;
+  margin-bottom:15px;
+  font-size: 14px;
+}
+
+table th {
+  border-bottom: 1px solid #999;
+  font-weight: bold;
+  padding:3px 4px 2px 0;
+  width: 100px
+}
+
+table.tutorial-table {
+    width: 460px;
+}
+
+table.tutorial-table th:first-child {
+    width: 70%;
+}
+
+table.tutorial-table th:last-child {
+    width: 30%;
+}
+
+table td {
+  vertical-align: middle;
+  border-bottom: 1px solid #999;
+  padding:8px 4px;
+}
+
+.registration .note {
+    width: 280px;
+    height: 160px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    letter-spacing: 0;
+    vertical-align: top;
+    color: #DDD;
+    overflow: hidden;
+    background: url('../images/header/sprite.png') no-repeat 0 -116px;
+    overflow: hidden;
+}
+
+/*** registration ***/
+
+.registration ul {font-size: 12px; list-style-type: circle; margin-bottom:20px}
+.registration ul li {display: list-item; margin-bottom:5px}
+.registration ul p {line-height: 16px; margin-left:5px}
+.registration ul p.subtitle {color:#FC0; font-weight:bold; font-size: 14px; margin: 0 0 1px}
+
+.registration span.strong {font-weight:bold}
+
+.registration .inner-note {
+    display: block;
+    margin-left: 25px;
+    padding: 20px 25px 0 0;
+    height: 140px;
+    background: url('../images/header/sprite.png') no-repeat right -116px;
+}
+
+.registration .inner-note p {
+    line-height: 15px;
+}
+
+.registration .table {float:left; margin-right:30px}
+
+.registration .button {text-align:center}
+
+.btn {clear: both; margin-bottom:20px; width:120px}
+.btn.soon {margin-bottom:0; width:200px}
+
+h2 {margin-bottom: 20px;}
+
+p {line-height:20px;}
+.included p {margin-bottom:10px;}

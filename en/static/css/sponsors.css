@@ -1,0 +1,52 @@
+.category h5 {
+    color: #484746;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sponsor h2 {
+    font-size: 20px;
+}
+
+.sponsor p {
+    font-size: 14px;
+}
+
+.sponsor p.description {
+    line-height: 18px;
+    margin-top: 15px;
+}
+
+.sponsor p.url {
+    margin: 10px 0;
+}
+
+.sponsor p.url a {
+    color: #2471A9;
+}
+
+.sponsor {
+    border-bottom: 1px dotted #8DBAC1;
+    padding-bottom: 20px;
+}
+
+.sponsor .logo {
+  height: 100px;
+  overflow: hidden;
+}
+
+.become {
+    font-size: 12px;
+    color: #fff;
+    background-color: #2471A9;
+    display: block;
+    padding: 10px;
+}
+
+.sponsors-nav li {
+    padding: 5px 0;
+}
+
+.sponsors-nav a {
+    color: #2471A9;
+}

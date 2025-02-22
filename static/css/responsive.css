@@ -1,0 +1,65 @@
+@media (min-width: 700px) and (max-width: 979px) {
+
+    #pre-register a {
+        margin: 87px 0;
+    }
+
+    div#sponsors {
+        margin-left: 100px;
+    }
+
+    .content .about .what-is {
+        float: none;
+        display: block;
+    }
+
+    div.row {
+        width: 700px;
+    }
+
+    #footer .about {
+        width: 600px;
+    }
+
+}
+
+@media (max-width: 699px) {
+
+    #header {
+        height: 400px;
+    }    
+
+    #logo {
+        top: 25px;
+    }
+
+    #pre-register a {
+        margin: 264px 110px 0 0;
+    }
+
+    div#sponsors {
+        margin-left: 50px;
+    }
+
+    .content .about .what-is {
+        float: none;
+        display: block;
+    }
+
+    .content .about .inner.grid_7 {
+        width: 400px;
+    }
+
+    #pre-registration {
+        width: 385px;
+    }
+
+    div.row {
+        width: 420px;
+    }
+
+    #footer .about {
+        width: 310px;
+    }
+
+}

@@ -1,0 +1,136 @@
+.content .about .what-is {
+    padding-bottom: 5px;
+}
+
+.content .about .what-is a {
+    color: #2471a9;
+    font-size: 32px;
+    letter-spacing: -1px;
+    padding-bottom: 5px;
+}
+
+.content .about .inner {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#sponsors {
+    position: relative;
+    height: 140px;
+}
+
+#sponsors .row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0;
+}
+
+.animation {
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 2s;
+    -moz-transition-property: opacity;
+    -moz-transition-duration: 2s;
+    -o-transition-property: opacity;
+    -o-transition-duration: 2s;
+    -ie-transition-property: opacity;
+    -ie-transition-duration: 2s;
+    transition-property: opacity;
+    transition-duration: 2s;
+}
+
+.sponsor {
+    text-align: center;
+}
+
+.sponsor a {
+    line-height: 85px;
+}
+
+.sponsor a img {
+    display: inline;
+    display: inline-table;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sponsor span {
+    display: block;
+    text-align: center;
+    border-top: 1px dotted #8DBAC1;
+    text-transform: uppercase;
+    color: #484746;
+    padding-top: 6px;
+    margin: 13px 0 0 0;
+    width: 130px;
+    font-weight: bold;
+    font-size: 77%;
+}
+
+.more_info {
+	margin-top: 40px;
+}
+
+.multicolumn {
+	margin: 0;
+	letter-spacing: -4px;
+	width: 103%;
+}
+  .multicolumn li {
+    display: -moz-inline-stack;
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		letter-spacing: 0;
+		vertical-align: top;
+		width: 274px;
+        margin-right: 30px;
+  }
+
+  .multicolumn li.fat {
+		width: 508px;
+  }
+  .multicolumn li.thin {
+		width: 110px;
+        text-align:right;
+  }
+
+
+.grab_badge img {
+	display: block;
+	max-width: 102%;
+	margin: 13px 0 0 -1%;
+}
+
+.up_to_date {
+	margin: 0;
+	padding: 10px 0;
+}
+	.up_to_date li {
+		overflow: hidden;
+		width: 90%;
+        margin-right: 0
+	}
+
+.ico {
+	float: left;
+	display: inline;
+	width: 58px;
+	height: 59px;
+	margin: -11px 10px 0 0;
+}
+	.ico img {
+		max-width: 100%;
+	}
+
+
+.subterm {
+	font-family: 'Open Sans', arial, sans-serif;
+	color: #666;
+	font-size: 17px;
+}
+
+ul.news li {margin-top:20px}
+ul.news li a.title {}
+ul.news li p.date {font-size:14px}

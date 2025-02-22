@@ -1,0 +1,334 @@
+#pre-register a {
+    width: 254px;
+    height: 39px;
+    float: right;
+    text-align: center;
+    margin: 11% 8% 0 0;
+    padding-bottom: 15px;
+    background: url('../images/header/sprite.png') #004592 right -52px no-repeat;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+#pre-register span {
+    height: 100%;
+    width: 230px;
+    padding: 15px 0 0 14px;
+    display: block;
+    background: url('../images/header/sprite.png') #004592 -2px -52px no-repeat;
+}
+
+#github-ribbon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/** COMMON **/
+
+body {
+    background-color: #1b1f20;
+    font-size: 15px;
+}
+p, li {
+    line-height: 18px;
+    letter-spacing:0px
+}
+.text_right {
+    text-align: right;
+}
+
+.text_center {
+    text-align: center;
+}
+
+/* .content .inner { */
+/*     padding: 25px 0; */
+/* } */
+
+/*** TYPOGRAPHY ***/
+
+h1 {
+    color: #2471A9;
+    font-family: arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+h2 {color: black; font-size: 20px; font-weight:bold; margin: 20px 0 10px; text-transform: uppercase;}
+a {color: #1E5D8B}
+a:visited {color: #1E5D8B}
+
+
+
+.content h5 {
+    color: #2471A9;
+}
+
+.dates h4 {
+    color: #2471A9;
+    font-size: 1.2em;
+}
+
+.dates p {
+    color: #474747;
+    margin-top: 5px;
+    line-height: 26px;
+}
+
+#footer p {
+    color: #ccc;
+    font-size: 0.875em;
+    text-align: right;
+    line-height: 18px;
+}
+
+/*** CONTAINERS ***/
+
+
+.clearfix {
+    clear: both;
+}
+
+.content {
+    background-color: #FFF;
+    width: 100%;
+}
+
+.content .row .row {
+    margin: 15px 0;
+}
+
+.content .become-a-sponsor {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.content .become-a-sponsor a {
+    float: right;
+    color: #2471A9;
+}
+
+.dates {
+    background-color: #efefef;
+    height: 85px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dates .dates-container {
+    margin: 0 auto;
+    width: 930px;
+}
+
+.dates .inner {
+    margin: 15px 70px 15px 0px;
+    float: left;
+}
+
+.dates .inner.last {
+    margin-right: 0;
+}
+
+.inner-row {
+    margin: 10px 0;
+}
+
+.wrapper {
+    margin: 0 8%;
+}
+
+/*** HEADER ***/
+
+#header {
+    height: 280px;
+    background: #1b1f20;
+}
+
+#header .inner {
+    margin: 0 8%;
+    position: relative;
+    height: 270px;
+}
+
+#logo {
+    background: url('../images/header/sprite.png') #1b1f20 0px -959px no-repeat;
+    position: absolute;
+}
+
+#logo-pt {
+    background: url('../images/header/sprite_pt.png') #1b1f20 0px -959px no-repeat;
+    position: absolute;
+}
+
+#logo a, #logo-pt a {
+    display: block;
+    height: 270px;
+    width: 400px;
+    text-indent: -9999px;
+}
+
+.dashed-border {
+    margin-top: -12px;
+    width: 100%;
+    height: 6px;
+    background: url('../images/header/dashed-border.png') #1b1f20 repeat-x;
+    position: absolute;
+}
+
+
+/*** MENU ***/
+
+#menu {
+    height: 45px;
+}
+
+#menu ul {
+    padding: 5px 0;
+    position: absolute;
+    right: 40px;
+    top: 5px;
+}
+
+#menu li {
+    display: inline;
+    float: left;
+}
+
+#menu li a {
+    color: #DDD;
+    padding: 10px;
+    display: block;
+}
+
+#menu li.active {
+    background: url('../images/header/sprite.png') left 3px no-repeat;
+    padding-left: 16px;
+}
+
+#menu li.active a {
+    background: url('../images/header/sprite.png') right 3px no-repeat;
+    padding: 10px 16px 10px 0;
+}
+
+#language-select {
+    right: 50px;
+    position: absolute;
+    top: 60px;
+}
+
+#language-select li {
+    float: left;
+    margin-left: 10px;
+}
+
+#language-select li a {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+}
+
+#language-select .selected a {
+    color: white;
+}
+
+#language-select .flag {
+    display: inline-block;
+    height: 11px;
+    width: 16px;
+    overflow: hidden;
+    background-image: url('../images/header/flags.png');
+}
+
+#language-select .pt-br .flag {
+    background-position: 0 0;
+}
+
+#language-select .en-us .flag {
+    background-position: -18px 0;
+}
+
+
+/*** FOOTER ***/
+
+#footer {
+    background-color: #1b1f20;
+    padding-bottom: 20px;
+}
+
+#footer .about {
+    margin-top: 40px;
+}
+
+#footer .logo {
+    display: inline;
+    background: url('../images/header/sprite.png') -15px -280px no-repeat;
+    width: 44px;
+    height: 44px;
+    margin: 41px 0 0 20px;
+}
+
+.btn {
+    border-radius: 3px;
+    border: 1px solid #2471A9;
+    background-color: #2471A9;
+    background-image: linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -moz-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -ms-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -o-linear-gradient(top, #24AAFF, #2471A9);
+    background-image: -webkit-linear-gradient(top, #24AAFF, #2471A9);
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-image: none;
+    text-decoration: none;
+}
+
+.btn:visited, .btn:active, .btn:hover {
+    color: #FFF;
+}
+
+.btn.green {
+    border-color: #480;
+    background-color: #480;
+    background-image: -moz-linear-gradient(top, #240, #480)
+}
+
+.btn.green:hover {
+    background-image: -moz-linear-gradient(top, #250, #480)
+}
+
+a.become {color:white}
+#sponsors-info a.become:visited {color:white}
+
+h2 {
+font-family: 'Open Sans', arial, sans-serif;
+text-transform: uppercase;
+color: black;
+font-size: 20px;
+line-height: 0.9em;
+letter-spacing: -1px;
+}
+
+h3 {
+font-family: 'Open Sans', arial, sans-serif;
+text-transform: uppercase;
+color: black;
+font-size: 16px;
+line-height: 0.9em;
+letter-spacing: -1px;
+margin: 10px 0 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}

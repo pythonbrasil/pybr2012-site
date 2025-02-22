@@ -1,0 +1,110 @@
+.speakers {
+	width: 103%;
+	margin-top: 35px;
+	letter-spacing: -4px;
+}
+	.speakers h2 {
+		padding-bottom: 10px;
+	}
+	.speakers ul {
+		width: 650px;
+		display: -moz-inline-stack;
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		vertical-align: top;
+		padding: 1px;
+		margin: 0;
+	}
+		.speakers li {
+			width: 71px;
+			height: 71px;
+			margin: 0 6px 6px 0;
+			display: -moz-inline-stack;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			vertical-align: top;
+			letter-spacing: 0;
+			background: #DDD;
+			-moz-box-shadow: 0px 0px 2px #DDD;
+			-webkit-box-shadow: 0px 0px 2px #DDD;
+			box-shadow: 0px 0px 2px #DDD;
+			overflow: hidden;
+			background: url('../images/header/sprite.png') no-repeat -768px -302px;
+		}
+	.speakers .note {
+		width: 280px;
+		height: 160px;
+		display: -moz-inline-stack;
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		letter-spacing: 0;
+		vertical-align: top;
+		color: #DDD;
+		overflow: hidden;
+		background: url('../images/header/sprite.png') no-repeat 0 -116px;
+		overflow: hidden;
+	}
+		.speakers .note p {font-size: 13px; margin-bottom: 8px}
+		.speakers .inner-note {
+			display: block;
+			margin-left: 25px;
+			padding: 14px 25px 0 0;
+			height: 140px;
+			background: url('../images/header/sprite.png') no-repeat right -116px;
+		}
+
+table { width: 100%; }
+th { font-size: 150%; font-weight: bold; }
+
+h1, h2, h3 {
+  text-transform: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h2.indent {
+  margin-left: 10px;
+  margin-top: 0;
+}
+.label {
+  margin: 5px;
+  font-weight: bold;
+  width: 40%;
+  display: inline-block;
+}
+.label-info {
+  width: 60%;
+}
+div.twocolumn > div {
+  display: block;
+  float: left;
+  width: 40%;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.twocolumn {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+td {
+  padding: 5px;
+}
+.odd {
+  background-color: #DEDEDE !important;
+}
+.even {
+  background-color: #F1F1F1 !important;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.25em;
+  padding-top: 15px !important;
+}
+
+p.alert {
+    background-color:yellow;
+    text-align: center
+}

@@ -1,0 +1,30 @@
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+.item { margin: 0; overflow: hidden; list-style: none; }
+	.item_media { float: left; display: inline; margin-right: 10px; }
+		.item_media img { display: block; clear: both; margin-bottom: 8px }
+	.item_body { display: table; zoom: 1; }
+
+
+
+.badges { margin-top: 35px}
+	.badges h2 { padding-bottom: 25px; }
+	.badges p {
+		margin-bottom: 8px;
+	}
+	.badges ul {
+		list-style: none;
+		margin: 0;
+	}
+	.badges li { padding-bottom: 30px; }
+	.badges .item_media { text-align: center; }
+
+pre {
+	margin: 40px 0 10px 10px;
+	padding: 10px;
+	color: #333;
+	font-size: 12px; 
+	border: 1px solid #c1c1c1;
+	text-shadow: 0 1px 0 #FFFFFF;
+	background: #eaeaea;
+}
